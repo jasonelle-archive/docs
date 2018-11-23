@@ -1,0 +1,85 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Horizontal Layout",
+      "styles": {
+        "note": {
+          "font": "Georgia",
+          "size": "16"
+        }
+      },
+      "actions": {
+        "$pull": {
+          "type": "$flush",
+          "success": {
+            "type": "$reload"
+          }
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/layout/horizontal.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [{
+        "items": [{
+          "type": "horizontal",
+          "style": {
+            "padding": "15",
+            "distribution": "equalsize",
+            "spacing": "10"
+          },
+          "components": [{
+            "type": "label",
+            "class": "note",
+            "text": "When I first encounter René Redzepi, he is cutting a live elk in half with a chainsaw. Noma’s unwavering commitment to native, hyper-local Nordic foods requires its kitchen staff to spend hours every morning foraging the neighboring woodlands and shorelines for wild ingredients, and Redzepi has a gift for sensing gastronomic potential in everything around him."
+          }, {
+            "type": "label",
+            "class": "note",
+            "text": "\"A lot of times you can find these lovely little rose hip flowers pickling in the stomach fluids of the larger field mammals that live around here,\" Redzepi says, his arm elbow-deep in the abdominal cavity of the freshly bisected animal, its viscera still twitching and gurgling as he fishes out two small, pink, slimy flower petals from within. \"Sometimes you have to saw through 20 or so elk before you find any, but it's always worth the effort. They're absolutely perfect with caramelized sweetbreads.\""
+          }]
+        }]
+      }, {
+        "header": {
+          "type": "horizontal",
+          "style": {
+            "padding": "0",
+            "align": "top",
+            "z_index": "-1"
+          },
+          "components": [{
+            "type": "image",
+            "style": {
+              "width": "100%"
+            },
+            "url": "http://images.onionstatic.com/clickhole/3380/5/16x9/640.jpg"
+          }]
+        },
+        "items": [{
+          "type": "horizontal",
+          "style": {
+            "padding": "15",
+            "background": "#ffffff",
+            "distribution": "equalsize",
+            "spacing": "10"
+          },
+          "components": [{
+            "type": "label",
+            "class": "note",
+            "text": "Redzepi collects some of the bile-drenched petals in a jar, sets the elk carcass ablaze, and wanders off to continue foraging. He leads me down to a gray, windblown beach, where, to the untrained eye, there seems to be nothing growing but weeds and scraggly grass. But Redzepi, using hand grenades to displace large mounds of sand, almost immediately uncovers a veritable buffet of herbs and produce sticking out every which way from the soil. There’s wild parsnip, beach peas, sea lettuce, spicy lilac, Osama bin Laden’s beached corpse, horseradish, mustard flowers, and verdant goosefoot—all growing within the same 4-foot radius."
+          }, {
+            "type": "label",
+            "class": "note",
+            "text": "“We’ll use the horseradish in a sea urchin dish, the lettuce with salted cod roe, and the corpse leg to make a nice broth with ash-roasted beets,” he explains while severing the bloated terrorist leader’s cadaver at the pelvis with his chainsaw, filling the air with a pungent, almost curry-like bouquet of hot postmortem gases. “These flavors are wholly unique to this area. You will not find them anywhere else in the world.”"
+          }]
+        }]
+      }]
+    }
+  }
+}

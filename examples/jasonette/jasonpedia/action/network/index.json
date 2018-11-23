@@ -1,0 +1,85 @@
+{
+  "$jason": {
+    "head": {
+      "title": "$network",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        }
+      },
+      "data": {
+        "items": [{
+          "url": "https://imagejason.herokuapp.com",
+          "title": "imagejason",
+          "description": "takes photo using $media.camera, and uploads it to imagejason.herokuapp.com via $network.upload"
+        }, {
+          "url": "https://fureliza.herokuapp.com",
+          "title": "eliza",
+          "description": "make a $network.request to node.js express based chatbot server. Returns auto-generated output based on the input"
+        }, {
+          "url": "https://sessionjason.herokuapp.com/posts.json",
+          "title": "Microblog with user account",
+          "description": "Signs into the blog using token authentication ($network.request and $session.set) and make posts using $network.request"
+        }]
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "menu": {
+              "text": "View JSON",
+              "href": {
+                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/action/network/index.json",
+                "view": "web"
+              }
+            }
+          },
+          "sections": [
+            {
+              "header": {
+                "type": "horizontal",
+                "style": {
+                  "background": "rgba(14,122,254,0.1)",
+                  "padding": "20"
+                },
+                "components": [{
+                  "style": {
+                    "size": "12"
+                  },
+                  "type": "label",
+                  "text": "Note: Sometimes the apps may take about 10 seconds to load. This is because these connect to demo app servers, which go into hibernation when left idle for a while. But wait for a bit for them to load and they should work!"
+                }]
+              },
+              "items": {
+                "{{#each items}}": {
+                  "type": "vertical",
+                  "href": {
+                    "url": "{{url}}"
+                  },
+                  "components": [{
+                    "type": "label",
+                    "class": "bold",
+                    "text": "{{title}}"
+                  }, {
+                    "type": "label",
+                    "class": "normal",
+                    "text": "{{description}}"
+                  }]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

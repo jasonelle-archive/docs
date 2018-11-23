@@ -1,0 +1,112 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Static Layers",
+      "actions": {
+        "$load": {
+          "type": "$render"
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#000000"
+          },
+          "header": {
+            "menu": {
+              "text": "View JSON",
+              "href": {
+                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/layer/static.json",
+                "view": "web"
+              }
+            },
+            "style": {
+              "background": "rgba(0,0,0,0)",
+              "color": "#ffffff"
+            }
+          },
+          "layers": [{
+            "type": "label",
+            "text": "THESE ARE STATIC LAYERS.\n\nSTATIC LAYERS CAN BE STYLED AND ALSO RESPOND TO ACTIONS.\n\nBUT YOU CAN'T RESIZE, ROTATE, OR DRAG THEM.\n\nTRY PRESSING A BUTTON BELOW.",
+            "style": {
+              "font": "Verdana",
+              "color": "#fdfdfd",
+              "size": "18",
+              "top": "100",
+              "left": "0",
+              "width": "100%",
+              "height": "200",
+              "align": "center"
+            }
+          }, {
+            "type": "label",
+            "text": "Banner",
+            "action": {
+              "type": "$util.banner",
+              "options": {
+                "title": "Banner",
+                "description": "This is a banner"
+              }
+            },
+            "style": {
+              "align": "center",
+              "bottom": "30",
+              "left": "50%-50",
+              "width": "100",
+              "padding": "10",
+              "background": "#6e2111",
+              "color": "#ffffff",
+              "corner_radius": "3"
+            }
+          }, {
+            "type": "label",
+            "text": "Alert",
+            "action": {
+              "type": "$util.alert",
+              "options": {
+                "title": "Alert",
+                "description": "This is an alert"
+              }
+            },
+            "style": {
+              "align": "center",
+              "bottom": "30",
+              "right": "20",
+              "padding": "10",
+              "background": "#6e2111",
+              "color": "#ffffff",
+              "corner_radius": "3"
+            }
+          }, {
+            "type": "label",
+            "text": "1UP",
+            "action": {
+              "type": "$audio.play",
+              "options": {
+                "url": "https://jasonette.github.io/Jasonpedia/assets/1up.mp3"
+              }
+            },
+            "style": {
+              "align": "center",
+              "bottom": "30",
+              "left": "20",
+              "padding": "10",
+              "background": "#6e2111",
+              "color": "#ffffff",
+              "corner_radius": "3"
+            }
+          }, {
+            "type": "image",
+            "url": "https://jasonette.github.io/Jasonpedia/assets/0.png",
+            "style": {
+              "width": "86",
+              "height": "175",
+              "bottom": "30%-87",
+              "left": "50%-43"
+            }
+          }]
+        }
+      }
+    }
+  }
+}

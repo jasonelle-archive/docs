@@ -1,0 +1,55 @@
+{
+  "$jason": {
+    "head": {
+      "title": "$render",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "title": "$render",
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/core/render/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "items": [
+            {
+              "type": "vertical",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/core/render/templates.json"
+              },
+              "components": [{
+                "type": "label",
+                "text": "Multiple templates",
+                "class": "bold"
+              }, {
+                "type": "label",
+                "text": "Switching between multiple different templates",
+                "class": "normal"
+              }]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

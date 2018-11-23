@@ -1,0 +1,69 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Stopwatch",
+      "actions": {
+        "$load": {
+          "type": "$set",
+          "options": {
+            "index": "0"
+          },
+          "success": {
+            "type": "$timer.start",
+            "options": {
+              "interval": "1",
+              "name": "stopwatch",
+              "repeats": "true",
+              "action": {
+                "trigger": "tick"
+              }
+            }
+          }
+        },
+        "tick": {
+          "type": "$set",
+          "options": {
+            "index": "{{'' + (parseInt($get.index) + 1)}}"
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#000000",
+            "color": "#ffffff"
+          },
+          "header": {
+            "style": {
+              "background": "#000000",
+              "color": "#ffffff"
+            },
+            "menu": {
+              "text": "View JSON",
+              "href": {
+                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/action/timer/stopwatch.json",
+                "view": "web"
+              }
+            }
+          },
+          "layers": [{
+            "type": "label",
+            "text": "{{$get.index}}",
+            "style": {
+              "top": "50%",
+              "left": "50%-100",
+              "color": "#ffffff",
+              "font": "Georgia",
+              "size": "50",
+              "align": "center",
+              "width": "200"
+            }
+          }]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Header Example",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "padding": "10",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$render"
+        },
+        "$foreground": {
+          "type": "$reload"
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "title": "[Title goes here]",
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/header/index.json",
+            "view": "web"
+          }
+        },
+        "style": {
+          "font": "AvenirNext-Heavy",
+          "size": "18"
+        },
+        "search": {
+          "name": "query",
+          "placeholder": "Enter keyword",
+          "action": {
+            "type": "$util.banner",
+            "options": {
+              "title": "{{$get.query}}",
+              "description": "The content inside the search input is {{$get.query}}"
+            }
+          }
+        }
+      },
+      "sections": [{
+        "items": [{
+          "type": "label",
+          "text": "With header",
+          "href": {
+            "url": "https://jasonette.github.io/Jasonpedia/view/header/header.json"
+          }
+        }, {
+          "type": "label",
+          "text": "No header",
+          "href": {
+            "url": "https://jasonette.github.io/Jasonpedia/view/header/noheader.json"
+          }
+        }]
+      }]
+    }
+  }
+}

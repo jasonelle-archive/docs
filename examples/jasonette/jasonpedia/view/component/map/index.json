@@ -1,0 +1,125 @@
+{
+  "$jason": {
+    "head": {
+      "title": "map",
+      "styles": {
+        "padded": {
+          "padding": "20",
+          "font": "HelveticaNeue-Bold",
+          "size": "20"
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/component/map/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [{
+        "header": {
+          "type": "vertical",
+          "style": {
+            "padding": "0"
+          },
+          "components": [{
+            "type": "label",
+            "style": {
+              "background": "#f5f5f5",
+              "padding": "10"
+            },
+            "text": "Map in a header"
+          }, {
+            "type": "map",
+            "region": {
+              "coord": "40.7197614,-73.9909211",
+              "width": "200",
+              "height": "200"
+            },
+            "style": {
+              "width": "100%",
+              "height": "150"
+            }
+          }]
+        },
+        "items": [{
+          "type": "label",
+          "class": "padded",
+          "text": "scroll down to see more"
+        }, {
+          "type": "label",
+          "class": "padded",
+          "text": "scroll down to see more"
+        }, {
+          "type": "label",
+          "class": "padded",
+          "text": "scroll down to see more"
+        }, {
+          "type": "label",
+          "class": "padded",
+          "text": "scroll down to see more"
+        }, {
+          "type": "label",
+          "class": "padded",
+          "text": "scroll down to see more"
+        }, {
+          "type": "label",
+          "class": "padded",
+          "text": "scroll down to see more"
+        }]
+      }, {
+        "header": {
+          "type": "label",
+          "style": {
+            "background": "#f5f5f5"
+          },
+          "text": "Map with 200x200 region"
+        },
+        "items": [{
+          "type": "map",
+          "region": {
+            "coord": "40.7197614,-73.9909211",
+            "width": "200",
+            "height": "200"
+          },
+          "style": {
+            "width": "100%",
+            "height": "300"
+          }
+        }]
+      }, {
+        "header": {
+          "type": "label",
+          "style": {
+            "background": "#f5f5f5"
+          },
+          "text": "Map with pins"
+        },
+        "items": [{
+          "type": "map",
+          "region": {
+            "coord": "40.7197614,-73.9909211",
+            "width": "100",
+            "height": "100"
+          },
+          "pins": [{
+            "title": "This is a pin",
+            "description": "It really is.",
+            "coord": "40.7197614,-73.9909211",
+            "style": {
+              "selected": "true"
+            }
+          }],
+          "style": {
+            "width": "100%",
+            "height": "300"
+          }
+        }]
+      }]
+    }
+  }
+}
