@@ -1,0 +1,171 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Kitty Home",
+      "description": "Sorted by time",
+      "actions": {
+        "$pull": {
+          "trigger": "fetch"
+        },
+        "$foreground": {
+          "trigger": "fetch"
+        },
+        "$show": {
+          "trigger": "fetch"
+        },
+        "$load": {
+          "trigger": "fetch"
+        },
+        "fetch": {
+          "type": "$network.request",
+          "options": {
+            "url": "https://posts.producthunt.com/posts/currentUser?categoryId=1&filter=popular&page=0"
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#230B0F",
+            "color": "#ffffff",
+            "border": "none"
+          },
+          "header": {
+            "title": {
+              "type": "image",
+              "url": "https://raw.githubusercontent.com/gliechtenstein/Images/master/icon.jpeg",
+              "style": {
+                "width": "20",
+                "height": "20"
+              }
+            },
+            "style": {
+              "background": "#230B0F",
+              "font": "AvenirNext-Heavy",
+              "size": "14",
+              "shyt": "true",
+              "color": "#ffffff"
+            }
+          },
+          "footer": {
+            "tabs": {
+              "style": {
+                "background": "#230B0F",
+                "color": "#ffffff"
+              },
+              "items": [
+                {
+                  "image": "https://raw.githubusercontent.com/gliechtenstein/Images/master/clock.png",
+                  "url": "https://raw.githubusercontent.com/gliechtenstein/kitty.json/master/index.json"
+                },
+                {
+                  "image": "https://raw.githubusercontent.com/gliechtenstein/Images/master/fire.png",
+                  "url": "https://raw.githubusercontent.com/gliechtenstein/kitty.json/master/popular.json"
+                }
+              ]
+            }
+          },
+          "sections": {
+            "{{#each $jason.posts.sort(function(a,b){  return new Date(b.created_at) - new Date(a.created_at);}) }}": {
+              "header": {
+                "type": "label",
+                "text": "{{(function(){var d = new Date(created_at); var day = d.getDay(); var daymap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']; var realDay = daymap[parseInt(day)]; var h = d.getHours(); var m = d.getMinutes(); var suffix = (h > 11 ? 'pm' : 'am'); var hh = (h > 12 ? h - 12 : h); var mm = (m > 9 ? m : '0'+m); return realDay + ' ' + hh + ':' + mm + ' ' + suffix;})()}}",
+                "style": {
+                  "background": "#230B0F",
+                  "font": "HelveticaNeue-CondensedBold",
+                  "padding": "10",
+                  "color": "#ffffff",
+                  "size": "12"
+                }
+              },
+              "items": [
+                {
+                  "type": "vertical",
+                  "action": {
+                    "type": "$href",
+                    "options": {
+                      "url": "https://raw.githubusercontent.com/gliechtenstein/kitty.json/master/detail.json",
+                      "options": {
+                        "id": "{{id.toString()}}",
+                        "name": "{{name}}",
+                        "slug": "{{slug}}",
+                        "shortened_link": "https://www.producthunt.com{{shortened_url}}"
+                      }
+                    }
+                  },
+                  "style": {
+                    "background": "#ffffff"
+                  },
+                  "components": [
+                    {
+                      "type": "vertical",
+                      "components": [
+                        {
+                          "type": "horizontal",
+                          "style": {
+                            "distribution": "fill",
+                            "padding": "10",
+                            "spacing": "10"
+                          },
+                          "components": [
+                            {
+                              "type": "vertical",
+                              "style": {
+                                "distribution": "fill",
+                                "spacing": "5"
+                              },
+                              "components": [
+                                {
+                                  "type": "label",
+                                  "style": {
+                                    "size": "18",
+                                    "font": "AvenirNext-Heavy",
+                                    "color": "#cb4924"
+                                  },
+                                  "text": "{{name}}"
+                                },
+                                {
+                                  "type": "label",
+                                  "style": {
+                                    "font": "AvenirNext-Regular",
+                                    "size": "12",
+                                    "color": "#000000"
+                                  },
+                                  "text": "{{tagline}}"
+                                },
+                                {
+                                  "type": "label",
+                                  "style": {
+                                    "font": "HelveticaNeue-Bold",
+                                    "size": "12",
+                                    "color": "#000000"
+                                  },
+                                  "text": "{{'👍 ' + vote_count.toString() + '  ·  ' + '💬 ' + comment_count.toString()}}"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "image",
+                      "url": "{{thumbnail.image_url}}",
+                      "style": {
+                        "width": "100%",
+                        "padding": "0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "$jason": {
+    "head": {
+      "title": "{{$params.name}}",
+      "description": "Kitty details view",
+      "actions": {
+        "$show": {
+          "trigger": "fetch"
+        },
+        "$load": {
+          "trigger": "fetch"
+        },
+        "fetch": {
+          "type": "$network.request",
+          "options": {
+            "url": "https://www.producthunt.com/tech/{{$params.slug}}",
+            "dataType": "html"
+          },
+          "success": {
+            "type": "$render",
+            "options": {
+              "type": "html"
+            }
+          },
+          "error": {
+            "type": "$util.banner",
+            "options": {
+              "title": "Error",
+              "description": "Something went wrong"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#230B0F",
+            "border": "none"
+          },
+          "header": {
+            "title": {
+              "type": "image",
+              "url": "https://raw.githubusercontent.com/gliechtenstein/Images/master/icon.jpeg",
+              "style": {
+                "width": "20",
+                "height": "20"
+              }
+            },
+            "style": {
+              "background": "#230B0F",
+              "font": "AvenirNext-Heavy",
+              "shy": "true",
+              "size": "14",
+              "color": "#ffffff"
+            }
+          },
+          "footer": {
+            "tabs": {
+              "style": {
+                "background": "#230B0F",
+                "color": "#ffffff"
+              },
+              "items": [
+                {
+                  "image": "https://raw.githubusercontent.com/gliechtenstein/Images/master/clock.png",
+                  "url": "https://raw.githubusercontent.com/gliechtenstein/kitty.json/master/index.json"
+                },
+                {
+                  "image": "https://raw.githubusercontent.com/gliechtenstein/Images/master/fire.png",
+                  "url": "https://raw.githubusercontent.com/gliechtenstein/kitty.json/master/popular.json"
+                }
+              ]
+            }
+          },
+          "sections": [
+            {
+              "items": [
+                {
+                  "type": "label",
+                  "text": "Comments",
+                  "style": {
+                    "padding": "20",
+                    "font": "HelveticaNeue-CondensedBold",
+                    "size": "14",
+                    "color": "#ffffff"
+                  },
+                  "href": {
+                    "url": "https://www.producthunt.com/tech/{{$params.slug}}",
+                    "view": "web"
+                  }
+                },
+                {
+                  "type": "label",
+                  "text": "Site",
+                  "style": {
+                    "padding": "20",
+                    "font": "HelveticaNeue-CondensedBold",
+                    "size": "14",
+                    "color": "#ffffff"
+                  },
+                  "href": {
+                    "url": "{{$params.shortened_link}}",
+                    "view": "Web"
+                  }
+                }
+              ]
+            },
+            {
+              "items": {
+                "{{#each $jason.find('[class^=canvasWrapper] a[href^=\"https://ph-files.imgix.net\"]')}}": {
+                  "type": "image",
+                  "url": "{{$(this).attr('href')}}",
+                  "style": {
+                    "padding": "10",
+                    "corner_radius": "3",
+                    "width": "100%"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
