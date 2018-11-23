@@ -1,0 +1,59 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Todo App - Add view",
+      "actions": {
+        "$load": {
+          "type": "$render"
+        },
+        "$pull": {
+          "type": "$global.set",
+          "options": {
+            "todos": "{{'todos' in $global ? [{text: $get.todo, done: false, key: $global.current_key+1 }].concat($global.todos) : [{text: $get.todo, done: false, key: 0}] }}",
+            "current_key": "{{'current_key' in $global ? $global.current_key+1 : 0}}"
+          },
+          "success": {
+            "type": "$back"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "Swipe down to Save",
+            "style": {
+              "background": "#FF9800",
+              "color": "#ffffff"
+            }
+          },
+          "style": {
+            "background": "#FF9800",
+            "color": "#ffffff",
+            "border": "none"
+          },
+          "sections": [
+            {
+              "items": [
+                {
+                  "type": "textarea",
+                  "style": {
+                    "padding": "10",
+                    "size": "30",
+                    "font": "HelveticaNeue",
+                    "color:placeholder": "#ebebeb",
+                    "color": "#ffffff",
+                    "width": "100%",
+                    "height": "400",
+                    "align": "left"
+                  },
+                  "placeholder": "Enter todo",
+                  "name": "todo"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

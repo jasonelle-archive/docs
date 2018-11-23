@@ -1,0 +1,131 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Todo App",
+      "actions": {
+        "$show": {
+          "type": "$render"
+        },
+        "$pull": {
+          "type": "$href",
+          "options": {
+            "url": "https://gliechtenstein.github.io/todo-example/input.json"
+          }
+        },
+        "do": {
+          "type": "$global.set",
+          "options": {
+            "todos": "{{ var todos = $global.todos; var selected_index = 0; for(var index=0; index<todos.length; index++) { var todo = todos[index]; if(todo.key.toString() == $jason.key.toString()) todo.done = !todo.done; } return todos; }}"
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#FF9800",
+            "color": "#ffffff",
+            "border": "none"
+          },
+          "header": {
+            "title": "Todo App",
+            "style": {
+              "background": "#FF9800",
+              "color": "#ffffff"
+            },
+            "menu": {
+              "text": "reset",
+              "action": {
+                "type": "$global.reset",
+                "options": {
+                  "items": [
+                    "todos"
+                  ]
+                },
+                "success": {
+                  "type": "$render"
+                }
+              }
+            }
+          },
+          "sections": [
+            {
+              "items": [
+                {
+                  "{{#if 'todos' in $global}}": {
+                    "{{#each $global.todos}}": {
+                      "type": "horizontal",
+                      "style": {
+                        "spacing": "10"
+                      },
+                      "action": {
+                        "trigger": "do",
+                        "options": {
+                          "key": "{{key}}"
+                        }
+                      },
+                      "components": [
+                        {
+                          "type": "label",
+                          "style": {
+                            "color": "#ffffff",
+                            "size": "30",
+                            "padding": "10",
+                            "font": "HelveticaNeue"
+                          },
+                          "text": "{{text}}"
+                        },
+                        {
+                          "type": "image",
+                          "style": {
+                            "width": "50",
+                            "color": "#ffffff"
+                          },
+                          "url": "{{ done ? 'https://png.icons8.com/ok/ios7/100' : 'https://png.icons8.com/unchecked-circle/ios7/100'}}"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "{{#else}}": [
+                    {
+                      "type": "vertical",
+                      "style": {
+                        "align": "center"
+                      },
+                      "components": [
+                        {
+                          "type": "image",
+                          "url": "https://png.icons8.com/swipe-down-filled/ios7/100",
+                          "style": {
+                            "padding": "30",
+                            "width": "100",
+                            "color": "#ffffff"
+                          }
+                        },
+                        {
+                          "type": "label",
+                          "text": "Swipe down to add a todo",
+                          "style": {
+                            "color": "#ffffff",
+                            "font": "HelveticaNeue",
+                            "size": "12",
+                            "align": "center",
+                            "padding": "10"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
