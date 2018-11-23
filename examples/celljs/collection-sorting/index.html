@@ -1,0 +1,41 @@
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script>
+
+/*****************************************
+Display Table and sort by "name" or "type"
+*****************************************/
+var Food = [{name: "burrito", type: "mexican"}, {name:"taco", type: "mexican"}, {name:"empanada", type: "mexican"}, {name: "pizza", type: "italian"}, {name:"sushi", type: "japanese"}, {name:"biryani", type: "indian"}, {name:"soba", type: "japanese"}, {name:"ramen", type: "japanese"}, {name: "spaghetti", type: "japanese"}];
+var Tr = function(item){
+  return { $type: "tr", $components: [
+    { $type: "td", $text: item.name.toUpperCase() },
+    { $type: "td", $text: item.type }
+  ]}
+}
+var Table = {
+  $type: "table", class: "table", $components: [
+    {$type: "tbody", $components: Food.map(Tr)}
+  ],
+  $update: function(){
+    this.$components = this._items.map(Tr);
+  }
+}
+var NavItem = function(item){
+  return { $type: "li", class: "nav-item", $components: [{ $type: "a", class: "nav-link active", href: "#", $text: "Sort by " + item, onclick: function(e){
+    this._items.sort(function(a,b){ return a[item] > b[item] ? 1 : -1})
+    document.querySelector("table").$update();
+  }}]}
+}
+var Nav = {
+  $type: "ul", class: "nav", $components: ["name", "type"].map(NavItem)
+}
+var App = {
+  $cell: true,
+  _items: Food,
+  $components: [Nav, Table]
+}
+</script>
+</html>

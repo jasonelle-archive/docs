@@ -1,0 +1,85 @@
+{
+    "$result": {
+        "head": {
+            "url": "https://wethan.herokuapp.com/1.json",
+            "left": {
+                "text": "FAQ",
+                "href": {
+                    "url": "https://wethan.herokuapp.com/v2/help.json",
+                    "transition": "fullscreen"
+                }
+            },
+            "title": "my ethans",
+            "right": {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/settings%402x.png",
+                "href": {
+                    "url": "https://wethan.herokuapp.com/v2/user/edit.json"
+                }
+            },
+            "script": [
+                {
+                    "id": "create",
+                    "type": "href",
+                    "options": {
+                        "transition": "modal",
+                        "url": "https://wethan.herokuapp.com/v2/channels/new.json",
+                        "view": "FormView"
+                    }
+                }
+            ]
+        },
+        "body": {
+            "style": {
+                "border": {
+                    "display": "none"
+                }
+            },
+            "placeholder": {
+                "labels": [
+                    {
+                        "text": ""
+                    },
+                    {
+                        "text": "Create an ethan to text\nabout any topic you like.",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "14"
+                        }
+                    }
+                ],
+                "buttons": [
+                    {
+                        "text": "+ create",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#b64220",
+                            "size": "20"
+                        },
+                        "action": {
+                            "trigger": {
+                                "id": "create"
+                            }
+                        }
+                    }
+                ]
+            },
+            "sections": [
+                {
+                    "rows": []
+                }
+            ]
+        },
+        "tabBar": [
+            {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/search%402x.png"
+            },
+            {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/ee%402x.png"
+            },
+            {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/chat_bubble%402x.png"
+            }
+        ]
+    }
+}

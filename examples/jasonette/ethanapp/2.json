@@ -1,0 +1,309 @@
+{
+    "$result": {
+        "head": {
+            "url": "https://wethan.herokuapp.com/2.json",
+            "left": {
+                "text": "FAQ",
+                "href": {
+                    "url": "https://wethan.herokuapp.com/v2/help.json",
+                    "transition": "fullscreen"
+                }
+            },
+            "title": "contacts",
+            "right": {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/settings%402x.png",
+                "href": {
+                    "url": "https://wethan.herokuapp.com/v2/user/edit.json"
+                }
+            },
+            "style": {
+                "header_cell": {
+                    "background": "#ffffff",
+                    "opacity": "0.7"
+                },
+                "current_user_avatar": {
+                    "width": "30"
+                },
+                "header_label_score": {
+                    "font": "HelveticaNeue-Bold",
+                    "color": "#B64220",
+                    "size": "12"
+                },
+                "header_label_description": {
+                    "font": "HelveticaNeue-CondensedBold",
+                    "color": "#323232",
+                    "size": "14"
+                },
+                "channel_avatar": {
+                    "width": "40",
+                    "corner_radius": "20"
+                },
+                "channel_name": {
+                    "font": "HelveticaNeue-CondensedBold",
+                    "color": "#323232",
+                    "size": "12"
+                },
+                "channel_description_offline": {
+                    "font": "HelveticaNeue-Bold",
+                    "color": "#8899a6",
+                    "size": "10"
+                },
+                "channel_description": {
+                    "font": "HelveticaNeue-Bold",
+                    "color": "#96b420",
+                    "size": "10"
+                },
+                "channel_last_message": {
+                    "font": "HelveticaNeue",
+                    "color": "#8899a6",
+                    "size": "11"
+                }
+            },
+            "script": [
+                {
+                    "id": "ContextMenu",
+                    "type": "menu",
+                    "options": {
+                        "items": [
+                            {
+                                "text": "Report",
+                                "action": {
+                                    "type": "Widget.alert",
+                                    "options": {
+                                        "title": "Report this Ethan",
+                                        "description": "Pleae leave a reason you are reporting this Ethan (ex: harrassment, etc.)",
+                                        "form": [
+                                            {
+                                                "type": "text",
+                                                "name": "flag"
+                                            }
+                                        ]
+                                    },
+                                    "callback": {
+                                        "type": "Network.request",
+                                        "options": {
+                                            "include": {
+                                                "data": "{{$result}}"
+                                            },
+                                            "url": "https://wethan.herokuapp.com/v2/report_channel.json",
+                                            "method": "post",
+                                            "data": {
+                                                "id": "{{id}}"
+                                            }
+                                        },
+                                        "callback": {
+                                            "type": "Widget.toast",
+                                            "options": {
+                                                "text": "Successfully reported"
+                                            },
+                                            "callback": {
+                                                "type": "reload_silent"
+                                            }
+                                        }
+                                    }
+                                },
+                                "style": {
+                                    "background": "#b64220"
+                                }
+                            },
+                            {
+                                "text": "Block",
+                                "action": {
+                                    "type": "Widget.alert",
+                                    "options": {
+                                        "title": "Block this Ethan",
+                                        "description": "You won't receive message from this Ethan when you block"
+                                    },
+                                    "callback": {
+                                        "type": "Network.request",
+                                        "options": {
+                                            "url": "https://wethan.herokuapp.com/v2/block_channel.json",
+                                            "method": "post",
+                                            "data": {
+                                                "id": "{{id}}"
+                                            }
+                                        },
+                                        "callback": {
+                                            "type": "Widget.toast",
+                                            "options": {
+                                                "text": "Successfully Blocked"
+                                            },
+                                            "callback": {
+                                                "type": "reload_silent"
+                                            }
+                                        }
+                                    }
+                                },
+                                "style": {
+                                    "background": "#F27B35"
+                                }
+                            },
+                            {
+                                "text": "Hide",
+                                "action": {
+                                    "type": "Widget.alert",
+                                    "options": {
+                                        "title": "Hide this chat",
+                                        "description": "It will be hidden until this user sends you a new message"
+                                    },
+                                    "callback": {
+                                        "type": "Network.request",
+                                        "options": {
+                                            "url": "https://wethan.herokuapp.com/v2/archive_chat.json",
+                                            "method": "post",
+                                            "data": {
+                                                "id": "{{id}}"
+                                            }
+                                        },
+                                        "callback": {
+                                            "type": "Widget.toast",
+                                            "options": {
+                                                "text": "Successfully hidden"
+                                            },
+                                            "callback": {
+                                                "type": "reload_silent"
+                                            }
+                                        }
+                                    }
+                                },
+                                "style": {
+                                    "background": "#F2B035"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "body": {
+            "sections": [
+                {
+                    "rows": [
+                        {
+                            "style": {
+                                "background": "#DFF4FF"
+                            },
+                            "labels": [
+                                {
+                                    "text": "Verify your email at",
+                                    "style": {
+                                        "font": "HelveticaNeue-CondensedBold",
+                                        "color": "#000000"
+                                    }
+                                },
+                                {
+                                    "text": "camilo@ninjas.cl"
+                                }
+                            ],
+                            "buttons": [
+                                {
+                                    "text": "Verify",
+                                    "style": {
+                                        "background": "#007aff",
+                                        "color": "#ffffff"
+                                    },
+                                    "action": {
+                                        "type": "Widget.alert",
+                                        "options": {
+                                            "title": "Send verification email",
+                                            "description": "Send to camilo@ninjas.cl?"
+                                        },
+                                        "callback": {
+                                            "type": "Network.request",
+                                            "options": {
+                                                "url": "https://wethan.herokuapp.com/v2/send_verify_email.json",
+                                                "method": "post"
+                                            },
+                                            "callback": {
+                                                "type": "Widget.banner",
+                                                "options": {
+                                                    "title": "Check your email",
+                                                    "description": "Please check your inbox for verification email at camilo@ninjas.cl"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "rows": [
+                        {
+                            "style": {
+                                "background": "#F2D335"
+                            },
+                            "href": {
+                                "url": "https://wethan.herokuapp.com/v2/security.json",
+                                "transition": "fullscreen"
+                            },
+                            "images": [
+                                {
+                                    "url": "https://s3.amazonaws.com/www.textcast.co/icons/yellow_warning%402x.png"
+                                }
+                            ],
+                            "labels": [
+                                {
+                                    "text": "Security Warning",
+                                    "style": {
+                                        "font": "HelveticaNeue-CondensedBold",
+                                        "color": "#000000"
+                                    }
+                                },
+                                {
+                                    "text": "Unless you trust the person, DO NOT give out your personal information when a stranger randomly asks you a personal question unrelated to the topic. It can be used to hack your email or social media accounts.",
+                                    "style": {
+                                        "size": "11",
+                                        "color": "#292929"
+                                    }
+                                },
+                                {
+                                    "text": "Learn more >>",
+                                    "style": {
+                                        "size": "11",
+                                        "color": "#B64220"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "type": "ParagraphCell",
+                        "class": "header_cell",
+                        "images": [
+                            {
+                                "url": "https://s3.amazonaws.com/me.joincult.ethan/images/avatar/default_avatar.png",
+                                "class": "current_user_avatar"
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "text": "c c",
+                                "class": "header_label_description"
+                            },
+                            {
+                                "text": "0 XP",
+                                "class": "header_label_score"
+                            }
+                        ]
+                    },
+                    "rows": []
+                }
+            ]
+        },
+        "tabBar": [
+            {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/search%402x.png"
+            },
+            {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/ee%402x.png"
+            },
+            {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/chat_bubble%402x.png"
+            }
+        ]
+    }
+}

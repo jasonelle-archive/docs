@@ -1,0 +1,68 @@
+{
+    "$jason": {
+        "head": {
+            "url": "https://wethan.herokuapp.com/v2/signed_url.json",
+            "title": ""
+        },
+        "body": {
+            "style": {
+                "background": "#B64220",
+                "border": "none"
+            },
+            "nav": {
+                "style": {
+                    "background": "#B64220",
+                    "color": "#ffffff"
+                }
+            },
+            "sections": [{
+                "items": [{
+                    "style": {
+                        "padding": "50",
+                        "spacing": "50",
+                        "align": "center",
+                        "background": "#B64220"
+                    },
+                    "type": "vertical",
+                    "components": [{
+                        "type": "image",
+                        "url": "http://www.textethan.com/ethan_logo.png",
+                        "style": {
+                            "background": "#B64220",
+                            "width": "100"
+                        }
+                    }, {
+                        "type": "label",
+                        "text": "Create your own messaging hotline",
+                        "style": {
+                            "color": "#ffffff",
+                            "font": "HelveticaNeue-CondensedBold",
+                            "size": "14",
+                            "align": "center"
+                        }
+                    }, {
+                        "type": "button",
+                        "text": "Join \u003E",
+                        "style": {
+                            "font": "HelveticaNeue-Bold",
+                            "color": "#ffffff",
+                            "background": "#B64220",
+                            "size": "20",
+                            "width": "200",
+                            "height": "50",
+                            "align": "center",
+                            "corner_radius": "2"
+                        },
+                        "action": {
+                            "type": "$href",
+                            "options": {
+                                "url": "https://wethan.herokuapp.com/v3/sign_in.json",
+                                "transition": "modal"
+                            }
+                        }
+                    }]
+                }]
+            }]
+        }
+    }
+}

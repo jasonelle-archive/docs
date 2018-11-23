@@ -1,0 +1,42 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progress.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/progress.js/0.1.0/progressjs.min.css" rel="stylesheet">
+<script>
+/*****************************************************
+progress.js demo
+*****************************************************/
+Body = {
+  $cell: true,
+  $init: function(){
+    var self = this;
+    progressJs().start();
+    setTimeout(this._update, 50);
+  },
+  _update: function(){
+    if(this._gauge >= 100){
+      this._vector = -1;
+    } else if(this._gauge <= 0){
+      this._vector = 1;
+    }
+    this._gauge = this._gauge + this._vector * 1;
+    setTimeout(this._update, 50);
+  },
+  _gauge: 0,
+  _vector: 1,
+  $update: function(){
+    progressJs().set(this._gauge);
+    this.querySelector("#ticker")._update(this._gauge);
+  },
+  $components: [{
+    $type: "h1",
+    style: "font-size: 70px; text-align: center; padding: 100px;",
+    id: "ticker",
+    _val: "0",
+    _update: function(res){ this._val = res },
+    $update: function(){ this.$text = this._val; }
+  }]
+}
+</script>
+</html>

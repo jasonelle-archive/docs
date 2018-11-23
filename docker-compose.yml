@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  bookdown:
+    build: .
+    volumes:
+      - ./src:/src
+    ports:
+      - 4321:4321

@@ -1,0 +1,332 @@
+{
+    "$result": {
+        "head": {
+            "url": "https://wethan.herokuapp.com/v2/channels/1290.json",
+            "title": ""
+        },
+        "body": {
+            "style": {
+                "border": {
+                    "display": "none"
+                }
+            },
+            "sections": [{
+                "rows": [{
+                    "type": "ImageCell",
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/com.textethan/images/avatar/E1E80154-0AE8-406E-B73E-0298E47B8215.png"
+                    }]
+                }, {
+                    "labels": [{
+                        "text": "@Loveatics",
+                        "style": {
+                            "height": "100",
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#323232",
+                            "size": "30"
+                        }
+                    }, {
+                        "text": "relationship/love/goals/Etc text me about love and relationship ",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }]
+                }, {
+                    "style": {
+                        "background": "#f9f9f9"
+                    },
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/com.textethan/images/avatar/7516CB51-7CC2-49AA-B25A-6BEF10C4DBF2.png",
+                        "style": {
+                            "width": "35"
+                        }
+                    }],
+                    "labels": [{
+                        "text": "by katy  vatinnèl ",
+                        "style": {
+                            "font": "HelveticaNeue-Bold",
+                            "color": "#000000",
+                            "size": "10"
+                        }
+                    }, {
+                        "text": "Available ",
+                        "style": {
+                            "font": "HelveticaNeue-Bold",
+                            "color": "#96b420",
+                            "size": "12"
+                        }
+                    }]
+                }, {
+                    "buttons": [{
+                        "text": "Chat \u003E",
+                        "action": {
+                            "type": "href",
+                            "options": {
+                                "url": "https://wethan.herokuapp.com/v2/channels/1290/visit.json",
+                                "view": "MessageView",
+                                "transition": "fullscreen"
+                            }
+                        },
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "width": "1.0",
+                            "height": "50",
+                            "corner_radius": "3",
+                            "background": "#007aff",
+                            "color": "#ffffff"
+                        }
+                    }]
+                }]
+            }, {
+                "rows": [{
+                    "style": {
+                        "background": "#fbfbfb"
+                    },
+                    "labels": [{
+                        "text": "#relationship",
+                        "style": {
+                            "color": "#007aff",
+                            "size": "16",
+                            "font": "HelveticaNeue-CondensedBold"
+                        }
+                    }],
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/channels/tag/relationship/popular.json"
+                    }
+                }, {
+                    "style": {
+                        "background": "#fbfbfb"
+                    },
+                    "labels": [{
+                        "text": "#lifestyle",
+                        "style": {
+                            "color": "#007aff",
+                            "size": "16",
+                            "font": "HelveticaNeue-CondensedBold"
+                        }
+                    }],
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/channels/tag/lifestyle/popular.json"
+                    }
+                }, {
+                    "style": {
+                        "background": "#fbfbfb"
+                    },
+                    "labels": [{
+                        "text": "#love",
+                        "style": {
+                            "color": "#007aff",
+                            "size": "16",
+                            "font": "HelveticaNeue-CondensedBold"
+                        }
+                    }],
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/channels/tag/love/popular.json"
+                    }
+                }, {
+                    "style": {
+                        "background": "#fbfbfb"
+                    },
+                    "labels": [{
+                        "text": "#stress",
+                        "style": {
+                            "color": "#007aff",
+                            "size": "16",
+                            "font": "HelveticaNeue-CondensedBold"
+                        }
+                    }],
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/channels/tag/stress/popular.json"
+                    }
+                }, {
+                    "style": {
+                        "background": "#fbfbfb"
+                    },
+                    "labels": [{
+                        "text": "#health",
+                        "style": {
+                            "color": "#007aff",
+                            "size": "16",
+                            "font": "HelveticaNeue-CondensedBold"
+                        }
+                    }],
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/channels/tag/health/popular.json"
+                    }
+                }, {
+                    "style": {
+                        "background": "#fbfbfb"
+                    },
+                    "labels": [{
+                        "text": "#advice",
+                        "style": {
+                            "color": "#007aff",
+                            "size": "16",
+                            "font": "HelveticaNeue-CondensedBold"
+                        }
+                    }],
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/channels/tag/advice/popular.json"
+                    }
+                }, {
+                    "style": {
+                        "background": "#fbfbfb"
+                    },
+                    "labels": [{
+                        "text": "#school",
+                        "style": {
+                            "color": "#007aff",
+                            "size": "16",
+                            "font": "HelveticaNeue-CondensedBold"
+                        }
+                    }],
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/channels/tag/school/popular.json"
+                    }
+                }]
+            }, {
+                "header": {
+                    "labels": [{
+                        "text": "Fans"
+                    }]
+                },
+                "rows": [{
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/com.textethan/images/avatar/C328D2FF-9F75-4EF4-A822-B80494423250.png"
+                    }],
+                    "labels": [{
+                        "text": "israel",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#323232",
+                            "size": "14"
+                        }
+                    }, {
+                        "text": "upvoted",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }]
+                }, {
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/com.textethan/images/avatar/0FF85788-E404-4F71-B9EC-5169FCFAA3AA.png"
+                    }],
+                    "labels": [{
+                        "text": "Omar",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#323232",
+                            "size": "14"
+                        }
+                    }, {
+                        "text": "upvoted",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }]
+                }, {
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/me.joincult.ethan/images/avatar/default_avatar.png"
+                    }],
+                    "labels": [{
+                        "text": "",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#323232",
+                            "size": "14"
+                        }
+                    }, {
+                        "text": "upvoted",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }]
+                }, {
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/me.joincult.ethan/images/avatar/default_avatar.png"
+                    }],
+                    "labels": [{
+                        "text": "Geetam ",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#323232",
+                            "size": "14"
+                        }
+                    }, {
+                        "text": "upvoted",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }]
+                }, {
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/me.joincult.ethan/images/avatar/5007A046-C35F-4420-BCEE-005B39609B60.png"
+                    }],
+                    "labels": [{
+                        "text": "Bill",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#323232",
+                            "size": "14"
+                        }
+                    }, {
+                        "text": "upvoted",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }]
+                }, {
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/me.joincult.ethan/images/avatar/default_avatar.png"
+                    }],
+                    "labels": [{
+                        "text": "LuckyTheBestGamerT2",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#323232",
+                            "size": "14"
+                        }
+                    }, {
+                        "text": "upvoted",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }]
+                }, {
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/me.joincult.ethan/images/avatar/default_avatar.png"
+                    }],
+                    "labels": [{
+                        "text": "alex",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "color": "#323232",
+                            "size": "14"
+                        }
+                    }, {
+                        "text": "upvoted",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }]
+                }]
+            }]
+        }
+    }
+}
