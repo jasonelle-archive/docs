@@ -2,4 +2,4 @@
 
 Demo of Audio Playback and Gifs.
 
-![](demo.png)
+![](demo.jpg)
