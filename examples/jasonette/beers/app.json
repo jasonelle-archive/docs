@@ -1,0 +1,86 @@
+{
+    "$jason": {
+        "head": {
+            "mixin": "true",
+            "title": "Dark ListView Mixin",
+            "data": {
+                "items": {
+                    "@": "$document.api"
+                }
+            },
+            "templates": {
+                "body": {
+                    "style": {
+                        "border": "none"
+                    },
+                    "header": {
+                        "title": {
+                            "type": "label",
+                            "text": {
+                                "@": "$document.title"
+                            },
+                            "style": {
+                                "font": "HelveticaNeue",
+                                "color": "rgb(220, 164, 54)"
+                            }
+                        }
+                    },
+                    "sections": [{
+                        "items": {
+                            "{{#each items}}": {
+                                "type": "horizontal",
+                                "style": {
+                                    "spacing": "20"
+                                },
+                                "components": [{
+                                    "type": "image",
+                                    "url": {
+                                        "@": "$document.item.avatar"
+                                    },
+                                    "style": {
+                                        "width": "50"
+                                    }
+                                }, {
+                                    "type": "vertical",
+                                    "style": {
+                                        "spacing": "3"
+                                    },
+                                    "components": [{
+                                        "type": "label",
+                                        "style": {
+                                            "color": "rgb(220, 164, 54)",
+                                            "font": "HelveticaNeue-Bold",
+                                            "size": "14"
+                                        },
+                                        "text": {
+                                            "@": "$document.item.title"
+                                        }
+                                    }, {
+                                        "type": "label",
+                                        "style": {
+                                            "color": "#8f9d6a",
+                                            "font": "HelveticaNeue-Bold",
+                                            "size": "12"
+                                        },
+                                        "text": {
+                                            "@": "$document.item.subtitle"
+                                        }
+                                    }, {
+                                        "type": "label",
+                                        "style": {
+                                            "color": "rgba(0,0,0,0.8)",
+                                            "size": "12"
+                                        },
+                                        "text": {
+                                            "@": "$document.item.content"
+                                        }
+                                    }]
+                                }]
+                            }
+                        }
+                    }]
+                }
+            }
+        }
+    }
+}

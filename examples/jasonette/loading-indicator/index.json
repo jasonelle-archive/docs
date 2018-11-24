@@ -1,0 +1,22 @@
+{
+    "$jason": {
+      "head": {
+        "title": "Loading Indicator"
+      },
+      "body": {
+        "background": "#1a1a21",
+        "layers": [
+          {
+            "type": "image",
+            "url": "https://loading.io/spinners/microsoft/lg.rotating-balls-spinner.gif",
+            "style": {
+              "top": "50%-50",
+              "width": "100",
+              "height": "100",
+              "left": "50%-50"
+            }
+          }
+        ]
+      }
+    }
+  }

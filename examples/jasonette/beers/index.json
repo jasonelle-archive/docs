@@ -1,0 +1,13 @@
+{
+    "@": "http://web.jasonette.com/items/170",
+    "title": "Beers",
+    "api": {
+      "@": "https://api.punkapi.com/v2/beers"
+    },
+    "item": {
+      "avatar": "{{image_url}}",
+      "title": "{{name}}",
+      "subtitle": "{{tagline}}",
+      "content": "{{description}}"
+    }
+  }
