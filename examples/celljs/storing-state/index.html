@@ -1,0 +1,22 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script>
+/*************************************************
+Simple state demo
+*************************************************/
+el = {
+  $cell: true,
+  $type: "a", style: "font-size: 30px; color: navy; font-weight: bold; text-align: center; padding: 100px; display: block;",
+  href: "#",
+  $text: "Start",
+  onclick: function(e){ this._next() },
+  _next: function(){
+    this._index >=3 ? this._index=0 : this._index++;
+    this.$text = this._items[this._index];
+  },
+  _index: -1,
+  _items: ["Buy it", "Use it", "Break it", "Fix it"]
+}
+</script>
+</html>

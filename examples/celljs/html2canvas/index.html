@@ -1,0 +1,53 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://www.celljs.org/cell.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+<script>
+/**********************************************
+
+	Snapper is a drop-in component for
+    generating a snapshot of any DOM element.
+    Powered by HTML2Canvas.
+    
+    # Usage:
+    
+    document.querySelector(".snapcell")._update($your_node);
+    
+**********************************************/
+var Snapper = {
+  class: 'snapper',
+  _update: function(node) {
+    var self = this;
+    html2canvas(node).then(function(canvas) {
+      self.appendChild(canvas);
+    });
+  }    
+}
+
+
+// App starts here
+SynchronizedInput = {
+  $cell: true,
+  $components: [{
+    style: {
+      padding: "30px"
+    },
+    _update: function(val) {
+      document.querySelector(".snapper")._update(this)
+    },
+    $components: [
+      { 
+        $type: "input",
+        placeholder: "Type something",
+        style: {
+          fontSize: "20px", padding: "10px"
+        },
+        onkeyup: function(e){ 
+          this._update(this.value);
+        } 
+      }
+    ]    
+  }, Snapper]
+}
+</script>
+</html>

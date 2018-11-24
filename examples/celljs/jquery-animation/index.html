@@ -1,0 +1,81 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
+<style>
+.animsition{
+  padding-top: 50px;
+  text-align: center;
+  font-family: "Helvetica Neue", helvetica;
+  font-size: 14px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.animsition img{
+  max-width: 500px;
+  margin-top: 20px;
+}
+a{
+  font-size: 20px;
+}
+</style>
+<script>
+/*******************************************************
+animsition.js demo
+*******************************************************/
+var effects = [
+  { in: "fade-in-up", out: "fade-out-down" },
+  { in: "flip-in-y", out: "flip-out-y" },
+  { in: "fade-in-left", out: "fade-out-right" },
+  { in: "rotate-in", out: "rotate-out" },
+  { in: "zoom-in", out: "zoom-out" }
+]
+
+// Play with effects by changing the index!!!!!
+var effect = effects[3];
+
+el = {
+  $cell: true,
+  class: "animsition",
+  $init: function(){
+    $(this).animsition({
+      inClass: effect.in,
+      outClass: effect.out,
+      inDuration: 600,
+      outDuration: 600,
+      loading: true,
+      loadingInner: '',
+      timeout: true,
+      timeoutCountdown: 100,
+      onLoadEvent: true      
+    });
+    $(this).on("animsition.outEnd", this._in);
+  },
+  _in: function(){
+    $(this).animsition('in');
+  },
+  $components: [{
+    $type: "a",
+    class: "animsition-link",
+    href: "#",
+    onclick: function(e){
+      fetch("https://api.unsplash.com/photos/random?client_id=b87441fffba59e26c90ac9ff43dfef45e7da5ff323b78a401955e4fa13a63ccc").then(function(res){
+        return res.json();
+      }).then(function(res){
+        document.querySelector("img").src = res.urls.regular;
+      })
+    },
+    $text: "Click me"
+  }, {
+    $type: "img",
+    style: "width: 100%;",
+    src: "https://gliechtenstein.github.io/images/highrise.jpg"
+  }, {
+    $type: "p",
+    $text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis orci sapien, ut rhoncus risus maximus id. Donec fermentum eros id tristique egestas. Aliquam erat volutpat. Aenean id ultrices nulla, quis ornare lectus. Ut id rhoncus justo, eget pellentesque magna. Quisque pharetra ut tortor a fringilla. Aenean id cursus purus. Nunc in mi vitae justo ultricies convallis quis nec turpis. Vestibulum posuere ipsum nec eros imperdiet, sed vulputate lectus semper. Aenean ornare, elit elementum aliquam vulputate, dui dolor egestas turpis, ut luctus sapien enim eget elit. Donec scelerisque posuere euismod. Quisque non lacus augue.\n\nDuis fermentum scelerisque dolor. Morbi vitae aliquam sem. Suspendisse luctus laoreet fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris hendrerit, enim a porttitor maximus, dui ex pharetra ipsum, eget lacinia diam quam id risus. Vivamus fringilla libero vitae tincidunt venenatis. Nullam mattis quam et ante aliquam auctor sed et quam. In scelerisque augue sit amet augue hendrerit, eu tincidunt sem elementum. Vestibulum vel tempor eros. Integer tempor, ipsum non tempus pellentesque, lacus mauris aliquam nunc, non semper tortor felis non sapien. Nam vel condimentum arcu, nec sagittis turpis. Vivamus sit amet ullamcorper urna, quis faucibus mauris. Duis molestie ipsum ac nibh lacinia, ac consequat ligula viverra."
+  }]
+}
+</script>
+</html>
