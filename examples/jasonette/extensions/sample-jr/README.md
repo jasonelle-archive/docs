@@ -15,7 +15,8 @@ The Jr file tells Jasonette the properties of the extension.
   "href" : "https://jasonelle.com",
   "license" : "MIT",
   "description": "$vibration.activate makes the device vibrate."
-}```
+}
+```
 
 # Important Properties
 
