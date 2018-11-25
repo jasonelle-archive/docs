@@ -1,0 +1,50 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<link href="https://gliechtenstein.github.io/hehehe/hehehe.css" rel="stylesheet">
+<script>
+ಠᴥಠ = {
+  $cell: true,
+  $components: [{
+    $components: [],
+    class: "container",
+    _items: [],
+    _add: function(data){
+      this.$components = [this._item(data)].concat(this.$components).slice(0,50)
+      this._items = [data].concat(this._items).slice(0,30);
+      if (window.$agent) $agent.trigger("update", this._items);
+    },
+    _debouncedAdd: _.debounce(function(item) {
+      this._add(JSON.parse(item))
+    }, 1000),
+    $init: function(){
+      var self = this;
+      this._ws = new WebSocket('wss://twitsocket.herokuapp.com').addEventListener('message', function (event) {
+        self._debouncedAdd(event.data)
+      }) 
+    },
+    _item: function(data){
+      return {
+        class: "item hidden",
+        $init: function(){ this.class = "item" },
+        $components: [{
+          style: "display: block;",
+          $components: [{
+            $type: "img",
+            class: "avatar",
+            src: data.user.profile_image_url_https
+          }]
+        },
+        {
+          class: "body",
+          $components: [
+            { $type: "h5", $text: data.user.name + " (" + data.user.screen_name + ")" },
+            { $type: "text", $text: data.text }
+          ].concat( data.extended_entities && data.extended_entities.media ? [{ $type: "img", src: data.extended_entities.media[0].media_url_https }] : [] ) 
+        }]
+      }
+    }
+  }]
+}
+</script>
+</html>

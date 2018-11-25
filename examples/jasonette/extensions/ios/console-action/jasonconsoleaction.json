@@ -1,0 +1,50 @@
+{
+    "$jason": {
+        "head": {
+            "title": "Console",
+            "actions": {
+                "$load": {
+                   "type": "$render"
+                }
+            },
+            "templates": {
+                "body": {
+                    "header": {
+                        "style": {
+                            "background": "#1c1c1c",
+                            "color": "#ffffff"
+                        },
+                        "title": ">_"
+                    },
+                    "style": {
+                        "background": "#202020",
+                        "border": "none"
+                    },
+                    "sections": {
+                        "{{#each $params.variables}}": {
+                            "header": {
+                                "type": "label",
+                                "style": {
+                                    "color": "#f7d797",
+                                    "background": "#1c1c1c",
+                                    "font": "HelveticaNeue-CondensedBold",
+                                    "size": "11"
+                                },
+                                "text": "{{name}}"
+                            },
+                            "items": [{
+                                "type": "label",
+                                "style": {
+                                    "color": "#cecece",
+                                    "font": "Courier",
+                                    "size": "11"
+                                },
+                                "text": "{{JSON.stringify(value, null, 1)}}"
+                            }]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

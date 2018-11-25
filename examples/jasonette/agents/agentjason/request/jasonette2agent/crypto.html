@@ -1,0 +1,23 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script>
+var md5 = function(data, sync) {
+  if (sync) {
+    $agent.response(CryptoJS.MD5(data).toString());
+  } else {
+    setTimeout(function() {
+      $agent.response(CryptoJS.MD5(data).toString());
+    }, 2000);
+  }
+}
+var sha256 = function(data, sync) {
+  if (sync) {
+    $agent.response(CryptoJS.SHA256(data).toString());
+  } else {
+    setTimeout(function() {
+      $agent.response(CryptoJS.SHA256(data).toString());
+    }, 2000);
+  }
+}
+</script>
+</html>

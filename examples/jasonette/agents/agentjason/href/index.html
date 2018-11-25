@@ -1,0 +1,12 @@
+<html>
+<script>
+var rand = Math.random();
+var transition = (rand > 0.5 ? 'push' : 'modal');
+setTimeout(function() {
+  $agent.href({
+    url: "https://jasonette.github.io/AgentJason/href/app.json",
+    transition: transition
+  })
+}, 2000)
+</script>
+</html>

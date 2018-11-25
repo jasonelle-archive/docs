@@ -1,0 +1,11 @@
+{
+  "version": "0.1.2",
+  "name": "date",
+  "classname": "JasonDateAction",
+  "platform": "ios",
+  "language" : "objective-c",
+  "author" : "Camilo Castro <camilo@ninjas.cl>",
+  "href" : "https://github.com/NinjasCL/JasonDateAction",
+  "license" : "MIT",
+  "description": "$date.now returns the current date and timezone of the phone. $date.format enables you to change date formats."
+}

@@ -1,0 +1,148 @@
+{
+  "$jason": {
+    "head": {
+      "title": "iOS Dev Weekly Detail",
+      "styles": {
+        "news": {
+          "background": "#0073c5"
+        },
+        "tools": {
+          "background": "#00b69d"
+        },
+        "code": {
+          "background": "#732582"
+        },
+        "business": {
+          "background": "#454547"
+        },
+        "mac": {
+          "background": "#a61c70"
+        },
+        "videos": {
+          "background": "#f42020"
+        },
+        "jobs": {
+          "background": "#eba421"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$set",
+          "options": {
+          },
+          "success": {
+            "trigger": "reload"
+          }
+        },
+        "reload": {
+          "type": "$network.request",
+          "options": {
+            "url": "{{$params.issue}}",
+            "data_type": "html"
+          },
+          "success": {
+            "type": "$render",
+            "options": {
+              "type": "html"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "border": "none"
+          },
+          "header": {
+            "style": {
+              "background": "#0070c9",
+              "color": "#ffffff",
+              "shy": "true"
+            },
+            "title": "iOS Dev Weekly"
+          },
+          "sections": {
+            "{{#each $jason.find('section.category')}}": {
+              "header": {
+                "type": "vertical",
+                "style": {
+                  "padding": "10",
+                  "align": "right",
+                  "background": "rgba(0,0,0,0)"
+                },
+                "components": [
+                  {
+                    "type": "label",
+                    "class": "{{$(this).find('.i').attr('id')}}",
+                    "style": {
+                      "padding": "5",
+                      "align": "right",
+                      "color": "#ffffff",
+                      "corner_radius": "3",
+                      "padding_right": "10",
+                      "padding_left": "10"
+                    },
+                    "text": "{{$(this).find('.category__title').text()}}"
+                  }
+                ]
+              },
+              "items": {
+                "{{#each $(this).find('.item')}}": {
+                  "type": "vertical",
+                  "style": {
+                    "padding": "20",
+                    "color": "#cecece",
+                    "spacing": "10"
+                  },
+                  "href": {
+                    "url": "{{$(this).find('h3 a').attr('href')}}",
+                    "view": "web"
+                  },
+                  "components": [
+                    {
+                      "type": "horizontal",
+                      "components": [
+                        {
+                          "type": "label",
+                          "style": {
+                            "font": "Georgia-Bold",
+                            "size": "18"
+                          },
+                          "text": "{{$(this).find('.item__title').text()}}"
+                        },
+                        {
+                          "type": "space",
+                          "style": {
+                            "width": "20"
+                          }
+                        },
+                        {
+                          "type": "label",
+                          "style": {
+                            "font": "HelveticaNeue-Italic",
+                            "size": "14",
+                            "align": "right",
+                            "color": "#cecece"
+                          },
+                          "text": "{{$(this).find('.item__footer').text()}}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "label",
+                      "text": "{{$(this).find('p').text()}}",
+                      "style": {
+                        "font": "Georgia",
+                        "size": "16"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

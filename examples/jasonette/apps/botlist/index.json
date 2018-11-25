@@ -1,0 +1,100 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Botlist",
+      "actions": {
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "https://botlist.co",
+            "data_type": "html"
+          },
+          "success": {
+            "type": "$render",
+            "options": {
+              "type": "html"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "style": {
+              "background": "#0583e9"
+            },
+            "title": {
+              "type": "image",
+              "url": "https://i.imgur.com/1NOSpgC.png",
+              "style": {
+                "width": "97",
+                "height": "15"
+              }
+            }
+          },
+          "sections": {
+            "{{#each $jason.find('.tab-pane')}}": {
+              "header": {
+                "type": "label",
+                "text": "#{{$(this).attr('id')}}",
+                "style": {
+                  "background": "#0583e9",
+                  "font": "HelveticaNeue-Bold",
+                  "size": "12",
+                  "color": "#ffffff"
+                }
+              },
+              "items": {
+                "{{#each $(this).find('.bot')}}": {
+                  "type": "horizontal",
+                  "style": {
+                    "spacing": "10",
+                    "color": "#ebebeb"
+                  },
+                  "href": {
+                    "url": "https://raw.githubusercontent.com/gliechtenstein/botlist.json/master/detail.json",
+                    "options": {
+                      "fetch_url": "{{$(this).find('a').first().attr('href')}}"
+                    }
+                  },
+                  "components": [
+                    {
+                      "type": "image",
+                      "url": "https://botlist.co{{$(this).find('img').attr('src')}}",
+                      "style": {
+                        "width": "50",
+                        "corner_radius": "2"
+                      }
+                    },
+                    {
+                      "type": "vertical",
+                      "components": [
+                        {
+                          "type": "label",
+                          "text": "{{$(this).find('h2').text().trim()}}",
+                          "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "size": "15"
+                          }
+                        },
+                        {
+                          "type": "label",
+                          "text": "{{$(this).find('p').first().text().trim()}}",
+                          "style": {
+                            "font": "HelveticaNeue",
+                            "size": "12",
+                            "color": "#959595"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

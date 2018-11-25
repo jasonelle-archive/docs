@@ -1,0 +1,35 @@
+{
+  "$jason": {
+    "head": {
+      "agents": {
+        "audio": {
+          "url": "https://jasonette.github.io/agent.audio"
+        }
+      },
+      "actions": {
+        "update": {
+          "type": "$agent.request",
+          "options": {
+            "id": "audio",
+            "method": "update",
+            "params": ["{{$get.freq*1000}}"]
+          }
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "title": "Sound Control"
+      },
+      "sections": [{
+        "items": [{
+          "type": "slider",
+          "name": "freq",
+          "action": {
+            "trigger": "update"
+          }
+        }]
+      }]
+    }
+  }
+}

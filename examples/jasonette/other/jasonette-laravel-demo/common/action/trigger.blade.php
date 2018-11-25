@@ -1,0 +1,1 @@
+"trigger" : "{{$value or ''}}"

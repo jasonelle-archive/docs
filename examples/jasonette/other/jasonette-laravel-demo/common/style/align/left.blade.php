@@ -1,0 +1,1 @@
+@include('common.style.align', ['value' => 'left'])

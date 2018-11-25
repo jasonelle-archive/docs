@@ -1,0 +1,1 @@
+@include('common.properties.method', ['value' => 'put'])

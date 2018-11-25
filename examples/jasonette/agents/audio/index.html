@@ -1,0 +1,23 @@
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.2/Pizzicato.min.js"></script>
+<script>
+var sineWave = new Pizzicato.Sound({
+    source: 'wave',
+    options: {
+        frequency: 440
+    }
+});
+
+sineWave.play();
+var update = function(freq) {
+  sineWave.frequency = freq;
+}
+var play = function() {
+  sineWave.play();
+}
+var stop = function() {
+  sineWave.pause();
+}
+</script>
+<input type='range' onchange="update(this.value*10)" style="width:300px;margin:200px auto; display: block;">
+</html>

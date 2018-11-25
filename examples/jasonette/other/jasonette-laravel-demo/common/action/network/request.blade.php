@@ -1,0 +1,1 @@
+@include('common.properties.type', ['value' => '$network.request'])

@@ -1,0 +1,86 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Jasonette <-> Angular",
+      "agents": {
+        "angular": {
+          "url": "https://jasonette.github.io/agent.jsframeworks/angular"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$agent.request",
+          "options": {
+            "id": "angular",
+            "method": "all",
+            "params": []
+          },
+          "success": {
+            "type": "$render"
+          }
+        },
+        "add": {
+          "type": "$agent.request",
+          "options": {
+            "id": "angular",
+            "method": "add",
+            "params": ["{{$get.name}}", "{{$get.snippet}}"]
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": { 
+        "body": {
+          "header": {
+            "title": "Jasonette <-> AngularJS"
+          },
+          "sections": [{
+            "items": [{
+              "type": "textfield",
+              "placeholder": "Enter name",
+              "name": "name"
+            }, {
+              "type": "textfield",
+              "placeholder": "Enter description",
+              "name": "snippet"
+            }, {
+              "type": "button",
+              "text": "Add",
+              "style": {
+                "width": "100%",
+                "background": "#ff0000",
+                "color": "#ffffff"
+              },
+              "action": {
+                "trigger": "add"
+              }
+            }]
+          }, {
+            "items": {
+              "{{#each $jason}}": {
+                "type": "vertical",
+                "components": [{
+                  "type": "label",
+                  "style": {
+                    "font": "HelveticaNeue-Bold",
+                    "size": "14"
+                  },
+                  "text": "{{name}}"
+                }, {
+                  "type": "label",
+                  "style": {
+                    "font": "HelveticaNeue",
+                    "size": "12"
+                  },
+                  "text": "{{snippet}}"
+                }]
+              }
+            }
+          }]
+        }
+      }
+    }
+  }
+}

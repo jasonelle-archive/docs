@@ -1,0 +1,156 @@
+{
+  "$jason": {
+    "head": {
+      "title": "login"
+    },
+    "body": {
+      "style": {
+        "border": "none",
+        "background": "#646464"
+      },
+      "header": {
+        "title": "Sign in",
+        "style": {
+          "background": "#646464",
+          "color": "#ffffff"
+        }
+      },
+      "sections": [{
+        "items": [{
+          "type": "space",
+          "height": "10"
+        }, {
+          "type": "textfield",
+          "name": "email",
+          "style": {
+            "size": "20",
+            "color": "#8bb92d",
+            "font": "HelveticaNeue-Bold",
+            "background": "#575757",
+            "padding": "20"
+          },
+          "placeholder": "enter email"
+        }, {
+          "type": "space",
+          "height": "5"
+        }, {
+          "type": "textfield",
+          "name": "password",
+          "placeholder": "enter password",
+          "style": {
+            "size": "20",
+            "color": "#8bb92d",
+            "font": "HelveticaNeue-Bold",
+            "background": "#575757",
+            "padding": "20",
+            "secure": "true"
+          }
+        }, {
+          "type": "space",
+          "height": "5"
+        }, {
+          "type": "label",
+          "style": {
+            "width": "100%",
+            "align": "right",
+            "font": "HelveticaNeue-Bold",
+            "size": "20",
+            "padding": "10",
+            "background": "#8bb92d",
+            "color": "#ffffff"
+          },
+          "text": "Sign in >",
+          "action": {
+            "type": "$network.request",
+            "options": {
+              "url": "ROOT/users/sign_in.json",
+              "method": "post",
+              "data": {
+                "user[email]": "{{$get.email}}",
+                "user[password]": "{{$get.password}}"
+              }
+            },
+            "success": {
+              "type": "$session.set",
+              "options": {
+                "domain": "ROOT",
+                "header": {
+                  "X-User-Email": "{{$jason.email}}",
+                  "X-User-Token": "{{$jason.authentication_token}}"
+                }
+              },
+              "success": {
+                "type": "$href",
+                "options": {
+                  "url": "ROOT/posts.json",
+                  "transition": "replace"
+                }
+              }
+            },
+            "error": {
+              "type": "$util.banner",
+              "options": {
+                "title": "Error",
+                "description": "Something went wrong. Please check if you entered your email and password correctly"
+              }
+            }
+          }
+        }, {
+          "type": "label",
+          "style": {
+            "size": "16",
+            "font": "HelveticaNeue-Bold",
+            "text": "or",
+            "padding": "10",
+            "align": "center"
+          }
+        }, {
+          "type": "label",
+          "text": "Sign up >",
+          "style": {
+            "align": "right",
+            "size": "20",
+            "padding": "10",
+            "font": "HelveticaNeue-Bold",
+            "color": "#ffffff"
+          },
+          "action": {
+            "type": "$network.request",
+            "options": {
+              "url": "ROOT/users.json",
+              "method": "post",
+              "data": {
+                "user[email]": "{{$get.email}}",
+                "user[password]": "{{$get.password}}"
+              }
+            },
+            "success": {
+              "type": "$session.set",
+              "options": {
+                "domain": "ROOT",
+                "header": {
+                  "X-User-Email": "{{$jason.email}}",
+                  "X-User-Token": "{{$jason.authentication_token}}"
+                }
+              },
+              "success": {
+                "type": "$href",
+                "options": {
+                  "url": "ROOT/posts.json",
+                  "transition": "replace"
+                }
+              }
+            },
+            "error": {
+              "type": "$util.banner",
+              "options": {
+                "title": "Enter credentials",
+                "description": "Please enter both email and password"
+              }
+            }
+          }
+        }]
+      }]
+    }
+  }
+}
