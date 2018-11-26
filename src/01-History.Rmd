@@ -27,9 +27,9 @@ It got quickly popular.
 - http://www.sfgate.com/business/article/Stupid-apps-but-not-always-a-stupid-idea-5843629.php
 
 
-![Ethan App Screenshot](https://user-images.githubusercontent.com/292738/48963770-bb29e880-ef78-11e8-9178-ead9191087ee.jpeg)
+![Ethan App Screenshot](images/history/ethanapp.jpeg)
 
-![Ethan Drawing](https://user-images.githubusercontent.com/292738/48963771-bb29e880-ef78-11e8-93e4-be81e9749818.jpeg)
+![Ethan Drawing](images/history/ethan.jpeg)
 
 
 Some time after that Ethan began extracting the core, refining the api and creating documentation.
