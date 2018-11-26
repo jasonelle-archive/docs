@@ -4,21 +4,21 @@ author: "Jasonelle Team"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
+github-repo: jasonelle/jasonelle
+url: 'http\://jasonelle.com'
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "Jasonelle is a family of components that enables you creating apps and tools using only JSON."
+geometry: "left=4cm, right=3cm, top=2.5cm, bottom=2.5cm"
+fontsize: 12pt
+linestretch: 1.5
+toc-depth: 1
+lof: False
+lot: False
 ---
 
 # Welcome
 
 *Jasonelle* Family is made of several components that share *JSON* as the main language.
 
-
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```

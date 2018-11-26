@@ -32,9 +32,7 @@ It got quickly popular.
 ![Ethan Drawing](images/history/ethan.jpeg)
 
 
-Some time after that Ethan began extracting the core, refining the api and creating documentation.
-
-After finally releasing the first version of Jasonette on November 3th 2016
+Some time after that Ethan began extracting the core, refining the api and creating documentation. Finally releasing the first version of Jasonette on November 3th 2016
 
 - https://www.producthunt.com/posts/jasonette
 
