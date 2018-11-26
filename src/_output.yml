@@ -2,11 +2,18 @@ bookdown::gitbook:
   css: style.css
   config:
     toc:
+      collapse: none
       before: |
         <li><a href="./">Jasonelle Docs</a></li>
       after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: ["pdf", "epub"]
+        <li><a href="https://jasonelle.com">Jasonelle.com</a></li>
+        <li><a href="https://github.com/jasonelle/docs/tree/develop/examples">Examples</a></li>
+        <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+    download: [pdf, epub]
+    sharing:
+      github: yes
+      facebook: no
+      twitter: no
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
