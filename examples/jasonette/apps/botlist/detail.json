@@ -1,0 +1,106 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Detail Page",
+      "actions": {
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "{{$params.fetch_url}}",
+            "data_type": "html"
+          },
+          "success": {
+            "type": "$render",
+            "options": {
+              "type": "html"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "border": "none"
+          },
+          "header": {
+            "style": {
+              "background": "#0583e9",
+              "color": "#ffffff"
+            },
+            "title": {
+              "type": "image",
+              "url": "https://i.imgur.com/1NOSpgC.png",
+              "style": {
+                "width": "97",
+                "height": "15"
+              }
+            }
+          },
+          "sections": [
+            {
+              "header": {
+                "type": "label",
+                "text": "{{$jason.find('#about h2').text().trim()}}",
+                "style": {
+                  "font": "HelveticaNeue-CondensedBold",
+                  "size": "30",
+                  "align": "center",
+                  "padding": "10",
+                  "background": "#0583e9",
+                  "color": "#ffffff"
+                }
+              },
+              "items": [
+                {
+                  "type": "image",
+                  "url": "https://botlist.co{{$jason.find('#sidebar .avatar').attr('src')}}"
+                }
+              ]
+            },
+            {
+              "header": {
+                "type": "label",
+                "text": "GET THIS BOT ON",
+                "style": {
+                  "font": "HelveticaNeue-Bold",
+                  "size": "12"
+                }
+              },
+              "items": {
+                "{{#each $jason.find('ul.bot-platforms a')}}": {
+                  "type": "label",
+                  "style": {
+                    "background": "#fafafa",
+                    "color": "#0583e9"
+                  },
+                  "href": {
+                    "url": "{{$(this).attr('href')}}",
+                    "view": "web"
+                  },
+                  "text": "{{$(this).find('li').text().trim()}}"
+                }
+              }
+            },
+            {
+              "items": [
+                {
+                  "type": "horizontal",
+                  "style": {
+                    "padding": "50"
+                  },
+                  "components": [
+                    {
+                      "type": "html",
+                      "text": "<p>{{$jason.find('.cms-content').html()}}</p>",
+                      "css": "p,div,li{font-size: 15; font-family: Helvetica;}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

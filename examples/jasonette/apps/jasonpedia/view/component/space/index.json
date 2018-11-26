@@ -1,0 +1,112 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Space",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "padding": "10",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        },
+        "$pull": {
+          "type": "$flush",
+          "success": {
+            "type": "$reload"
+          }
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/component/space/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "header": {
+            "type": "label",
+            "text": "Fixed space",
+            "style": {
+              "background": "#f5f5f5"
+            }
+          },
+          "items": [
+            {
+              "type": "vertical",
+              "style": {
+                "padding": "0"
+              },
+              "components": [
+                {
+                  "type": "label",
+                  "style": {
+                    "background": "#ebebeb"
+                  },
+                  "text": "50px Space below this point",
+                  "class": "bold"
+                },
+                {
+                  "type": "space",
+                  "style": {
+                    "height": "50"
+                  }
+                },
+                {
+                  "type": "label",
+                  "text": "50px Space above this point",
+                  "style": {
+                    "background": "#ebebeb"
+                  },
+                  "class": "bold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": {
+            "type": "label",
+            "style": {
+              "background": "#f5f5f5"
+            },
+            "text": "Flexible space usage. The space component in the middle automatically expands to fill the layout. This type of layout would be not possible without a space component"
+          },
+          "items": [{
+            "type": "horizontal",
+            "components": [{
+              "type": "label",
+              "style": {
+                "width": "100",
+                "align": "right"
+              },
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+            }, {
+              "type": "space"
+            }, {
+              "type": "label",
+              "style": {
+                "width": "50",
+                "align": "left"
+              },
+              "text": "laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            }]
+          }]
+        }
+      ]
+    }
+  }
+}

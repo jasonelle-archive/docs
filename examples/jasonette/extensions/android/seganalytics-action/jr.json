@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0",
+  "name": "segment",
+  "classname": "JasonSEGAnalyticsAction",
+  "platform": "android",
+  "description": "Segment.io extension for Jasonette",
+  "dependencies": [ "compile 'com.segment.analytics.android:analytics:4.+'" ]
+}

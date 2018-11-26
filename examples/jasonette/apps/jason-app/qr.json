@@ -1,0 +1,49 @@
+{
+    "$jason": {
+      "head": {
+        "title": "Barcode Testing with inline update",
+        "actions": {
+          "qr": {
+            "type": "$set",
+            "options": {
+              "content": "Scanning..."
+            },
+            "success": {
+              "type": "$vision.scan",
+              "options": {
+                "type": "qrcode"
+              },
+              "success": {
+                "type": "$render"
+              }
+            }
+          },
+          "$vision.ready": {
+            "trigger": "qr"
+          },
+          "$load": {
+            "type": "$render"
+          },
+          "$vision.onscan": {
+            "type": "$ok",
+            "options": {
+              "content": "{{$jason.content}}"
+            }
+          }
+        },
+        "templates": {
+          "body": {
+            "style": {
+              "border": "none"
+            },
+            "background": {
+              "type": "camera",
+              "options": {
+                "device": "back"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

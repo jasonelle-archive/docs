@@ -1,0 +1,1 @@
+@include('common.properties.content_type' , ['value' => 'json'])

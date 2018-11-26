@@ -1,0 +1,66 @@
+<html>
+<script>
+
+/***************************************************
+
+  This app is a web app AND a Jasonette agent,
+  simultaneously.
+
+  The only different part is where it checks for
+  "window.$agent" (if it's true, than it means
+  the app is being loaded as Jasonette agent.
+  Otherwise it's just a regular web app)
+
+  This means you can bring your existing web apps
+  to build a native Jasonette app on top of.
+
+  All you need to do is plug in the $agent methods
+
+***************************************************/
+
+var host = location.origin.replace(/^http/, 'ws')
+var ws = new WebSocket(host)
+ws.onopen = function () {
+  connected();
+}
+ws.onmessage = function (ev) {
+  received(ev.data);
+}
+var send = function(message) {
+  ws.send(message);
+}
+var received = function(message) {
+  if (typeof message !== "object") {  // ignore pings
+    if (window.$agent) {
+      // Jasonette Agent 
+      $agent.trigger("onmessage", message)
+    } else {
+      // Web App
+      var line = document.createElement("pre");
+      line.innerHTML = message;
+      document.querySelector("#messages").appendChild(line);
+    }
+  }
+}
+var connected = function() {
+  if (window.$agent) {
+    // Jasonette Agent 
+    $agent.trigger("onconnect")
+  } else {
+    // Web App
+    var line = document.createElement("pre");
+    line.innerHTML = "websocket connected ...";
+    document.querySelector("#messages").appendChild(line);
+  }
+}
+document.addEventListener("DOMContentLoaded", function(e) {
+  document.querySelector("#send").onclick = function(c) {
+    send(document.querySelector("#message").value)
+  }
+})
+
+</script>
+<input type='text' placeholder='enter message' id='message'>
+<button id='send'>Send</button>
+<div id='messages'></div>
+</html>

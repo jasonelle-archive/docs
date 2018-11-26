@@ -1,0 +1,1 @@
+"color:disabled" : "{{$value or ''}}"

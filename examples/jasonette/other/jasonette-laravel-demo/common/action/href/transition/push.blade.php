@@ -1,0 +1,1 @@
+@include('common.properties.transition', ['value' => 'push'])

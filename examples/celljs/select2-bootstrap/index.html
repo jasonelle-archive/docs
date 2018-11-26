@@ -1,0 +1,57 @@
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.min.js"></script>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css' rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script>
+/************************************************************
+jQuery + Select2 + Bootstrap Table Example
+************************************************************/
+var View = function(m){ return { $type: "option", value: m.value, $text: m.caption } };
+var Model = [ {value: "AL", caption: "Alabama"}, {value: "WY", caption: "Wyoming"}, {value: "MO", caption: "Missouri"}];
+var Tr = function(item){
+  return { $type: "tr", $components: [
+    { $type: "td", $text: item.value },
+    { $type: "td", $text: item.caption }
+  ]}
+}
+var Table = {
+  $type: "table", class: "table", 
+  $components: [{ $type: "tbody", $components: [],
+    $update: function(){
+    	this.$components = this._items.map(Tr);
+    },
+    _add: function(val){
+      var item = Model.filter(function(item){return item.value === val;})[0];
+      this._items.push(item);
+    },
+    _items: []
+  }]
+}
+var el = {
+  $cell: true,
+  class: "container",
+  style: "padding: 100px",
+  $components: [{
+    $type: "h2", id: "selected", style: "padding: 10px;", _content: "", $text: "Select an Item",
+    _set: function(val){ this._content = val },
+    $update: function(){ this.$text = this._content }
+  }, {
+    $type: "select",
+    style: "width: 100%;",
+    class: "js-example-basic-single",
+    $init: function(){
+      this._selector = $(this).select2()
+      this._selector.on("change", function(e){
+        document.querySelector("#selected")._set(e.target.value);
+        document.querySelector("tbody")._add(e.target.value);
+      })
+    },
+    $components: Model.map(View)
+  }, Table]
+}
+</script>
+</html>

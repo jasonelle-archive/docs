@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "name": "idle",
+  "classname": "JasonIdleTimerAction",
+  "platform": "ios",
+  "language" : "objective-c",
+  "author" : "Camilo Castro <camilo@ninjas.cl>",
+  "href" : "https://github.com/NinjasCL/JasonIdleTimerAction",
+  "license" : "MIT",
+  "description": "$idle.enable enables idle timer. $idle.disable disables idle timer."
+}

@@ -1,0 +1,79 @@
+{
+    "$jason": {
+        "head": {
+            "title": "Profile View",
+            "type": "mixin"
+        },
+        "body": {
+            "style": {
+                "background": "#252541",
+                "border": "none"
+            },
+            "header": {
+                "title": "Profile",
+                "style": {
+                    "background": "#252541",
+                    "color": "#bc9458"
+                }
+            },
+            "layers": [{
+                "type": "label",
+                "text": {
+                    "@": "$document.submit.text"
+                },
+                "style": {
+                    "@": "$document.submit.style",
+                    "align": "center",
+                    "left": "0",
+                    "bottom": "0",
+                    "width": "100%",
+                    "size": "20",
+                    "height": "60",
+                    "background": "#bc9458",
+                    "color": "#252541"
+                }
+            }],
+            "sections": [{
+                "header": {
+                    "type": "vertical",
+                    "style": {
+                        "padding": "30",
+                        "spacing": "10",
+                        "align": "center"
+                    },
+                    "components": [{
+                        "type": "image",
+                        "style": {
+                            "@": "$document.avatar.style",
+                            "align": "center"
+                        },
+                        "url": {
+                            "@": "$document.avatar.image"
+                        }
+                    }, {
+                        "type": "label",
+                        "style": {
+                            "@": "$document.title.style",
+                            "font": "HelveticaNeue-Bold",
+                            "align": "center",
+                            "color": "#ffffff"
+                        },
+                        "text": {
+                            "@": "$document.title.text"
+                        }
+                    }]
+                },
+                "items": [{
+                    "type": "label",
+                    "style": {
+                        "@": "$document.content.style",
+                        "color": "#ffffff"
+                    },
+                    "text": {
+                        "@": "$document.content.text"
+                    }
+                }]
+            }]
+        }
+    }
+}

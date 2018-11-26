@@ -1,0 +1,100 @@
+{
+  "$jason": {
+    "head": {
+      "title": "CSV parser",
+      "actions": {
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "https://jasonette.github.io/Jasonpedia/template/csv",
+            "dataType": "raw"
+          },
+          "success": {
+            "type": "$convert.csv",
+            "options": {
+              "data": "{{$jason}}"
+            },
+            "success": {
+              "type": "$render"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "FKA",
+            "menu": {
+              "text": "View JSON",
+              "href": {
+                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/template/csv.json",
+                "view": "web"
+              }
+            }
+          },
+          "sections": [
+            {
+              "header": {
+                "type": "horizontal",
+                "style": {
+                  "background": "rgba(14,122,254,0.1)",
+                  "padding": "20"
+                },
+                "components": [{
+                  "style": {
+                    "size": "12"
+                  },
+                  "type": "label",
+                  "text": "This demo parses a CSV at https://github.com/Jasonette/Jasonpedia/blob/gh-pages/template/csv and renders it as JSON"
+                }]
+              },
+              "items": {
+                "{{#each $jason}}": {
+                  "type": "horizontal",
+                  "href": {
+                    "url": "{{url}}",
+                    "view": "Web"
+                  },
+                  "style": {
+                    "padding": "10",
+                    "spacing": "5"
+                  },
+                  "components": [
+                    {
+                      "type": "image",
+                      "style": {
+                        "width": "50"
+                      },
+                      "url": "{{icon}}"
+                    },
+                    {
+                      "type": "vertical",
+                      "components": [
+                        {
+                          "type": "label",
+                          "text": "{{name}}",
+                          "style": {
+                            "font": "HelveticaNeue-Bold",
+                            "size": "14"
+                          }
+                        },
+                        {
+                          "type": "label",
+                          "text": "{{descrption}}",
+                          "style": {
+                            "font": "HelveticaNeue",
+                            "size": "13"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.1/timeago.min.js"></script>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' rel='stylesheet'>
+<style>
+body{
+  background: #191919;
+  padding-top: 50px;
+}
+h1{
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+.timestamp{
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  color: gray;
+}
+.row{
+  padding: 10px;
+  margin: 10px;
+  -webkit-transition: all 1s ease-out, opacity 1s ease-out;
+  -moz-transition: all 1s ease-out, opacity 1s ease-out;
+  transition: all 1s ease-out, opacity 1s ease-out;
+  overflow:hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding-bottom: 20px;
+  max-height: 600px;
+  opacity: 1;
+}
+.row.hidden{
+  opacity: 0;
+  max-height: 0;
+}
+</style>
+<script>
+/****************************************************
+Bitcoin Ticker powered by wss://api.bitfinex.com/ws 
+*****************************************************/
+$root = {
+  id: "stream",
+  $cell: true,
+  class: "container",
+  _timestamps: function(){ return this.querySelectorAll(".timestamp") },
+  $init: function(){
+    this._bitcoin = Bitcoin(this);
+  },
+  _add: function(data){
+    console.log("data", data);
+    if(data[1] !== "hb"){
+      this.$components.unshift(Item({dollars: data[1], timestamp: Date.now()}))
+      this._timestamps().forEach(function(timestamp){ timestamp._refresh() })
+    }
+  },
+  $components: []
+}
+Item = function(o){
+  return {
+    class: "row hidden",
+    $init: function(){
+      var t = this;
+      setTimeout(function(){ t._display() }, 200)
+    },
+    _display: function(){
+      this.class = "row";
+    },
+    $components: [
+      {
+        $type: "h1",
+        $text: "$" + o.dollars
+      },
+      {
+        class: "timestamp",
+        _timestamp: o.timestamp,
+        _refresh: function(){ this.$text = Timeago(this._timestamp) },
+        $text: Timeago(o.timestamp)
+      }
+    ]
+  }
+}
+Bitcoin = function($el){
+  var ws = new WebSocket('wss://api.bitfinex.com/ws')
+  ws.addEventListener('message', function (event) {
+    if(Array.isArray(JSON.parse(event.data))) $el._add(JSON.parse(event.data))
+  })
+  ws.addEventListener('open', function (event) {
+    ws.send(JSON.stringify({ "event":"subscribe", "channel":"ticker", "pair":"BTCUSD" }))
+  })
+  return ws;
+}
+Timeago = function(d){
+  return timeago().format(d);
+}
+</script>
+</html>

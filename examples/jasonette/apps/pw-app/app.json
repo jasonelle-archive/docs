@@ -1,0 +1,83 @@
+{
+  "$jason": {
+    "head": {
+      "title": "ProcessWire RSS Reader",
+      "description": "Shows ProcessWire News. Made by Ninjas.cl",
+      "icon": "https://d1juguve2xwkcy.cloudfront.net/templates/styles/images/pwmark.png",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "size": "15"
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "title": {
+          "type": "image",
+          "url": "http://d1juguve2xwkcy.cloudfront.net/templates/styles/img/logo.png",
+          "style": {
+            "width": "159",
+            "height": "28"
+          }
+        },
+        "style": {
+          "background": "rgb(105, 183, 239)",
+          "padding": "10",
+          "color": "#ffffff"
+        }
+      },
+      "sections": [
+        {
+          "items": [
+            {
+              "type": "label",
+              "text": "Read ProcessWire Blog",
+              "class": "bold",
+              "style": {
+                "padding": "20"
+              },
+              "href": {
+                "url": "https://raw.githubusercontent.com/NinjasCL/pw-app/master/blog.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Read ProcessWire Weekly",
+              "class": "bold",
+              "style": {
+                "padding": "20"
+              },
+              "href": {
+                "url": "https://raw.githubusercontent.com/NinjasCL/pw-app/master/weekly.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Read Latest Forum Posts",
+              "class": "bold",
+              "style": {
+                "padding": "20"
+              },
+              "href": {
+                "url": "https://raw.githubusercontent.com/NinjasCL/pw-app/master/forum.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Made by Ninjas.cl",
+              "class": "bold",
+              "style": {
+                "padding": "20"
+              },
+              "href": {
+                    "url": "http://www.ninjas.cl",
+                    "view": "web"
+                  }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

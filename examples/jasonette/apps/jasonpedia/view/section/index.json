@@ -1,0 +1,579 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Sections Example",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "padding": "10",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue-Bold",
+          "color": "rgb(154, 205, 50)",
+          "size": "12"
+        },
+        "carousel_img": {
+          "height": "210",
+          "width": "210"
+        },
+        "avatar_img": {
+          "height": "70",
+          "width": "70",
+          "corner_radius": "35"
+        },
+        "username": {
+          "font": "Avenir",
+          "size": "15"
+        },
+        "center": {
+          "align": "center"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        }
+      }
+    },
+    "body": {
+      "style": {
+        "background": "#ECA73E"
+      },
+      "header": {
+        "style": {
+          "background": "#ECA73E"
+        },
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/section/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "type": "horizontal",
+          "header": {
+            "type": "horizontal",
+            "style": {
+              "align": "center",
+              "background": "#ECA73E",
+              "opacity": "0.2",
+              "spacing": "10"
+            },
+            "components": [
+              {
+                "type": "image",
+                "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/swipehorizontal.png",
+                "style": {
+                  "width": "50"
+                }
+              },
+              {
+                "type": "label",
+                "class": "bold",
+                "text": "horizontally scrolling section"
+              }
+            ]
+          },
+          "items": [
+            {
+              "type": "vertical",
+              "style": {
+                "width": "210",
+                "padding": "10",
+                "background": "#ffffff",
+                "align": "center",
+                "height": "300"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "carousel_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/homer.jpg"
+                },
+                {
+                  "type": "label",
+                  "text": "Homer Simpson",
+                  "class": "username center"
+                },
+                {
+                  "type": "button",
+                  "text": "Meow",
+                  "style": {
+                    "background": "rgb(100, 149, 237)",
+                    "color": "#ffffff",
+                    "align": "center",
+                    "width": "150",
+                    "height": "40"
+                  },
+                  "action": {
+                    "type": "$audio.play",
+                    "options": {
+                      "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/cat.mp3"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical",
+              "style": {
+                "width": "210",
+                "padding": "10",
+                "background": "#ffffff",
+                "align": "center",
+                "height": "300"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "carousel_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/marge.png"
+                },
+                {
+                  "type": "label",
+                  "text": "Marge Simpson",
+                  "class": "username center"
+                },
+                {
+                  "type": "button",
+                  "text": "Meow",
+                  "style": {
+                    "background": "rgb(100, 149, 237)",
+                    "color": "#ffffff",
+                    "align": "center",
+                    "width": "150",
+                    "height": "40"
+                  },
+                  "action": {
+                    "type": "$audio.play",
+                    "options": {
+                      "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/cat.mp3"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical",
+              "style": {
+                "width": "210",
+                "padding": "10",
+                "background": "#ffffff",
+                "align": "center",
+                "height": "300"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "carousel_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/bart.png"
+                },
+                {
+                  "type": "label",
+                  "text": "Bart Simpson",
+                  "class": "username center"
+                },
+                {
+                  "type": "button",
+                  "text": "Meow",
+                  "style": {
+                    "background": "rgb(100, 149, 237)",
+                    "color": "#ffffff",
+                    "align": "center",
+                    "width": "150",
+                    "height": "40"
+                  },
+                  "action": {
+                    "type": "$audio.play",
+                    "options": {
+                      "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/cat.mp3"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical",
+              "style": {
+                "width": "210",
+                "padding": "10",
+                "background": "#ffffff",
+                "align": "center",
+                "height": "300"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "carousel_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/lisa.jpg"
+                },
+                {
+                  "type": "label",
+                  "text": "Lisa Simpson",
+                  "class": "username center"
+                },
+                {
+                  "type": "button",
+                  "text": "Meow",
+                  "style": {
+                    "background": "rgb(100, 149, 237)",
+                    "color": "#ffffff",
+                    "align": "center",
+                    "width": "150",
+                    "height": "40"
+                  },
+                  "action": {
+                    "type": "$audio.play",
+                    "options": {
+                      "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/cat.mp3"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "vertical",
+              "style": {
+                "width": "210",
+                "padding": "10",
+                "background": "#ffffff",
+                "align": "center",
+                "height": "300"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "carousel_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/maggie.png"
+                },
+                {
+                  "type": "label",
+                  "text": "Maggie Simpson",
+                  "class": "username center"
+                },
+                {
+                  "type": "button",
+                  "text": "Meow",
+                  "style": {
+                    "background": "rgb(100, 149, 237)",
+                    "color": "#ffffff",
+                    "align": "center",
+                    "width": "150",
+                    "height": "40"
+                  },
+                  "action": {
+                    "type": "$audio.play",
+                    "options": {
+                      "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/cat.mp3"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": {
+            "type": "horizontal",
+            "style": {
+              "background": "#ECA73E",
+              "align": "center",
+              "spacing": "10"
+            },
+            "components": [
+              {
+                "type": "image",
+                "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/swipevertical.png",
+                "style": {
+                  "width": "50"
+                }
+              },
+              {
+                "type": "label",
+                "class": "bold",
+                "text": "vertically scrolling section"
+              }
+            ]
+          },
+          "items": [
+            {
+              "type": "horizontal",
+              "style": {
+                "spacing": "10",
+                "background": "#edf0ff"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "avatar_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/homer.jpg"
+                },
+                {
+                  "type": "vertical",
+                  "components": [
+                    {
+                      "type": "label",
+                      "class": "username",
+                      "text": "Homer Simpson"
+                    },
+                    {
+                      "type": "label",
+                      "class": "normal",
+                      "text": "Donuts..."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "horizontal",
+              "style": {
+                "spacing": "10",
+                "background": "#edf0ff"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "avatar_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/marge.png"
+                },
+                {
+                  "type": "vertical",
+                  "components": [
+                    {
+                      "type": "label",
+                      "class": "username",
+                      "text": "Marge Simpson"
+                    },
+                    {
+                      "type": "label",
+                      "class": "normal",
+                      "text": "I don't mind if you pee in the shower, but only if you're taking a shower"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "horizontal",
+              "style": {
+                "spacing": "10",
+                "background": "#edf0ff"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "avatar_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/bart.png"
+                },
+                {
+                  "type": "vertical",
+                  "components": [
+                    {
+                      "type": "label",
+                      "class": "username",
+                      "text": "Bart Simpson"
+                    },
+                    {
+                      "type": "label",
+                      "class": "normal",
+                      "text": "Ay Caramba!"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "horizontal",
+              "style": {
+                "spacing": "10",
+                "background": "#edf0ff"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "avatar_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/lisa.jpg"
+                },
+                {
+                  "type": "vertical",
+                  "components": [
+                    {
+                      "type": "label",
+                      "class": "username",
+                      "text": "Lisa Simpson"
+                    },
+                    {
+                      "type": "label",
+                      "class": "normal",
+                      "text": "BAAAART!"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "horizontal",
+              "style": {
+                "spacing": "10",
+                "background": "#edf0ff"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "class": "avatar_img",
+                  "url": "https://jasonette.github.io/Jasonpedia/assets/maggie.png"
+                },
+                {
+                  "type": "vertical",
+                  "components": [
+                    {
+                      "type": "label",
+                      "class": "username",
+                      "text": "Maggie Simpson"
+                    },
+                    {
+                      "type": "label",
+                      "class": "normal",
+                      "text": "..."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": {
+            "type": "horizontal",
+            "style": {
+              "background": "#ECA73E",
+              "align": "center",
+              "spacing": "10"
+            },
+            "components": [
+              {
+                "type": "image",
+                "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/map.png",
+                "style": {
+                  "width": "50"
+                }
+              },
+              {
+                "type": "label",
+                "class": "bold",
+                "text": "Map component"
+              }
+            ]
+          },
+          "items": [
+            {
+              "type": "map",
+              "region": {
+                "coord": "40.7409395,-74.0083886",
+                "width": "50"
+              },
+              "pins": [
+                {
+                  "title": "Le Bain",
+                  "description": "Best club in NYC",
+                  "coord": "40.7409395,-74.0083886",
+                  "style": {
+                    "selected": "true"
+                  }
+                }
+              ],
+              "style": {
+                "width": "100%",
+                "padding": "0",
+                "height": "200"
+              }
+            }
+          ]
+        },
+        {
+          "header": {
+            "type": "horizontal",
+            "style": {
+              "background": "#ECA73E",
+              "align": "center",
+              "spacing": "10"
+            },
+            "components": [
+              {
+                "type": "image",
+                "url": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/form.png",
+                "style": {
+                  "width": "50"
+                }
+              },
+              {
+                "type": "label",
+                "class": "bold",
+                "text": "Form components"
+              }
+            ]
+          },
+          "items": [
+            {
+              "type": "textarea",
+              "name": "multiline_content",
+              "placeholder": "Type something...",
+              "style": {
+                "background": "#ffffff",
+                "width": "100%",
+                "align": "right",
+                "height": "200"
+              }
+            },
+            {
+              "type": "space",
+              "style": {
+                "width": "100%",
+                "background": "#ebebeb",
+                "height": "10"
+              }
+            },
+            {
+              "type": "textfield",
+              "name": "singleline_content",
+              "value": "44",
+              "placeholder": "Say something...",
+              "style": {
+                "background": "#ffffff",
+                "width": "100%"
+              }
+            },
+            {
+              "type": "space",
+              "style": {
+                "width": "100%",
+                "background": "#ebebeb",
+                "height": "10"
+              }
+            },
+            {
+              "type": "slider",
+              "name": "gauge",
+              "style": {
+                "color": "#ff0000",
+                "background": "#ffffff"
+              },
+              "action": {
+                "type": "$util.banner",
+                "options": {
+                  "title": "Value",
+                  "description": "{{parseFloat($get.gauge)*100}}%"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

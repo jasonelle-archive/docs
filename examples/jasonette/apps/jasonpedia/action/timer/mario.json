@@ -1,0 +1,93 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Mario",
+      "actions": {
+        "$load": {
+          "type": "$set",
+          "options": {
+            "index": "0",
+            "frame": "0"
+          },
+          "success": {
+            "type": "$timer.start",
+            "options": {
+              "interval": "1",
+              "name": "mario",
+              "repeats": "true",
+              "action": {
+                "trigger": "tick"
+              }
+            }
+          }
+        },
+        "tick": {
+          "type": "$set",
+          "options": {
+            "index": "{{'' + ((parseInt($get.index) + 1)%2)}}",
+            "frame": "{{'' + ((parseInt($get.frame) + 5)%500)}}"
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#000000",
+            "color": "#ffffff",
+            "border": "none"
+          },
+          "header": {
+            "style": {
+              "background": "#000000",
+              "color": "#ffffff"
+            },
+            "menu": {
+              "text": "View JSON",
+              "href": {
+                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/action/timer/mario.json",
+                "view": "web"
+              }
+            }
+          },
+          "sections": [{
+            "items": [{
+              "type": "vertical",
+              "style": {
+                "spacing": "10"
+              },
+              "components": [{
+                "type": "label",
+                "text": "FRAME\nhttps://jasonette.github.io/Jasonpedia/assets/{{$get.index}}.png",
+                "style": {
+                  "font": "Courier",
+                  "size": "12",
+                  "color": "#ebebeb"
+                }
+              }, {
+                "type": "label",
+                "text": "COORD\n{{$get.frame}}",
+                "style": {
+                  "font": "Courier",
+                  "size": "12",
+                  "color": "#ebebeb"
+                }
+              }]
+            }]
+          }],
+          "layers": [{
+            "type": "image",
+            "url": "https://jasonette.github.io/Jasonpedia/assets/{{$get.index}}.png",
+            "style": {
+              "top": "50%",
+              "left": "{{$get.frame}}",
+              "height": "50"
+            }
+          }]
+        }
+      }
+    }
+  }
+}

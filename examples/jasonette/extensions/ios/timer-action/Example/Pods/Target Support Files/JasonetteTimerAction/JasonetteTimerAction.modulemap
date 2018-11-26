@@ -1,0 +1,6 @@
+framework module JasonetteTimerAction {
+  umbrella header "JasonetteTimerAction-umbrella.h"
+
+  export *
+  module * { export * }
+}

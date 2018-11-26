@@ -1,0 +1,116 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Jasonette Href",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "padding": "10",
+          "background": "#ffffff",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "padding": "10",
+          "size": "12"
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/core/href/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "items": [
+            {
+              "type": "label",
+              "text": "Push transition to another Jason View",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/core/href/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Push transition to another Jason View with tabs",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/core/href/tabs.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Modal transition to another Jason View",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/core/href/index.json",
+                "transition": "modal"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Modal transition to another Jason View with tabs",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/core/href/tabs.json",
+                "transition": "modal"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Open external app (mail)",
+              "class": "bold",
+              "href": {
+                "url": "mailto:ethan.gliechtenstein@gmail.com?subject=It%20works!",
+                "view": "app"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Open a browser",
+              "class": "bold",
+              "href": {
+                "url": "https://twitter.com/intent/user?screen_name=gliechtenstein",
+                "view": "web"
+              }
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "tabs": {
+          "style": {
+            "background": "rgba(255,255,255,0.8)",
+            "color": "#000000"
+          },
+          "items": [{
+            "image": "https://jasonette.github.io/Jasonpedia/assets/0.png",
+            "style": {
+              "height": "21"
+            },
+            "url": "https://jasonette.github.io/Jasonpedia/core/href/tabs.json"
+          }, {
+            "image": "https://jasonette.github.io/Jasonpedia/assets/2.png",
+            "style": {
+              "height": "21"
+            },
+            "url": "https://jasonette.github.io/Jasonpedia/core/href/tabs.json"
+          }, {
+            "image": "https://jasonette.github.io/Jasonpedia/assets/3.png",
+            "style": {
+              "height": "21"
+            },
+            "url": "https://jasonette.github.io/Jasonpedia/core/href/tabs.json"
+          }]
+        }
+      }
+    }
+  }
+}

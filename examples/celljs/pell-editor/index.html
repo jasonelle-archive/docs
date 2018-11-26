@@ -1,0 +1,27 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script src="https://unpkg.com/pell"></script>
+<link href="https://unpkg.com/pell/dist/pell.min.css" rel="stylesheet">
+<script>
+p = {
+  $cell: true,
+  _actions: [
+    'bold', 'italic', 'underline', 'strikethrough', 'heading1', 'heading2', 'paragraph', 'quote', 'olist', 'ulist', 'code', 'line', 'link', 'image'
+  ],
+  $init: function() {
+    pell.init({
+      element: this,
+      onChange: html => console.log(html),
+      styleWithCSS: false,
+      actions: this._actions,
+      classes: {
+        actionbar: 'pell-actionbar',
+        button: 'pell-button',
+        content: 'pell-content'
+      }
+    })
+  }
+}
+</script>
+</html>

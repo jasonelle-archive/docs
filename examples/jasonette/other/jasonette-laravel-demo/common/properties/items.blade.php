@@ -1,0 +1,1 @@
+"items" : "{{$value or ''}}"

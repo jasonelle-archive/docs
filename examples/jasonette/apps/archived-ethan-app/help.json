@@ -1,0 +1,127 @@
+{
+    "$result": {
+        "head": {
+            "url": "https://wethan.herokuapp.com/v2/help.json",
+            "title": "Help",
+            "style": {
+                "header_cell": {
+                    "background": "#f6f6f6"
+                },
+                "header_label": {
+                    "font": "HelveticaNeue-CondensedBold",
+                    "color": "#323232",
+                    "size": "14"
+                },
+                "row_label": {
+                    "font": "HelveticaNeue",
+                    "color": "#8899a6",
+                    "size": "12"
+                }
+            }
+        },
+        "body": {
+            "sections": [{
+                "header": {
+                    "class": "header_cell",
+                    "type": "ParagraphCell",
+                    "labels": [{
+                        "text": "Q: What is an Ethan?",
+                        "class": "header_label"
+                    }]
+                },
+                "rows": [{
+                    "labels": [{
+                        "text": "An 'Ethan' is a your own messaging hotline. Each Ethan has its own unique username that people can text to",
+                        "class": "row_label"
+                    }]
+                }]
+            }, {
+                "header": {
+                    "class": "header_cell",
+                    "type": "ParagraphCell",
+                    "labels": [{
+                        "text": "Q: What should my Ethan be about?",
+                        "class": "header_label"
+                    }]
+                },
+                "rows": [{
+                    "labels": [{
+                        "text": "1. Pick any topic you're good at or would like to talk about more. The more focused the better because you have less competition that way.\n\n2. Try to be as specific as possible so people know how to and what to text you. Otherwise you may get all kinds of random irrevelant texts.",
+                        "class": "row_label"
+                    }]
+                }]
+            }, {
+                "header": {
+                    "class": "header_cell",
+                    "type": "ParagraphCell",
+                    "labels": [{
+                        "text": "Q: How to get more texts?",
+                        "class": "header_label"
+                    }]
+                },
+                "rows": [{
+                    "labels": [{
+                        "text": "The home directory displays Ethans sorted by:\n\n1. last active time\n2. last upvoted time.\n\nThis means the more active you are the higher the chance of people seeing you.\n\nMost importantly, be descriptive about what you want people to text you about. You will probably never get a text if you just describe your Ethan with one word, such as 'gaming', 'relationships', etc.",
+                        "class": "row_label"
+                    }]
+                }]
+            }, {
+                "header": {
+                    "class": "header_cell",
+                    "type": "ParagraphCell",
+                    "labels": [{
+                        "text": "Q: How to go offline?",
+                        "class": "header_label"
+                    }]
+                },
+                "rows": [{
+                    "labels": [{
+                        "text": "Go to your Ethan dashboard and press the blue 'Update' button and select 'Go offline'. Your Ethan won't show up on directory results and will show up as offline to your existing contacts.\n\nHowever if you don't plan on using it in the future, it might be better to just destroy it by going into edit menu.",
+                        "class": "row_label"
+                    }]
+                }, {
+                    "type": "ImageCell",
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/www.textcast.co/icons/ethan_dashboard%402x.png"
+                    }]
+                }]
+            }, {
+                "header": {
+                    "class": "header_cell",
+                    "type": "ParagraphCell",
+                    "labels": [{
+                        "text": "Q: How do I block, hide, or report a chat?",
+                        "class": "header_label"
+                    }]
+                },
+                "rows": [{
+                    "labels": [{
+                        "text": "Swipe left to see the options from the chat list.",
+                        "class": "row_label"
+                    }],
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/www.textcast.co/icons/swipecell%402x.gif",
+                        "style": {
+                            "width": "150"
+                        }
+                    }]
+                }]
+            }, {
+                "header": {
+                    "class": "header_cell",
+                    "type": "ParagraphCell",
+                    "labels": [{
+                        "text": "Q: What happens when I hide a chat?",
+                        "class": "header_label"
+                    }]
+                },
+                "rows": [{
+                    "labels": [{
+                        "text": "It will be hidden from your chat list, but will come back when the person messages you again. If you want to completely block the user, use 'block' instead.",
+                        "class": "row_label"
+                    }]
+                }]
+            }]
+        }
+    }
+}

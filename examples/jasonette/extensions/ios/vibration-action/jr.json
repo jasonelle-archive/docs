@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "name": "vibration",
+  "classname": "JasonVibrationAction",
+  "platform": "ios",
+  "language" : "objective-c",
+  "author" : "Camilo Castro <camilo@ninjas.cl>",
+  "href" : "https://github.com/NinjasCL/JasonVibrationAction",
+  "license" : "MIT",
+  "description": "$vibration.activate makes the device vibrate."
+}

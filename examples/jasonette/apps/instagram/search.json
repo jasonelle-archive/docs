@@ -1,0 +1,69 @@
+{
+  "$jason": {
+    "head": {
+      "title": "search"
+    },
+    "body": {
+      "header": {
+        "title": {
+          "type": "image",
+          "style": {
+            "width": "94",
+            "height": "27"
+          },
+          "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/logo.png"
+        }
+      },
+      "layers": [{
+        "type": "label",
+        "text": "Not implemented yet...",
+        "style": {
+          "top": "50%-100",
+          "left": "50%-100",
+          "width": "200",
+          "height": "200",
+          "align": "center"
+        }
+      }],
+      "footer": {
+        "tabs": {
+          "style": {
+            "background": "rgba(255,255,255,0.8)",
+            "color": "#000000"
+          },
+          "items": [{
+            "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/home.png",
+            "style": {
+              "height": "21"
+            },
+            "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/home.json"
+          }, {
+            "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/search.png",
+            "style": {
+              "height": "21"
+            },
+            "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/search.json"
+          }, {
+            "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/camera.png",
+            "style": {
+              "height": "21"
+            },
+            "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/camera.json"
+          }, {
+            "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/heart.png",
+            "style": {
+              "height": "21"
+            },
+            "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/heart.json"
+          }, {
+            "image": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/images/profile.png",
+            "style": {
+              "height": "21"
+            },
+            "url": "https://raw.githubusercontent.com/Jasonette/Instagram-UI-example/master/profile.json"
+          }]
+        }
+      }
+    }
+  }
+}

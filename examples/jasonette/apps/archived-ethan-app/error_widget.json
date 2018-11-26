@@ -1,0 +1,9 @@
+{
+    "$action": {
+        "type": "Widget.banner",
+        "options": {
+            "title": "Error",
+            "description": "Invalid email"
+        }
+    }
+}

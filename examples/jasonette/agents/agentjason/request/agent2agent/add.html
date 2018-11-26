@@ -1,0 +1,14 @@
+<html>
+<script>
+var runSync = function(state) {
+  state.push("a");
+  $agent.response(state);
+}
+var runAsync = function(state) {
+  setTimeout(function() {
+    state.push("a");
+    $agent.response(state);
+  }, 2000);
+}
+</script>
+</html>

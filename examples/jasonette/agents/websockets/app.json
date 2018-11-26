@@ -1,0 +1,90 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Websocket Chat",
+      "agents": {
+        "ws": {
+          "url": "https://wsjason.herokuapp.com/"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$cache.set",
+          "options": {
+            "messages": []
+          },
+          "success": {
+            "type": "$render"
+          }
+        },
+        "onmessage": {
+          "type": "$cache.set",
+          "options": {
+            "messages": "{{$cache.messages.concat($jason)}}"
+          },
+          "success": {
+            "type": "$render"
+          }
+        },
+        "send": {
+          "type": "$agent.request",
+          "options": {
+            "id": "ws",
+            "method": "send",
+            "params": ["{{$get.message}}"]
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "border": "none"
+          },
+          "header": {
+            "title": "WebSocket Chat Agent"
+          },
+          "sections": [{
+            "items": {
+              "{{#each $cache.messages}}": {
+                "type": "horizontal",
+                "style": {
+                  "align": "bottom",
+                  "padding": "5"
+                },
+                "components": [{
+                  "type": "label",
+                  "text": "{{this}}",
+                  "style": {
+                    "corner_radius": "10",
+                    "background": "#3787f6",
+                    "color": "#ffffff",
+                    "font": "HelveticaNeue",
+                    "size": "16",
+                    "padding": "8",
+                    "width": "80%"
+                  }
+                }, {
+                  "type": "space"
+                }]
+              }
+            }
+          }],
+          "footer": {
+            "input": {
+              "textfield": {
+                "name": "message",
+                "placeholder": "enter a message"
+              },
+              "right": {
+                "text": "Send",
+                "action": {
+                  "trigger": "send"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

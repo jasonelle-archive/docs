@@ -1,0 +1,126 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Component",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "padding": "10",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        },
+        "$pull": {
+          "type": "$flush",
+          "success": {
+            "type": "$reload"
+          }
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/component/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "items": [
+            {
+              "type": "label",
+              "text": "label",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/label/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "image",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/image/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "button",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/button/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "html",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/html/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "map",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/map/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "slider",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/slider/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "textarea",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/textarea/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "textfield",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/textfield/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "space",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/space/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "common styling",
+              "class": "bold",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/component/style/index.json"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

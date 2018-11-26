@@ -1,0 +1,16 @@
+PODS:
+  - JasonetteTimerAction (0.1.0)
+
+DEPENDENCIES:
+  - JasonetteTimerAction (from `../`)
+
+EXTERNAL SOURCES:
+  JasonetteTimerAction:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JasonetteTimerAction: 11c8da06b1079afa549a7962fb56400934cb2b51
+
+PODFILE CHECKSUM: a8e1310a147b171c4a9b5033cf846b86e3f13eac
+
+COCOAPODS: 1.2.0.beta.1

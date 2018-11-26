@@ -1,0 +1,1 @@
+"badge" : "{{$value or ''}}"

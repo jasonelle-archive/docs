@@ -1,0 +1,102 @@
+<html>
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script src="https://www.celljs.org/cell.js"></script>
+<script>
+/************************************************************
+
+  This app (and an agent) uses cell.js framework but you don't
+  have to use cell to build Jasonette agents. This is just a 
+  demonstration. If you're not familiar with cell.js, you can:
+
+  1. Learn: www.celljs.org
+      it's super simple once you understand the minimum
+      building blocks. Takes prob 10 minutes to learn the
+      whole library.
+
+  2. Or if you're in a hurry and just want to learn how
+     this is using Jasonette $agents, just take a look
+     at some of the important parts here to learn how
+     it's using $agent.trigger() inside the _update()
+     method. Then you can implement it using vanilla JS
+     or using your favorite JS Framework.
+
+  Brief Overview of what's happening:
+     
+    A. initializing Firebase
+
+    firebase.initializeApp(config);
+    this._ref = firebase.database().ref();
+
+    B. Listening to the value change and triggering _update()
+
+    this._ref.on("value", function(snapshot){
+      self._update(snapshot.val()); 
+    });
+    
+    C. And finally inside _update(), calling $agent.trigger()
+
+    $agent.trigger("update", {"items": components.map(function(c) {
+      return c.$text
+    })});
+
+************************************************************/
+var config = {
+  apiKey: "AIzaSyBIR1GaVnXmw_9ZxeMl04dv7BrW7a1BneA",
+  authDomain: "chat-51426.firebaseapp.com",
+  databaseURL: "https://chat-51426.firebaseio.com",
+  projectId: "chat-51426",
+  storageBucket: "",
+  messagingSenderId: "291700310985"
+};
+var audio = new Audio('http://soundbible.com/mp3/Pling-KevanGC-1485374730.mp3');
+
+var chat = function(m) {
+  document.querySelector("#root")._ref.push(m);
+}
+c = {
+  $cell: true,
+  _ref: null,
+  id: "root",
+  $init: function() {
+    firebase.initializeApp(config);
+    this._ref = firebase.database().ref();
+    var self = this;
+    this._ref.on("value", function(snapshot){
+      self._update(snapshot.val()); 
+    });
+  },
+  _update: function(items) {
+    var components = Object.keys(items).map(function(key) {
+      return { $type: "h2", $text: items[key] }
+    }).reverse()
+    this.querySelector("#items").$components = components;
+    audio.play();
+    $agent.trigger("update", {
+      "items": components.map(function(c) { return c.$text })
+    });
+  },
+  $components: [{
+    $type: "form",
+    _val: "",
+    onsubmit: function(e) {
+      e.preventDefault();
+      this._ref.push(this._val); 
+      this.querySelector('.v').value = '';
+    },
+    $components: [{
+      $type: "input",
+      class: "v",
+      placeholder: "type something",
+      onkeyup: function(e) {
+        this._val = this.value;
+      }
+    }, {
+      $type: "input", type: "submit"
+    }]
+  }, {
+    id: "items",
+    $components: []
+  }],
+}
+</script>
+</html>

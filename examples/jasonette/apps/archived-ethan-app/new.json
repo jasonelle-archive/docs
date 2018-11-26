@@ -1,0 +1,100 @@
+{
+    "$result": {
+        "head": {
+            "title": "New Ethan",
+            "url": "https://wethan.herokuapp.com/v2/channels/new.json",
+            "right": {
+                "text": "Done",
+                "action": {
+                    "type": "Network.request",
+                    "options": {
+                        "url": "https://wethan.herokuapp.com/channels.json",
+                        "method": "post"
+                    },
+                    "callback": {
+                        "type": "ok",
+                        "callback": {
+                            "type": "reload_silent"
+                        }
+                    }
+                }
+            },
+            "type": "form"
+        },
+        "body": {
+            "sections": [
+                {
+                    "rows": [
+                        {
+                            "label": "Image",
+                            "name": "channel[avatar]",
+                            "type": "image",
+                            "required": true,
+                            "options": {
+                                "type": "photo",
+                                "storage": {
+                                    "type": "s3",
+                                    "bucket": "com.textethan",
+                                    "path": "images/avatar",
+                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                }
+                            }
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "text": "Name"
+                                }
+                            ],
+                            "name": "channel[firstname]",
+                            "type": "text",
+                            "required": true
+                        },
+                        {
+                            "labels": [
+                                {
+                                    "text": "Text me about"
+                                }
+                            ],
+                            "name": "channel[description]",
+                            "type": "textarea",
+                            "required": true
+                        }
+                    ]
+                },
+                {
+                    "type": "select",
+                    "options": {
+                        "text": "Tags",
+                        "name": "channel[tags]",
+                        "type": "text"
+                    }
+                },
+                {
+                    "rows": [
+                        {
+                            "labels": [
+                                {
+                                    "text": "Text anonymously"
+                                }
+                            ],
+                            "name": "channel[pseudonym]",
+                            "type": "radio",
+                            "options": [
+                                {
+                                    "text": "No",
+                                    "value": ""
+                                },
+                                {
+                                    "text": "Yes",
+                                    "value": "pseudonym"
+                                }
+                            ],
+                            "selected": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

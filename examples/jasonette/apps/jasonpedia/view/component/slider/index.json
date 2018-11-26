@@ -1,0 +1,79 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Slider",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "align": "center",
+          "size": "40"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        },
+        "$pull": {
+          "type": "$flush",
+          "success": {
+            "type": "$reload"
+          }
+        },
+        "$load": {
+          "type": "$set",
+          "options": {
+            "gauge": "0.2"
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "menu": {
+              "text": "View JSON",
+              "href": {
+                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/component/slider/index.json",
+                "view": "web"
+              }
+            }
+          },
+          "sections": [{
+            "header": {
+              "type": "label",
+              "class": "bold",
+              "text": "{{'' + $get.gauge}}"
+            },
+            "items": [{
+              "type": "slider",
+              "name": "gauge",
+              "style": {
+                "height": "100",
+                "width": "50%",
+                "align": "center",
+                "color": "#00ff00"
+              },
+              "action": {
+                "type": "$render"
+              }
+            }, {
+              "type": "slider",
+              "name": "gauge",
+              "style": {
+                "height": "100",
+                "width": "100%",
+                "align": "center",
+                "color": "#ff0000"
+              },
+              "action": {
+                "type": "$render"
+              }
+            }]
+          }]
+        }
+      }
+    }
+  }
+}

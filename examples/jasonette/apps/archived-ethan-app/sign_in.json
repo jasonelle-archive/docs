@@ -1,0 +1,82 @@
+{
+    "$jason": {
+        "head": {
+            "title": "Sign In"
+        },
+        "body": {
+            "style": {
+                "background": "#B64220",
+                "border": "none"
+            },
+            "nav": {
+                "style": {
+                    "background": "#B64220",
+                    "color": "#ffffff"
+                }
+            },
+            "sections": [{
+                "items": [{
+                    "type": "textfield",
+                    "style": {
+                        "padding": "10",
+                        "background": "#B64220",
+                        "font": "HelveticaNeue",
+                        "size": "14",
+                        "color": "#ffffff",
+                        "placeholder_color": "#752A15"
+                    },
+                    "name": "email",
+                    "placeholder": "Email"
+                }, {
+                    "type": "textfield",
+                    "style": {
+                        "padding": "10",
+                        "color": "#ffffff",
+                        "background": "#B64220",
+                        "font": "HelveticaNeue",
+                        "size": "14",
+                        "secure": "true",
+                        "placeholder_color": "#752A15"
+                    },
+                    "name": "password",
+                    "placeholder": "Password"
+                }, {
+                    "type": "button",
+                    "text": "Sign in \u003E",
+                    "style": {
+                        "font": "HelveticaNeue-Bold",
+                        "color": "#ffffff",
+                        "background": "#B64220",
+                        "padding": "10",
+                        "size": "15",
+                        "width": "100%",
+                        "height": "50",
+                        "align": "right",
+                        "corner_radius": "2"
+                    },
+                    "action": {
+                        "type": "$network.auth",
+                        "options": {
+                            "url": "https://wethan.herokuapp.com/api/v1/users/sign_in",
+                            "method": "post",
+                            "data": {
+                                "email": "{{$get.email}}",
+                                "password": "{{$get.password}}"
+                            }
+                        },
+                        "success": {
+                            "type": "$close",
+                            "success": {
+                                "type": "$href",
+                                "options": {
+                                    "transition": "replace",
+                                    "url": "https://wethan.herokuapp.com/v3/top_tags.json"
+                                }
+                            }
+                        }
+                    }
+                }]
+            }]
+        }
+    }
+}

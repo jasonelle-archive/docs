@@ -1,0 +1,53 @@
+{
+  "$jason": {
+    "head": {
+      "title": "$agent.trigger Demo",
+      "agents": {
+        "test": {
+          "url": "https://jasonette.github.io/AgentJason/trigger"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$render",
+          "options": {
+            "data": {
+              "text": "Start!",
+              "color": "#f00000"
+            }
+          }
+        },
+        "lets_update": {
+          "type": "$render" 
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "{{$jason.color}}"
+          },
+          "header": {
+            "title": "$agent.trigger demo",
+            "style": {
+              "color": "#ffffff",
+              "background": "rgba(0,0,0,0)"
+            }
+          },
+          "layers": [{
+            "type": "label",
+            "text": "{{$jason.text}}",
+            "style": {
+              "size": "100",
+              "color": "#ffffff",
+              "font": "HelveticaNeue-CondensedBold",
+              "align": "center",
+              "top": "100",
+              "left": "0",
+              "width": "100%"
+            }
+          }]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<html>
+<script>
+var state = [];
+var run = function(method, issync) {
+  $agent.request({
+    id: method,
+    method: issync.sync ? "runSync" : "runAsync",
+    params: [state]
+  }, function(res) {
+    state = res;
+    $agent.response(res);
+  })
+}
+</script>
+</html>

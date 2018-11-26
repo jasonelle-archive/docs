@@ -1,0 +1,378 @@
+{
+    "$result": {
+        "head": {
+            "url": "https://wethan.herokuapp.com/v2/channels/1290/visit.json",
+            "title": "Loveatics",
+            "right": {
+                "image": "https://s3.amazonaws.com/www.textcast.co/icons/thumb%402x.png",
+                "href": {
+                    "url": "https://wethan.herokuapp.com/v2/channels/1290/review.json"
+                }
+            },
+            "script": [
+                {
+                    "id": "Canvas",
+                    "type": "href",
+                    "options": {
+                        "view": "CanvasView",
+                        "transition": "modal",
+                        "options": {
+                            "url": "{{metadata}}"
+                        },
+                        "callback": {
+                            "type": "Network.upload",
+                            "options": {
+                                "type": "image",
+                                "storage": {
+                                    "type": "s3",
+                                    "bucket": "com.textethan",
+                                    "path": "images/avatar",
+                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                }
+                            },
+                            "callback": {
+                                "type": "Network.request",
+                                "options": {
+                                    "loading": true,
+                                    "include": {
+                                        "data": {
+                                            "chat[metadata]": "https://s3.amazonaws.com/com.textethan/images/avatar/{{$result}}",
+                                            "chat[message]": "image"
+                                        }
+                                    },
+                                    "method": "POST",
+                                    "url": "https://wethan.herokuapp.com/v2/say.json",
+                                    "data": {
+                                        "chat[channel_id]": "{{channel_id}}"
+                                    }
+                                },
+                                "callback": {
+                                    "type": "reload_silent"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "body": {
+            "placeholder": {
+                "text": "Say something..."
+            },
+            "style": {
+                "background": "#F0F0F0"
+            },
+            "users": [
+                {
+                    "id": "29364",
+                    "username": "katy ",
+                    "avatar": "https://s3.amazonaws.com/com.textethan/images/avatar/7516CB51-7CC2-49AA-B25A-6BEF10C4DBF2.png",
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/users/xgRm5q.json",
+                        "transition": "modal"
+                    },
+                    "style": {
+                        "background": "#EEE3CA",
+                        "color": "#000000"
+                    }
+                },
+                {
+                    "id": "44728",
+                    "username": "c",
+                    "avatar": "https://s3.amazonaws.com/me.joincult.ethan/images/avatar/default_avatar.png",
+                    "href": {
+                        "url": "https://wethan.herokuapp.com/v2/users/8ak2Ex.json",
+                        "transition": "modal"
+                    },
+                    "current_user": true,
+                    "style": {
+                        "background": "#B64220",
+                        "color": "#ffffff",
+                        "direction": "right"
+                    }
+                }
+            ],
+            "messages": [
+                {
+                    "user_id": "29364",
+                    "bubble": {
+                        "type": "text",
+                        "data": "relationship/love/goals/Etc text me about love and relationship "
+                    },
+                    "header": {
+                        "text": "katy "
+                    },
+                    "timestamp": {
+                        "value": "2018-11-21T02:06:29.976Z"
+                    }
+                }
+            ],
+            "input": {
+                "left": {
+                    "action": {
+                        "type": "Widget.picker",
+                        "options": {
+                            "items": [
+                                {
+                                    "text": "Draw something",
+                                    "href": {
+                                        "view": "CanvasView",
+                                        "transition": "modal",
+                                        "callback": {
+                                            "type": "Network.upload",
+                                            "options": {
+                                                "storage": {
+                                                    "type": "s3",
+                                                    "bucket": "com.textethan",
+                                                    "path": "images/avatar",
+                                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                                }
+                                            },
+                                            "callback": {
+                                                "type": "Network.request",
+                                                "options": {
+                                                    "loading": true,
+                                                    "include": {
+                                                        "data": {
+                                                            "chat[metadata]": "https://s3.amazonaws.com/com.textethan/images/avatar/{{$result}}",
+                                                            "chat[message]": "image"
+                                                        }
+                                                    },
+                                                    "method": "POST",
+                                                    "url": "https://wethan.herokuapp.com/v2/say.json",
+                                                    "data": {
+                                                        "chat[channel_id]": 1290
+                                                    }
+                                                },
+                                                "callback": {
+                                                    "type": "reload_silent"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "text": "Photo camera",
+                                    "action": {
+                                        "type": "Media.camera",
+                                        "options": {
+                                            "type": "photo"
+                                        },
+                                        "callback": {
+                                            "type": "Network.upload",
+                                            "options": {
+                                                "storage": {
+                                                    "type": "s3",
+                                                    "bucket": "com.textethan",
+                                                    "path": "images/avatar",
+                                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                                }
+                                            },
+                                            "callback": {
+                                                "type": "Network.request",
+                                                "options": {
+                                                    "loading": true,
+                                                    "include": {
+                                                        "data": {
+                                                            "chat[metadata]": "https://s3.amazonaws.com/com.textethan/images/avatar/{{$result}}",
+                                                            "chat[message]": "image"
+                                                        }
+                                                    },
+                                                    "method": "POST",
+                                                    "url": "https://wethan.herokuapp.com/v2/say.json",
+                                                    "data": {
+                                                        "chat[channel_id]": 1290
+                                                    }
+                                                },
+                                                "callback": {
+                                                    "type": "reload_silent"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "text": "Photos",
+                                    "action": {
+                                        "type": "Media.cameraroll",
+                                        "options": {
+                                            "type": "photo"
+                                        },
+                                        "callback": {
+                                            "type": "Network.upload",
+                                            "options": {
+                                                "storage": {
+                                                    "type": "s3",
+                                                    "bucket": "com.textethan",
+                                                    "path": "images/avatar",
+                                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                                }
+                                            },
+                                            "callback": {
+                                                "type": "Network.request",
+                                                "options": {
+                                                    "loading": true,
+                                                    "include": {
+                                                        "data": {
+                                                            "chat[metadata]": "https://s3.amazonaws.com/com.textethan/images/avatar/{{$result}}",
+                                                            "chat[message]": "image"
+                                                        }
+                                                    },
+                                                    "method": "POST",
+                                                    "url": "https://wethan.herokuapp.com/v2/say.json",
+                                                    "data": {
+                                                        "chat[channel_id]": 1290
+                                                    }
+                                                },
+                                                "callback": {
+                                                    "type": "reload_silent"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "text": "Videos",
+                                    "action": {
+                                        "type": "Media.cameraroll",
+                                        "options": {
+                                            "type": "video"
+                                        },
+                                        "callback": {
+                                            "type": "Network.upload",
+                                            "options": {
+                                                "storage": {
+                                                    "type": "s3",
+                                                    "bucket": "com.textethan",
+                                                    "path": "images/avatar",
+                                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                                }
+                                            },
+                                            "callback": {
+                                                "type": "Network.request",
+                                                "options": {
+                                                    "loading": true,
+                                                    "include": {
+                                                        "data": {
+                                                            "chat[metadata]": "https://s3.amazonaws.com/com.textethan/images/avatar/{{$result}}",
+                                                            "chat[message]": "video"
+                                                        }
+                                                    },
+                                                    "method": "POST",
+                                                    "url": "https://wethan.herokuapp.com/v2/say.json",
+                                                    "data": {
+                                                        "chat[channel_id]": 1290
+                                                    }
+                                                },
+                                                "callback": {
+                                                    "type": "reload_silent"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "text": "Video camera",
+                                    "action": {
+                                        "type": "Media.camera",
+                                        "options": {
+                                            "type": "video"
+                                        },
+                                        "callback": {
+                                            "type": "Network.upload",
+                                            "options": {
+                                                "storage": {
+                                                    "type": "s3",
+                                                    "bucket": "com.textethan",
+                                                    "path": "assets/videos",
+                                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                                }
+                                            },
+                                            "callback": {
+                                                "type": "Network.request",
+                                                "options": {
+                                                    "loading": true,
+                                                    "include": {
+                                                        "data": {
+                                                            "chat[metadata]": "https://s3.amazonaws.com/com.textethan/assets/videos/{{$result}}",
+                                                            "chat[message]": "video"
+                                                        }
+                                                    },
+                                                    "method": "POST",
+                                                    "url": "https://wethan.herokuapp.com/v2/say.json",
+                                                    "data": {
+                                                        "chat[channel_id]": 1290
+                                                    }
+                                                },
+                                                "callback": {
+                                                    "type": "reload_silent"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "text": "Record audio",
+                                    "action": {
+                                        "type": "Audio.record",
+                                        "callback": {
+                                            "type": "Network.upload",
+                                            "options": {
+                                                "storage": {
+                                                    "type": "s3",
+                                                    "bucket": "com.textethan",
+                                                    "path": "assets/audios",
+                                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                                }
+                                            },
+                                            "callback": {
+                                                "type": "Network.request",
+                                                "options": {
+                                                    "loading": true,
+                                                    "include": {
+                                                        "data": {
+                                                            "chat[metadata]": "https://s3.amazonaws.com/com.textethan/assets/audios/{{$result}}",
+                                                            "chat[message]": "audio"
+                                                        }
+                                                    },
+                                                    "method": "POST",
+                                                    "url": "https://wethan.herokuapp.com/v2/say.json",
+                                                    "data": {
+                                                        "chat[channel_id]": 1290
+                                                    }
+                                                },
+                                                "callback": {
+                                                    "type": "reload_silent"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "right": {
+                    "action": {
+                        "type": "Network.request",
+                        "options": {
+                            "include": {
+                                "data": {
+                                    "chat[message]": "{{$input}}"
+                                }
+                            },
+                            "method": "POST",
+                            "url": "https://wethan.herokuapp.com/v2/say.json",
+                            "data": {
+                                "chat[channel_id]": 1290
+                            }
+                        },
+                        "callback": {
+                            "type": "reload_silent"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

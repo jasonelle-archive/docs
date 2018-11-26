@@ -1,0 +1,131 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src='https://www.celljs.org/cell.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.css' rel='stylesheet'>
+<style>
+body {
+  background: #191919;
+  font-family: Menlo, monaco, Courier;
+  color: rgba(255,255,255,0.8);
+  padding: 10px;
+  font-size:11px;
+}
+h1 {
+  font-family: "HelveticaNeue-Bold";
+  font-weight: bold;
+}
+.name {
+  color: #bc9458;
+}
+</style>
+<script>
+
+
+/****************************************************************
+
+	Powered by api.coinmarketcap.com
+    
+    Play around with this by tweaking the schema below!
+    
+    * Note: Each 'coin' object looks like this:
+    
+    {
+      "id": "bitcoin",
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "rank": "1",
+      "price_usd": "15937.1",
+      "price_btc": "1.0",
+      "24h_volume_usd": "15895900000.0",
+      "market_cap_usd": "267565374153",
+      "available_supply": "16788837.0",
+      "total_supply": "16788837.0",
+      "max_supply": "21000000.0",
+      "percent_change_1h": "-1.36",
+      "percent_change_24h": "-6.94",
+      "percent_change_7d": "14.61",
+      "last_updated": "1515384560"
+    }
+    
+****************************************************************/
+
+var Schema = {
+  row: function(coin, index) {
+    return [{
+      $text: "#" + (index+1) + " " + coin.name,
+      class: 'col name'
+    }, {
+      class: "col",
+      $text: coin.total_supply + " * $" + coin.price_usd
+    }, {
+      $text: "$" + Math.floor(Schema.metric(coin)),
+      class: 'col'
+    }]
+  },
+  metric: function(coin) {
+    return parseFloat(coin.total_supply) * parseFloat(coin.price_usd);
+  }  
+}
+
+
+
+
+
+
+
+
+
+/****************************************************************
+
+	Main App Starts Here
+
+****************************************************************/
+
+ಠᴥಠ = {
+  $cell: true,
+  class: 'container-fluid',
+  $components: [{
+    $type: "h1",
+    $text: "What coins are TRULY expensive?"
+  }, {
+    $text: "A $1 coin that has 1 Billion supply is as expensive as a $1000 coin that has 1 Million supply."
+  }, {
+    $type: "hr"
+  }, {
+    $text: "Chart sorted by Total Supply * Price per coin"
+  }, {
+    $type: "br"
+  }, {
+    $init: function() {
+      var self = this;
+      fetch("https://api.coinmarketcap.com/v1/ticker/?limit=100")
+      .then(function(res) {
+        return res.json()
+      })
+      .then(function(res){
+        self._update(res)
+      })
+    },
+    $update: function() {
+      var self = this;
+      this.$components = this._coins.map(function(coin, index) {
+        return {
+          class: 'row',
+          $components: Schema.row(coin, index)
+        }
+      })
+    },
+    _coins: [],
+    _update: function(coins) {
+      var self = this;
+      var sorted = coins.sort(function(a, b) {
+        return Schema.metric(b) - Schema.metric(a);
+      })
+      this._coins = sorted;
+    }    
+  }]
+}
+
+</script>
+</html>

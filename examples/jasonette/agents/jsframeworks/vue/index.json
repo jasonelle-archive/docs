@@ -1,0 +1,47 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Jasonette <-> Vue",
+      "agents": {
+        "vue": {
+          "url": "https://jasonette.github.io/agent.jsframeworks/vue"
+        }
+      },
+      "actions": {
+        "$load": {
+          "trigger": "reverse"
+        },
+        "reverse": {
+          "type": "$agent.request",
+          "options": {
+            "id": "vue",
+            "method": "app.reverseMessage",
+            "params": []
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": { 
+        "body": {
+          "layers": [{
+            "type": "label",
+            "text": "{{$jason}}",
+            "style": {
+              "size": "40",
+              "top": "0",
+              "height": "100%",
+              "align": "center",
+              "left": "0",
+              "width": "100%"
+            },
+            "action": {
+              "trigger": "reverse"
+            }
+          }]
+        }
+      }
+    }
+  }
+}

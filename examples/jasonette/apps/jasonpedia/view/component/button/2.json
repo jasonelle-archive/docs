@@ -1,0 +1,30 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Rounded Button"
+    },
+    "body": {
+      "sections": [{
+        "items": [{
+          "type": "vertical",
+          "style": {
+            "align": "center"
+          },
+          "components": [{
+            "type": "button",
+            "style": {
+              "font": "HelveticaNeue-Bold",
+              "background": "#0000ff",
+              "color": "#ffffff",
+              "width": "200",
+              "height": "200",
+              "corner_radius": "100",
+              "size": "15"
+            },
+            "text": "YES"
+          }]
+        }]
+      }]
+    }
+  }
+}

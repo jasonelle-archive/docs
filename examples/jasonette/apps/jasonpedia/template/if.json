@@ -1,0 +1,88 @@
+{
+  "$jason": {
+    "head": {
+      "title": "#if",
+      "data": {
+        "users": [{
+          "profile": "https://pbs.twimg.com/profile_images/557061751150112768/eMwi4Xz2_400x400.jpeg",
+          "username": "gliechtenstein"
+        }, {
+          "username": "guest" 
+        }, {
+          "profile": "https://pbs.twimg.com/profile_images/693649835086360577/xPofOC6p.png",
+          "username": "catsnacks"
+        }, {
+          "username": "guest" 
+        }, {
+          "username": "guest" 
+        }]
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "#if/#elseif/#else",
+            "menu": {
+              "text": "View JSON",
+              "href": {
+                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/template/if.json",
+                "view": "web"
+              }
+            }
+          },
+          "sections": [{
+            "header": {
+              "type": "label",
+              "text": "What's going on here:\n\nDisplay the default avatar (egg) for those who don't have an avatar, using the #if and #else logic (view JSON for more)",
+              "style": {
+                "background": "#f5f5f5"
+              }
+            },
+            "items": {
+              "{{#each users}}": {
+                "type": "horizontal",
+                "style": {
+                  "spacing": "10"
+                },
+                "components": [{
+                  "type": "image",
+                  "style": {
+                    "width": "50"
+                  },
+                  "url": [{
+                    "{{#if 'profile' in this}}": "{{profile}}"
+                  }, {
+                    "{{#else}}": "https://jasonette.github.io/Jasonpedia/assets/egg.png"
+                  }]
+                }, {
+                  "type": "vertical",
+                  "style": {
+                    "spacing": "5"
+                  },
+                  "components": [{
+                    "type": "label",
+                    "style": {
+                      "font": "HelveticaNeue-Bold",
+                      "size": "12"
+                    },
+                    "text": "{{username}}"
+                  }, {
+                    "type": "label",
+                    "style": {
+                      "background": "#282828",
+                      "corner_radius": "3",
+                      "color": "#c5d3d8",
+                      "padding": "10",
+                      "size": "12",
+                      "font": "Courier"
+                    },
+                    "text": "JSON:\n\n{{JSON.stringify(this, null, '  ')}}"
+                  }]
+                }]
+              }
+            }
+          }]
+        }
+      }
+    }
+  }
+}

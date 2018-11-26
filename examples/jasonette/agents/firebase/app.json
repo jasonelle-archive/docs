@@ -1,0 +1,62 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Firebase Agent Demo",
+      "agents": {
+        "firebase": {
+          "url": "https://jasonette.github.io/agent.firebase"
+        }
+      },
+      "actions": {
+        "update": {
+          "type": "$render"
+        },
+        "chat": {
+          "type": "$agent.request",
+          "options": {
+            "id": "firebase",
+            "method": "chat",
+            "params": [
+              "{{$get.chat}}"
+            ]
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "align": "bottom"
+          },
+          "footer": {
+            "input": {
+              "textfield": {
+                "name": "chat"
+              },
+              "right": {
+                "text": "send",
+                "action": {
+                  "trigger": "chat"
+                }
+              }
+            }
+          },
+          "sections": [
+            {
+              "items": {
+                "{{#each $jason.items}}": {
+                  "type": "label",
+                  "text": "{{this}}",
+                  "style": {
+                    "size": "12",
+                    "background": "#f00000",
+                    "color": "#ffffff"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
