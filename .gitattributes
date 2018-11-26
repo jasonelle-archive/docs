@@ -1,1 +1,3 @@
+$ cat .gitattributes
+examples/* linguist-vendored
 *.Rmd linguist-language=Markdown
