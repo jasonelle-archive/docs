@@ -1,3 +1,14 @@
 # Jasonette
 
-Jasonette 
+Quite a different way to make an app. Make iOS and Android apps 
+with just a single JSON,loaded over HTTP, local file, or anywhere.
+
+
+![](images/jasonette/intro/jasonette-intro.jpg)
+
+```{r echo=FALSE, results='asis'}
+tmp <- URLencode(paste(readLines("html/jasonette/intro-video.html"), collapse="\n"))
+
+cat('<iframe src="data:text/html;charset=utf-8,', tmp ,
+    '" style="border: none; seamless:seamless; width: 100%; height: 420px"></iframe>')
+```

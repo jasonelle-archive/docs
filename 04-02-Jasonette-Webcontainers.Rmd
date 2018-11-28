@@ -1,3 +1,0 @@
-## Web Containers
-
-Web containers are cool.
