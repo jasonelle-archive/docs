@@ -60,7 +60,7 @@
                   "components": [
                     {
                       "type": "image",
-                      "url": "{{$(this).find('img').attr('src')}}",
+                      "url": "http://web.archive.org{{$(this).find('img').attr('src')}}",
                       "style": {
                         "width": "50",
                         "corner_radius": "2"

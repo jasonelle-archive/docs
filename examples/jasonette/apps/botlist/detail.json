@@ -53,7 +53,7 @@
               "items": [
                 {
                   "type": "image",
-                  "url": "{{$jason.find('#sidebar .avatar').attr('src')}}"
+                  "url": "http://web.archive.org{{$jason.find('#sidebar .avatar').attr('src')}}"
                 }
               ]
             },
