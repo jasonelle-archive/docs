@@ -1,0 +1,25 @@
+{
+    "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/green-chat/app.json",
+    "title": "Green Chat",
+    "model": [
+      "Call Me",
+      "hi",
+      "bye",
+      "come again"
+    ],
+    "style": {
+      "background": "#ffffff",
+      "header": {
+        "background": "#8f9d6a",
+        "color": "#ffffff"
+      },
+      "sender": {
+        "background": "#8f9d6a",
+        "color": "#ffffff"
+      },
+      "receiver": {
+        "background": "#cecece",
+        "color": "#000000"
+      }
+    }
+  }
