@@ -1,0 +1,31 @@
+{
+    "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/studioghibli/app.json",
+    "collection": {
+      "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/studioghibli/data.json"
+    },
+    "style": {
+      "background": "#f00000",
+      "header": {
+        "background": "#f00000",
+        "color": "#ffffff"
+      },
+      "section": {
+        "color": "#ffffff",
+        "padding": "10",
+        "font": "HelveticaNeue-Bold",
+        "size": "53"
+      },
+      "key": {
+        "color": "#ffffff",
+        "font": "HelveticaNeue-Bold",
+        "align": "right",
+        "size": "33"
+      },
+      "value": {
+        "color": "#ffffff",
+        "align": "right",
+        "font": "HelveticaNeue",
+        "size": "12"
+      }
+    }
+  }
