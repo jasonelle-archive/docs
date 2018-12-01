@@ -2,4 +2,8 @@
 
 set -e
 
-[ "${TRAVIS_BRANCH}" != "develop" ] && echo "Commmit not on develop branch" && exit -1
+if [ "${TRAVIS_BRANCH}" != "develop" ]
+then
+  echo "Commmit not on develop branch"
+  exit -1
+fi
