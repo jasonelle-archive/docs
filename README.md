@@ -2,6 +2,8 @@
 
 Documentation made using [Bookdown](https://bookdown.org/).
 
+[![Build Status](https://travis-ci.com/jasonelle/docs.svg?branch=develop)](https://travis-ci.com/jasonelle/docs)
+
 ## Tips
 
 - `build-docker.sh` Uses https://hub.docker.com/r/rocker/verse/ to build.
