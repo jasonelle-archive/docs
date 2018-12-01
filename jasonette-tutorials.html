@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Jasonelle Documentation</title>
+  <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Jasonelle Documentation" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://jasonelle.com" />
+  
+  <meta property="og:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  <meta name="github-repo" content="jasonelle/jasonelle" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Jasonelle Documentation" />
+  
+  <meta name="twitter:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  
+
+<meta name="author" content="Jasonelle Team">
+
+
+<meta name="date" content="2018-12-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="tools.html">
+<link rel="next" href="how-to-guides.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">📝 Jasonelle Docs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a></li>
+<li class="chapter" data-level="3" data-path="cell-js.html"><a href="cell-js.html"><i class="fa fa-check"></i><b>3</b> Cell.js</a><ul>
+<li class="chapter" data-level="3.1" data-path="cell-js.html"><a href="cell-js.html#about"><i class="fa fa-check"></i><b>3.1</b> About</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="jasonette.html"><a href="jasonette.html"><i class="fa fa-check"></i><b>4</b> Jasonette</a><ul>
+<li class="chapter" data-level="4.1" data-path="jasonette.html"><a href="jasonette.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="jasonette.html"><a href="jasonette.html#json-to-native-components"><i class="fa fa-check"></i><b>4.1.1</b> JSON to Native Components</a></li>
+<li class="chapter" data-level="4.1.2" data-path="jasonette.html"><a href="jasonette.html#free-battle-tested"><i class="fa fa-check"></i><b>4.1.2</b> Free &amp; Battle Tested</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="selector-transformer.html"><a href="selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Selector Transformer</a></li>
+<li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a></li>
+<li class="chapter" data-level="7" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html"><i class="fa fa-check"></i><b>7</b> Jasonette Tutorials</a><ul>
+<li class="chapter" data-level="7.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a></li>
+<li class="chapter" data-level="7.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="how-to-guides.html"><a href="how-to-guides.html"><i class="fa fa-check"></i><b>8</b> How To Guides</a></li>
+<li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a></li>
+<li class="divider"></li>
+<li><a href="https://jasonelle.com">Jasonelle.com</a></li>
+<li><a href="https://github.com/jasonelle/docs/tree/develop/examples">Examples</a></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Jasonelle Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="jasonette-tutorials" class="section level1">
+<h1><span class="header-section-number">7</span> Jasonette Tutorials</h1>
+<p>The following tutorials are using <em>Jasonette</em> as the main technology.</p>
+
+<div id="build-a-qrcodebarcode-scanning-app-with-26-lines-of-json" class="section level2">
+<h2><span class="header-section-number">7.1</span> Build a QRCode/Barcode scanning app with 26 lines of JSON</h2>
+<p>This tutorial was posted by <a href="https://medium.com/@gliechtenstein/build-a-qrcode-barcode-scanning-app-with-26-lines-of-json-b83453d39197">Ethan on Medium</a></p>
+<div class="figure">
+<img src="images/tutorials/qrcode/1.gif" />
+
+</div>
+<p>Nowadays we see QR code everywhere. We see it on a <em>billboard</em>, we see it embedded in <em>product packaging</em>, we use it to share <em>Bitcoin public key</em>.</p>
+<p>QR code is like a 2D version of barcode.</p>
+<p>As a publisher, you can pack all kinds of data in it as an image, and as a consumer you can simply scan the QR code to extract whatever is stored in the code.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="images/tutorials/qrcode/2.png" /></td>
+<td><img src="images/tutorials/qrcode/3.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<p>Both <em>web.jasonette.com</em> and <em>jasonbase.com</em> websites incorporate QR Code scanning, so you can just open your <em>JASON</em> app and scan the QR code to automatically open the app.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="images/tutorials/qrcode/4.png" /></td>
+<td><img src="images/tutorials/qrcode/5.png" /></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Scan the QR code from JASON app to load the app</p>
+</blockquote>
+<p>But you can do much more than just storing a URL in a QR code. Let’s take a look at how you can implement the QR code feature for your app too.</p>
+<p>Like any other features on Jasonette, it’s all built into Jasonette, so you don’t need to do anything. You just need to load a JSON markup that instructs Jasonette to scan QR code.</p>
+<div id="how-to-implement" class="section level4">
+<h4><span class="header-section-number">7.1.0.1</span> How to implement</h4>
+<p>You can implement barcode &amp; QR code scanning using a newly added API called <code>$vision</code>.</p>
+<p>Here’s how you implement them:</p>
+<p><strong>1 - Include back facing camera as background, as follows</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;camera&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;device&quot;</span><span class="fu">:</span> <span class="st">&quot;back&quot;</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p><strong>2 - Wait for <code>$vision.ready</code> event and call <code>$vision.scan</code> action</strong></p>
+<p>You need to wait for the camera to be ready before calling the scan action.</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;$vision.ready&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$vision.scan&quot;</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;camera&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;device&quot;</span><span class="fu">:</span> <span class="st">&quot;back&quot;</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p><strong>3 - Now wait for <code>$vision.onscan</code> event</strong></p>
+<p>This will be triggered once when the camera scans a new barcode. The event will return the data inside <code>$jason</code>, which you can parse to use it for your own purpose, like below:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;$vision.ready&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$vision.scan&quot;</span>
+            <span class="fu">},</span>
+            <span class="dt">&quot;$vision.onscan&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$util.alert&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+                <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Scanned&quot;</span><span class="fu">,</span>
+                <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$jason.content}}&quot;</span>
+            <span class="fu">}</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;camera&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;device&quot;</span><span class="fu">:</span> <span class="st">&quot;back&quot;</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+</div>
+<div id="simple-and-flexible-works-on-both-ios-and-android." class="section level4">
+<h4><span class="header-section-number">7.1.0.2</span> Simple and Flexible, works on both iOS and Android.</h4>
+<p>Believe it or not, I have just introduced you to the entirety of the <code>$vision</code> API.</p>
+<p>No need to write native code or install additional features, it’s already all built into <em>Jasonette-iOS</em> and <em>Jasonette-Android</em>. Just load the JSON markup from <em>Jasonette</em> and it should just work.</p>
+<p>This works not just for the QR code, but also for regular “one dimensional” barcode we’re all familiar with.</p>
+<p>Just like any other <em>Jasonette</em> actions, you can chain the scanned data with other <em>Jasonette</em> action to achieve whatever you need to build. For example you could:</p>
+<ul>
+<li>Automatically open a web page by scanning a QR code containing a URL</li>
+<li>Render any UI component using $render and passing the scanned data to a template.</li>
+<li>etc.</li>
+</ul>
+<p>Below you see another example which scans barcode and qrcode, and displays the content on the screen in realtime:</p>
+<div class="figure">
+<img src="images/tutorials/qrcode/6.gif" />
+
+</div>
+<blockquote>
+<p>Check out the code for above example in <a href="https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/action/vision/index.json">Jasonpedia</a>.</p>
+</blockquote>
+</div>
+<div id="conclusion" class="section level4">
+<h4><span class="header-section-number">7.1.0.3</span> Conclusion</h4>
+<p>QR code is really cool, and Jasonette makes it super easy to implement it just by writing a few lines of JSON markup.</p>
+<p>Not only is it easy, but it’s also very flexible, since you can pass the return value to any other action to build whatever you want.</p>
+<p>Please play with it and share if you come up with any cool examples.</p>
+<p>Have fun!</p>
+
+</div>
+</div>
+<div id="turn-your-website-into-a-mobile-app-with-7-lines-of-json" class="section level2">
+<h2><span class="header-section-number">7.2</span> Turn Your Website into a Mobile App with 7 Lines of JSON</h2>
+<p>A New Approach for Blending Web Engine into Native Apps</p>
+<p>This tutorial was posted by Ethan on <a href="https://medium.freecodecamp.org/how-to-turn-your-website-into-a-mobile-app-with-7-lines-of-json-631c9c9895f5">FreeCodeCamp</a>.</p>
+<div class="figure">
+<img src="images/tutorials/website2app/1.png" />
+
+</div>
+<p>What if I told you the <strong>7 lines of JSON above, colored in orange</strong> is all you need to turn a website into a mobile app? No need to rewrite your website using some framework API just to make it behave like a mobile app. Just bring your existing website as is, and blend it into a native app with a simple URL reference.</p>
+<p>And what if, just by tweaking the JSON markup a bit, you can access all the native APIs, native UI components, as well as native view transitions out of the box?</p>
+<p>Here’s what a minimal example looks like in action:</p>
+<div class="figure">
+<img src="images/tutorials/website2app/2.gif" />
+
+</div>
+<p>Notice how I’ve embedded a <em>github.com</em> web page but the rest of the layout is all native UI components, such as the <em>navigation header</em> and the bottom <em>tab bar</em>. And the transition is automatically native without you having to rewrite the website using any APIs.</p>
+<p>Before I explain how, you may ask:</p>
+<blockquote>
+<p>“That’s cool, but can you do anything meaningful other than just displaying the web page in a native app frame?”</p>
+</blockquote>
+<p>Great question, because that’s the main topic of this post. All you need to do is create a seamless <strong>2-way communication channel between the web view and the app</strong>, so the parent app can trigger any <em>JavaScript</em> functions inside the web view and the web view can reach outside to call native APIs.</p>
+<p>Here’s one such example:</p>
+<div class="figure">
+<img src="images/tutorials/website2app/3.gif" />
+
+</div>
+<p>Note that this view contains:</p>
+<ul>
+<li>Native navigation header, complete with built-in transition functionality</li>
+<li>A Web view, which embeds a QR code generator web app</li>
+<li>A native chat input component at the bottom</li>
+</ul>
+<p>All this can be described by just tweaking some of the JSON markup attributes we saw above.</p>
+<p>Finally, note that the QR code changes as you enter something from the chat input. The chat input triggers a JavaScript function inside the QR code web app that re-generates the image.</p>
+<p>No app development framework has tried to fundamentally solve this problem of <strong>“seamless integration of web view into native apps”</strong> because they’re all focused on picking either 100% native or 100% HTML5 side.</p>
+<p>Whenever you hear someone talk about the future of mobile apps, you would probably hear them talk about <strong>“Will it be the HTML5 approach that wins out? Or will it be native?”</strong>.</p>
+<p>None of them see <code>native</code> and <code>html</code> as something that could co-exist and furthermore, create synergy and achieve things that are not easily possible otherwise.</p>
+<p>In this article I’m going to explain:</p>
+<ul>
+<li>Why blending web engine and native components is often a good idea.</li>
+<li>Why a seamless integration of HTML and Native is not easy, and how I implemented one.</li>
+<li>Most importantly, how YOU can use it to build your own app instantly.</li>
+</ul>
+<div id="why-would-you-use-html-in-a-native-app" class="section level4">
+<h4><span class="header-section-number">7.2.0.1</span> Why would you use HTML in a native app?</h4>
+<p>Before we go further, let’s first discuss whether this is even a good idea, and when you may want to take this approach.</p>
+<p>Here are some potential use cases:</p>
+<p><strong>Use Web Native Features</strong></p>
+<p>Some parts of your app may be better implemented using the web engine. For example, <a href="https://en.wikipedia.org/wiki/WebSocket">Websocket</a> is a web-native feature that’s designed for the web environment. In this case it makes sense to use the built-in web engine (<strong>WKWebView for iOS and WebView for Android</strong>) instead of installing a 3rd party library that essentially <em>“emulates”</em> Websocket.</p>
+<p>No need to install additional code just to do something that you can do for free, which brings us to the next point.</p>
+<p><strong>Avoid Large Binary Size</strong></p>
+<p>You may want to quickly incorporate features that will otherwise require a huge 3rd party library.</p>
+<p>For example, to incorporate a QR code image generator natively, you will need to install some 3rd party library which will increase the binary size. But if you use the web view engine and a <em>JavaScript</em> library through a simple <code>&lt;script src&gt;</code>, you get all that for free, and you don’t need to install any 3rd party native libraries.</p>
+<p><strong>No Reliable Mobile Library Exists</strong></p>
+<p>For some cutting edge technologies, there is no reliable and stable mobile implementation yet.</p>
+<p>Fortunately most of these technologies have web implementations, so the most efficient way to integrate them is to use their <em>JavaScript</em> library.</p>
+<p><strong>Build part-native, part-web-based apps</strong></p>
+<p>Many new developers looking to port their website into a mobile app get discouraged or overwhelmed when they find out some of their existing website features are too complex to quickly rewrite from scratch for each mobile platform.</p>
+<p>For example, you may have a single web page that’s too complex to immediately convert to a mobile app, but the rest of your website may be easily converted.</p>
+<p>In this case, it would be nice if there was a way to build most of the app natively, but for that particular complex web page, somehow seamlessly integrate it into the app as HTML.</p>
+</div>
+<div id="how-does-it-work" class="section level4">
+<h4><span class="header-section-number">7.2.0.2</span> How does it work?</h4>
+<p><strong>Jasonette</strong></p>
+<p><em>Jasonette</em> is an open source, markup-based approach to building cross-platform native apps.</p>
+<p>It’s like a web browser, but instead of interpreting HTML markup into web pages, it interprets JSON markup into native apps on iOS and Android.</p>
+<p>Just like how all web browsers have exactly the same code but can deliver you all kinds of different web apps by interpreting various HTML markup on demand, all <em>Jasonette</em> apps have exactly the same binary, and it interprets various JSON markup on demand to create your app. The developers never need to touch the code. Instead, you build apps by writing a markup that translates to native app in real-time.</p>
+<p>You can learn more about <em>Jasonette</em> <a href="https://jasonelle.com/docs">here</a>.</p>
+<p>While <em>Jasonette</em> at its core is all about building native apps, this particular article is about integrating HTML into the core native engine, so let’s talk about that.</p>
+<p><strong>Jasonette Web Container</strong></p>
+<p>Native apps are great but sometimes we need to make use of web features.</p>
+<p>But integrating web views into a native app is a tricky business. A seamless integration requires:</p>
+<ul>
+<li><p><strong>Web view should be integrated as a part of native layout</strong>: The web view should blend into the app as a part of the native layout and is treated just like any other native UI components. Otherwise it will feel clunky, and it will feel exactly like what it is a website.</p></li>
+<li><p><strong>Parent app can control child web container</strong>: The parent app should be able to freely control the child web view.</p></li>
+<li><p><strong>Child web container can trigger native events on the parent app</strong>: The child app should be able to trigger the parent app’s events to run native APIs.</p></li>
+</ul>
+<p>These are a lot of work, so I first worked on only the first piece of the puzzle  <strong>simply embedding a web container into native layout</strong> and released it as version 1.</p>
+<p>This was already pretty useful, but it still had the limitation of being non-interactive.</p>
+<p>The parent app couldn’t control the child web container, and the child couldn’t notify the parent of any event, <strong>keeping the web container completely isolated from the outside world</strong>.</p>
+<p><strong>Jasonette Web Container 2.0: Make it Interactive</strong></p>
+<p>After releasing version 1, I experimented with the second piece of the puzzle <strong>adding interactivity to the web container</strong>.</p>
+<p>The next section explains the solutions that were added to make the previously-static web containers interactive, making them significantly more powerful.</p>
+</div>
+<div id="implementation-interactive-web-container" class="section level4">
+<h4><span class="header-section-number">7.2.0.3</span> Implementation: Interactive Web Container</h4>
+<p><strong>1 - Load by URL</strong></p>
+<p><em>Problem</em></p>
+<p>Previously in version 1, to use web container as a background view component, you had to first set the <code>$jason.body.background.type</code> to <code>&quot;html&quot;</code> and then hard-code the HTML text under <code>$jason.body.background.text</code> attribute like this:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="er">...</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello World&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p>Naturally people wanted to be able to instantiate the container using simply a web URL instead of having to hardcode the entire HTML text in a single line.</p>
+<p><em>Solution</em></p>
+<p>Web container 2.0 has added the <code>url</code> attribute. You can embed a local <code>file://</code> HTML like this (it loads from the local HTML file you ship with the app):</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="er">...</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://index.html&quot;</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p>Or embed a remote <code>http[s]://</code> URL like this (it loads from a remote HTML):</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="er">...</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://news.ycombinator.com&quot;</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p><strong>2 - Parent App &lt;=&gt; Web Container Communication</strong></p>
+<p><em>Problem</em></p>
+<p>Previously, web containers were only for displaying content, and not interactive. This meant NONE of the following was possible:</p>
+<ul>
+<li><p><strong>Jasonette =&gt; Web Container</strong>: Call <em>JavaScript</em> functions inside the web container from <em>Jasonette</em>.</p></li>
+<li><p><strong>Web Container =&gt; Jasonette</strong>: Call native API from web container code.</p></li>
+</ul>
+<p>All you could do was display the web container. This was similar to how you would embed an iframe in a web page, but the main web page had no access to what was inside the iframe.</p>
+<p><em>Solution</em></p>
+<p>The whole point of <em>Jasonette</em> is to design a standard markup language to describe cross platform mobile apps. In this case, we needed a markup language that could comprehensively describe communications between the parent app and the child web container.</p>
+<p>To achieve this, I came up with a <a href="http://www.jsonrpc.org/specification">JSON-RPC</a> based communication channel between the parent app and the child web container. Since everything on <em>Jasonette</em> is expressed in <code>JSON</code> objects, it made perfect sense to use the <code>JSON-RPC</code>standard format as the communication protocol.</p>
+<div class="figure">
+<img src="images/tutorials/website2app/4.png" />
+
+</div>
+<p>To make a <em>JavaScript</em> function call into the web container, we declare an action called <code>$agent.request</code>:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$agent.request&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;$webcontainer&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;login&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;params&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;username&quot;</span><span class="ot">,</span> <span class="st">&quot;password&quot;</span><span class="ot">]</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p><code>$agent.request</code> is the native API that triggers a <em>JSON-RPC</em> request into the web container. To use it, we must pass an <code>options</code> object as its parameter.</p>
+<p>The <code>options</code> object is the actual <a href="http://www.jsonrpc.org/specification#conventions">JSON-RPC</a> request that will be sent to the web container. Let’s look at what each attribute means:</p>
+<ul>
+<li><p><code>id</code>: Web container is built on top of a lower level architecture called agent. Normally you can have multiple agents for a single view, and each agent can have its unique ID. But Web container is a special type of agent which can only have the id of <code>$webcontainer</code>, which is why we use that ID here.</p></li>
+<li><p><code>method</code>: The <em>JavaScript</em> function name to call.</p></li>
+<li><p><code>params</code>: The array of parameters to pass to the <em>JavaScript</em> function.</p></li>
+</ul>
+<p>The full markup would look something like this:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;$load&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$agent.request&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+                <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;$webcontainer&quot;</span><span class="fu">,</span>
+                <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;login&quot;</span><span class="fu">,</span>
+                <span class="dt">&quot;params&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;alice&quot;</span><span class="ot">,</span> <span class="st">&quot;1234&quot;</span><span class="ot">]</span>
+            <span class="fu">}</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;header&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Web Container 2.0&quot;</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://index.html&quot;</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p>This markup is saying:</p>
+<p>When the view loads (<code>$jason.head.actions.$load</code>), make a <em>JSON-RPC</em> request into the web container agent (<code>$agent.request</code>) where the request is specified under options.</p>
+<p>The web container is defined under <code>$jason.body.background</code>, which in this case loads a local file called <code>file://index.html</code>.</p>
+<p>It will look for a <em>JavaScript</em> function called login and pass the two arguments under params ( <code>&quot;alice&quot;</code> and <code>&quot;1234&quot;</code>).</p>
+<pre><code>login(&quot;alice&quot;, &quot;1234&quot;)</code></pre>
+<p>I’ve only explained how the parent app can trigger the child web container’s <em>JavaScript</em> function calls, but you can also do the opposite and let the web container trigger the parent app’s native API.</p>
+<p>To learn more, check out the <code>agent documentation</code>.</p>
+<p><strong>Example</strong></p>
+<p>Let’s come back to the QR code example I briefly shared above:</p>
+<div class="figure">
+<img src="images/tutorials/website2app/3.gif" />
+
+</div>
+<ul>
+<li>The footer input component is 100% native.</li>
+<li>The QR code is generated by the web container as a <a href="https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/webcontainer/agent/fn/agent.html">web app</a>.</li>
+<li>When a user enters something and presses “Generate,” it calls <code>$agent.request</code> action into the web container agent, calling the <em>JavaScript</em> <a href="https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/webcontainer/agent/fn/agent.html#L22">function <code>“qr”</code></a>.</li>
+</ul>
+<p>You can check out the <a href="https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/webcontainer/agent/fn/index.json">example here</a>.</p>
+<p><strong>3 - Script Injection</strong></p>
+<p><strong>Problem</strong></p>
+<p>Sometimes you may want to dynamically inject <em>JavaScript</em> code into the web container AFTER it’s finished loading the initial HTML.</p>
+<p>Imagine you want to build a custom web browser app. You may want to inject your own custom <em>JavaScript</em> into every web view to customize the web view’s behavior, kind of like how web browser extensions work.</p>
+<p>Even if you’re not building a web browser, you may want to use the script injection method whenever you want a custom behavior for a URL whose content you have no control over. The only way to communicate between the native app and the web container is through the <code>$agent</code> API. But if you can’t change the HTML content, the only way to add the <code>$agent</code> interface into the web container is through dynamic injection.</p>
+<p><strong>Solution</strong></p>
+<p>As mentioned in the previous section, the <code>$jason.body.background</code> web container is just another agent. This means you can use the same <code>$agent.inject</code> method available to regular agents.</p>
+<div class="figure">
+<img src="images/tutorials/website2app/5.png" />
+
+</div>
+<p><strong>4 - URL Click Handling</strong></p>
+<p>In the past, there were only two ways a web container could handle link clicks:</p>
+<ul>
+<li><p><strong>Readonly</strong>: Treat the web container as readonly and ignore all events such as touch or scroll. All web containers are readonly unless you tell them to behave like a regular browser, as described below.</p></li>
+<li><p><strong>Regular Browser Behavior</strong>: Let users interact with the page by behaving like a normal browser. You declare it by setting <code>&quot;type&quot;: &quot;$default&quot;</code> as its <code>action</code> attribute.</p></li>
+</ul>
+<p><em>Problem</em></p>
+<p>Both are “all or nothing” solutions.</p>
+<ul>
+<li><p>In the <em>“Readonly”</em> case, all your interactions are completely ignored by the web container.</p></li>
+<li><p>In the <em>“Regular Browser Behavior”</em> case, the web container functions literally as a browser. When you click a link, it would just send you to that link by refreshing the page just like a web page. There was no way to hijack the click and call some native API.</p></li>
+</ul>
+<p><em>Solution</em></p>
+<p>With the new web container, you can now attach any <code>action</code> on the <code>$jason.body.background</code> web container to handle link click events.</p>
+<div class="figure">
+<img src="images/tutorials/website2app/6.png" />
+
+</div>
+<p>Let’s look at an example:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;displayBanner&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$util.banner&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+                <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Clicked&quot;</span><span class="fu">,</span>
+                <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Link {{$jason.url}} clicked!&quot;</span>
+            <span class="fu">}</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://index.html&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;trigger&quot;</span><span class="fu">:</span> <span class="st">&quot;displayBanner&quot;</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p>Here we have attached <code>&quot;trigger&quot;: &quot;displayBanner&quot;</code> to the web container. This means that when a user clicks any link in the web container, it will trigger <code>displayBanner</code> action instead of letting the web view handle it.</p>
+<p>Also, if you look at the <code>displayBanner</code> action, you’ll notice the <code>$jason</code> variable. In this case, the clicked link will be passed through the <code>$jason</code> variable. For example, if you clicked a URL named <code>&quot;https://google.com&quot;</code>, the <code>$jason</code> will have the following value:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://google.com&quot;</span>
+<span class="fu">}</span></code></pre></div>
+<p>This means you can selectively trigger different actions by checking the <code>$jason.url</code> value.</p>
+<p>Let’s take another example where we implement a custom web browser:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;handleLink&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+            <span class="dt">&quot;{{#if $jason.url.indexOf(&#39;signin&#39;) !== -1 }}&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+                <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span>
+                <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+                <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://key.html&quot;</span>
+                <span class="fu">}</span>
+            <span class="fu">}</span>
+            <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+            <span class="dt">&quot;{{#else}}&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+                <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$default&quot;</span>
+            <span class="fu">}</span>
+            <span class="fu">}</span><span class="ot">]</span>
+        <span class="fu">}</span>
+        <span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://index.html&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;trigger&quot;</span><span class="fu">:</span> <span class="st">&quot;handleLink&quot;</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p>We test if the URL contains the string <code>signin</code> and then run two different actions depending on the result.</p>
+<ul>
+<li>If it contains <code>signin</code>, it opens a new view to take care of signing in natively.</li>
+<li>If it doesn’t contain <code>signin</code>, just run the <code>&quot;type&quot;: &quot;$default&quot;</code> action so that it behaves like a regular browser.</li>
+</ul>
+</div>
+<div id="example-usage" class="section level4">
+<h4><span class="header-section-number">7.2.0.4</span> Example Usage</h4>
+<p><strong>Building a custom web browser</strong></p>
+<p>We can now take advantage of the fact that the new web container can:</p>
+<ul>
+<li>Take a <code>url</code> attribute to load itself, functioning as a full-fledged browser</li>
+<li>Selectively handle link clicks depending on the URL</li>
+</ul>
+<p>We can even build a custom web browser app with just a dozen lines of JSON. Since we can now hijack every link click, we can take a look at <code>$jason.url</code> and run whatever actions we want depending on the URL.</p>
+<p>For example, take a look at the example below:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="images/tutorials/website2app/7.gif" /></td>
+<td><img src="images/tutorials/website2app/8.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p>On the left side we see that clicking a link behaves like a regular browser (<code>&quot;type&quot;: &quot;$default&quot;</code>)</p>
+<p>On the right side we see that clicking a link does a native transition to another JASON view.</p>
+<p>All this can be achieved by selectively triggering different actions based on <code>$jason.url</code>.</p>
+<p><strong>Step 1. Attach an action named <code>visit</code> to the web container like this</strong>:</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="er">...</span>
+    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://news.ycombinator.com&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;trigger&quot;</span><span class="fu">:</span> <span class="st">&quot;visit&quot;</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
+<p><strong>Step 2. Run relevant actions inside <code>visit</code>, based on <code>$jason.url</code></strong></p>
+<p>In the following code, we’re checking if <code>$jason.url</code> matches newest, show, ask, and so on (they’re the top menu item links). If they do, we let the web container behave like a regular browser by setting <code>&quot;type&quot;: &quot;$default&quot;</code>.</p>
+<p>If they don’t match the pattern, we make a native <code>$href</code> transition to a new view and pass the clicked link as a parameter.</p>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="er">...</span>
+<span class="er">&quot;actions&quot;:</span> <span class="fu">{</span>
+    <span class="dt">&quot;visit&quot;</span><span class="fu">:</span> <span class="ot">[</span>
+        <span class="fu">{</span>
+        <span class="dt">&quot;{{#if /</span><span class="ch">\\</span><span class="dt">/(newest|show|ask)$/.test($jason.url) }}&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$default&quot;</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span><span class="ot">,</span>
+        <span class="fu">{</span>
+        <span class="dt">&quot;{{#else}}&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jasonette.github.io/Jasonpedia/webcontainer/agent/hijack.json&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;preload&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+                <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span>
+            <span class="fu">},</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+                <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$jason.url}}&quot;</span>
+            <span class="fu">}</span>
+            <span class="fu">}</span>
+        <span class="fu">}</span>
+        <span class="fu">}</span>
+    <span class="ot">]</span>
+<span class="fu">}</span><span class="er">,</span></code></pre></div>
+<p>Check out the full JSON markup for the <a href="https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/webcontainer/agent/hijack.json">web browser here</a> (it’s only 48 lines!).</p>
+<p><strong>Instant “Hybrid” App</strong></p>
+<p>When people normally talk about “hybrid” apps, they mostly mean HTML web apps wrapped inside a native app frame.</p>
+<p>But that’s not what I mean here. When I say “Hybrid,” I mean a truly hybrid app, where one app can have multiple native views and multiple web-based views simultaneously. Also where one view can have multiple native UI components and a web container rendered in the same native layout.</p>
+<p><strong>The cross-over between web-based view and native view should be so seamless that it’s hard to tell where one starts and ends.</strong></p>
+<div class="figure">
+<img src="images/tutorials/website2app/9.gif" />
+
+</div>
+<p>In this example, I’ve created an app that displays jasonbase.com in a web container as the home view.</p>
+<p>Jasonbase is a free JSON hosting service I built to easily host JSON markup for <em>Jasonette</em> apps.</p>
+<p>Naturally, it’s just a website, but I have embedded it in <em>Jasonette</em> so that when you click the link, instead of opening a web page, it makes a native <code>$href</code> transition to a native <code>JASON</code> view.</p>
+<p>I didn’t have to touch any of Jasonbase.com’s code to build this app.</p>
+<p>I simply embedded the website into <em>Jasonette</em> as a web container, and hijacked the link clicks to handle them natively, so it can do all the native stuff like triggering native APIs and making native transitions.</p>
+<p><a href="https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/webcontainer/agent/hybrid.json">You can check out the code here</a>.</p>
+</div>
+<div id="conclusion-1" class="section level4">
+<h4><span class="header-section-number">7.2.0.5</span> Conclusion</h4>
+<p>In my opinion, what makes all this work fabulously is that <strong>everything is taken care of on the framework level</strong>. All the hard work is taken care of behind the scenes.</p>
+<p>Instead of putting the burden on the app developers to implement all of the following from scratch:</p>
+<ul>
+<li><p>Embed a webview into native layout.</p></li>
+<li><p>Create a <em>JavaScript</em> bridge so the app can make function calls into the web view.</p></li>
+<li><p>Creating a native event handling architecture so the web view can trigger native events on the parent app.</p></li>
+</ul>
+<p>The solution was to create an abstraction made up of:</p>
+<ul>
+<li><p><strong>Declarative Markup Language</strong>: for describing how to embed a web view into a native app.</p></li>
+<li><p><strong>Communication Protocol (JSON-RPC)</strong>: to allow dead-simple interactions between the app and its child web views.</p></li>
+</ul>
+<p>I don’t claim this approach to be the ultimate solution to solve everything, but I’m happy to say that this has been a great solution for my own use case.</p>
+<p>I was trying to build an app that builds on a super edge technology which has no stable and reliable mobile implementations (and it’s not clear if there ever will be a mobile implementation due to the protocol’s nature).</p>
+<p>Thankfully it had <em>JavaScript</em> implementations so I could easily integrate it into the app without hassle.</p>
+<p>Overall, it’s been great and I’m satisfied with how it turned out. The documentation is up to date to reflect all the new features, so feel free to dig in and play around.</p>
+<blockquote>
+<p>Disclaimer: With great power comes great responsibility</p>
+</blockquote>
+<p>I would like to end with a disclaimer: as great as this newly found power is, I think you need to keep a balance to build an app with a great user experience.</p>
+<p>Some may take this and build an entire app using web views only, but then you will end up with an app that’s basically just a website, which defeats the purpose of building a dedicated app.</p>
+<p>I emphasize that I’m not saying you should always build apps with both HTML and native. I am saying this can be very useful for many people in different situations. Just don’t go overboard with it.</p>
+<blockquote>
+<p>Follow Along to Learn More</p>
+</blockquote>
+<p>There are many different configurations in which the <em>Jasonette</em> native core and its child web container can communicate to get things done in creative and powerful ways, and this post is just scratching the surface.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tools.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="how-to-guides.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["jasonelle.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

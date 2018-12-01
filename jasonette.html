@@ -116,11 +116,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="selector-transformer.html"><a href="selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Selector Transformer</a></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a></li>
-<li class="chapter" data-level="7" data-path="tutorials.html"><a href="tutorials.html"><i class="fa fa-check"></i><b>7</b> Tutorials</a><ul>
-<li class="chapter" data-level="7.1" data-path="tutorials.html"><a href="tutorials.html#jasonette-1"><i class="fa fa-check"></i><b>7.1</b> Jasonette</a><ul>
-<li class="chapter" data-level="7.1.1" data-path="tutorials.html"><a href="tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a></li>
-<li class="chapter" data-level="7.1.2" data-path="tutorials.html"><a href="tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.1.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a></li>
-</ul></li>
+<li class="chapter" data-level="7" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html"><i class="fa fa-check"></i><b>7</b> Jasonette Tutorials</a><ul>
+<li class="chapter" data-level="7.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a></li>
+<li class="chapter" data-level="7.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="how-to-guides.html"><a href="how-to-guides.html"><i class="fa fa-check"></i><b>8</b> How To Guides</a></li>
 <li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a></li>
@@ -173,71 +171,71 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h4><span class="header-section-number">4.1.1.1</span> Structure</h4>
 <p>Organize your code in nested JSON objects.</p>
 <p><strong>Example:</strong></p>
-<pre><code>{
-    &quot;$jason&quot;: {
-        &quot;head&quot;: {...},
-        &quot;body&quot;: {
-            &quot;sections&quot;: [{
-            &quot;items&quot;: [
-                { &quot;type&quot;: &quot;image&quot;, &quot;url&quot;: &quot;...&quot; },
-                { &quot;type&quot;: &quot;label&quot;, &quot;text&quot;: &quot;...&quot; },
-                ...
-            ]
-            }]
-        }
-    }
-}</code></pre>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span><span class="er">...</span><span class="fu">},</span>
+        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+            <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span>
+                <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span> <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span> <span class="fu">}</span><span class="ot">,</span>
+                <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span> <span class="fu">}</span><span class="ot">,</span>
+                <span class="er">...</span>
+            <span class="ot">]</span>
+            <span class="fu">}</span><span class="ot">]</span>
+        <span class="fu">}</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
 </div>
 <div id="layout" class="section level4">
 <h4><span class="header-section-number">4.1.1.2</span> Layout</h4>
 <p>Construct complex layouts with JSON.</p>
 <p><strong>Example:</strong></p>
 <p>Build a card UI with an image, labels, and nested layouts.</p>
-<pre><code>{
-    &quot;type&quot;: &quot;horizontal&quot;,
-    &quot;components&quot;: [
-        { &quot;type&quot;: &quot;image&quot;, &quot;url&quot;: &quot;file://ethan.jpeg&quot; },
-        { &quot;type&quot;: &quot;vertical&quot;,
-        &quot;components&quot;: [
-            { &quot;type&quot;: &quot;label&quot;, &quot;text&quot;: &quot;Ethan&quot; },
-            { &quot;type&quot;: &quot;label&quot;, &quot;text&quot; &quot;www.textethan.com&quot; }
-        ]
-        }
-    ]
-}</code></pre>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span>
+        <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span> <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://ethan.jpeg&quot;</span> <span class="fu">}</span><span class="ot">,</span>
+        <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span>
+            <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Ethan&quot;</span> <span class="fu">}</span><span class="ot">,</span>
+            <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span> <span class="dt">&quot;www.textethan.com&quot;</span> <span class="fu">}</span>
+        <span class="ot">]</span>
+        <span class="fu">}</span>
+    <span class="ot">]</span>
+<span class="fu">}</span></code></pre></div>
 </div>
 <div id="actions" class="section level4">
 <h4><span class="header-section-number">4.1.1.3</span> Actions</h4>
 <p>Describe actions with JSON.</p>
 <p><strong>Example:</strong></p>
 <p>Make a network request and draw the result.</p>
-<pre><code>{
-    &quot;type&quot;: &quot;$network.request&quot;,
-    &quot;options&quot;: {
-        &quot;url&quot;: &quot;http://api.giphy.com/v1/gifs/search&quot;,
-        &quot;data&quot;: { &quot;q&quot;: &quot;kitten&quot;, &quot;api_key&quot;: &quot;dc6zaTOxFJmzC&quot; }
-    },
-    &quot;success&quot;: {
-        &quot;type&quot;: &quot;$render&quot;
-    }
-}</code></pre>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$network.request&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://api.giphy.com/v1/gifs/search&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;q&quot;</span><span class="fu">:</span> <span class="st">&quot;kitten&quot;</span><span class="fu">,</span> <span class="dt">&quot;api_key&quot;</span><span class="fu">:</span> <span class="st">&quot;dc6zaTOxFJmzC&quot;</span> <span class="fu">}</span>
+    <span class="fu">},</span>
+    <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$render&quot;</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
 </div>
 <div id="style" class="section level4">
 <h4><span class="header-section-number">4.1.1.4</span> Style</h4>
 <p>Style components with JSON.</p>
 <p><strong>Example:</strong></p>
 <p>Style a label.</p>
-<pre><code>{
-    &quot;type&quot;: &quot;label&quot;,
-    &quot;text&quot;: &quot;Hello World&quot;,
-    &quot;style&quot;: {
-        &quot;padding&quot;: &quot;10&quot;,
-        &quot;corner_radius&quot;: &quot;5&quot;,
-        &quot;background&quot;: &quot;rgba(0,0,0,0.4)&quot;,
-        &quot;color&quot;: &quot;#ffffff&quot;,
-        &quot;font&quot;: &quot;HelveticaNeue&quot;
-    }
-}</code></pre>
+<div class="sourceCode"><pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Hello World&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;padding&quot;</span><span class="fu">:</span> <span class="st">&quot;10&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;corner_radius&quot;</span><span class="fu">:</span> <span class="st">&quot;5&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;rgba(0,0,0,0.4)&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;color&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue&quot;</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre></div>
 </div>
 <div id="native-app-over-json" class="section level4">
 <h4><span class="header-section-number">4.1.1.5</span> Native App Over JSON</h4>

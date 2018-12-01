@@ -20,7 +20,7 @@ Files are organized depending on the chapter numbers.
 
 `02-01-History.Rmd` Will be before than `03-01-Cell.Rmd`.
 
-Use diferent headers to include sections inside chapters.
+Use different headers to include sections inside chapters.
 *Bookdown* menu renders until `###` sections.
 
 - `#` - Chapter
