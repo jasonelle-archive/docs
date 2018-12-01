@@ -16,7 +16,7 @@ Imports:
     xfun (>= 0.2),
     tinytex,
     yaml (>= 2.1.14)
-    bookdown (>= 0.7)
+    bookdown (>= 0.8)
 Suggests:
     htmlwidgets,
     rstudioapi,
