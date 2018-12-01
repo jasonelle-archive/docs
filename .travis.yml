@@ -8,7 +8,9 @@ cache:
     - $HOME/bin
 services:
   - docker
-before_script:
+before_install:
+  - docker pull rocker/verse
   - ./build-docker.sh
+
 after_success:
   - ./deploy-github.sh
