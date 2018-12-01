@@ -1,14 +1,13 @@
-language: r
+language: python
 pandoc_version: 2.0.6
 sudo: false
 cache:
   packages: yes
   directories:
     - $HOME/bin
-
-before_install:
-  - Rscript -e "update.packages(.libPaths()[1], ask = FALSE)"
+services:
+  - docker
 before_script:
-  - ./build.sh
+  - ./build-docker.sh
 after_success:
   - ./deploy-github.sh
