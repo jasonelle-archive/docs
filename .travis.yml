@@ -1,16 +1,23 @@
 language: python
 python:
   - "3.6"
+
 sudo: false
+
 cache:
   packages: yes
   directories:
     - $HOME/bin
+
 services:
   - docker
+
 before_install:
   - docker pull rocker/verse
   - ./build-docker.sh
+
+install: true
+script: true
 
 after_success:
   - ./deploy-github.sh
