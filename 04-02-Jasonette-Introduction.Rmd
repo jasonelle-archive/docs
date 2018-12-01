@@ -17,7 +17,7 @@ Organize your code in nested JSON objects.
 
 **Example:**
 
-```
+```json
 {
     "$jason": {
         "head": {...},
@@ -43,7 +43,7 @@ Construct complex layouts with JSON.
 Build a card UI with an image, labels, and nested layouts.
 
 
-```
+```json
 {
     "type": "horizontal",
     "components": [
@@ -66,7 +66,7 @@ Describe actions with JSON.
 
 Make a network request and draw the result.
 
-```
+```json
 {
     "type": "$network.request",
     "options": {
@@ -87,7 +87,7 @@ Style components with JSON.
 
 Style a label.
 
-```
+```json
 {
     "type": "label",
     "text": "Hello World",
@@ -165,4 +165,7 @@ ALL YOU NEED IS JSON.
 If you have a web server, you ALREADY have a Jasonette server.
 
 #### 100% EXTENSIBLE
-Jasonette is essentially just an engine that maps JSON expression to native components and actions. It doesn't force you to drop everything and adopt the technology exclusively. You can extend it or even integrate it with your existing native code seamlessly.
+Jasonette is essentially just an engine that maps JSON expression to 
+native components and actions. 
+It doesn't force you to drop everything and adopt the technology exclusively. 
+You can extend it or even integrate it with your existing native code seamlessly.

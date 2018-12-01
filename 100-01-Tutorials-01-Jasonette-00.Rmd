@@ -1,3 +1,3 @@
-## Jasonette
+# Jasonette Tutorials
 
 The following tutorials are using *Jasonette* as the main technology.
