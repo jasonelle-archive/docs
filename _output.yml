@@ -4,12 +4,12 @@ bookdown::gitbook:
     toc:
       collapse: none
       before: |
-        <li><a href="./">Jasonelle Docs</a></li>
+        <li><a href="./">📝 Jasonelle Docs</a></li>
       after: |
         <li><a href="https://jasonelle.com">Jasonelle.com</a></li>
         <li><a href="https://github.com/jasonelle/docs/tree/develop/examples">Examples</a></li>
         <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
-    download: [pdf, epub]
+    download: [epub]
     sharing:
       github: yes
       facebook: no

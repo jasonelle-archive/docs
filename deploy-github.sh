@@ -22,6 +22,7 @@ rm -rf *.Rbuildignore
 rm -rf .Rproj.user
 rm -rf Rhistory
 rm -rf *.sh
+rm -rf DESCRIPTION
 
 git add --all *
 git commit -m "deployed docs (travis build ${TRAVIS_BUILD_NUMBER})"
