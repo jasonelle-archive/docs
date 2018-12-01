@@ -208,7 +208,7 @@ Previously in version 1, to use web container as a background view component,
 you had to first set the `$jason.body.background.type` to `"html"` and then hard-code 
 the HTML text under `$jason.body.background.text` attribute like this:
 
-```
+```json
 {
     "$jason": {
         "head": {
@@ -234,7 +234,7 @@ Web container 2.0 has added the `url` attribute.
 You can embed a local `file://` HTML like this 
 (it loads from the local HTML file you ship with the app):
 
-```
+```json
 {
     "$jason": {
         "head": {
@@ -252,7 +252,7 @@ You can embed a local `file://` HTML like this
 
 Or embed a remote `http[s]://` URL like this (it loads from a remote HTML):
 
-```
+```json
 {
     "$jason": {
         "head": {
@@ -302,7 +302,7 @@ communication protocol.
 To make a *JavaScript* function call into the web container, 
 we declare an action called `$agent.request`:
 
-```
+```json
 {
     "type": "$agent.request",
     "options": {
@@ -334,7 +334,7 @@ Let’s look at what each attribute means:
 
 The full markup would look something like this:
 
-```
+```json
 {
     "$jason": {
         "head": {
@@ -465,7 +465,7 @@ web container to handle link click events.
 
 Let’s look at an example:
 
-```
+```json
 {
     "$jason": {
         "head": {
@@ -502,7 +502,7 @@ through the `$jason` variable. For example,
 if you clicked a URL named `"https://google.com"`, 
 the `$jason` will have the following value:
 
-```
+```json
 {
     "url": "https://google.com"
 }
@@ -513,7 +513,7 @@ actions by checking the `$jason.url` value.
 
 Let’s take another example where we implement a custom web browser:
 
-```
+```json
 {
     "$jason": {
         "head": {
@@ -582,7 +582,7 @@ actions based on `$jason.url`.
 
 **Step 1. Attach an action named `visit` to the web container like this**:
 
-```
+```json
 {
     ...
     "body": {
@@ -607,7 +607,7 @@ by setting `"type": "$default"`.
 If they don’t match the pattern, we make a native `$href` 
 transition to a new view and pass the clicked link as a parameter.
 
-```
+```json
 ...
 "actions": {
     "visit": [
