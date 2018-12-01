@@ -6,6 +6,8 @@ cache:
   directories:
     - $HOME/bin
 
+before_install:
+  - Rscript -e "update.packages(.libPaths()[1], ask = FALSE)"
 before_script:
   - ./build.sh
 after_success:
