@@ -35,7 +35,7 @@ Like any other features on Jasonette, it’s all built into Jasonette,
 so you don’t need to do anything. 
 You just need to load a JSON markup that instructs Jasonette to scan QR code.
 
-#### How to implement
+### How to implement
 
 You can implement barcode & QR code scanning using a newly 
 added API called `$vision`.
@@ -120,7 +120,7 @@ it for your own purpose, like below:
 }
 ```
 
-#### Simple and Flexible, works on both iOS and Android.
+### Simple and Flexible, works on both iOS and Android.
 
 Believe it or not, I have just introduced you to the entirety of the 
 `$vision` API.
@@ -148,7 +148,7 @@ and displays the content on the screen in realtime:
 
 > Check out the code for above example in [Jasonpedia](https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/action/vision/index.json).
 
-#### Conclusion
+### Conclusion
 
 QR code is really cool, and Jasonette makes it super easy to 
 implement it just by writing a few lines of JSON markup.

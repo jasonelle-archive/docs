@@ -77,7 +77,7 @@ In this article I’m going to explain:
 - Why a seamless integration of HTML and Native is not easy, and how I implemented one.
 - Most importantly, how YOU can use it to build your own app instantly.
 
-#### Why would you use HTML in a native app?
+### Why would you use HTML in a native app?
 
 Before we go further, let’s first discuss whether 
 this is even a good idea, and when you may want to take this approach. 
@@ -132,7 +132,7 @@ In this case, it would be nice if there was a way to build
 most of the app natively, but for that particular complex web page, 
 somehow seamlessly integrate it into the app as HTML.
 
-#### How does it work?
+### How does it work?
 
 **Jasonette**
 
@@ -198,7 +198,7 @@ The next section explains the solutions that were added to
 make the previously-static web containers interactive, 
 making them significantly more powerful.
 
-#### Implementation: Interactive Web Container
+### Implementation: Interactive Web Container
 
 **1 - Load by URL**
 
@@ -552,7 +552,7 @@ and then run two different actions depending on the result.
 - If it doesn’t contain `signin`, just run the `"type": "$default"` 
     action so that it behaves like a regular browser.
 
-#### Example Usage
+### Example Usage
 
 **Building a custom web browser**
 
@@ -672,7 +672,7 @@ and making native transitions.
 
 [You can check out the code here](https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/webcontainer/agent/hybrid.json).
 
-#### Conclusion
+### Conclusion
 
 In my opinion, what makes all this work fabulously 
 is that **everything is taken care of on the framework level**. 
