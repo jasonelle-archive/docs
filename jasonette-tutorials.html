@@ -117,8 +117,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5" data-path="selector-transformer.html"><a href="selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Selector Transformer</a></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a></li>
 <li class="chapter" data-level="7" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html"><i class="fa fa-check"></i><b>7</b> Jasonette Tutorials</a><ul>
-<li class="chapter" data-level="7.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a></li>
-<li class="chapter" data-level="7.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a></li>
+<li class="chapter" data-level="7.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#how-to-implement"><i class="fa fa-check"></i><b>7.1.1</b> How to implement</a></li>
+<li class="chapter" data-level="7.1.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#simple-and-flexible-works-on-both-ios-and-android."><i class="fa fa-check"></i><b>7.1.2</b> Simple and Flexible, works on both iOS and Android.</a></li>
+<li class="chapter" data-level="7.1.3" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#conclusion"><i class="fa fa-check"></i><b>7.1.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#why-would-you-use-html-in-a-native-app"><i class="fa fa-check"></i><b>7.2.1</b> Why would you use HTML in a native app?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#how-does-it-work"><i class="fa fa-check"></i><b>7.2.2</b> How does it work?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#implementation-interactive-web-container"><i class="fa fa-check"></i><b>7.2.3</b> Implementation: Interactive Web Container</a></li>
+<li class="chapter" data-level="7.2.4" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#example-usage"><i class="fa fa-check"></i><b>7.2.4</b> Example Usage</a></li>
+<li class="chapter" data-level="7.2.5" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#conclusion-1"><i class="fa fa-check"></i><b>7.2.5</b> Conclusion</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="how-to-guides.html"><a href="how-to-guides.html"><i class="fa fa-check"></i><b>8</b> How To Guides</a></li>
 <li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a></li>
@@ -180,8 +190,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </blockquote>
 <p>But you can do much more than just storing a URL in a QR code. Let’s take a look at how you can implement the QR code feature for your app too.</p>
 <p>Like any other features on Jasonette, it’s all built into Jasonette, so you don’t need to do anything. You just need to load a JSON markup that instructs Jasonette to scan QR code.</p>
-<div id="how-to-implement" class="section level4">
-<h4><span class="header-section-number">7.1.0.1</span> How to implement</h4>
+<div id="how-to-implement" class="section level3">
+<h3><span class="header-section-number">7.1.1</span> How to implement</h3>
 <p>You can implement barcode &amp; QR code scanning using a newly added API called <code>$vision</code>.</p>
 <p>Here’s how you implement them:</p>
 <p><strong>1 - Include back facing camera as background, as follows</strong>:</p>
@@ -247,8 +257,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <span class="fu">}</span>
 <span class="fu">}</span></code></pre></div>
 </div>
-<div id="simple-and-flexible-works-on-both-ios-and-android." class="section level4">
-<h4><span class="header-section-number">7.1.0.2</span> Simple and Flexible, works on both iOS and Android.</h4>
+<div id="simple-and-flexible-works-on-both-ios-and-android." class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Simple and Flexible, works on both iOS and Android.</h3>
 <p>Believe it or not, I have just introduced you to the entirety of the <code>$vision</code> API.</p>
 <p>No need to write native code or install additional features, it’s already all built into <em>Jasonette-iOS</em> and <em>Jasonette-Android</em>. Just load the JSON markup from <em>Jasonette</em> and it should just work.</p>
 <p>This works not just for the QR code, but also for regular “one dimensional” barcode we’re all familiar with.</p>
@@ -267,8 +277,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Check out the code for above example in <a href="https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/action/vision/index.json">Jasonpedia</a>.</p>
 </blockquote>
 </div>
-<div id="conclusion" class="section level4">
-<h4><span class="header-section-number">7.1.0.3</span> Conclusion</h4>
+<div id="conclusion" class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Conclusion</h3>
 <p>QR code is really cool, and Jasonette makes it super easy to implement it just by writing a few lines of JSON markup.</p>
 <p>Not only is it easy, but it’s also very flexible, since you can pass the return value to any other action to build whatever you want.</p>
 <p>Please play with it and share if you come up with any cool examples.</p>
@@ -319,8 +329,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Why a seamless integration of HTML and Native is not easy, and how I implemented one.</li>
 <li>Most importantly, how YOU can use it to build your own app instantly.</li>
 </ul>
-<div id="why-would-you-use-html-in-a-native-app" class="section level4">
-<h4><span class="header-section-number">7.2.0.1</span> Why would you use HTML in a native app?</h4>
+<div id="why-would-you-use-html-in-a-native-app" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Why would you use HTML in a native app?</h3>
 <p>Before we go further, let’s first discuss whether this is even a good idea, and when you may want to take this approach.</p>
 <p>Here are some potential use cases:</p>
 <p><strong>Use Web Native Features</strong></p>
@@ -337,8 +347,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>For example, you may have a single web page that’s too complex to immediately convert to a mobile app, but the rest of your website may be easily converted.</p>
 <p>In this case, it would be nice if there was a way to build most of the app natively, but for that particular complex web page, somehow seamlessly integrate it into the app as HTML.</p>
 </div>
-<div id="how-does-it-work" class="section level4">
-<h4><span class="header-section-number">7.2.0.2</span> How does it work?</h4>
+<div id="how-does-it-work" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> How does it work?</h3>
 <p><strong>Jasonette</strong></p>
 <p><em>Jasonette</em> is an open source, markup-based approach to building cross-platform native apps.</p>
 <p>It’s like a web browser, but instead of interpreting HTML markup into web pages, it interprets JSON markup into native apps on iOS and Android.</p>
@@ -360,8 +370,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>After releasing version 1, I experimented with the second piece of the puzzle <strong>adding interactivity to the web container</strong>.</p>
 <p>The next section explains the solutions that were added to make the previously-static web containers interactive, making them significantly more powerful.</p>
 </div>
-<div id="implementation-interactive-web-container" class="section level4">
-<h4><span class="header-section-number">7.2.0.3</span> Implementation: Interactive Web Container</h4>
+<div id="implementation-interactive-web-container" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> Implementation: Interactive Web Container</h3>
 <p><strong>1 - Load by URL</strong></p>
 <p><em>Problem</em></p>
 <p>Previously in version 1, to use web container as a background view component, you had to first set the <code>$jason.body.background.type</code> to <code>&quot;html&quot;</code> and then hard-code the HTML text under <code>$jason.body.background.text</code> attribute like this:</p>
@@ -580,8 +590,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>If it doesn’t contain <code>signin</code>, just run the <code>&quot;type&quot;: &quot;$default&quot;</code> action so that it behaves like a regular browser.</li>
 </ul>
 </div>
-<div id="example-usage" class="section level4">
-<h4><span class="header-section-number">7.2.0.4</span> Example Usage</h4>
+<div id="example-usage" class="section level3">
+<h3><span class="header-section-number">7.2.4</span> Example Usage</h3>
 <p><strong>Building a custom web browser</strong></p>
 <p>We can now take advantage of the fact that the new web container can:</p>
 <ul>
@@ -657,8 +667,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>I simply embedded the website into <em>Jasonette</em> as a web container, and hijacked the link clicks to handle them natively, so it can do all the native stuff like triggering native APIs and making native transitions.</p>
 <p><a href="https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/jasonpedia/webcontainer/agent/hybrid.json">You can check out the code here</a>.</p>
 </div>
-<div id="conclusion-1" class="section level4">
-<h4><span class="header-section-number">7.2.0.5</span> Conclusion</h4>
+<div id="conclusion-1" class="section level3">
+<h3><span class="header-section-number">7.2.5</span> Conclusion</h3>
 <p>In my opinion, what makes all this work fabulously is that <strong>everything is taken care of on the framework level</strong>. All the hard work is taken care of behind the scenes.</p>
 <p>Instead of putting the burden on the app developers to implement all of the following from scratch:</p>
 <ul>
