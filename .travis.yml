@@ -15,10 +15,10 @@ services:
 before_install:
   - ./check-branch.sh
   - docker pull rocker/verse
-  - ./build-docker.sh
 
 install: true
-script: true
+script:
+  - ./build-docker.sh
 
 after_success:
   - ./deploy-github.sh
