@@ -1,5 +1,0 @@
-language: r
-cache: packages
-
-script:
-  - Rscript -e 'bookdown::render_book("index.rmd")'

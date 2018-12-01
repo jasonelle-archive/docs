@@ -8,7 +8,7 @@ set -e
 BOOK_DIR=$(pwd)/_book
 rm -rf ~/_book
 mkdir ~/_book && cd ~/_book
-git clone https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git .
+git clone -b master https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git .
 ls | grep -v ^bookdown[.].* | xargs rm -rf
 git ls-files --deleted -z | xargs -0 git rm
 cp -r ${BOOK_DIR}/* ./
