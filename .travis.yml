@@ -1,8 +1,12 @@
 language: r
 pandoc_version: 2.0.6
 sudo: false
+cache:
+  packages: yes
+  directories:
+    - $HOME/bin
 
 before_script:
-        - ./build.sh
+  - ./build.sh
 after_success:
-        - ./deploy-github.sh
+  - ./deploy-github.sh
