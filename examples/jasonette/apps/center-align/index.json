@@ -1,0 +1,97 @@
+{
+    "$jason": {
+      "head": {
+        "title": "center align two buttons"
+      },
+      "body": {
+        "header": {
+          "title": {
+            "type": "label",
+            "text": "hello world",
+            "style": {
+              "font": "Avenir",
+              "size": "30",
+              "color": "rgb(200,0,0)",
+              "padding": "10"
+            }
+          }
+        },
+        "footer": {
+          "title": {
+            "type": "label",
+            "text": "Hello World",
+            "style": {
+              "font": "Avenir",
+              "size": "30",
+              "color": "rgb(200,0,0)",
+              "padding": "10"
+            }
+          }
+        },
+        "background": "#1f3f9a",
+        "sections": [
+          {
+            "type": "vertical",
+            "items": [
+              {
+                "type": "horizontal",
+                "style": {
+                  "align": "center"
+                },
+                "components": [
+                  {
+                    "type": "space",
+                    "style": {
+                      "height": "10",
+                      "width": "50%-110",
+                      "background": "#00ff00"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "text": "Btn1",
+                    "style": {
+                      "width": "100",
+                      "height": "40",
+                      "background": "#ffffff",
+                      "border_width": "1",
+                      "border_color": "#000000",
+                      "color": "#000000",
+                      "font": "HelveticaNeue",
+                      "size": "20"
+                    },
+                    "href": {
+                      "url": "https://www.jasonclient.org/next.json",
+                      "view": "jason"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "text": "Btn2",
+                    "style": {
+                      "width": "100",
+                      "height": "40",
+                      "background": "#0000ff",
+                      "border_width": "1",
+                      "border_color": "#000000",
+                      "color": "#ffffff",
+                      "font": "HelveticaNeue",
+                      "size": "20"
+                    }
+                  },
+                  {
+                    "type": "space",
+                    "style": {
+                      "height": "10",
+                      "width": "50%-110",
+                      "background": "#ff0000"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }

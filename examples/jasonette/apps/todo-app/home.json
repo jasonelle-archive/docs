@@ -9,7 +9,7 @@
         "$pull": {
           "type": "$href",
           "options": {
-            "url": "https://gliechtenstein.github.io/todo-example/input.json"
+            "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/input.json"
           }
         },
         "do": {
@@ -83,7 +83,7 @@
                             "width": "50",
                             "color": "#ffffff"
                           },
-                          "url": "{{ done ? 'https://png.icons8.com/ok/ios7/100' : 'https://png.icons8.com/unchecked-circle/ios7/100'}}"
+                          "url": "{{ done ? 'https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/done.png' : 'https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/pending.png'}}"
                         }
                       ]
                     }
@@ -99,7 +99,7 @@
                       "components": [
                         {
                           "type": "image",
-                          "url": "https://png.icons8.com/swipe-down-filled/ios7/100",
+                          "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/swipedown.png",
                           "style": {
                             "padding": "30",
                             "width": "100",

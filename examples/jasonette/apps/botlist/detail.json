@@ -29,7 +29,7 @@
             },
             "title": {
               "type": "image",
-              "url": "https://i.imgur.com/1NOSpgC.png",
+              "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/botlist/logo.png",
               "style": {
                 "width": "97",
                 "height": "15"
@@ -53,7 +53,7 @@
               "items": [
                 {
                   "type": "image",
-                  "url": "https://botlist.co{{$jason.find('#sidebar .avatar').attr('src')}}"
+                  "url": "http://web.archive.org{{$jason.find('#sidebar .avatar').attr('src')}}"
                 }
               ]
             },

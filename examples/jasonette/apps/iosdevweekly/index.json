@@ -1,0 +1,95 @@
+{
+  "$jason": {
+    "head": {
+      "title": "iOS Dev Weekly Master",
+      "actions": {
+        "$load": {
+          "type": "$network.request",
+          "options": {
+            "url": "http://web.archive.org/web/20161113165005/http://iosdevweekly.com/issues",
+            "data_type": "html"
+          },
+          "success": {
+            "type": "$render",
+            "options": {
+              "type": "html"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "border": "none"
+          },
+          "header": {
+            "style": {
+              "background": "#0070c9",
+              "shy": "true",
+              "color": "#ffffff"
+            },
+            "title": "iOS Dev Weekly"
+          },
+          "sections": [
+            {
+              "items": {
+                "{{#each $jason.find('.item')}}": {
+                  "type": "vertical",
+                  "href": {
+                    "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/iosdevweekly/detail.json",
+                    "options": {
+                      "issue": "http://iosdevweekly.com{{$(this).find('a').attr('href')}}"
+                    }
+                  },
+                  "style": {
+                    "padding": "20",
+                    "color": "#cecece",
+                    "spacing": "10"
+                  },
+                  "components": [
+                    {
+                      "type": "horizontal",
+                      "components": [
+                        {
+                          "type": "label",
+                          "style": {
+                            "font": "HelveticaNeue-Bold",
+                            "size": "14"
+                          },
+                          "text": "{{$(this).find('.item__heading').text()}}"
+                        },
+                        {
+                          "type": "space",
+                          "style": {
+                            "width": "20"
+                          }
+                        },
+                        {
+                          "type": "label",
+                          "style": {
+                            "font": "HelveticaNeue-Italic",
+                            "size": "14",
+                            "color": "#cecece"
+                          },
+                          "text": "{{$(this).find('.item__footer').text()}}"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "label",
+                      "text": "{{$(this).find('.item__title').text()}}",
+                      "style": {
+                        "font": "Georgia",
+                        "size": "22"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

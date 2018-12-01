@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Jasonelle Documentation</title>
+  <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Jasonelle Documentation" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://jasonelle.com" />
+  
+  <meta property="og:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  <meta name="github-repo" content="jasonelle/jasonelle" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Jasonelle Documentation" />
+  
+  <meta name="twitter:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  
+
+<meta name="author" content="Jasonelle Team">
+
+
+<meta name="date" content="2018-12-01">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="cell-js.html">
+<link rel="next" href="selector-transformer.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Jasonelle Docs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a></li>
+<li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a></li>
+<li class="chapter" data-level="3" data-path="cell-js.html"><a href="cell-js.html"><i class="fa fa-check"></i><b>3</b> Cell.js</a><ul>
+<li class="chapter" data-level="3.1" data-path="cell-js.html"><a href="cell-js.html#about"><i class="fa fa-check"></i><b>3.1</b> About</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="jasonette.html"><a href="jasonette.html"><i class="fa fa-check"></i><b>4</b> Jasonette</a><ul>
+<li class="chapter" data-level="4.1" data-path="jasonette.html"><a href="jasonette.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="jasonette.html"><a href="jasonette.html#json-to-native-components"><i class="fa fa-check"></i><b>4.1.1</b> JSON to Native Components</a></li>
+<li class="chapter" data-level="4.1.2" data-path="jasonette.html"><a href="jasonette.html#free-battle-tested"><i class="fa fa-check"></i><b>4.1.2</b> Free &amp; Battle Tested</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="selector-transformer.html"><a href="selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Selector Transformer</a></li>
+<li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a></li>
+<li class="chapter" data-level="7" data-path="tutorials.html"><a href="tutorials.html"><i class="fa fa-check"></i><b>7</b> Tutorials</a><ul>
+<li class="chapter" data-level="7.1" data-path="tutorials.html"><a href="tutorials.html#jasonette-1"><i class="fa fa-check"></i><b>7.1</b> Jasonette</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="tutorials.html"><a href="tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a></li>
+<li class="chapter" data-level="7.1.2" data-path="tutorials.html"><a href="tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.1.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="how-to-guides.html"><a href="how-to-guides.html"><i class="fa fa-check"></i><b>8</b> How To Guides</a></li>
+<li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a></li>
+<li class="divider"></li>
+<li><a href="https://jasonelle.com">Jasonelle.com</a></li>
+<li><a href="https://github.com/jasonelle/docs/tree/develop/examples">Examples</a></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Jasonelle Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="jasonette" class="section level1">
+<h1><span class="header-section-number">4</span> Jasonette</h1>
+<p>Quite a different way to make an app. Make iOS and Android apps with just a single JSON, loaded over HTTP, local file, or anywhere.</p>
+<p>It has never been trivial to have an idea and turn it into an app quickly. Even for genius programmers.</p>
+<p>With <em>Jasonette</em>, you don’t even have to be a programmer. Anyone can make an app. And do it in minutes, not days or weeks.</p>
+<p>Make an app as fast as it takes to write a blog post.</p>
+<div class="figure">
+<img src="images/jasonette/intro/jasonette-intro.jpg" />
+
+</div>
+<iframe src="data:text/html;charset=utf-8, %0A%3Cvideo%20width=%22100%25%22%20height=%22auto%22%20controls%3E%0A%20%20%20%20%3Csource%20src=%22https://github.com/jasonelle/videos/raw/master/jasonette-intro.webm%22%20type=%22video/webm%22%3E%0A%20%20%20%20%3Cimg%20src=%22https://raw.githubusercontent.com/jasonelle/videos/master/jasonette-intro.jpg%22%3E%0A%3C/video%3E " style="border: none; seamless:seamless; width: 100%; height: 420px">
+</iframe>
+
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p><em>Jasonette</em> abstracts away all low level programming with a JSON based markup. All you need to write is a single JSON.</p>
+<div id="json-to-native-components" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> JSON to Native Components</h3>
+<p>Just like how web browsers turn HTML into a web page, <strong>Jasonette turns JSON into iOS and Android native components.</strong> This lets you build native apps by writing a simple JSON.</p>
+<div class="figure">
+<img src="images/jasonette/intro/code1.png" alt="Native App over JSON" />
+<p class="caption">Native App over JSON</p>
+</div>
+<div id="structure" class="section level4">
+<h4><span class="header-section-number">4.1.1.1</span> Structure</h4>
+<p>Organize your code in nested JSON objects.</p>
+<p><strong>Example:</strong></p>
+<pre><code>{
+    &quot;$jason&quot;: {
+        &quot;head&quot;: {...},
+        &quot;body&quot;: {
+            &quot;sections&quot;: [{
+            &quot;items&quot;: [
+                { &quot;type&quot;: &quot;image&quot;, &quot;url&quot;: &quot;...&quot; },
+                { &quot;type&quot;: &quot;label&quot;, &quot;text&quot;: &quot;...&quot; },
+                ...
+            ]
+            }]
+        }
+    }
+}</code></pre>
+</div>
+<div id="layout" class="section level4">
+<h4><span class="header-section-number">4.1.1.2</span> Layout</h4>
+<p>Construct complex layouts with JSON.</p>
+<p><strong>Example:</strong></p>
+<p>Build a card UI with an image, labels, and nested layouts.</p>
+<pre><code>{
+    &quot;type&quot;: &quot;horizontal&quot;,
+    &quot;components&quot;: [
+        { &quot;type&quot;: &quot;image&quot;, &quot;url&quot;: &quot;file://ethan.jpeg&quot; },
+        { &quot;type&quot;: &quot;vertical&quot;,
+        &quot;components&quot;: [
+            { &quot;type&quot;: &quot;label&quot;, &quot;text&quot;: &quot;Ethan&quot; },
+            { &quot;type&quot;: &quot;label&quot;, &quot;text&quot; &quot;www.textethan.com&quot; }
+        ]
+        }
+    ]
+}</code></pre>
+</div>
+<div id="actions" class="section level4">
+<h4><span class="header-section-number">4.1.1.3</span> Actions</h4>
+<p>Describe actions with JSON.</p>
+<p><strong>Example:</strong></p>
+<p>Make a network request and draw the result.</p>
+<pre><code>{
+    &quot;type&quot;: &quot;$network.request&quot;,
+    &quot;options&quot;: {
+        &quot;url&quot;: &quot;http://api.giphy.com/v1/gifs/search&quot;,
+        &quot;data&quot;: { &quot;q&quot;: &quot;kitten&quot;, &quot;api_key&quot;: &quot;dc6zaTOxFJmzC&quot; }
+    },
+    &quot;success&quot;: {
+        &quot;type&quot;: &quot;$render&quot;
+    }
+}</code></pre>
+</div>
+<div id="style" class="section level4">
+<h4><span class="header-section-number">4.1.1.4</span> Style</h4>
+<p>Style components with JSON.</p>
+<p><strong>Example:</strong></p>
+<p>Style a label.</p>
+<pre><code>{
+    &quot;type&quot;: &quot;label&quot;,
+    &quot;text&quot;: &quot;Hello World&quot;,
+    &quot;style&quot;: {
+        &quot;padding&quot;: &quot;10&quot;,
+        &quot;corner_radius&quot;: &quot;5&quot;,
+        &quot;background&quot;: &quot;rgba(0,0,0,0.4)&quot;,
+        &quot;color&quot;: &quot;#ffffff&quot;,
+        &quot;font&quot;: &quot;HelveticaNeue&quot;
+    }
+}</code></pre>
+</div>
+<div id="native-app-over-json" class="section level4">
+<h4><span class="header-section-number">4.1.1.5</span> Native App Over JSON</h4>
+<p>Directly manipulate native APIs simply using JSON. For Android, this means direct access to LinearLayout, RecyclerView, etc. For iOS, this means direct access to UITableView, UIStackView, etc.</p>
+<p>Want to make changes to your LIVE app? Simply change your JSON content on the server, and watch the app change in front of your eyes, instantly!.</p>
+<div class="figure">
+<img src="images/jasonette/intro/reload.gif" />
+
+</div>
+</div>
+<div id="native-components" class="section level4">
+<h4><span class="header-section-number">4.1.1.6</span> Native Components</h4>
+<p>These are some Native Components you can access using just JSON.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="images/jasonette/intro/footer_input_focused.jpeg" alt="Footer Input" /></td>
+<td><img src="images/jasonette/intro/util_alert_basic.jpeg" alt="Alert" /></td>
+</tr>
+<tr class="even">
+<td><img src="images/jasonette/intro/util_banner.jpeg" alt="Banner" /></td>
+<td><img src="images/jasonette/intro/media_play.jpeg" alt="Video Playback" /></td>
+</tr>
+</tbody>
+</table>
+<p>And much more! Including:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Direct access to the device such as camera, audio, geolocation, video, network request, etc.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Powerful layout engine that directly manipulates native components such as UITableView, UIStackView, UIView, etc.</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Describe styling and event handling all with JSON</li>
+</ol></li>
+</ul>
+</div>
+<div id="cross-platform" class="section level4">
+<h4><span class="header-section-number">4.1.1.7</span> Cross Platform</h4>
+<p>100% native binary for both <em>Android</em> and <em>iOS</em>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>iOS</th>
+<th>Android</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="images/jasonette/intro/instagram-ios.gif" alt="Jasonette iOS" /></td>
+<td><img src="images/jasonette/intro/instagram-android.gif" alt="Jasonette Android" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="free-battle-tested" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Free &amp; Battle Tested</h3>
+<p><em>Jasonette</em> was extracted from several production apps on the App Store, so you know it works.</p>
+<p>Below are some actual production apps built with <em>Jasonette</em>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Kitty</th>
+<th>Catch All</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="images/jasonette/intro/kitty.png" alt="Kitty App" /></td>
+<td><img src="images/jasonette/intro/catchall.jpg" alt="Catchall App" /></td>
+</tr>
+</tbody>
+</table>
+<div id="free" class="section level4">
+<h4><span class="header-section-number">4.1.2.1</span> 100% FREE</h4>
+<p>Everything is free for you to use. There is no small print that says “pay <span class="math inline">\($\)</span> if you want to publish your app”. It’s all yours.</p>
+</div>
+<div id="open-source" class="section level4">
+<h4><span class="header-section-number">4.1.2.2</span> 100% OPEN SOURCE</h4>
+<p>Jasonette is licensed under MIT license. Take the code, build and publish your own apps, and do whatever you want with it!</p>
+</div>
+<div id="portable" class="section level4">
+<h4><span class="header-section-number">4.1.2.3</span> 100% PORTABLE</h4>
+<p>There is no magical backend server you need to learn to use, pay for, or install to use Jasonette. ALL YOU NEED IS JSON. If you have a web server, you ALREADY have a Jasonette server.</p>
+</div>
+<div id="extensible" class="section level4">
+<h4><span class="header-section-number">4.1.2.4</span> 100% EXTENSIBLE</h4>
+<p>Jasonette is essentially just an engine that maps JSON expression to native components and actions. It doesn’t force you to drop everything and adopt the technology exclusively. You can extend it or even integrate it with your existing native code seamlessly.</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="cell-js.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="selector-transformer.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["jasonelle.pdf", "jasonelle.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
