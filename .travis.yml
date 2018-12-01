@@ -13,6 +13,7 @@ services:
   - docker
 
 before_install:
+  - ./check-branch.sh
   - docker pull rocker/verse
   - ./build-docker.sh
 
