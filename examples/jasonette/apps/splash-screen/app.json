@@ -1,0 +1,26 @@
+{
+  "$jason": {
+    "head": {
+      "title": "App"
+    },
+    "body": {
+      "style": {
+        "background": "#ffffff",
+        "color": "#000000"
+      },
+      "layers": [{
+        "type": "label",
+        "text": "My App",
+        "style": {
+          "top": "50%-80",
+          "left": "50%-100",
+          "color": "#000000",
+          "font": "Georgia",
+          "size": "50",
+          "align": "center",
+          "width": "200"
+        }
+      }]
+    }
+  }
+}
