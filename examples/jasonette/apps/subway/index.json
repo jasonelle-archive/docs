@@ -1,5 +1,5 @@
 {
-    "@": "http://web.jasonette.com/items/146",
+    "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/subway/app.json",
     "title": "Montgomery",
     "collection": {
       "@": "root.station[0].etd@https://api.bart.gov/api/etd.aspx?cmd=etd&orig=MONT&key=MW9S-E7SL-26DU-VV8V&json=y"
@@ -20,4 +20,4 @@
         "description": "#001000"
       }
     }
-  }
+}
