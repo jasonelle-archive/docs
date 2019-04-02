@@ -41,7 +41,7 @@
             "type": "$href",
             "options": {
               "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/splash-screen/app.json",
-              "transition": "fullscreen"
+              "transition": "replace"
             }
           }
         }
