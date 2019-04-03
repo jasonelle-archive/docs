@@ -265,7 +265,7 @@
                 "name": "url",
                 "placeholder": "Enter a valid jason url",
                 "left": {
-                  "image": "https://raw.githubusercontent.com/jasonelle/jasonelle/master/jasonette/examples/jasonapp/images/qr-code.png",
+                  "image": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/jason-app/images/qr-code.png",
                   "action": {
                     "trigger": "scan"
                   }
