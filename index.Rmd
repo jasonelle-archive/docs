@@ -22,9 +22,19 @@ lot: False
 
 *Jasonelle* Family is made of several components that share *JSON* as the main language.
 
+## Cool things about Jasonelle
+
+- **100% NATIVE**: Jasonelle maps *JSON* into native components and native function calls. There is no gimmick. There is no magic.
+- **App loads over HTTP (or local file)**: Your app exists 100% as JSON, and loads from the cloud or local. No more hard-coding.
+- **An app in 30 minutes**: No kidding, build an app in 30 minutes.
+- **Lowest possible learning curve**: No programming experience required. There's a small amount of things you need to know: JSON (And maybe a little JavaScript). Which means you can build an app without "becoming a programmer".
+
 ## Old Docs
 
 The previous version of this documentation is present in the following url
 [https://jasonelle.com/jasonette-old-docs/](https://jasonelle.com/jasonette-old-docs/).
 The vast mayority of the old docs are still valid and useful.
 
+## Examples
+
+Plenty of code examples are stored in the [https://github.com/jasonelle/docs/tree/develop/examples/jasonette](https://github.com/jasonelle/docs/tree/develop/examples/jasonette) repository.
