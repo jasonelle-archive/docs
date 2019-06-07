@@ -1,3 +1,12 @@
 # Cell.js
 
-Cell.js was a framework to simplify web development using JSON like structures. As per [this blog post](https://jasonelle.com/blog/cell-js-is-deprecated/), the cell.js project is now depreciated and no longer maintained. However, Jasonette allows for iOS and Android apps to be built in a similar way - using only JSON.
+*Cell.js* was a framework to simplify web development using *JSON* like structures. 
+As per [this blog post](https://jasonelle.com/blog/cell-js-is-deprecated/), 
+the *Cell.js* project is now depreciated and no longer maintained. 
+
+However, you can access plenty of code examples here [https://github.com/jasonelle/docs/tree/develop/examples/celljs](https://github.com/jasonelle/docs/tree/develop/examples/celljs).
+
+*Jasonelle Team* recommends the following frameworks as replacements:
+
+- [Svelte](https://svelte.dev/)
+- [Mithril](https://mithril.js.org/)
