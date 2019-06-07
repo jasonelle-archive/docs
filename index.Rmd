@@ -22,3 +22,9 @@ lot: False
 
 *Jasonelle* Family is made of several components that share *JSON* as the main language.
 
+## Old Docs
+
+The previous version of this documentation is present in the following url
+[https://jasonelle.com/jasonette-old-docs/](https://jasonelle.com/jasonette-old-docs/).
+The vast mayority of the old docs are still valid and useful.
+
