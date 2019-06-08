@@ -1,6 +1,4 @@
-## Jason App 
-
-**{ ·ᴥ·}**
+## Jason App **{ ·ᴥ·}**
 
 Jason is a single app that lets you summon and bookmark 
 multiple Jasonette apps simply by entering the JSON url, 
@@ -63,6 +61,9 @@ The url you must use is
 `https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/jason-app/index.json`
 
 ![Jason App in Xcode](images/tools/jasonapp/jasonapp.png)
+
+The complete source code is in the following directory
+[https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/jason-app](https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/jason-app)
 
 If you need futher documentation please visit the old docs setup guide.
 
