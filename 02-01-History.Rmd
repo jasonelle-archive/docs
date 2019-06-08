@@ -6,7 +6,7 @@
 
 It got quickly popular.
 
-![Ethan Rules](images/history/ethanrules.jpg)
+![Ethan App Homepage](images/history/ethanhome.jpg)
 
 | | |
 |--|--|
@@ -23,7 +23,8 @@ It got quickly popular.
 | | |
 |--|--|
 ![Ethan App Screenshot](images/history/ethanapp.jpeg)| ![Ethan Drawing](images/history/ethan.jpeg)
-![Ethan App Screenshot 2](images/history/ethanapp2.jpg) | ![Ethan App Screenshot 3](images/history/ethanapp3.jpg)
+
+![Ethan App Screenshot](images/history/ethanapp2.jpg)
 
 
 Some time after that Ethan began extracting the core, refining the api and creating documentation. 
@@ -33,14 +34,14 @@ Finally releasing the first version of *Jasonette* on November 3th 2016.
 
 - https://twitter.com/jasonclient/status/794175517763272708
 
-![Jasonette](images/history/jasonette.png)
+![Jasonette First Tweet](images/history/jasonette.png)
 
 Ethan worked on *Jasonette*, *Cell* and *ST* for nearly 2 years straight full-time. 
 Until June 9 2018 were he misteriosly disappeared without a trace. 
 Later on November 6th 2018. *Jasonelle Team* took the lead 
 ([https://github.com/Jasonette/Jasonette/issues/23](https://github.com/Jasonette/Jasonette/issues/23)).
 
-![Last known ethan contribution](images/history/gliechtenstein.png)
+![Last known Ethan contribution](images/history/gliechtenstein.png)
 
 The original repositories of *Jasonette, Cell and ST* are:
 
