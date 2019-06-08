@@ -28,7 +28,7 @@ submit it to the App Store, and do whatever you want with it!.
 
 ## Main Goals
 
-*Jasonelle** project want to reach these goals:
+*Jasonelle* project want to reach these goals:
 
 - Use known and popular technologies (*JSON*, *Javascript*). 💯
 - Easy to learn, use and extend. ☺️
