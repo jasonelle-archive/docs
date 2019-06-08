@@ -152,11 +152,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform"><i class="fa fa-check"></i><b>5.3.2</b> Transform</a></li>
 <li class="chapter" data-level="5.3.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#usage"><i class="fa fa-check"></i><b>5.3.3</b> Usage</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#examples-1"><i class="fa fa-check"></i><b>5.4</b> Examples</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#declarative-json-api-template"><i class="fa fa-check"></i><b>5.4.1</b> Declarative JSON API Template</a></li>
-<li class="chapter" data-level="5.4.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#json-as-a-json-query-language"><i class="fa fa-check"></i><b>5.4.2</b> JSON as a JSON Query Language</a></li>
-<li class="chapter" data-level="5.4.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#app-as-data"><i class="fa fa-check"></i><b>5.4.3</b> App as data</a></li>
-<li class="chapter" data-level="5.4.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#routerless-server"><i class="fa fa-check"></i><b>5.4.4</b> Routerless Server</a></li>
+<li class="chapter" data-level="5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#select-1"><i class="fa fa-check"></i><b>5.4</b> Select</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#syntax"><i class="fa fa-check"></i><b>5.4.1</b> Syntax</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#parameters"><i class="fa fa-check"></i><b>5.4.2</b> Parameters</a></li>
+<li class="chapter" data-level="5.4.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#return-value"><i class="fa fa-check"></i><b>5.4.3</b> Return Value</a></li>
+<li class="chapter" data-level="5.4.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example"><i class="fa fa-check"></i><b>5.4.4</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#examples-1"><i class="fa fa-check"></i><b>5.5</b> Examples</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#declarative-json-api-template"><i class="fa fa-check"></i><b>5.5.1</b> Declarative JSON API Template</a></li>
+<li class="chapter" data-level="5.5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#json-as-a-json-query-language"><i class="fa fa-check"></i><b>5.5.2</b> JSON as a JSON Query Language</a></li>
+<li class="chapter" data-level="5.5.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#app-as-data"><i class="fa fa-check"></i><b>5.5.3</b> App as data</a></li>
+<li class="chapter" data-level="5.5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#routerless-server"><i class="fa fa-check"></i><b>5.5.4</b> Routerless Server</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a><ul>
@@ -417,15 +423,113 @@ Being able to bend any JSON to your will means you can do all kinds of magical t
                 <span class="op">}</span>)
                 .<span class="at">root</span>()<span class="op">;</span></code></pre>
 
-
-
 </div>
+</div>
+</div>
+<div id="select-1" class="section level2">
+<h2><span class="header-section-number">5.4</span> Select</h2>
+<div id="syntax" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Syntax</h3>
+<pre class="sourceCode js"><code class="sourceCode javascript"><span class="va">ST</span>.<span class="at">select</span>(data<span class="op">,</span> selectorFunction)<span class="op">;</span></code></pre>
+</div>
+<div id="parameters" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> Parameters</h3>
+<ul>
+<li><code>data</code> : Any JavaScript object</li>
+<li><code>selectorFunction</code> : selectorFunction is a predicate, to test each key/value pairs of the entire JSON tree.
+Return true to keep the element, false otherwise, taking two arguments:
+<ul>
+<li><code>key</code> : the “key” of the current key/value pair being tested.</li>
+<li><code>value</code> : the “value” of the current key/value pair being tested.</li>
+</ul></li>
+</ul>
+</div>
+<div id="return-value" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> Return Value</h3>
+<p>Returns a selection object which can be queried to retrieve the final result, using the following API:</p>
+<ul>
+<li><code>values()</code> : Array of values for all the key/value pair matches.</li>
+<li><code>keys()</code> : Array of keys for all the key/value pair matches.</li>
+<li><code>paths()</code> : Array of paths leading to all the key/value pair matches.</li>
+<li><code>objects()</code> : Array of full objects in which the key/value match was found.</li>
+<li><code>root()</code> : Retrieve the root node. Useful when used along with transform.</li>
+</ul>
+</div>
+<div id="example" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> Example</h3>
+<p>You can select any JSON tree to find only the subtrees that satisfy your needs.</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Take any data</li>
+</ol>
+</blockquote>
+<pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">var</span> data <span class="op">=</span> <span class="op">{</span>
+  <span class="dt">links</span><span class="op">:</span> [
+    <span class="op">{</span> <span class="st">&quot;remote_url&quot;</span><span class="op">:</span> <span class="st">&quot;http://localhost&quot;</span> <span class="op">},</span>
+    <span class="op">{</span> <span class="st">&quot;file_url&quot;</span><span class="op">:</span> <span class="st">&quot;file://documents&quot;</span> <span class="op">},</span>
+    <span class="op">{</span> <span class="st">&quot;remote_url&quot;</span><span class="op">:</span> <span class="st">&quot;https://blahblah.com&quot;</span> <span class="op">}</span>
+  ]<span class="op">,</span>
+  <span class="dt">preview</span><span class="op">:</span> <span class="st">&quot;https://image&quot;</span><span class="op">,</span>
+  <span class="dt">metadata</span><span class="op">:</span> <span class="st">&quot;This is a link collection&quot;</span>
+<span class="op">};</span></code></pre>
+<blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>Select subtree</li>
+</ol>
+</blockquote>
+<pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">var</span> selection <span class="op">=</span> <span class="va">ST</span>.<span class="at">select</span>(data<span class="op">,</span> <span class="kw">function</span>(key<span class="op">,</span> val) <span class="op">{</span>
+  <span class="cf">return</span> <span class="ss">/https</span><span class="sc">?</span><span class="ss">:/</span>.<span class="at">test</span>(val)<span class="op">;</span>
+<span class="op">}</span>)</code></pre>
+<blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li>Query the selection object</li>
+</ol>
+</blockquote>
+<pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">var</span> selected_values <span class="op">=</span> <span class="va">selection</span>.<span class="at">values</span>()<span class="op">;</span>
+<span class="co">//  [</span>
+<span class="co">//    &quot;http://localhost&quot;,</span>
+<span class="co">//    &quot;https://blahblah.com&quot;,</span>
+<span class="co">//    &quot;https://image&quot;</span>
+<span class="co">//  ]</span>
+
+<span class="kw">var</span> selected_keys <span class="op">=</span> <span class="va">selection</span>.<span class="at">keys</span>()<span class="op">;</span>
+<span class="co">//  [</span>
+<span class="co">//    &quot;remote_url&quot;,</span>
+<span class="co">//    &quot;remote_url&quot;,</span>
+<span class="co">//    &quot;preview&quot;</span>
+<span class="co">//  ]</span>
+
+<span class="kw">var</span> selected_objects <span class="op">=</span> <span class="va">selection</span>.<span class="at">objects</span>()<span class="op">;</span>
+<span class="co">//  [</span>
+<span class="co">//    { &quot;remote_url&quot;: &quot;http://localhost&quot; },</span>
+<span class="co">//    { &quot;remote_url&quot;: &quot;https://blahblah.com&quot; },</span>
+<span class="co">//    {</span>
+<span class="co">//      &quot;links&quot;: [</span>
+<span class="co">//        { &quot;remote_url&quot;: &quot;http://localhost&quot; },</span>
+<span class="co">//        { &quot;file_url&quot;: &quot;file://documents&quot; },</span>
+<span class="co">//        { &quot;remote_url&quot;: &quot;https://blahblah.com&quot; }</span>
+<span class="co">//      ],</span>
+<span class="co">//      &quot;preview&quot;: &quot;https://image&quot;,</span>
+<span class="co">//      &quot;metadata&quot;: &quot;This is a link collection&quot;</span>
+<span class="co">//    }</span>
+<span class="co">//  ]</span>
+<span class="co">//</span>
+<span class="co">//</span>
+
+<span class="kw">var</span> selected_paths <span class="op">=</span> <span class="va">selection</span>.<span class="at">paths</span>()<span class="op">;</span>
+<span class="co">//  [</span>
+<span class="co">//    &quot;[\&quot;links\&quot;][0]&quot;,</span>
+<span class="co">//    &quot;[\&quot;links\&quot;][2]&quot;,</span>
+<span class="co">//    &quot;&quot;</span>
+<span class="co">//  ]</span></code></pre>
+
+
 </div>
 </div>
 <div id="examples-1" class="section level2">
-<h2><span class="header-section-number">5.4</span> Examples</h2>
+<h2><span class="header-section-number">5.5</span> Examples</h2>
 <div id="declarative-json-api-template" class="section level3">
-<h3><span class="header-section-number">5.4.1</span> Declarative JSON API Template</h3>
+<h3><span class="header-section-number">5.5.1</span> Declarative JSON API Template</h3>
 <p>Build JSON using a simple, human-readable,
 and declarative template instead of manually coding it.</p>
 <p>See the example code at:
@@ -481,7 +585,7 @@ app.get(&#39;/&#39;, function (req, res) {
 }</code></pre>
 </div>
 <div id="json-as-a-json-query-language" class="section level3">
-<h3><span class="header-section-number">5.4.2</span> JSON as a JSON Query Language</h3>
+<h3><span class="header-section-number">5.5.2</span> JSON as a JSON Query Language</h3>
 <p>Make complex API queries purely written in JSON.</p>
 <p>Since templates in ST are written in JSON,
 you can pass them around anywhere just like any other data object.</p>
@@ -492,7 +596,7 @@ No convoluted infrastructure to set up!</p>
 <p><img src="images/jajs/jsonql.png" /></p>
 </div>
 <div id="app-as-data" class="section level3">
-<h3><span class="header-section-number">5.4.3</span> App as data</h3>
+<h3><span class="header-section-number">5.5.3</span> App as data</h3>
 <p>Templates are normally used for views
 But the cool thing about JSON is it can be used to
 declaratively represent ANYTHING from Model to View to Controller.</p>
@@ -559,7 +663,7 @@ represented as a piece of data.</p>
 <span class="op">}</span>)<span class="op">;</span></code></pre>
 </div>
 <div id="routerless-server" class="section level3">
-<h3><span class="header-section-number">5.4.4</span> Routerless Server</h3>
+<h3><span class="header-section-number">5.5.4</span> Routerless Server</h3>
 <p>Let’s take the router example from right above.
 Since our router logic is just a JSON (<code>router.json</code>),
 we don’t even need it on the server side.
