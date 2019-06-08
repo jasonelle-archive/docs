@@ -1,0 +1,19 @@
+# Ja.js - Selector Transformer
+
+*Ja.js* (previously named *st.js*) is a library 
+that enables implementing
+practically any programming concept in a declarative manner, 
+using *JSON*.
+
+This is because `ja.js` is a low level building block for creating a 
+**Turing Complete JSON markup language**.
+
+`ja.js` is the core *JSON parser* that powers **Jasonette**, 
+so you can build native *iOS/Android* apps by 
+writing nothing but a *JSON markup*.
+
+![Ja.js](images/jajs/jajs.gif)
+
+**Repository**
+
+[https://github.com/jasonelle/ja.js](https://github.com/jasonelle/ja.js)

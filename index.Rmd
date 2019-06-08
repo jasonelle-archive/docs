@@ -95,4 +95,4 @@ Example:
 [Flask](http://flask.pocoo.org/), 
 [Django](https://www.djangoproject.com/), 
 [AWS Lambda](https://aws.amazon.com/lambda/),
-`file://` localfile
+`file://` local file.
