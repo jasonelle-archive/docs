@@ -2,9 +2,11 @@
 
 *Jasonette* was created by *"Ethan Gliechtenstein"*, a New York developer. Probably from Bushwick. Who's real identity nobody knows.
 
-*Jasonette* core began in Late 2014 as an app named *"Ethan"*  (http://www.textethan.com/)
+*Jasonette* core began in Late 2014 as an app named *"Ethan"*  (`http://www.textethan.com/`)
 
 It got quickly popular.
+
+![Ethan Rules](images/history/ethanrules.jpg)
 
 | | |
 |--|--|
@@ -21,6 +23,7 @@ It got quickly popular.
 | | |
 |--|--|
 ![Ethan App Screenshot](images/history/ethanapp.jpeg)| ![Ethan Drawing](images/history/ethan.jpeg)
+![Ethan App Screenshot 2](images/history/ethanapp2.jpg) | ![Ethan App Screenshot 3](images/history/ethanapp3.jpg)
 
 
 Some time after that Ethan began extracting the core, refining the api and creating documentation. 
@@ -29,6 +32,8 @@ Finally releasing the first version of *Jasonette* on November 3th 2016.
 - https://www.producthunt.com/posts/jasonette
 
 - https://twitter.com/jasonclient/status/794175517763272708
+
+![Jasonette](images/history/jasonette.png)
 
 Ethan worked on *Jasonette*, *Cell* and *ST* for nearly 2 years straight full-time. Until June 9 2018 were he misteriosly disappeared without a trace. Later on November 6th 2018. *Jasonelle Team* took the lead ([https://github.com/Jasonette/Jasonette/issues/23](https://github.com/Jasonette/Jasonette/issues/23)).
 
