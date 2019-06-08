@@ -20,7 +20,22 @@ lot: False
 
 # Welcome
 
-*Jasonelle* is an app framework that takes a JSON markup and turns it into Android/iOS native components and function calls, which then can be packaged and distributed as your own app. And the most important part: it's 100% open source under *MPL-2.0 license*, which means you can take it and build your app, submit it to the appstore, and do whatever you want with it!. 
+*Jasonelle* is an app framework that takes a JSON markup and turns it into Android/iOS 
+native components and function calls, which then can be packaged and distributed as your own app. 
+And the most important part: it's 100% open source under *MPL-2.0 license*,
+which means you can take it and build your app, 
+submit it to the App Store, and do whatever you want with it!.
+
+## Main Goals
+
+*Jasonelle** project want to reach these goals:
+
+- Use known and popular technologies (*JSON*, *Javascript*). 💯
+- Easy to learn, use and extend. ☺️
+- Stable API. ⚓
+- Use Native Components. 📱
+- Great Documentation. 📝
+- Friendly and Welcoming Community. 🤝
 
 ## Cool things about Jasonelle
 
@@ -57,3 +72,27 @@ The vast mayority of the old docs are still valid and useful.
 ## Examples
 
 Plenty of code examples are stored in the [https://github.com/jasonelle/docs/tree/develop/examples/jasonette](https://github.com/jasonelle/docs/tree/develop/examples/jasonette) repository.
+
+## Why JSON?
+
+- Industry Standard, lightweight data-interchange format. 
+Huge amount of programming languages and tools with support available.
+
+- It is easy for humans to read and write. 
+It is easy for machines to parse and generate. 
+
+- A single plain text file can contain all the data and logic needed in a 
+complete native app.
+
+- You can use any backend to generate the app (or do not use a backend at all). 
+Example: 
+[Masonite](http://masoniteproject.com/), 
+[ProcessWire](https://processwire.com/), 
+[Express](https://expressjs.com/), 
+[SailsJS](https://sailsjs.com/), 
+[Laravel](https://laravel.com/), 
+[Rails](https://rubyonrails.org/), 
+[Flask](http://flask.pocoo.org/), 
+[Django](https://www.djangoproject.com/), 
+[AWS Lambda](https://aws.amazon.com/lambda/),
+`file://` localfile
