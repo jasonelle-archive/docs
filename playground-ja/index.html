@@ -22,83 +22,83 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/javascript/javascript.js"></script>
 
 <style>
-.container-fluid, .row, .col {
-  height: 100%;
-}
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
+  .container-fluid, .row, .col {
+    height: 100%;
+  }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
 </style>
 <script>
-var content = {
-  source: "var data = {\n  items: [1,2,3,100,10,19]\n};\nvar template = {\n  labels: {\n    \"{{#each items}}\": {\n      type: \"label\",\n      text: \"{{this}}\"\n    }\n  }\n}",
-  code: "ST.select(data)\n\t.transformWith(template)\n\t.root()"
-};
+  var content = {
+    source: "var data = {\n  items: [1,2,3,100,10,19]\n};\nvar template = {\n  labels: {\n    \"{{#each items}}\": {\n      type: \"label\",\n      text: \"{{this}}\"\n    }\n  }\n}",
+    code: "ST.select(data)\n\t.transformWith(template)\n\t.root()"
+  };
 
-var editor = {
-  $cell: {
-    codemirror: function(options) {
-      return {
-        $type: "textarea",
-        id: options.id,
-        _ed: null,
-        $init: function(){
-          for(var key in options) { if (key !== '$inherit') this[key] = options[key]; }
-          this._ed = CodeMirror.fromTextArea(this, {
-            lineNumbers: true,
-            lineWrapping: true,
-            lint: true,
-            styleActiveLine: true,
-            autoCloseBrackets: true,
-            matchBrackets: true,
-            viewportMargin: true,
-            theme: "railscasts",
-            gutters: ["CodeMirror-lint-markers"]
-          })
-          if (options.onchange) this._ed.on('change', options.onchange.bind(this))
-          var wrapper = this._ed.getWrapperElement()
-          wrapper.setAttribute("class", wrapper.getAttribute("class") + " " + options.class)
-          if (options.style) wrapper.style = options.style
-          if (options.$init) options.$init.call(this);
-        },
-        _update: function(o){
-          if (this._ed) {
-            this._ed.getDoc().setValue(o)
-          } else {
-            setTimeout(function() {
+  var editor = {
+    $cell: {
+      codemirror: function(options) {
+        return {
+          $type: "textarea",
+          id: options.id,
+          _ed: null,
+          $init: function(){
+            for(var key in options) { if (key !== '$inherit') this[key] = options[key]; }
+            this._ed = CodeMirror.fromTextArea(this, {
+              lineNumbers: true,
+              lineWrapping: true,
+              lint: true,
+              styleActiveLine: true,
+              autoCloseBrackets: true,
+              matchBrackets: true,
+              viewportMargin: true,
+              theme: "railscasts",
+              gutters: ["CodeMirror-lint-markers"]
+            })
+            if (options.onchange) this._ed.on('change', options.onchange.bind(this))
+            var wrapper = this._ed.getWrapperElement()
+            wrapper.setAttribute("class", wrapper.getAttribute("class") + " " + options.class)
+            if (options.style) wrapper.style = options.style
+            if (options.$init) options.$init.call(this);
+          },
+          _update: function(o){
+            if (this._ed) {
               this._ed.getDoc().setValue(o)
-            }.bind(this), 0);
+            } else {
+              setTimeout(function() {
+                this._ed.getDoc().setValue(o)
+              }.bind(this), 0);
+            }
+          },
+          _get: function(){
+            if (this._ed) return this._ed.getDoc().getValue()
+            else return null;
           }
-        },
-        _get: function(){
-          if (this._ed) return this._ed.getDoc().getValue()
-          else return null;
         }
       }
     }
-  }
-};
+  };
 
-var app = {
-  $cell: true,
-  class: 'container-fluid',
-  _u: function() {
-    var source = document.querySelector("#source")._get();
-    var evaluation = document.querySelector("#code")._get();
-    if (source && evaluation) {
-      var result = eval(source + "\n" + evaluation);
-      document.querySelector("#result")._update(JSON.stringify(result, null, 2));
-    }
-  },
-  $components: [{
-    class: 'row',
-    $components: [
-      { id: 'source', $inherit: 'codemirror', class: 'col', value: content.source, $init: function() { this._u(); }, onchange: function(e) { this._u(); } },
-      { id: 'code', $inherit: 'codemirror', class: 'col', value: content.code, $init: function() { this._u(); }, onchange: function(e) { this._u(); } },
-      { id: 'result', $inherit: 'codemirror', class: 'col' }
-    ]
-  }]
-};
+  var app = {
+    $cell: true,
+    class: 'container-fluid',
+    _u: function() {
+      var source = document.querySelector("#source")._get();
+      var evaluation = document.querySelector("#code")._get();
+      if (source && evaluation) {
+        var result = eval(source + "\n" + evaluation);
+        document.querySelector("#result")._update(JSON.stringify(result, null, 2));
+      }
+    },
+    $components: [{
+      class: 'row',
+      $components: [
+        { id: 'source', $inherit: 'codemirror', class: 'col', value: content.source, $init: function() { this._u(); }, onchange: function(e) { this._u(); } },
+        { id: 'code', $inherit: 'codemirror', class: 'col', value: content.code, $init: function() { this._u(); }, onchange: function(e) { this._u(); } },
+        { id: 'result', $inherit: 'codemirror', class: 'col' }
+      ]
+    }]
+  };
 </script>
 </html>
