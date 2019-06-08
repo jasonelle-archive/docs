@@ -20,3 +20,15 @@ Want to build your own turing complete JSON markup language?
 ## Repository
 
 [https://github.com/jasonelle/ja.js](https://github.com/jasonelle/ja.js)
+
+## Playground
+
+Parse *JSON* anywhere,
+both frontend and backend, as easy as using 
+`JSON.stringify` or `JSON.parse`.
+
+[https://jasonelle.com/docs/playground-ja/](https://jasonelle.com/docs/playground-ja/)
+
+**Source Code**:
+
+[https://github.com/jasonelle/docs/tree/develop/playground-ja](https://github.com/jasonelle/docs/tree/develop/playground-ja).
