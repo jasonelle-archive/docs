@@ -152,6 +152,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform"><i class="fa fa-check"></i><b>5.3.2</b> Transform</a></li>
 <li class="chapter" data-level="5.3.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#usage"><i class="fa fa-check"></i><b>5.3.3</b> Usage</a></li>
 </ul></li>
+<li class="chapter" data-level="5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#examples-1"><i class="fa fa-check"></i><b>5.4</b> Examples</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#declarative-json-api-template"><i class="fa fa-check"></i><b>5.4.1</b> Declarative JSON API Template</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#json-as-a-json-query-language"><i class="fa fa-check"></i><b>5.4.2</b> JSON as a JSON Query Language</a></li>
+<li class="chapter" data-level="5.4.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#app-as-data"><i class="fa fa-check"></i><b>5.4.3</b> App as data</a></li>
+<li class="chapter" data-level="5.4.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#routerless-server"><i class="fa fa-check"></i><b>5.4.4</b> Routerless Server</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a><ul>
 <li class="chapter" data-level="6.1" data-path="tools.html"><a href="tools.html#jason-app-"><i class="fa fa-check"></i><b>6.1</b> Jason App <strong>{ ·ᴥ·}</strong></a><ul>
@@ -413,8 +419,220 @@ Being able to bend any JSON to your will means you can do all kinds of magical t
 
 
 
-
 </div>
+</div>
+</div>
+<div id="examples-1" class="section level2">
+<h2><span class="header-section-number">5.4</span> Examples</h2>
+<div id="declarative-json-api-template" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> Declarative JSON API Template</h3>
+<p>Build JSON using a simple, human-readable,
+and declarative template instead of manually coding it.</p>
+<p>See the example code at:
+<a href="https://github.com/jasonelle/st.js-api.template">https://github.com/jasonelle/st.js-api.template</a></p>
+<blockquote>
+<p>Old way: Manually construct object</p>
+</blockquote>
+<pre class="sourceCode js"><code class="sourceCode javascript">
+<span class="co">// app.js</span>
+<span class="va">app</span>.<span class="at">get</span>(<span class="st">&#39;/&#39;</span><span class="op">,</span> <span class="kw">function</span> (req<span class="op">,</span> res) <span class="op">{</span>
+  <span class="kw">var</span> response <span class="op">=</span> <span class="op">{}</span>
+  response[<span class="st">&quot;current_user&quot;</span>] <span class="op">=</span> <span class="op">{</span>
+    <span class="dt">username</span><span class="op">:</span> <span class="st">&quot;@&quot;</span> <span class="op">+</span> <span class="va">req</span>.<span class="va">user</span>.<span class="at">username</span><span class="op">,</span>
+    <span class="dt">firstname</span><span class="op">:</span> <span class="va">req</span>.<span class="va">user</span>.<span class="va">name</span>.<span class="at">split</span>(<span class="st">&#39; &#39;</span>)[<span class="dv">0</span>]<span class="op">,</span>
+    <span class="dt">lastname</span><span class="op">:</span> <span class="va">req</span>.<span class="va">user</span>.<span class="va">name</span>.<span class="at">split</span>(<span class="st">&#39; &#39;</span>)[<span class="dv">1</span>]
+  <span class="op">}</span>
+  <span class="kw">var</span> transformed_posts <span class="op">=</span> <span class="va">db</span>.<span class="va">posts</span>.<span class="at">map</span>(<span class="kw">function</span>(post)<span class="op">{</span>
+    <span class="cf">return</span> <span class="op">{</span>
+      <span class="dt">slug</span><span class="op">:</span> <span class="va">post</span>.<span class="at">slug</span>
+      <span class="dt">permalink</span><span class="op">:</span> <span class="st">&quot;https://blahblahblah.blahblah/&quot;</span> <span class="op">+</span> <span class="va">post</span>.<span class="at">slug</span><span class="op">,</span>
+      <span class="dt">post_title</span><span class="op">:</span> <span class="va">post</span>.<span class="at">title</span><span class="op">,</span>
+      <span class="dt">post_content</span><span class="op">:</span> <span class="va">post</span>.<span class="at">content</span>
+    <span class="op">}</span>
+  <span class="op">}</span>)
+  response[<span class="st">&quot;posts&quot;</span>] <span class="op">=</span> transformed_posts
+  <span class="va">res</span>.<span class="at">json</span>(response)
+<span class="op">}</span>)</code></pre>
+<blockquote>
+<p>New way: Declarative approach with ja.js</p>
+</blockquote>
+<pre><code>// app.js
+app.get(&#39;/&#39;, function (req, res) {
+  res.json(ST.select(require(&#39;./template.json&#39;))
+              .transform({user: req.user, posts: db.posts})
+              .root())
+})
+
+// template.json
+{
+  &quot;current_user&quot;: {
+    &quot;username&quot;: &quot;@{{user.username}}&quot;,
+    &quot;firstname&quot;: &quot;{{user.name.split(&#39; &#39;)[0]}}&quot;,
+    &quot;lastname&quot;: &quot;{{user.name.split(&#39; &#39;)[1]}}&quot;
+  },
+  &quot;posts&quot;: {
+    &quot;{{#each posts}}&quot;: {
+      &quot;slug&quot;: &quot;{{slug}}&quot;,
+      &quot;permalink&quot;: &quot;https://blahblahblah.blahblah/{{slug}}&quot;,
+      &quot;post_title&quot;: &quot;{{title}}&quot;,
+      &quot;post_content&quot;: &quot;{{content}}&quot;
+    }
+  }
+}</code></pre>
+</div>
+<div id="json-as-a-json-query-language" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> JSON as a JSON Query Language</h3>
+<p>Make complex API queries purely written in JSON.</p>
+<p>Since templates in ST are written in JSON,
+you can pass them around anywhere just like any other data object.</p>
+<p>Notice we’re not creating some new query language, it’s just JSON.
+No convoluted infrastructure to set up!</p>
+<p>See the example code at:
+<a href="https://github.com/jasonelle/st.js-jsonql">https://github.com/jasonelle/st.js-jsonql</a></p>
+<p><img src="images/jajs/jsonql.png" /></p>
+</div>
+<div id="app-as-data" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> App as data</h3>
+<p>Templates are normally used for views
+But the cool thing about JSON is it can be used to
+declaratively represent ANYTHING from Model to View to Controller.</p>
+<p>What if we set executable functions as leaf
+nodes of an object, select &amp; transform it, and then auto-trigger the resolved function?
+We have built a router in JSON!</p>
+<p>Basically, the entire router logic is
+represented as a piece of data.</p>
+<blockquote>
+<p>Browser</p>
+</blockquote>
+<pre class="sourceCode js"><code class="sourceCode javascript">
+<span class="kw">var</span> rpc <span class="op">=</span> <span class="op">{</span>
+  <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;add&quot;</span><span class="op">,</span>
+  <span class="dt">args</span><span class="op">:</span> [<span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">1</span>]
+<span class="op">}</span>
+<span class="at">fetch</span>(<span class="st">&quot;http://localhost:3000&quot;</span><span class="op">,</span> <span class="op">{</span>
+  <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;POST&quot;</span><span class="op">,</span>
+  <span class="dt">headers</span><span class="op">:</span> <span class="op">{</span>
+    <span class="st">&#39;Accept&#39;</span><span class="op">:</span> <span class="st">&#39;application/json&#39;</span><span class="op">,</span>
+    <span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;application/json&#39;</span>
+  <span class="op">},</span>
+  <span class="dt">body</span><span class="op">:</span> <span class="va">JSON</span>.<span class="at">stringify</span>(rpc)
+).<span class="at">then</span>(<span class="kw">function</span>(res) <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(<span class="va">res</span>.<span class="at">json</span>())<span class="op">;</span>
+<span class="op">}</span>)</code></pre>
+<blockquote>
+<p>Server</p>
+</blockquote>
+<pre class="sourceCode js"><code class="sourceCode javascript"><span class="co">// router.json</span>
+[<span class="op">{</span>
+  <span class="st">&quot;{{#if &#39;name&#39; in this}}&quot;</span><span class="op">:</span> [<span class="op">{</span>
+    <span class="st">&quot;{{#if name === &#39;add&#39;}}&quot;</span><span class="op">:</span> <span class="st">&#39;add_service&#39;</span>
+  <span class="op">},</span> <span class="op">{</span>
+    <span class="st">&quot;{{#elseif name === &#39;subtract&#39;}}&quot;</span><span class="op">:</span> [<span class="op">{</span>
+      <span class="st">&quot;{{#if args.length === 2}}&quot;</span><span class="op">:</span> <span class="st">&#39;subtract_service&#39;</span>
+    <span class="op">},</span> <span class="op">{</span>
+      <span class="st">&quot;{{#else}}&quot;</span><span class="op">:</span> <span class="st">&#39;error_service&#39;</span>
+    <span class="op">}</span>]
+  <span class="op">}</span>]
+<span class="op">},</span> <span class="op">{</span>
+  <span class="st">&quot;{{#else}}&quot;</span><span class="op">:</span> <span class="st">&#39;error_service&#39;</span>
+<span class="op">}</span>]
+
+<span class="co">// express server</span>
+<span class="va">app</span>.<span class="at">post</span>(<span class="st">&#39;/&#39;</span><span class="op">,</span>  (req<span class="op">,</span> res) <span class="op">=&gt;</span> <span class="op">{</span>
+  <span class="kw">const</span> Services <span class="op">=</span> <span class="op">{</span>
+    <span class="dt">add_service</span><span class="op">:</span> <span class="kw">function</span>()<span class="op">{</span>
+        <span class="cf">return</span> <span class="va">Array</span>.<span class="va">prototype</span>.<span class="at">slice</span>
+                    .<span class="at">call</span>(arguments)
+                    .<span class="at">reduce</span>((a<span class="op">,</span>b) <span class="op">=&gt;</span> <span class="op">{</span>
+                      <span class="cf">return</span> a<span class="op">+</span>b<span class="op">;</span>
+                    <span class="op">},</span> <span class="dv">0</span>)
+    <span class="op">},</span>
+    <span class="dt">subtract_service</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span>
+      <span class="cf">return</span> arguments[<span class="dv">0</span>] <span class="op">-</span> arguments[<span class="dv">1</span>]
+    <span class="op">},</span>
+    <span class="dt">error_service</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span>
+      <span class="cf">return</span> <span class="st">&#39;error&#39;</span><span class="op">;</span>
+    <span class="op">}</span>
+  <span class="op">}</span>
+  <span class="kw">const</span> name <span class="op">=</span> <span class="va">ST</span>.<span class="at">transform</span>(<span class="at">require</span>(<span class="st">&#39;./router.json&#39;</span>)<span class="op">,</span> <span class="va">req</span>.<span class="at">body</span>)<span class="op">;</span>
+  <span class="va">res</span>.<span class="at">json</span>(Services[name].<span class="at">apply</span>(<span class="kw">this</span><span class="op">,</span> <span class="va">req</span>.<span class="va">body</span>.<span class="at">args</span>))<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre>
+</div>
+<div id="routerless-server" class="section level3">
+<h3><span class="header-section-number">5.4.4</span> Routerless Server</h3>
+<p>Let’s take the router example from right above.
+Since our router logic is just a JSON (<code>router.json</code>),
+we don’t even need it on the server side.
+What if we DON’T keep <code>router.json</code> on the server,
+but send it from the browser?</p>
+<blockquote>
+<p>Browser</p>
+</blockquote>
+<pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">var</span> router <span class="op">=</span> [<span class="op">{</span>
+  <span class="st">&quot;{{#if &#39;name&#39; in this}}&quot;</span><span class="op">:</span> [<span class="op">{</span>
+    <span class="st">&quot;{{#if name === &#39;add&#39;}}&quot;</span><span class="op">:</span> <span class="st">&#39;add_service&#39;</span>
+  <span class="op">},</span> <span class="op">{</span>
+    <span class="st">&quot;{{#elseif name === &#39;subtract&#39;}}&quot;</span><span class="op">:</span> [<span class="op">{</span>
+      <span class="st">&quot;{{#if args.length === 2}}&quot;</span><span class="op">:</span> <span class="st">&#39;subtract_service&#39;</span>
+    <span class="op">},</span> <span class="op">{</span>
+      <span class="st">&quot;{{#else}}&quot;</span><span class="op">:</span> <span class="st">&#39;error_service&#39;</span>
+    <span class="op">}</span>]
+  <span class="op">}</span>]
+<span class="op">},</span> <span class="op">{</span>
+  <span class="st">&quot;{{#else}}&quot;</span><span class="op">:</span> <span class="st">&#39;error_service&#39;</span>
+<span class="op">}</span>]<span class="op">;</span>
+
+<span class="kw">var</span> rpc <span class="op">=</span> <span class="op">{</span>
+  <span class="dt">name</span><span class="op">:</span> <span class="st">&quot;add&quot;</span><span class="op">,</span>
+  <span class="dt">args</span><span class="op">:</span> [<span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">1</span>]<span class="op">,</span>
+  <span class="dt">router</span><span class="op">:</span> router
+<span class="op">}</span>
+
+<span class="at">fetch</span>(<span class="st">&quot;http://localhost:3000&quot;</span><span class="op">,</span> <span class="op">{</span>
+  <span class="dt">method</span><span class="op">:</span> <span class="st">&quot;POST&quot;</span><span class="op">,</span>
+  <span class="dt">headers</span><span class="op">:</span> <span class="op">{</span>
+    <span class="st">&#39;Accept&#39;</span><span class="op">:</span> <span class="st">&#39;application/json&#39;</span><span class="op">,</span>
+    <span class="st">&#39;Content-Type&#39;</span><span class="op">:</span> <span class="st">&#39;application/json&#39;</span>
+  <span class="op">},</span>
+  <span class="dt">body</span><span class="op">:</span> <span class="va">JSON</span>.<span class="at">stringify</span>(rpc)
+).<span class="at">then</span>(<span class="kw">function</span>(res) <span class="op">{</span>
+  <span class="va">console</span>.<span class="at">log</span>(<span class="va">res</span>.<span class="at">json</span>())<span class="op">;</span>
+<span class="op">}</span>)</code></pre>
+<blockquote>
+<p>Server</p>
+</blockquote>
+<pre class="sourceCode js"><code class="sourceCode javascript"><span class="co">// express server</span>
+<span class="va">app</span>.<span class="at">post</span>(<span class="st">&#39;/&#39;</span><span class="op">,</span>  (req<span class="op">,</span> res) <span class="op">=&gt;</span> <span class="op">{</span>
+  <span class="kw">const</span> Services <span class="op">=</span> <span class="op">{</span>
+    <span class="dt">add_service</span><span class="op">:</span> <span class="kw">function</span>()<span class="op">{</span>
+        <span class="cf">return</span> <span class="va">Array</span>.<span class="va">prototype</span>.<span class="at">slice</span>
+                    .<span class="at">call</span>(arguments)
+                    .<span class="at">reduce</span>((a<span class="op">,</span>b) <span class="op">=&gt;</span> <span class="op">{</span>
+                      <span class="cf">return</span> a<span class="op">+</span>b<span class="op">;</span>
+                    <span class="op">},</span> <span class="dv">0</span>)
+    <span class="op">},</span>
+    <span class="dt">subtract_service</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span>
+      <span class="cf">return</span> arguments[<span class="dv">0</span>] <span class="op">-</span> arguments[<span class="dv">1</span>]
+    <span class="op">},</span>
+    <span class="dt">error_service</span><span class="op">:</span> <span class="kw">function</span>() <span class="op">{</span>
+      <span class="cf">return</span> <span class="st">&#39;error&#39;</span><span class="op">;</span>
+    <span class="op">}</span>
+  <span class="op">}</span>
+  <span class="kw">const</span> name <span class="op">=</span> <span class="va">ST</span>.<span class="at">transform</span>(<span class="va">req</span>.<span class="va">body</span>.<span class="at">router</span><span class="op">,</span> <span class="va">req</span>.<span class="at">body</span>)<span class="op">;</span>
+  <span class="va">res</span>.<span class="at">json</span>(Services[name].<span class="at">apply</span>(<span class="kw">this</span><span class="op">,</span> <span class="va">req</span>.<span class="va">body</span>.<span class="at">args</span>))<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span></code></pre>
+<p><strong>What’s going on here?</strong></p>
+<p>We are looking at a server WITHOUT a router.
+Instead of implementing a router on the server,
+we send the router itself as part of a network request!</p>
+<p>This type of JSON-powered portability provides
+extreme flexibility when creating interfaces
+for microservices and RPC endpoints</p>
+<p>Also, remember that you can bake
+<strong>validation, conditionals, loops, etc. all in a single
+JSON IPC/RPC call</strong>, which makes it extremely
+powerful and efficient.</p>
+
 </div>
 </div>
 </div>
