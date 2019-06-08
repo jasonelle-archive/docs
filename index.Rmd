@@ -24,13 +24,29 @@ lot: False
 
 ## Cool things about Jasonelle
 
-- **100% NATIVE**: Jasonelle maps *JSON* into native components and native function calls. There is no gimmick. There is no magic.
+- **100% NATIVE**: Jasonelle maps *JSON* into native 
+components and native function calls. There is no gimmick. 
+There is no magic.
 
-- **App loads over HTTP (or local file)**: Your app exists 100% as JSON, and loads from the cloud or local. No more hard-coding. Send Native App over HTTP Anything that can be expressed in JSON can be sent over the Internet. Anything that can be sent over the Internet doesn't need to be on the client. Since Jasonette lets you express the app 100% in JSON, you don't need to hard-code your app on the phone anymore. Instead, the app loads directly from the server everytime a user opens the app.
+- **App loads over HTTP (or local file)**: Your app exists 
+100% as JSON, and loads from the cloud or local. 
+No more hard-coding. Send Native App over HTTP Anything 
+that can be expressed in JSON can be sent over the Internet. 
+Anything that can be sent over the Internet doesn't need to be on the client. Since Jasonette lets you express the app 100% in JSON, you don't need to hard-code your app on the phone anymore. Instead, the app loads directly from the server everytime a user opens the app.
 
-- **An app in 30 minutes**: No kidding, build an app in 30 minutes. Describe instead of programming Instead of writing and compiling complex program lines, you only need to write a single markup that describes what the view should look like and how it should behave. An app that used to take days to build can be built in 10 minutes.
+- **An app in 30 minutes**: No kidding, build an app in 30 minutes. 
+Describe instead of programming Instead of writing and compiling complex program lines, 
+you only need to write a single markup that describes what the view should look like and 
+how it should behave. An app that used to take days to build can be built in 30 minutes.
 
-- **Lowest possible learning curve**: No programming experience required. There's a small amount of things you need to know: JSON (And maybe a little JavaScript). Which means you can build an app without "becoming a programmer". Minimum learning curve You can describe the view layout (like HTML), component style (like CSS), and native function calls (like Javascript) ALL in JSON. All you need is a single JSON.
+- **Lowest possible learning curve**: No programming experience 
+required. There's a small amount of things you need to know: 
+JSON (And maybe a little JavaScript). Which means you can 
+build an app without "becoming a programmer". 
+Minimum learning curve You can describe the view 
+layout (like HTML), component style (like CSS), and native 
+function calls (like Javascript) **ALL in JSON**. 
+All you need is a single JSON.
 
 ## Old Docs
 
