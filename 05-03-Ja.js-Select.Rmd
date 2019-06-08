@@ -1,0 +1,100 @@
+## Select
+
+### Syntax
+
+```js
+ST.select(data, selectorFunction);
+```
+
+### Parameters
+
+- `data` : Any JavaScript object
+- `selectorFunction` : selectorFunction is a predicate, to test each key/value pairs of the entire JSON tree. 
+Return true to keep the element, false otherwise, taking two arguments:
+  - `key` : the "key" of the current key/value pair being tested.
+  - `value` : the "value" of the current key/value pair being tested.
+
+### Return Value
+
+Returns a selection object which can be queried to retrieve the final result, using the following API:
+
+- `values()` : Array of values for all the key/value pair matches.
+- `keys()` : Array of keys for all the key/value pair matches.
+- `paths()` : Array of paths leading to all the key/value pair matches.
+- `objects()` : Array of full objects in which the key/value match was found.
+- `root()` : Retrieve the root node. Useful when used along with transform.
+
+### Example
+
+You can select any JSON tree to find only the subtrees that satisfy your needs.
+
+
+
+> 1. Take any data
+
+```js
+var data = {
+  links: [
+    { "remote_url": "http://localhost" },
+    { "file_url": "file://documents" },
+    { "remote_url": "https://blahblah.com" }
+  ],
+  preview: "https://image",
+  metadata: "This is a link collection"
+};
+```
+
+
+
+> 2. Select subtree
+
+```js
+var selection = ST.select(data, function(key, val) {
+  return /https?:/.test(val);
+})
+```
+
+
+
+> 3. Query the selection object
+
+```js
+var selected_values = selection.values();
+//  [
+//    "http://localhost",
+//    "https://blahblah.com",
+//    "https://image"
+//  ]
+
+var selected_keys = selection.keys();
+//  [
+//    "remote_url",
+//    "remote_url",
+//    "preview"
+//  ]
+
+var selected_objects = selection.objects();
+//  [
+//    { "remote_url": "http://localhost" },
+//    { "remote_url": "https://blahblah.com" },
+//    {
+//      "links": [
+//        { "remote_url": "http://localhost" },
+//        { "file_url": "file://documents" },
+//        { "remote_url": "https://blahblah.com" }
+//      ],
+//      "preview": "https://image",
+//      "metadata": "This is a link collection"
+//    }
+//  ]
+//
+//
+
+var selected_paths = selection.paths();
+//  [
+//    "[\"links\"][0]",
+//    "[\"links\"][2]",
+//    ""
+//  ]
+```
+
