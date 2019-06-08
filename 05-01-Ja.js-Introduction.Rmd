@@ -1,5 +1,20 @@
 ## Introduction
 
+`ja.js` is a library that adds a couple of powerful methods to JavaScript's native JSON.
+
+So you can simply use it with the syntax `ST.select(...).transform(...)`.
+
+The library is just a single file, made up of **stateless functions**, with **NO dependency**.
+Which makes it effortless to **embed anywhere** without hassle. 
+(Currently used in various environments including iOS, Android, node.js, browser, etc.).
+
+**What Can I Use It For?**
+
+JSON powers almost everything in the world.
+Being able to bend any JSON to your will means you can do all kinds of magical things.
+
+*Ja.js* consist mainly of two operations:
+
 1. **Select:** Query any JSON tree to select exactly the subtree you are looking for.
 2. **Transform:** Transform any JSON object to another by parsing with a template, also written in JSON
 
@@ -185,14 +200,3 @@ const parsed = ST.select({ "items": [1,2,3,4] })
                 })
                 .root();
 ```
-
-### How Does It Work?
-
-`ja.js` is a library that adds a couple of powerful methods to JavaScript's native JSON.
-
-So you can simply use it with the syntax `ST.select(...).transform(...)`.
-
-The library is just a single file, made up of **stateless functions**, with **NO dependency**.
-Which makes it effortless to **embed anywhere** without hassle. 
-(Currently used in various environments including iOS, Android, node.js, browser, etc.)
-
