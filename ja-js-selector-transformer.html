@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Ja.js - Selector Transformer | Jasonelle Documentation</title>
+  <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Ja.js - Selector Transformer | Jasonelle Documentation" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://jasonelle.com" />
+  
+  <meta property="og:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  <meta name="github-repo" content="jasonelle/jasonelle" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Ja.js - Selector Transformer | Jasonelle Documentation" />
+  
+  <meta name="twitter:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  
+
+<meta name="author" content="Jasonelle Team" />
+
+
+<meta name="date" content="2019-06-08" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="jasonette.html">
+<link rel="next" href="tools.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">📝 Jasonelle Docs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#main-goals"><i class="fa fa-check"></i><b>1.1</b> Main Goals</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#cool-things-about-jasonelle"><i class="fa fa-check"></i><b>1.2</b> Cool things about Jasonelle</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#old-docs"><i class="fa fa-check"></i><b>1.3</b> Old Docs</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#examples"><i class="fa fa-check"></i><b>1.4</b> Examples</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#why-json"><i class="fa fa-check"></i><b>1.5</b> Why JSON?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a></li>
+<li class="chapter" data-level="3" data-path="cell-js.html"><a href="cell-js.html"><i class="fa fa-check"></i><b>3</b> Cell.js</a></li>
+<li class="chapter" data-level="4" data-path="jasonette.html"><a href="jasonette.html"><i class="fa fa-check"></i><b>4</b> Jasonette</a><ul>
+<li class="chapter" data-level="4.1" data-path="jasonette.html"><a href="jasonette.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="jasonette.html"><a href="jasonette.html#json-to-native-components"><i class="fa fa-check"></i><b>4.1.1</b> JSON to Native Components</a></li>
+<li class="chapter" data-level="4.1.2" data-path="jasonette.html"><a href="jasonette.html#free-battle-tested"><i class="fa fa-check"></i><b>4.1.2</b> Free &amp; Battle Tested</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Ja.js - Selector Transformer</a></li>
+<li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a><ul>
+<li class="chapter" data-level="6.1" data-path="tools.html"><a href="tools.html#jason-app-"><i class="fa fa-check"></i><b>6.1</b> Jason App <strong>{ ·ᴥ·}</strong></a><ul>
+<li class="chapter" data-level="6.1.1" data-path="tools.html"><a href="tools.html#how-is-related-to-jasonette"><i class="fa fa-check"></i><b>6.1.1</b> How is related to Jasonette?</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tools.html"><a href="tools.html#what-is-it"><i class="fa fa-check"></i><b>6.1.2</b> What is it?</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tools.html"><a href="tools.html#when-to-use"><i class="fa fa-check"></i><b>6.1.3</b> When to use?</a></li>
+<li class="chapter" data-level="6.1.4" data-path="tools.html"><a href="tools.html#how-to-install"><i class="fa fa-check"></i><b>6.1.4</b> How to Install</a></li>
+<li class="chapter" data-level="6.1.5" data-path="tools.html"><a href="tools.html#how-to-use"><i class="fa fa-check"></i><b>6.1.5</b> How to Use</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html"><i class="fa fa-check"></i><b>7</b> Jasonette Tutorials</a><ul>
+<li class="chapter" data-level="7.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#how-to-implement"><i class="fa fa-check"></i><b>7.1.1</b> How to implement</a></li>
+<li class="chapter" data-level="7.1.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#simple-and-flexible-works-on-both-ios-and-android."><i class="fa fa-check"></i><b>7.1.2</b> Simple and Flexible, works on both iOS and Android.</a></li>
+<li class="chapter" data-level="7.1.3" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#conclusion"><i class="fa fa-check"></i><b>7.1.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#why-would-you-use-html-in-a-native-app"><i class="fa fa-check"></i><b>7.2.1</b> Why would you use HTML in a native app?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#how-does-it-work"><i class="fa fa-check"></i><b>7.2.2</b> How does it work?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#implementation-interactive-web-container"><i class="fa fa-check"></i><b>7.2.3</b> Implementation: Interactive Web Container</a></li>
+<li class="chapter" data-level="7.2.4" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#example-usage"><i class="fa fa-check"></i><b>7.2.4</b> Example Usage</a></li>
+<li class="chapter" data-level="7.2.5" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#conclusion-1"><i class="fa fa-check"></i><b>7.2.5</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="how-to-guides.html"><a href="how-to-guides.html"><i class="fa fa-check"></i><b>8</b> How To Guides</a></li>
+<li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a><ul>
+<li class="chapter" data-level="9.1" data-path="discussions.html"><a href="discussions.html#beerjs---chile---2019"><i class="fa fa-check"></i><b>9.1</b> BeerJS - Chile - 2019</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://jasonelle.com">Jasonelle.com</a></li>
+<li><a href="https://github.com/jasonelle/docs/tree/develop/examples">Examples</a></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Jasonelle Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ja.js---selector-transformer" class="section level1">
+<h1><span class="header-section-number">5</span> Ja.js - Selector Transformer</h1>
+<p><em>Ja.js</em> (previously named <em>st.js</em>) is a library
+that enables implementing
+practically any programming concept in a declarative manner,
+using <em>JSON</em>.</p>
+<p>This is because <code>ja.js</code> is a low level building block for creating a
+<strong>Turing Complete JSON markup language</strong>.</p>
+<p><code>ja.js</code> is the core <em>JSON parser</em> that powers <strong>Jasonette</strong>,
+so you can build native <em>iOS/Android</em> apps by
+writing nothing but a <em>JSON markup</em>.</p>
+<div class="figure">
+<img src="images/jajs/jajs.gif" alt="Ja.js" />
+<p class="caption">Ja.js</p>
+</div>
+<p><strong>Repository</strong></p>
+<p><a href="https://github.com/jasonelle/ja.js">https://github.com/jasonelle/ja.js</a></p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="jasonette.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tools.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["jasonelle.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
