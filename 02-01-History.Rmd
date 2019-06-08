@@ -26,6 +26,8 @@ It got quickly popular.
 
 ![Ethan App Screenshot](images/history/ethanapp2.jpg)
 
+If you want to see the prototype *Jasonette JSON syntax*, see the archived repo here:
+[https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/archived-ethan-app](https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/archived-ethan-app)
 
 Some time after that Ethan began extracting the core, refining the api and creating documentation. 
 Finally releasing the first version of *Jasonette* on November 3th 2016.
