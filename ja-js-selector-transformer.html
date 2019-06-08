@@ -146,10 +146,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Ja.js - Selector Transformer</a><ul>
 <li class="chapter" data-level="5.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#repository"><i class="fa fa-check"></i><b>5.1</b> Repository</a></li>
-<li class="chapter" data-level="5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#select"><i class="fa fa-check"></i><b>5.2.1</b> Select</a></li>
-<li class="chapter" data-level="5.2.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform"><i class="fa fa-check"></i><b>5.2.2</b> Transform</a></li>
-<li class="chapter" data-level="5.2.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#usage"><i class="fa fa-check"></i><b>5.2.3</b> Usage</a></li>
+<li class="chapter" data-level="5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#playground"><i class="fa fa-check"></i><b>5.2</b> Playground</a></li>
+<li class="chapter" data-level="5.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#introduction-1"><i class="fa fa-check"></i><b>5.3</b> Introduction</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#select"><i class="fa fa-check"></i><b>5.3.1</b> Select</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform"><i class="fa fa-check"></i><b>5.3.2</b> Transform</a></li>
+<li class="chapter" data-level="5.3.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#usage"><i class="fa fa-check"></i><b>5.3.3</b> Usage</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a><ul>
@@ -221,10 +222,19 @@ Want to build your own turing complete JSON markup language?</p>
 <div id="repository" class="section level2">
 <h2><span class="header-section-number">5.1</span> Repository</h2>
 <p><a href="https://github.com/jasonelle/ja.js">https://github.com/jasonelle/ja.js</a></p>
+</div>
+<div id="playground" class="section level2">
+<h2><span class="header-section-number">5.2</span> Playground</h2>
+<p>Parse <em>JSON</em> anywhere,
+both frontend and backend, as easy as using
+<code>JSON.stringify</code> or <code>JSON.parse</code>.</p>
+<p><a href="https://jasonelle.com/docs/playground-ja/">https://jasonelle.com/docs/playground-ja/</a></p>
+<p><strong>Source Code</strong>:</p>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/playground-ja">https://github.com/jasonelle/docs/tree/develop/playground-ja</a>.</p>
 
 </div>
 <div id="introduction-1" class="section level2">
-<h2><span class="header-section-number">5.2</span> Introduction</h2>
+<h2><span class="header-section-number">5.3</span> Introduction</h2>
 <p><code>ja.js</code> is a library that adds a couple of powerful methods to JavaScript’s native JSON.</p>
 <p>So you can simply use it with the syntax <code>ST.select(...).transform(...)</code>.</p>
 <p>The library is just a single file, made up of <strong>stateless functions</strong>, with <strong>NO dependency</strong>.
@@ -240,7 +250,7 @@ Being able to bend any JSON to your will means you can do all kinds of magical t
 </ol>
 <p>You can also mix and match Select AND Transform to perform partial transform, modularize JSON objects, etc.</p>
 <div id="select" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> Select</h3>
+<h3><span class="header-section-number">5.3.1</span> Select</h3>
 <p>Select a JSON object or its subtree that matches your filter function criteria.</p>
 <blockquote>
 <p>Step 1. Take any JSON object</p>
@@ -285,7 +295,7 @@ Being able to bend any JSON to your will means you can do all kinds of magical t
 <span class="co">//  ]</span></code></pre>
 </div>
 <div id="transform" class="section level3">
-<h3><span class="header-section-number">5.2.2</span> Transform</h3>
+<h3><span class="header-section-number">5.3.2</span> Transform</h3>
 <p>Transform any JSON with a declarative template, also in JSON.</p>
 <blockquote>
 <p>Step 1. Take any JSON object</p>
@@ -368,9 +378,9 @@ Being able to bend any JSON to your will means you can do all kinds of magical t
 <span class="co">//  }</span></code></pre>
 </div>
 <div id="usage" class="section level3">
-<h3><span class="header-section-number">5.2.3</span> Usage</h3>
+<h3><span class="header-section-number">5.3.3</span> Usage</h3>
 <div id="in-a-browser" class="section level4">
-<h4><span class="header-section-number">5.2.3.1</span> In a browser</h4>
+<h4><span class="header-section-number">5.3.3.1</span> In a browser</h4>
 <pre class="sourceCode js"><code class="sourceCode javascript"><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">&quot;ja.js&quot;</span><span class="op">&gt;</span>&lt;/script<span class="op">&gt;</span>
 <span class="op">&lt;</span>script<span class="op">&gt;</span>
 <span class="kw">var</span> parsed <span class="op">=</span> <span class="va">ST</span>.<span class="at">select</span>(<span class="op">{</span> <span class="st">&quot;items&quot;</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">4</span>] <span class="op">}</span>)
@@ -383,7 +393,7 @@ Being able to bend any JSON to your will means you can do all kinds of magical t
 &lt;/script<span class="op">&gt;</span></code></pre>
 </div>
 <div id="in-node.js" class="section level4">
-<h4><span class="header-section-number">5.2.3.2</span> In node.js</h4>
+<h4><span class="header-section-number">5.3.3.2</span> In node.js</h4>
 <blockquote>
 <p>Install through npm:</p>
 </blockquote>
@@ -400,6 +410,9 @@ Being able to bend any JSON to your will means you can do all kinds of magical t
                   <span class="op">}</span>
                 <span class="op">}</span>)
                 .<span class="at">root</span>()<span class="op">;</span></code></pre>
+
+
+
 
 </div>
 </div>
