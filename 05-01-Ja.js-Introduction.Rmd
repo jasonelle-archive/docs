@@ -20,7 +20,7 @@ Being able to bend any JSON to your will means you can do all kinds of magical t
 
 You can also mix and match Select AND Transform to perform partial transform, modularize JSON objects, etc.
 
-### 1. Select
+### Select
 
 Select a JSON object or its subtree that matches your filter function criteria.
 
@@ -71,7 +71,7 @@ var paths = sel.paths();
 //  ]
 ```
 
-### 2. Transform
+### Transform
 
 Transform any JSON with a declarative template, also in JSON.
 
