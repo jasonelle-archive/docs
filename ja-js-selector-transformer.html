@@ -146,15 +146,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Ja.js - Selector Transformer</a><ul>
 <li class="chapter" data-level="5.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#repository"><i class="fa fa-check"></i><b>5.1</b> Repository</a></li>
-<li class="chapter" data-level="5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#features"><i class="fa fa-check"></i><b>5.2</b> Features</a><ul>
+<li class="chapter" data-level="5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#select"><i class="fa fa-check"></i><b>5.2.1</b> 1. Select</a></li>
 <li class="chapter" data-level="5.2.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform"><i class="fa fa-check"></i><b>5.2.2</b> 2. Transform</a></li>
+<li class="chapter" data-level="5.2.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#usage"><i class="fa fa-check"></i><b>5.2.3</b> Usage</a></li>
+<li class="chapter" data-level="5.2.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#how-does-it-work"><i class="fa fa-check"></i><b>5.2.4</b> How Does It Work?</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#usage"><i class="fa fa-check"></i><b>5.3</b> Usage</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#in-a-browser"><i class="fa fa-check"></i><b>5.3.1</b> In a browser</a></li>
-<li class="chapter" data-level="5.3.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#in-node.js"><i class="fa fa-check"></i><b>5.3.2</b> In node.js</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#how-does-it-work"><i class="fa fa-check"></i><b>5.4</b> How Does It Work?</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a><ul>
 <li class="chapter" data-level="6.1" data-path="tools.html"><a href="tools.html#jason-app-"><i class="fa fa-check"></i><b>6.1</b> Jason App <strong>{ ·ᴥ·}</strong></a><ul>
@@ -220,12 +217,15 @@ writing nothing but a <em>JSON markup</em>.</p>
 <img src="images/jajs/jajs.gif" alt="Ja.js" />
 <p class="caption">Ja.js</p>
 </div>
+<p>But <em>Jasonette</em> is just one implementation.
+Want to build your own turing complete JSON markup language?</p>
 <div id="repository" class="section level2">
 <h2><span class="header-section-number">5.1</span> Repository</h2>
 <p><a href="https://github.com/jasonelle/ja.js">https://github.com/jasonelle/ja.js</a></p>
+
 </div>
-<div id="features" class="section level2">
-<h2><span class="header-section-number">5.2</span> Features</h2>
+<div id="introduction-1" class="section level2">
+<h2><span class="header-section-number">5.2</span> Introduction</h2>
 <ol style="list-style-type: decimal">
 <li><strong>Select:</strong> Query any JSON tree to select exactly the subtree you are looking for.</li>
 <li><strong>Transform:</strong> Transform any JSON object to another by parsing with a template, also written in JSON</li>
@@ -359,12 +359,11 @@ writing nothing but a <em>JSON markup</em>.</p>
 <span class="co">//    }]</span>
 <span class="co">//  }</span></code></pre>
 </div>
-</div>
-<div id="usage" class="section level2">
-<h2><span class="header-section-number">5.3</span> Usage</h2>
-<div id="in-a-browser" class="section level3">
-<h3><span class="header-section-number">5.3.1</span> In a browser</h3>
-<pre class="sourceCode js"><code class="sourceCode javascript"><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">&quot;st.js&quot;</span><span class="op">&gt;</span>&lt;/script<span class="op">&gt;</span>
+<div id="usage" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Usage</h3>
+<div id="in-a-browser" class="section level4">
+<h4><span class="header-section-number">5.2.3.1</span> In a browser</h4>
+<pre class="sourceCode js"><code class="sourceCode javascript"><span class="op">&lt;</span>script src<span class="op">=</span><span class="st">&quot;ja.js&quot;</span><span class="op">&gt;</span>&lt;/script<span class="op">&gt;</span>
 <span class="op">&lt;</span>script<span class="op">&gt;</span>
 <span class="kw">var</span> parsed <span class="op">=</span> <span class="va">ST</span>.<span class="at">select</span>(<span class="op">{</span> <span class="st">&quot;items&quot;</span><span class="op">:</span> [<span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">4</span>] <span class="op">}</span>)
                 .<span class="at">transformWith</span>(<span class="op">{</span>
@@ -375,8 +374,8 @@ writing nothing but a <em>JSON markup</em>.</p>
                 .<span class="at">root</span>()<span class="op">;</span>
 &lt;/script<span class="op">&gt;</span></code></pre>
 </div>
-<div id="in-node.js" class="section level3">
-<h3><span class="header-section-number">5.3.2</span> In node.js</h3>
+<div id="in-node.js" class="section level4">
+<h4><span class="header-section-number">5.2.3.2</span> In node.js</h4>
 <blockquote>
 <p>Install through npm:</p>
 </blockquote>
@@ -395,14 +394,15 @@ writing nothing but a <em>JSON markup</em>.</p>
                 .<span class="at">root</span>()<span class="op">;</span></code></pre>
 </div>
 </div>
-<div id="how-does-it-work" class="section level2">
-<h2><span class="header-section-number">5.4</span> How Does It Work?</h2>
+<div id="how-does-it-work" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> How Does It Work?</h3>
 <p><code>ja.js</code> is a library that adds a couple of powerful methods to JavaScript’s native JSON.</p>
-<p>So you can simply use it with the syntax <code>ST.select(...).transform(...)</code>
-The library is just a single file, made up of <strong>stateless functions</strong>, with <strong>NO dependency</strong>.
+<p>So you can simply use it with the syntax <code>ST.select(...).transform(...)</code>.</p>
+<p>The library is just a single file, made up of <strong>stateless functions</strong>, with <strong>NO dependency</strong>.
 Which makes it effortless to <strong>embed anywhere</strong> without hassle.
 (Currently used in various environments including iOS, Android, node.js, browser, etc.)</p>
 
+</div>
 </div>
 </div>
             </section>
