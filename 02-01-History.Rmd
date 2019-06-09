@@ -43,7 +43,7 @@ finally releasing the first version of *Jasonette* on November 3th 2016.
 > Jason then interprets it in realtime and turns it into a native app. 
 
 
-- [https://www.producthunt.com/@gliechtenstein](https://www.producthunt.com/@gliechtenstein)
+- [https://www.producthunt.com/gliechtenstein](https://www.producthunt.com/@gliechtenstein)
 - [https://www.producthunt.com/posts/jason](https://www.producthunt.com/posts/jason)
 - [https://www.producthunt.com/posts/jasonette](https://www.producthunt.com/posts/jasonette)
 
@@ -64,4 +64,5 @@ The original repositories of *Jasonette, Cell and ST* are:
 - [https://github.com/intercellular](https://github.com/intercellular)
 - [https://github.com/selecttransform](https://github.com/selecttransform)
 
-PD: If you want to know that character Ethan uses it's Kon from Bleach 💯 (http://bleach.wikia.com/wiki/Kon)
+PD: If you want to know that character 
+Ethan uses it's Kon from Bleach 💯 ([http://bleach.wikia.com/wiki/Kon](http://bleach.wikia.com/wiki/Kon))
