@@ -278,8 +278,10 @@ action call, with a payload of:
 
 
 ```json
-"options": {
-  "url": "https://jsonplaceholder.typicode.com/posts"
+{
+  "options": {
+    "url": "https://jsonplaceholder.typicode.com/posts"
+  }
 }
 ```
 
@@ -289,10 +291,12 @@ function call, and when it succeeds, it triggers its
 
 
 ```json
-"success": {
-  "type": "$render",
-  "options": {
-    "data": "{{$jason}}"
+{
+  "success": {
+    "type": "$render",
+    "options": {
+      "data": "{{$jason}}"
+    }
   }
 }
 ```
