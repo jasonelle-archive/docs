@@ -1752,16 +1752,20 @@ Jasonette interprets this into an actual native method call.</li>
 </ul>
 <p>In above example we make a <code>&quot;$network.request&quot;</code>
 action call, with a payload of:</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="er">&quot;options&quot;:</span> <span class="fu">{</span>
-  <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jsonplaceholder.typicode.com/posts&quot;</span>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jsonplaceholder.typicode.com/posts&quot;</span>
+  <span class="fu">}</span>
 <span class="fu">}</span></code></pre>
 <p>This actually translates to a native <code>Objective-c</code>
 function call, and when it succeeds, it triggers its
 “success” callback which is another action:</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="er">&quot;success&quot;:</span> <span class="fu">{</span>
-  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$render&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-    <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$jason}}&quot;</span>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$render&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$jason}}&quot;</span>
+    <span class="fu">}</span>
   <span class="fu">}</span>
 <span class="fu">}</span></code></pre>
 <p><strong>This is where <code>ja.js</code> comes in.</strong></p>
