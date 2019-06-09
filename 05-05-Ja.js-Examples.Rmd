@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
 
 > New way: Declarative approach with ja.js
 
-```
+```js
 // app.js
 app.get('/', function (req, res) {
   res.json(ST.select(require('./template.json'))

@@ -1,12 +1,15 @@
 ## Select
 
+Select a JSON object or its subtree that matches your filter function.
+
+
 ### Syntax
 
 ```js
 ST.select(data, selectorFunction);
 ```
 
-### Parameters
+#### Parameters
 
 - `data` : Any JavaScript object
 - `selectorFunction` : selectorFunction is a predicate, to test each key/value pairs of the entire JSON tree. 
@@ -14,7 +17,7 @@ Return true to keep the element, false otherwise, taking two arguments:
   - `key` : the "key" of the current key/value pair being tested.
   - `value` : the "value" of the current key/value pair being tested.
 
-### Return Value
+#### Return Value
 
 Returns a selection object which can be queried to retrieve the final result, using the following API:
 
