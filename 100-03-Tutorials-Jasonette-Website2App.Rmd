@@ -2,8 +2,8 @@
 
 A New Approach for Blending Web Engine into Native Apps
 
-This tutorial was posted by Ethan on
-[FreeCodeCamp](https://medium.freecodecamp.org/how-to-turn-your-website-into-a-mobile-app-with-7-lines-of-json-631c9c9895f5).
+This tutorial was posted by Ethan on FreeCodeCamp
+[https://medium.freecodecamp.org/how-to-turn-your-website-into-a-mobile-app-with-7-lines-of-json-631c9c9895f5](https://medium.freecodecamp.org/how-to-turn-your-website-into-a-mobile-app-with-7-lines-of-json-631c9c9895f5).
 
 ![](images/tutorials/website2app/1.png)
 

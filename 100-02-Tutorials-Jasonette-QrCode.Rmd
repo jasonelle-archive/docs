@@ -1,6 +1,6 @@
 ## Build a QRCode/Barcode scanning app with 26 lines of JSON
 
-This tutorial was posted by [Ethan on Medium](https://medium.com/@gliechtenstein/build-a-qrcode-barcode-scanning-app-with-26-lines-of-json-b83453d39197)
+This tutorial was posted by Ethan on Medium [https://medium.com/@gliechtenstein/build-a-qrcode-barcode-scanning-app-with-26-lines-of-json-b83453d39197](https://medium.com/@gliechtenstein/build-a-qrcode-barcode-scanning-app-with-26-lines-of-json-b83453d39197)
 
 ![](images/tutorials/qrcode/1.gif)
 
