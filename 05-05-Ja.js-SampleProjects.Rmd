@@ -1,4 +1,4 @@
-## Examples
+## Sample Projects
 
 ### Declarative JSON API Template
 

@@ -542,10 +542,10 @@ ST.select(template)
 ```
 
 
-### $index
+### `$index`
+
 You can use a special variable 
 named `$index` within `#each` loops.
-
 
 
 > 1. Template and Data
