@@ -177,6 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#json-as-a-json-query-language"><i class="fa fa-check"></i><b>5.6.2</b> JSON as a JSON Query Language</a></li>
 <li class="chapter" data-level="5.6.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#app-as-data"><i class="fa fa-check"></i><b>5.6.3</b> App as data</a></li>
 <li class="chapter" data-level="5.6.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#routerless-server"><i class="fa fa-check"></i><b>5.6.4</b> Routerless Server</a></li>
+<li class="chapter" data-level="5.6.5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#jasonette-1"><i class="fa fa-check"></i><b>5.6.5</b> Jasonette</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a><ul>
@@ -1703,6 +1704,70 @@ for microservices and RPC endpoints</p>
 <strong>validation, conditionals, loops, etc. all in a single
 JSON IPC/RPC call</strong>, which makes it extremely
 powerful and efficient.</p>
+</div>
+<div id="jasonette-1" class="section level3">
+<h3><span class="header-section-number">5.6.5</span> Jasonette</h3>
+<p>Jasonette uses <code>ja.js</code> to:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Transform an “action” JSON object into a native method call.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Transform any client-side data into a view markup,
+and then into actual native view components.</li>
+</ol></li>
+</ul>
+<p>Here’s an example where we describe an
+“action” (function) in a JSON object:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$network.request&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jsonplaceholder.typicode.com/posts&quot;</span>
+  <span class="fu">},</span>
+  <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$render&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$jason}}&quot;</span>
+    <span class="fu">}</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<p>Every function (called “action”)
+consists of up to four attributes:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li><code>&quot;type&quot;</code>: Type of action to perform.
+Jasonette interprets this into an actual native method call.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li><code>&quot;options&quot;</code>: Arguments to send to the action.</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li><code>&quot;success&quot;</code>: Success callback. You can chain another action here.</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li><code>&quot;error&quot;</code>: Error callback. You can chain another action here.</li>
+</ol></li>
+</ul>
+<p>In above example we make a <code>&quot;$network.request&quot;</code>
+action call, with a payload of:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="er">&quot;options&quot;:</span> <span class="fu">{</span>
+  <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jsonplaceholder.typicode.com/posts&quot;</span>
+<span class="fu">}</span></code></pre>
+<p>This actually translates to a native <code>Objective-c</code>
+function call, and when it succeeds, it triggers its
+“success” callback which is another action:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="er">&quot;success&quot;:</span> <span class="fu">{</span>
+  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$render&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$jason}}&quot;</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<p><strong>This is where <code>ja.js</code> comes in.</strong></p>
+<p>Whenever an action call is made,
+<strong>Jasonette</strong> automatically fills the <code>$jason</code>
+variable with the return value from its
+preceding action (<code>$network.request</code>) and runs a
+transform, thereby implementing an actual function call.</p>
 
 </div>
 </div>
