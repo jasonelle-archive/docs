@@ -9,15 +9,16 @@ bookdown::gitbook:
         <li><a href="https://jasonelle.com">Jasonelle.com</a></li>
         <li><a href="https://github.com/jasonelle/docs/tree/develop/examples">Examples</a></li>
         <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
-    download: [epub]
+    download: []
     sharing:
       github: yes
       facebook: no
       twitter: no
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+# Removed due to github limitations on file size
+# bookdown::pdf_book:
+#   includes:
+#     in_header: preamble.tex
+#   latex_engine: xelatex
+#   citation_package: natbib
+#   keep_tex: yes
+# bookdown::epub_book: default
