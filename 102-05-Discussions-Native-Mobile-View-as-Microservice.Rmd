@@ -1,0 +1,335 @@
+## Native Mobile View as Microservice
+
+This article was published by Ethan on [https://medium.com/@gliechtenstein/native-mobile-view-as-microservice-fd24ea62defa](https://medium.com/@gliechtenstein/native-mobile-view-as-microservice-fd24ea62defa).
+
+How sandboxed views talk to each other in *Jasonette*.
+
+![](images/discussions/native-mobile-microservice/header.png)
+
+
+*Jasonette* takes security very seriously. 
+The entire architecture was built on a sandbox model that 
+took inspiration from web browsers and applied to mobile context.
+
+Each view is completely sandboxed but they can communicate 
+with other views through predefined protocols, 
+resembling how microservices work ([https://en.wikipedia.org/wiki/Microservices](https://en.wikipedia.org/wiki/Microservices)).
+
+In this post I will explain:
+
+- How the sandbox model works in *Jasonette*.
+
+- How two views can communicate back and forth using `$href` 
+and `$ok` action protocols.
+
+### How Sandbox Model Works in Jasonette
+
+If a language encourages certain design 
+patterns that are insecure, regardless of how secure the 
+low level architecture is, we should consider the language insecure.
+
+
+For example, the language could facilitate a way to build an 
+entire mobile app as a SINGLE view, based on 
+highly inter-wined modules with complex dependency graph. 
+This would force anyone who wants to understand and audit the 
+code to understand the entire app as a whole. This means fewer 
+people will even attempt to do something like this. With fewer 
+eyeballs, the application is less secure.
+
+
+Therefore it is a good idea to break an app out to 
+multiple views, each of which performs an atomic 
+task, and can communicate with one another in a loosely coupled manner.
+
+To break an app out into multiple units 
+*Jasonette* takes the following approach:
+
+
+- **Sandboxed Containers**: Each View is a sandboxed container. 
+One view can’t manipulate another view.
+A view can also contain child containers like `agents` and `web` containers, 
+which are also sandboxed themselves.
+
+[https://jasonelle.com/jasonette-old-docs/web/](https://jasonelle.com/jasonette-old-docs/web/).
+
+[https://jasonelle.com/jasonette-old-docs/agents/](https://jasonelle.com/jasonette-old-docs/agents/).
+
+
+- **Protocol Based Communication between Containers**: All containers 
+must communicate with each other through standard protocols 
+instead of directly executing actions remotely. 
+Otherwise we end up with too tightly coupled dependency, 
+which makes the code complex, difficult to reuse unless 
+you’re a programmer, and hard to understand.
+
+Let’s look into how the sandbox model works in *Jasonette*.
+
+### Agents and Web Container
+
+In communicating with agents and web containers, 
+*Jasonette* puts top priority on security, 
+which is why each container and agent is 
+completely sandboxed from the outside world, 
+and the only way to communicate is through a 
+pre-defined JSON-RPC protocol.
+
+### Local Variables
+
+Same goes for communication between views. 
+All views are completely sandboxed, you may be able to transition 
+from one view to another, and you may be able to pass messages, 
+but one view cannot directly execute actions in another view.
+
+Also, all local variables are 
+sandboxed per view. There are two types of read/write 
+local variables, “local” meaning they are 
+sandboxed to the parent view.
+
+- **Ephemeral Local Variable**: Tied to a view through URL, 
+only on memory, so it goes away when the user navigates away. 
+You can write through `$set` action and read through `$get`
+
+- **Cache Local Variable**: Similar to ephemeral local variable, 
+but stays persisted instead of going away after the user 
+navigates away. You can write through `$cache.set` and read 
+through `$cache.[variable name]`.
+
+
+**This means View A can’t access anything that 
+belongs to View B and vice versa**. 
+This is the security model web browsers use, 
+and is critical to building secure apps with loosely coupled views.
+
+
+Just to be clear, 
+there *does* exist a way to implement a shared 
+data layer using `$global` but that’s out of scope 
+for this article. The point is, 
+when you define a local variable from a view, 
+there is no way other views can access them.
+
+
+OK it’s great to know it’s secure, but a question arises:
+
+> “What if I want View A and View B to communicate?”.
+
+### Cross-View Communication Protocol
+
+We have a new addition to *Jasonette*
+that makes this possible while securing 
+the sandboxed nature of views. Here’s a typical sequence of events:
+
+- View A sends data to View B.
+- View B uses the data to carry out tasks and return a response back to View A.
+- View A can continue on with the return value it received from View B.
+
+
+Does this sound familiar? It’s like a *function* call!.
+Also, it is a similar security model to the 
+request-and-response model employed by agents and web container.
+
+
+Below I’ll explain each step of the communication process.
+
+
+#### Step 1. Calling a View with Parameters
+
+First we pass some parameters to the next view through `$href` action. 
+You define parameters under the `options` attribute.
+
+Here we pass two parameters `firstName` and `lastName`:
+
+```json
+{
+  "type": "$href",
+  "options": {
+    "url": "https://jasonbase.com/things/3fj.json",
+    "options": {
+      "firstName": "Bart",
+      "lastName": "Simpson"
+    }
+  }
+}
+```
+
+The attributes will be accessible as `$params.firstName`
+and `$params.lastName` from the next view. 
+This feature has been available from the beginning, 
+so you may already know this.
+
+
+#### Step 2. Go Back to Previous View with Return Values
+
+**This feature is new**. 
+To return values back to the caller view, 
+we use an action called `$ok`. Previously the only 
+option we had of going back to the previous view was `$back`, 
+which simply went back a level but didn’t have ability to 
+pass a return value back.
+
+
+We can trigger `$ok` at any point in the view lifecycle. 
+For example, we can immediately trigger it on `$load` to make it
+return immediately, like this:
+
+```json 
+{
+  "$jason": {
+    "head": {
+      "title": "Return Immediately!",
+      "actions": {
+        "$load": {
+          "type": "$ok",
+          "options": {
+            "fullName": "{{$params.firstName}} {{$params.lastName}}"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Or we could let the user manually trigger `$ok` . 
+This can be useful for accepting user input and 
+returning the value to the previous view. For example:
+
+```json
+
+{
+  "$jason": {
+    "head": {
+      "title": "Form"
+    },
+    "body": {
+      "sections": [{
+        "items": [{
+          "type": "textfield",
+          "name": "username"
+        }, {
+          "type": "textfield",
+          "name": "password",
+        }, {
+          "type": "button",
+          "text": "Login",
+          "action": {
+            "type": "$ok",
+            "options": {
+              "username": "{{$get.username}}",
+              "password": "{{$get.password}}"
+            }
+          }
+        }]
+      }]
+    }
+  }
+}
+```
+
+You can basically implement the `$ok` action anywhere 
+to return to the previous view with return values. 
+Here’s an example where a QR code scanner returns 
+the scanned value back to the previous view:
+
+```
+{
+  "$jason": {
+    "head": {
+      "title": "QR Scanner",
+      "actions": {
+        "$vision.ready": {
+          "type": "$vision.scan"
+        },
+        "$vision.onscan": {
+          "type": "$ok",
+          "options": {
+            "response": "{{$jason.content}}"
+          }
+        },
+        // ...
+```
+
+#### Step 3. Process the Return Value with “success” callback
+
+In step 1 I only discussed a simple `$href` case where 
+all it does is send some parameters to the next view. 
+The `$href` action didn’t have a way to handle its return value.
+
+
+So even if we did everything 
+correctly from the next view and 
+returned via `$ok` action, there would not be a way to deal with them.
+
+
+Let’s make a small tweak to the 
+JSON markup and add a success callback to handle the return value:
+
+```json
+{
+  "type": "$href",
+  "options": {
+    "url": "https://jasonbase.com/things/3fj.json",
+    "options": {
+      "firstName": "Bart",
+      "lastName": "Simpson"
+    }
+  },
+  "success": {
+    "type": "$util.alert",
+    "options": {
+      "title": "Full Name",
+      "description": "Full Name is: {{$jason.fullName}}"
+    }
+  }
+}
+```
+
+
+When you come back from the other 
+view through the `$ok` action, its options 
+object is returned as `$jason`, and you can 
+continue on with the rest of the action call chain.
+
+
+So what actually happens when *Jasonette* runs the above `$href` markup is:
+
+- It transitions to the next view with `Bart` and `Simpson` as parameters.
+
+- Meanwhile, the caller view is waiting for the 
+callee view to return with `$ok`. Rest of the action call chain is paused.
+
+- The next view immediately comes back to the 
+caller view and returns `"Bart Simpson"` 
+stored under `fullName` attribute.
+
+- Now that the caller view has access to 
+the `fullName` attribute through `$jason` variable, 
+it can continue on with rest of the action call chain.
+
+
+### Conclusion
+
+Building apps in a tightly 
+coupled manner results in **less transparency and consequently less security**.
+
+
+This is why breaking an app down to 
+multiple functional sandboxed views is a 
+good idea and why that forms the basis of 
+*Jasonette*’s core architecture. 
+The two way communication protocol between 
+*Jasonette* views ensure that views are loosely coupled.
+
+
+This architecture is similar to the 
+secure sandbox model of web browsers, 
+but it also adds one additional ability 
+that web browsers don’t support. It lets views 
+communicate with each other through the `$href` and `$ok` protocols, 
+resembling a microservice architecture but implemented on 
+the mobile frontend.
+
+- You can learn more about `$href` action here: [https://jasonelle.com/jasonette-old-docs/actions/#href](https://jasonelle.com/jasonette-old-docs/actions/#href).
+- You can learn more about `$ok` action here: [https://jasonelle.com/jasonette-old-docs/actions/#ok](https://jasonelle.com/jasonette-old-docs/actions/#ok).
+- You can learn more about all other ways of returning from a view here: [https://jasonelle.com/jasonette-old-docs/actions/#view](https://jasonelle.com/jasonette-old-docs/actions/#view).
