@@ -337,5 +337,113 @@ to create any sophisticated view.
 
 Here are some examples, 100% built by composing aforementioned UI elements:
 
-![](images/discussions/building-apps-with-json/7.gif)
-![](images/discussions/building-apps-with-json/8.gif)
+- Instagram UI ([https://github.com/jasonelle/docs/tree/master/examples/jasonette/apps/instagram](https://github.com/jasonelle/docs/tree/master/examples/jasonette/apps/instagram))
+- Twitter UI ([https://github.com/jasonelle/docs/tree/master/examples/jasonette/apps/twitter](https://github.com/jasonelle/docs/tree/master/examples/jasonette/apps/twitter))
+
+![Instagram](images/discussions/building-apps-with-json/7.gif)
+![Twitter](images/discussions/building-apps-with-json/8.gif)
+
+### Beyond Views
+
+If you read this far, you may be either thinking:
+
+- “Wow cool! I wanna try this!”, or
+- “Yeah you can probably build a toy app, but no way you can build a production app using this way!”.
+
+
+Like I briefly mentioned above, this is just the *“View”* part of *Jasonette*, 
+which is the simplest part. But what’s really powerful about
+*Jasonette* is that you can actually go much further and write a full declarative program in JSON.
+
+
+You can attach actions to UI elements, which get triggered when a user touches them. 
+You can also trigger these actions one after another via success/error callbacks. 
+You can also listen to certain events and automatically trigger these actions.
+
+
+Just like this, when you can describe not just a 
+*“View”* but also the *“Model”* and the *“Controller”* 
+logic (all in JSON), **you can do anything**.
+
+### What is possible?
+
+Since all you need is a server that sends JSON,
+*Jasonette* is completely platform agnostic. 
+There is no proprietary server technology you need to depend on. All you need is JSON.
+
+And JSON can come from anywhere, from local device, to remote servers, to even a Raspberry pi!
+([https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md](https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md)).
+
+- **Have a web app?** : If you already have a web app, 
+you can instantly build a mobile native app for your *Node.js app, 
+Rails app, Django app, PHP app, or really any web app*, just by making requests to your API endpoint.
+
+- **You don’t even need a server** : Since you can fit an entire model-view-controller 
+in a single, self-contained JSON file, you can pretty much store and serve it from anywhere. 
+You can even create an app from a static JSON file served from a Pastebin or Github!.
+
+- **Turn any HTML website into an app** : *Jasonette* has a powerful HTML-to-JSON 
+parser powered by the cheerio library which lets you transform any HTML into a JSON object. 
+And you already know what we can do when we have JSON — you can build a native 
+view from the transformed JSON! This way, you can build a native app from a 
+website that doesn’t even have an API. Of course, the recommended way is to use 
+JSON whenever you can, but this is really cool regardless.
+
+
+I can go on forever, but here are some examples:
+
+A photo sharing app that lets you take a photo using the device 
+camera and upload it to S3, and then post the entry to your own server, creating a feed:
+
+[https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/s3-upload-example](https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/s3-upload-example)
+
+
+![S3 Upload Example](images/discussions/building-apps-with-json/9.gif)
+
+
+A Node.js powered Eliza Chatbot app for iOS and Android:
+
+[https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/eliza-example](https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/eliza-example)
+
+
+![Eliza Example](images/discussions/building-apps-with-json/10.gif)
+
+
+A Microblog app, complete with session management:
+
+[https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/token-authentication-example](https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/token-authentication-example)
+
+
+|||
+|--|--|
+|![](images/discussions/building-apps-with-json/11.png)|![](images/discussions/building-apps-with-json/12.png)|
+
+
+A remote control app for Slack bots:
+
+[http://jasonelle.com/jasonette-old-blog/2017/01/17/build-a-slackbot-with-jasonette/](http://jasonelle.com/jasonette-old-blog/2017/01/17/build-a-slackbot-with-jasonette/)
+
+[https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/coffee-app](https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/coffee-app)
+
+
+|||
+|--|--|
+|![](images/discussions/building-apps-with-json/13.png)|![](images/discussions/building-apps-with-json/14.png)|
+
+
+An example app that turns an HTML web page into JSON and then turns it into a native app:
+
+[https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/iosdevweekly](https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/iosdevweekly)
+
+![iOS Dev Weekly](images/discussions/building-apps-with-json/15.gif)
+
+
+
+### Conclusion
+
+*Jasonette* is a young project. I open-sourced the iOS version in late 2016, 
+and the Android version a month later.
+
+But it has already grown into a vibrant community of contributors and makers and is
+under active development. I hope this technology will 
+empower anyone (not just developers) to build apps effortlessly.
