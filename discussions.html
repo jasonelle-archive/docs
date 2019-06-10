@@ -217,6 +217,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.7" data-path="discussions.html"><a href="discussions.html#what-is-possible"><i class="fa fa-check"></i><b>9.3.7</b> What is possible?</a></li>
 <li class="chapter" data-level="9.3.8" data-path="discussions.html"><a href="discussions.html#conclusion-2"><i class="fa fa-check"></i><b>9.3.8</b> Conclusion</a></li>
 </ul></li>
+<li class="chapter" data-level="9.4" data-path="discussions.html"><a href="discussions.html#native-mobile-view-as-microservice"><i class="fa fa-check"></i><b>9.4</b> Native Mobile View as Microservice</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="discussions.html"><a href="discussions.html#how-sandbox-model-works-in-jasonette"><i class="fa fa-check"></i><b>9.4.1</b> How Sandbox Model Works in Jasonette</a></li>
+<li class="chapter" data-level="9.4.2" data-path="discussions.html"><a href="discussions.html#agents-and-web-container"><i class="fa fa-check"></i><b>9.4.2</b> Agents and Web Container</a></li>
+<li class="chapter" data-level="9.4.3" data-path="discussions.html"><a href="discussions.html#local-variables-1"><i class="fa fa-check"></i><b>9.4.3</b> Local Variables</a></li>
+<li class="chapter" data-level="9.4.4" data-path="discussions.html"><a href="discussions.html#cross-view-communication-protocol"><i class="fa fa-check"></i><b>9.4.4</b> Cross-View Communication Protocol</a></li>
+<li class="chapter" data-level="9.4.5" data-path="discussions.html"><a href="discussions.html#conclusion-3"><i class="fa fa-check"></i><b>9.4.5</b> Conclusion</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://jasonelle.com">Jasonelle.com</a></li>
@@ -654,6 +661,283 @@ and the Android version a month later.</p>
 <p>But it has already grown into a vibrant community of contributors and makers and is
 under active development. I hope this technology will
 empower anyone (not just developers) to build apps effortlessly.</p>
+
+</div>
+</div>
+<div id="native-mobile-view-as-microservice" class="section level2">
+<h2><span class="header-section-number">9.4</span> Native Mobile View as Microservice</h2>
+<p>This article was published by Ethan on <a href="https://medium.com/@gliechtenstein/native-mobile-view-as-microservice-fd24ea62defa">https://medium.com/<span class="citation">(<span class="citeproc-not-found" data-reference-id="gliechtenstein/native-mobile-view-as-microservice-fd24ea62defa"><strong>???</strong></span>)</span></a>.</p>
+<p>How sandboxed views talk to each other in <em>Jasonette</em>.</p>
+<p><img src="images/discussions/native-mobile-microservice/header.png" /></p>
+<p><em>Jasonette</em> takes security very seriously.
+The entire architecture was built on a sandbox model that
+took inspiration from web browsers and applied to mobile context.</p>
+<p>Each view is completely sandboxed but they can communicate
+with other views through predefined protocols,
+resembling how microservices work (<a href="https://en.wikipedia.org/wiki/Microservices">https://en.wikipedia.org/wiki/Microservices</a>).</p>
+<p>In this post I will explain:</p>
+<ul>
+<li><p>How the sandbox model works in <em>Jasonette</em>.</p></li>
+<li><p>How two views can communicate back and forth using <code>$href</code>
+and <code>$ok</code> action protocols.</p></li>
+</ul>
+<div id="how-sandbox-model-works-in-jasonette" class="section level3">
+<h3><span class="header-section-number">9.4.1</span> How Sandbox Model Works in Jasonette</h3>
+<p>If a language encourages certain design
+patterns that are insecure, regardless of how secure the
+low level architecture is, we should consider the language insecure.</p>
+<p>For example, the language could facilitate a way to build an
+entire mobile app as a SINGLE view, based on
+highly inter-wined modules with complex dependency graph.
+This would force anyone who wants to understand and audit the
+code to understand the entire app as a whole. This means fewer
+people will even attempt to do something like this. With fewer
+eyeballs, the application is less secure.</p>
+<p>Therefore it is a good idea to break an app out to
+multiple views, each of which performs an atomic
+task, and can communicate with one another in a loosely coupled manner.</p>
+<p>To break an app out into multiple units
+<em>Jasonette</em> takes the following approach:</p>
+<ul>
+<li><strong>Sandboxed Containers</strong>: Each View is a sandboxed container.
+One view can’t manipulate another view.
+A view can also contain child containers like <code>agents</code> and <code>web</code> containers,
+which are also sandboxed themselves.</li>
+</ul>
+<p><a href="https://jasonelle.com/jasonette-old-docs/web/">https://jasonelle.com/jasonette-old-docs/web/</a>.</p>
+<p><a href="https://jasonelle.com/jasonette-old-docs/agents/">https://jasonelle.com/jasonette-old-docs/agents/</a>.</p>
+<ul>
+<li><strong>Protocol Based Communication between Containers</strong>: All containers
+must communicate with each other through standard protocols
+instead of directly executing actions remotely.
+Otherwise we end up with too tightly coupled dependency,
+which makes the code complex, difficult to reuse unless
+you’re a programmer, and hard to understand.</li>
+</ul>
+<p>Let’s look into how the sandbox model works in <em>Jasonette</em>.</p>
+</div>
+<div id="agents-and-web-container" class="section level3">
+<h3><span class="header-section-number">9.4.2</span> Agents and Web Container</h3>
+<p>In communicating with agents and web containers,
+<em>Jasonette</em> puts top priority on security,
+which is why each container and agent is
+completely sandboxed from the outside world,
+and the only way to communicate is through a
+pre-defined JSON-RPC protocol.</p>
+</div>
+<div id="local-variables-1" class="section level3">
+<h3><span class="header-section-number">9.4.3</span> Local Variables</h3>
+<p>Same goes for communication between views.
+All views are completely sandboxed, you may be able to transition
+from one view to another, and you may be able to pass messages,
+but one view cannot directly execute actions in another view.</p>
+<p>Also, all local variables are
+sandboxed per view. There are two types of read/write
+local variables, “local” meaning they are
+sandboxed to the parent view.</p>
+<ul>
+<li><p><strong>Ephemeral Local Variable</strong>: Tied to a view through URL,
+only on memory, so it goes away when the user navigates away.
+You can write through <code>$set</code> action and read through <code>$get</code></p></li>
+<li><p><strong>Cache Local Variable</strong>: Similar to ephemeral local variable,
+but stays persisted instead of going away after the user
+navigates away. You can write through <code>$cache.set</code> and read
+through <code>$cache.[variable name]</code>.</p></li>
+</ul>
+<p><strong>This means View A can’t access anything that
+belongs to View B and vice versa</strong>.
+This is the security model web browsers use,
+and is critical to building secure apps with loosely coupled views.</p>
+<p>Just to be clear,
+there <em>does</em> exist a way to implement a shared
+data layer using <code>$global</code> but that’s out of scope
+for this article. The point is,
+when you define a local variable from a view,
+there is no way other views can access them.</p>
+<p>OK it’s great to know it’s secure, but a question arises:</p>
+<blockquote>
+<p>“What if I want View A and View B to communicate?”.</p>
+</blockquote>
+</div>
+<div id="cross-view-communication-protocol" class="section level3">
+<h3><span class="header-section-number">9.4.4</span> Cross-View Communication Protocol</h3>
+<p>We have a new addition to <em>Jasonette</em>
+that makes this possible while securing
+the sandboxed nature of views. Here’s a typical sequence of events:</p>
+<ul>
+<li>View A sends data to View B.</li>
+<li>View B uses the data to carry out tasks and return a response back to View A.</li>
+<li>View A can continue on with the return value it received from View B.</li>
+</ul>
+<p>Does this sound familiar? It’s like a <em>function</em> call!.
+Also, it is a similar security model to the
+request-and-response model employed by agents and web container.</p>
+<p>Below I’ll explain each step of the communication process.</p>
+<div id="step-1.-calling-a-view-with-parameters" class="section level4">
+<h4><span class="header-section-number">9.4.4.1</span> Step 1. Calling a View with Parameters</h4>
+<p>First we pass some parameters to the next view through <code>$href</code> action.
+You define parameters under the <code>options</code> attribute.</p>
+<p>Here we pass two parameters <code>firstName</code> and <code>lastName</code>:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jasonbase.com/things/3fj.json&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span> <span class="st">&quot;Bart&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span> <span class="st">&quot;Simpson&quot;</span>
+    <span class="fu">}</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<p>The attributes will be accessible as <code>$params.firstName</code>
+and <code>$params.lastName</code> from the next view.
+This feature has been available from the beginning,
+so you may already know this.</p>
+</div>
+<div id="step-2.-go-back-to-previous-view-with-return-values" class="section level4">
+<h4><span class="header-section-number">9.4.4.2</span> Step 2. Go Back to Previous View with Return Values</h4>
+<p><strong>This feature is new</strong>.
+To return values back to the caller view,
+we use an action called <code>$ok</code>. Previously the only
+option we had of going back to the previous view was <code>$back</code>,
+which simply went back a level but didn’t have ability to
+pass a return value back.</p>
+<p>We can trigger <code>$ok</code> at any point in the view lifecycle.
+For example, we can immediately trigger it on <code>$load</code> to make it
+return immediately, like this:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Return Immediately!&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;$load&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$ok&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;fullName&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$params.firstName}} {{$params.lastName}}&quot;</span>
+          <span class="fu">}</span>
+        <span class="fu">}</span>
+      <span class="fu">}</span>
+    <span class="fu">}</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<p>Or we could let the user manually trigger <code>$ok</code> .
+This can be useful for accepting user input and
+returning the value to the previous view. For example:</p>
+<pre class="sourceCode json"><code class="sourceCode json">
+<span class="fu">{</span>
+  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Form&quot;</span>
+    <span class="fu">},</span>
+    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+        <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;textfield&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;username&quot;</span>
+        <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;textfield&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;password&quot;</span><span class="fu">,</span>
+        <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;button&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Login&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$ok&quot;</span><span class="fu">,</span>
+            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+              <span class="dt">&quot;username&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$get.username}}&quot;</span><span class="fu">,</span>
+              <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$get.password}}&quot;</span>
+            <span class="fu">}</span>
+          <span class="fu">}</span>
+        <span class="fu">}</span><span class="ot">]</span>
+      <span class="fu">}</span><span class="ot">]</span>
+    <span class="fu">}</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<p>You can basically implement the <code>$ok</code> action anywhere
+to return to the previous view with return values.
+Here’s an example where a QR code scanner returns
+the scanned value back to the previous view:</p>
+<pre><code>{
+  &quot;$jason&quot;: {
+    &quot;head&quot;: {
+      &quot;title&quot;: &quot;QR Scanner&quot;,
+      &quot;actions&quot;: {
+        &quot;$vision.ready&quot;: {
+          &quot;type&quot;: &quot;$vision.scan&quot;
+        },
+        &quot;$vision.onscan&quot;: {
+          &quot;type&quot;: &quot;$ok&quot;,
+          &quot;options&quot;: {
+            &quot;response&quot;: &quot;{{$jason.content}}&quot;
+          }
+        },
+        // ...</code></pre>
+</div>
+<div id="step-3.-process-the-return-value-with-success-callback" class="section level4">
+<h4><span class="header-section-number">9.4.4.3</span> Step 3. Process the Return Value with “success” callback</h4>
+<p>In step 1 I only discussed a simple <code>$href</code> case where
+all it does is send some parameters to the next view.
+The <code>$href</code> action didn’t have a way to handle its return value.</p>
+<p>So even if we did everything
+correctly from the next view and
+returned via <code>$ok</code> action, there would not be a way to deal with them.</p>
+<p>Let’s make a small tweak to the
+JSON markup and add a success callback to handle the return value:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jasonbase.com/things/3fj.json&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span> <span class="st">&quot;Bart&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span> <span class="st">&quot;Simpson&quot;</span>
+    <span class="fu">}</span>
+  <span class="fu">},</span>
+  <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$util.alert&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Full Name&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Full Name is: {{$jason.fullName}}&quot;</span>
+    <span class="fu">}</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<p>When you come back from the other
+view through the <code>$ok</code> action, its options
+object is returned as <code>$jason</code>, and you can
+continue on with the rest of the action call chain.</p>
+<p>So what actually happens when <em>Jasonette</em> runs the above <code>$href</code> markup is:</p>
+<ul>
+<li><p>It transitions to the next view with <code>Bart</code> and <code>Simpson</code> as parameters.</p></li>
+<li><p>Meanwhile, the caller view is waiting for the
+callee view to return with <code>$ok</code>. Rest of the action call chain is paused.</p></li>
+<li><p>The next view immediately comes back to the
+caller view and returns <code>&quot;Bart Simpson&quot;</code>
+stored under <code>fullName</code> attribute.</p></li>
+<li><p>Now that the caller view has access to
+the <code>fullName</code> attribute through <code>$jason</code> variable,
+it can continue on with rest of the action call chain.</p></li>
+</ul>
+</div>
+</div>
+<div id="conclusion-3" class="section level3">
+<h3><span class="header-section-number">9.4.5</span> Conclusion</h3>
+<p>Building apps in a tightly
+coupled manner results in <strong>less transparency and consequently less security</strong>.</p>
+<p>This is why breaking an app down to
+multiple functional sandboxed views is a
+good idea and why that forms the basis of
+<em>Jasonette</em>’s core architecture.
+The two way communication protocol between
+<em>Jasonette</em> views ensure that views are loosely coupled.</p>
+<p>This architecture is similar to the
+secure sandbox model of web browsers,
+but it also adds one additional ability
+that web browsers don’t support. It lets views
+communicate with each other through the <code>$href</code> and <code>$ok</code> protocols,
+resembling a microservice architecture but implemented on
+the mobile frontend.</p>
+<ul>
+<li>You can learn more about <code>$href</code> action here: <a href="https://jasonelle.com/jasonette-old-docs/actions/#href">https://jasonelle.com/jasonette-old-docs/actions/#href</a>.</li>
+<li>You can learn more about <code>$ok</code> action here: <a href="https://jasonelle.com/jasonette-old-docs/actions/#ok">https://jasonelle.com/jasonette-old-docs/actions/#ok</a>.</li>
+<li>You can learn more about all other ways of returning from a view here: <a href="https://jasonelle.com/jasonette-old-docs/actions/#view">https://jasonelle.com/jasonette-old-docs/actions/#view</a>.</li>
+</ul>
 
 </div>
 </div>
