@@ -24,7 +24,7 @@
 <meta name="author" content="Jasonelle Team" />
 
 
-<meta name="date" content="2019-06-09" />
+<meta name="date" content="2019-06-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -207,6 +207,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a><ul>
 <li class="chapter" data-level="9.1" data-path="discussions.html"><a href="discussions.html#beerjs---chile---2019"><i class="fa fa-check"></i><b>9.1</b> BeerJS - Chile - 2019</a></li>
 <li class="chapter" data-level="9.2" data-path="discussions.html"><a href="discussions.html#old-jasonette-blog"><i class="fa fa-check"></i><b>9.2</b> Old Jasonette Blog</a></li>
+<li class="chapter" data-level="9.3" data-path="discussions.html"><a href="discussions.html#building-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup"><i class="fa fa-check"></i><b>9.3</b> Building cross-platform mobile apps using nothing more than a JSON markup</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="discussions.html"><a href="discussions.html#basic-structure"><i class="fa fa-check"></i><b>9.3.1</b> Basic Structure</a></li>
+<li class="chapter" data-level="9.3.2" data-path="discussions.html"><a href="discussions.html#design-philosophy"><i class="fa fa-check"></i><b>9.3.2</b> Design Philosophy</a></li>
+<li class="chapter" data-level="9.3.3" data-path="discussions.html"><a href="discussions.html#sections-describing-scrolling-lists"><i class="fa fa-check"></i><b>9.3.3</b> Sections — Describing scrolling lists</a></li>
+<li class="chapter" data-level="9.3.4" data-path="discussions.html"><a href="discussions.html#items-describing-layout-within-each-scrolling-unit"><i class="fa fa-check"></i><b>9.3.4</b> Items — Describing layout within each scrolling unit</a></li>
+<li class="chapter" data-level="9.3.5" data-path="discussions.html"><a href="discussions.html#layers-aka-absolute-positioning"><i class="fa fa-check"></i><b>9.3.5</b> Layers — AKA “absolute positioning”</a></li>
+<li class="chapter" data-level="9.3.6" data-path="discussions.html"><a href="discussions.html#beyond-views"><i class="fa fa-check"></i><b>9.3.6</b> Beyond Views</a></li>
+<li class="chapter" data-level="9.3.7" data-path="discussions.html"><a href="discussions.html#what-is-possible"><i class="fa fa-check"></i><b>9.3.7</b> What is possible?</a></li>
+<li class="chapter" data-level="9.3.8" data-path="discussions.html"><a href="discussions.html#conclusion-2"><i class="fa fa-check"></i><b>9.3.8</b> Conclusion</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://jasonelle.com">Jasonelle.com</a></li>
@@ -264,6 +274,388 @@ in the following repository:</p>
 links updated to the new locations.</p>
 <p><a href="http://jasonelle.com/jasonette-old-blog/">http://jasonelle.com/jasonette-old-blog/</a></p>
 
+</div>
+<div id="building-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup" class="section level2">
+<h2><span class="header-section-number">9.3</span> Building cross-platform mobile apps using nothing more than a JSON markup</h2>
+<p><img src="images/discussions/building-apps-with-json/header.png" /></p>
+<p>This article was written by Ethan on FreeCodeCamp.
+<a href="https://www.freecodecamp.org/news/how-to-build-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup-f493abec1873/#.i83lzc4g9">https://www.freecodecamp.org/news/how-to-build-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup-f493abec1873/#.i83lzc4g9</a></p>
+<p>For the past few months, I’ve been working on a new way to build cross-platform,
+native iOS and Android apps called <em>Jasonette</em>.</p>
+<p>It lets you describe an entire app with nothing but a single JSON markup.</p>
+<p>If your app consists entirely of JSON, it can be treated like any other data.
+And it can be served remotely from the cloud on-demand.</p>
+<p>The app logic no longer needs to be hardcoded on the device,
+and you can update it as much as you want just by updating your JSON on the server-side.
+Your app will be freshly loaded from the server every time you open it.</p>
+<p><em>Jasonette</em> has many different parts.
+You can express functions, templates, styles, and more all by using a JSON Markup.
+And as a result, you can write a super-sophisticated native mobile app in a fully
+Model — View — Controller (<a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">https://en.wikipedia.org/wiki/Model-view-controller</a>)
+manner.</p>
+<p>In this post I’ll show you specifically the “View” part:</p>
+<ul>
+<li>How <em>Jasonette</em> expresses various cross-platform UI patterns in JSON.</li>
+<li>How it implements these JSON-to-Native mappings internally.</li>
+</ul>
+<div id="basic-structure" class="section level3">
+<h3><span class="header-section-number">9.3.1</span> Basic Structure</h3>
+<p>Under the hood, <em>Jasonette</em> works similarly to a web browser.
+But instead of interpreting an HTML markup and drawing a web view, <em>Jasonette</em> fetches a
+JSON markup and constructs a native view, on-the-fly.</p>
+<p>The markup is just a JSON file that follows some predefined conventions.
+First of all, it starts with a <code>$jason</code> key, which has two children:
+<code>head</code> and <code>body</code>, and looks like this:</p>
+<pre><code>{
+  &quot;$jason&quot;: {
+    &quot;head&quot;: {
+      // ..metadata about the document...
+    },
+    &quot;body&quot;: {
+      // ..actual content to be displayed on the view..
+    }
+  }
+}
+</code></pre>
+</div>
+<div id="design-philosophy" class="section level3">
+<h3><span class="header-section-number">9.3.2</span> Design Philosophy</h3>
+<p>When I first started designing the JSON syntax for describing native views,
+I had a couple of constraints in mind:</p>
+<ul>
+<li><p><strong>Native</strong>: There’s a reason why iOS and Android came up with their own native layout systems.
+The layout systems designed for the desktop era don’t always translate well to the small device world.
+The syntax should express the underlying layout in as mobile native manner as possible.</p></li>
+<li><p><strong>Cross platform</strong>: Yet it needs to be cross platform. For example,
+iOS has something called autolayout (<a href="https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG">https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG</a>)
+and visual format language (<a href="https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html">https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/VisualFormatLanguage.html</a>)
+but these are not implemented natively on Android, so not the right solution.</p></li>
+<li><p><strong>Simple yet expressive</strong>: It should be easily expressed in a simple JSON format and easy
+to compose into a sophisticated structure.</p></li>
+</ul>
+<p>When you take a look at how most mobile apps are built,
+they all boil down to a small number of common interface patterns:</p>
+<ul>
+<li>Vertically scrolling list</li>
+<li>Horizontally scrolling list</li>
+<li>Absolute positioning</li>
+<li>Grid</li>
+</ul>
+<p>Let’s take a look at the first three, since they are most widely used.</p>
+</div>
+<div id="sections-describing-scrolling-lists" class="section level3">
+<h3><span class="header-section-number">9.3.3</span> Sections — Describing scrolling lists</h3>
+<p>The most frequently used UI pattern is scrolling lists. On <em>Jasonette</em> we call them sections.</p>
+<p>There are two types of sections: <code>Vertical</code> and <code>Horizontal</code>.
+Vertical sections scroll vertically, and horizontal sections horizontally.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="images/discussions/building-apps-with-json/1.gif" alt="Vertical Section" /></td>
+<td><img src="images/discussions/building-apps-with-json/2.gif" alt="Horizontal Section" /></td>
+</tr>
+<tr class="even">
+<td>Vertical Section</td>
+<td>Horizontal Section</td>
+</tr>
+</tbody>
+</table>
+<div id="implementation-vertical-sections" class="section level4">
+<h4><span class="header-section-number">9.3.3.1</span> Implementation — Vertical Sections</h4>
+<p>This is probably the most frequently used UI for displaying data on mobile devices.
+On iOS, <em>Jasonette</em> implements this with UITableView (<a href="https://developer.apple.com/reference/uikit/uitableview">https://developer.apple.com/reference/uikit/uitableview</a>).
+On Android it’s implemented with RecyclerView (<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html</a>).</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+      <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 1&quot;</span>
+      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 2&quot;</span>
+      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 3&quot;</span>
+      <span class="fu">}</span><span class="ot">]</span>
+    <span class="fu">}</span><span class="ot">]</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<p>On iOS, above JSON markup creates a <code>UITableView</code> (<a href="https://developer.apple.com/reference/uikit/uitableviewcell">https://developer.apple.com/reference/uikit/uitableviewcell</a>)
+with three <code>UITableViewCells</code> (<a href="https://developer.apple.com/reference/uikit/uitableviewcell">https://developer.apple.com/reference/uikit/uitableviewcell</a>),
+each of which contains a <code>UILabel</code> (<a href="https://developer.apple.com/reference/uikit/uilabel">https://developer.apple.com/reference/uikit/uilabel</a>), with corresponding text attributes.</p>
+<p>On Android, it creates a <code>RecyclerView</code> with three items,
+each of which is a <code>TextView</code> (<a href="https://developer.android.com/reference/android/widget/TextView.html">https://developer.android.com/reference/android/widget/TextView.html</a>)
+that displays the corresponding <code>text</code> attributes.</p>
+<p>All of these are constructed programmatically without any use of Storyboards in iOS (<a href="https://developer.apple.com/library/content/documentation/General/Conceptual/Devpedia-CocoaApp/Storyboard.html">https://developer.apple.com/library/content/documentation/General/Conceptual/Devpedia-CocoaApp/Storyboard.html</a>)
+or XML layout files (Android) (<a href="https://developer.android.com/guide/topics/resources/layout-resource.html">https://developer.android.com/guide/topics/resources/layout-resource.html</a>)
+in order to make sure every detail is programmable dynamically.</p>
+</div>
+<div id="implementation-horizontal-sections" class="section level4">
+<h4><span class="header-section-number">9.3.3.2</span> Implementation — Horizontal Sections</h4>
+<p>Syntax-wise, horizontal sections are not much different,
+all you need to do is set the <code>type</code> as “<code>horizontal</code>”, and the items flow horizontally.</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 1&quot;</span>
+      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 2&quot;</span>
+      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 3&quot;</span>
+      <span class="fu">}</span><span class="ot">]</span>
+    <span class="fu">}</span><span class="ot">]</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<blockquote>
+<p>Note</p>
+</blockquote>
+<p>The syntax for the horizontal section is simple,
+but internally it’s actually quite complex.
+Horizontal sections on iOS were implemented with UICollectionView (<a href="https://developer.apple.com/reference/uikit/uicollectionview">https://developer.apple.com/reference/uikit/uicollectionview</a>).
+It’s a well-known technique, but basically a horizontally scrolling UICollectionView is
+embedded into its parent UITableView (which scrolls vertically).
+And on Android, it’s implemented in a similar manner, but using nested RecyclerViews instead.</p>
+</div>
+</div>
+<div id="items-describing-layout-within-each-scrolling-unit" class="section level3">
+<h3><span class="header-section-number">9.3.4</span> Items — Describing layout within each scrolling unit</h3>
+<p>Now that we understand how the top level view is structured,
+let’s look at <code>items</code>. Each section is made up of multiple units of scrollable <code>items</code>.
+Note that each item has a fixed dimension and nothing inside the item itself scrolls.</p>
+<p>An item can be:</p>
+<ul>
+<li>Just a single component like a <code>label</code>, <code>image</code>, <code>button</code>, <code>textarea</code>, etc.</li>
+<li>A combination of all of those components.</li>
+</ul>
+<p>Implementing this part was not as straight-forward as the <code>sections</code> implementation,
+because I had to choose a <strong>cross-platform, native, simple, and expressive way</strong> to form a
+super-sophisticated layout.</p>
+<p>Thankfully, iOS and Android have very similar native layout systems called
+UIStackView (<a href="https://developer.apple.com/reference/uikit/uistackview">https://developer.apple.com/reference/uikit/uistackview</a>)
+and LinearLayout (<a href="https://developer.android.com/reference/android/widget/LinearLayout.html">https://developer.android.com/reference/android/widget/LinearLayout.html</a>),
+respectively.
+And these layout schemes in turn are similar to CSS Flexbox (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes</a>),
+so I would say it’s as cross-platform as it can get.</p>
+<p>Lastly, these layout systems are infinitely composable.
+As seen below, you can create a vertical layout, a horizontal layout,
+or nest a vertical layout within a horizontal layout, and so forth, recursively.</p>
+<p><img src="images/discussions/building-apps-with-json/3.png" />
+<img src="images/discussions/building-apps-with-json/4.png" />
+<img src="images/discussions/building-apps-with-json/5.png" /></p>
+<p>To create a vertical layout, you would set the type as <code>vertical</code>, and then set its <code>components</code>:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;First&quot;</span>
+    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Second&quot;</span>
+    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Third&quot;</span>
+    <span class="fu">}</span><span class="ot">]</span>
+  <span class="fu">}</span><span class="ot">]</span>
+<span class="fu">}</span></code></pre>
+<p>Same thing with horizontal layout. Just set the type as <code>horizontal</code> instead:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://i.giphy.com/LXONhtCmN32YU.gif&quot;</span>
+    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Rick&quot;</span>
+    <span class="fu">}</span><span class="ot">]</span>
+  <span class="fu">}</span><span class="ot">]</span>
+<span class="fu">}</span></code></pre>
+<p>Nesting layouts is as simple as specifying a layout as another layout’s component.</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span>
+    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://i.giphy.com/LXONhtCmN32YU.gif&quot;</span>
+    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;User&quot;</span>
+      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Rick&quot;</span>
+      <span class="fu">}</span><span class="ot">]</span>
+    <span class="fu">}</span><span class="ot">]</span>
+  <span class="fu">}</span><span class="ot">]</span>
+<span class="fu">}</span></code></pre>
+<p>I have not talked about the styling feature here for the sake of brevity,
+but you can style each individual component as well as the layout itself to make sure the
+layout looks exactly like you wanted.
+All you need to do is add <code>style</code> objects
+describing <code>font</code>, <code>size</code>, <code>width</code>, <code>height</code>, <code>color</code>, <code>background</code>, <code>corner_radius</code>, <code>opacity</code>, etc.</p>
+</div>
+<div id="layers-aka-absolute-positioning" class="section level3">
+<h3><span class="header-section-number">9.3.5</span> Layers — AKA “absolute positioning”</h3>
+<p>Sometimes you may want to position items at exactly certain parts of the
+screen without scrolling. In CSS-terms we would call this <em>“absolute positioning”</em>.
+<em>Jasonette</em> supports this through what’s called <code>layers</code>.</p>
+<p>Currently layer supports two types of child components: <code>image</code> and <code>label</code>.
+You can place these components anywhere you desire on the screen this way. Here’s an example:</p>
+<div class="figure">
+<img src="images/discussions/building-apps-with-json/6.gif" alt="A Jasonette app with layer items" />
+<p class="caption">A Jasonette app with layer items</p>
+</div>
+<p>In this example, we have two labels (the temperature and the weather messages)
+and an image (the camera icon) on the screen, whose coordinates have been explicitly
+set to make sure they stay in place without scrolling.</p>
+<p>The markup would look something like this:</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+      <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;camera&quot;</span>
+      <span class="fu">},</span>
+      <span class="dt">&quot;layers&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;22°C&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+          <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue-Light&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;size&quot;</span><span class="fu">:</span> <span class="st">&quot;20&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;top&quot;</span><span class="fu">:</span> <span class="st">&quot;50&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;left&quot;</span><span class="fu">:</span> <span class="st">&quot;50%-100&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;width&quot;</span><span class="fu">:</span> <span class="st">&quot;200&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;align&quot;</span><span class="fu">:</span> <span class="st">&quot;center&quot;</span>
+        <span class="fu">}</span>
+      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;few clouds&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+          <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;size&quot;</span><span class="fu">:</span> <span class="st">&quot;15&quot;</span>
+        <span class="fu">}</span>
+      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://s3.amazonaws.com/.../camera%402x.png&quot;</span><span class="fu">,</span>
+        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span>
+          <span class="dt">&quot;bottom&quot;</span><span class="fu">:</span> <span class="st">&quot;100&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;width&quot;</span><span class="fu">:</span> <span class="st">&quot;30&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;color&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span>
+          <span class="dt">&quot;right&quot;</span><span class="fu">:</span> <span class="st">&quot;30&quot;</span>
+        <span class="fu">}</span>
+      <span class="fu">}</span><span class="ot">]</span>
+    <span class="fu">}</span>
+  <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<p>Amazingly enough, this is all you need to know in order to build any
+kind of sophisticated view you can imagine on mobile devices.</p>
+<p>Just like you can build anything with simple lego blocks,
+you can compose these basic components and layouts in different ways
+to create any sophisticated view.</p>
+<p>Here are some examples, 100% built by composing aforementioned UI elements:</p>
+<ul>
+<li>Instagram UI (<a href="https://github.com/jasonelle/docs/tree/master/examples/jasonette/apps/instagram">https://github.com/jasonelle/docs/tree/master/examples/jasonette/apps/instagram</a>)</li>
+<li>Twitter UI (<a href="https://github.com/jasonelle/docs/tree/master/examples/jasonette/apps/twitter">https://github.com/jasonelle/docs/tree/master/examples/jasonette/apps/twitter</a>)</li>
+</ul>
+<p><img src="images/discussions/building-apps-with-json/7.gif" alt="Instagram" />
+<img src="images/discussions/building-apps-with-json/8.gif" alt="Twitter" /></p>
+</div>
+<div id="beyond-views" class="section level3">
+<h3><span class="header-section-number">9.3.6</span> Beyond Views</h3>
+<p>If you read this far, you may be either thinking:</p>
+<ul>
+<li>“Wow cool! I wanna try this!”, or</li>
+<li>“Yeah you can probably build a toy app, but no way you can build a production app using this way!”.</li>
+</ul>
+<p>Like I briefly mentioned above, this is just the <em>“View”</em> part of <em>Jasonette</em>,
+which is the simplest part. But what’s really powerful about
+<em>Jasonette</em> is that you can actually go much further and write a full declarative program in JSON.</p>
+<p>You can attach actions to UI elements, which get triggered when a user touches them.
+You can also trigger these actions one after another via success/error callbacks.
+You can also listen to certain events and automatically trigger these actions.</p>
+<p>Just like this, when you can describe not just a
+<em>“View”</em> but also the <em>“Model”</em> and the <em>“Controller”</em>
+logic (all in JSON), <strong>you can do anything</strong>.</p>
+</div>
+<div id="what-is-possible" class="section level3">
+<h3><span class="header-section-number">9.3.7</span> What is possible?</h3>
+<p>Since all you need is a server that sends JSON,
+<em>Jasonette</em> is completely platform agnostic.
+There is no proprietary server technology you need to depend on. All you need is JSON.</p>
+<p>And JSON can come from anywhere, from local device, to remote servers, to even a Raspberry pi!
+(<a href="https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md">https://www.raspberrypi.org/documentation/remote-access/web-server/nginx.md</a>).</p>
+<ul>
+<li><p><strong>Have a web app?</strong> : If you already have a web app,
+you can instantly build a mobile native app for your <em>Node.js app,
+Rails app, Django app, PHP app, or really any web app</em>, just by making requests to your API endpoint.</p></li>
+<li><p><strong>You don’t even need a server</strong> : Since you can fit an entire model-view-controller
+in a single, self-contained JSON file, you can pretty much store and serve it from anywhere.
+You can even create an app from a static JSON file served from a Pastebin or Github!.</p></li>
+<li><p><strong>Turn any HTML website into an app</strong> : <em>Jasonette</em> has a powerful HTML-to-JSON
+parser powered by the cheerio library which lets you transform any HTML into a JSON object.
+And you already know what we can do when we have JSON — you can build a native
+view from the transformed JSON! This way, you can build a native app from a
+website that doesn’t even have an API. Of course, the recommended way is to use
+JSON whenever you can, but this is really cool regardless.</p></li>
+</ul>
+<p>I can go on forever, but here are some examples:</p>
+<p>A photo sharing app that lets you take a photo using the device
+camera and upload it to S3, and then post the entry to your own server, creating a feed:</p>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/s3-upload-example">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/s3-upload-example</a></p>
+<div class="figure">
+<img src="images/discussions/building-apps-with-json/9.gif" alt="S3 Upload Example" />
+<p class="caption">S3 Upload Example</p>
+</div>
+<p>A Node.js powered Eliza Chatbot app for iOS and Android:</p>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/eliza-example">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/eliza-example</a></p>
+<div class="figure">
+<img src="images/discussions/building-apps-with-json/10.gif" alt="Eliza Example" />
+<p class="caption">Eliza Example</p>
+</div>
+<p>A Microblog app, complete with session management:</p>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/token-authentication-example">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/token-authentication-example</a></p>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="images/discussions/building-apps-with-json/11.png" /></td>
+<td><img src="images/discussions/building-apps-with-json/12.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>A remote control app for Slack bots:</p>
+<p><a href="http://jasonelle.com/jasonette-old-blog/2017/01/17/build-a-slackbot-with-jasonette/">http://jasonelle.com/jasonette-old-blog/2017/01/17/build-a-slackbot-with-jasonette/</a></p>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/coffee-app">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/coffee-app</a></p>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="images/discussions/building-apps-with-json/13.png" /></td>
+<td><img src="images/discussions/building-apps-with-json/14.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>An example app that turns an HTML web page into JSON and then turns it into a native app:</p>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/iosdevweekly">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/apps/iosdevweekly</a></p>
+<div class="figure">
+<img src="images/discussions/building-apps-with-json/15.gif" alt="iOS Dev Weekly" />
+<p class="caption">iOS Dev Weekly</p>
+</div>
+</div>
+<div id="conclusion-2" class="section level3">
+<h3><span class="header-section-number">9.3.8</span> Conclusion</h3>
+<p><em>Jasonette</em> is a young project. I open-sourced the iOS version in late 2016,
+and the Android version a month later.</p>
+<p>But it has already grown into a vibrant community of contributors and makers and is
+under active development. I hope this technology will
+empower anyone (not just developers) to build apps effortlessly.</p>
+
+</div>
 </div>
 </div>
             </section>
