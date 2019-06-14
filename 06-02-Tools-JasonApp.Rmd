@@ -130,6 +130,13 @@ If you need futher documentation please visit the old docs setup guide.
 - [https://jasonelle.com/jasonette-old-docs/ios/](https://jasonelle.com/jasonette-old-docs/ios/)
 - [https://jasonelle.com/jasonette-old-docs/android/](https://jasonelle.com/jasonette-old-docs/android/)
 
+##### Troubleshooting
+
+- On **iOS** if you use this method you have to reinstall the app 
+in the next **7 days** or it will stop working. If you want to
+use the app longer you have to use [https://developer.apple.com/testflight/](https://developer.apple.com/testflight/), 
+but that requires a `$99 USD` per year for an Apple developer account.
+
 ### How to Use
 
 Once you installed *Jason* App in your device, start adding
