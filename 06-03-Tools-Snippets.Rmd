@@ -3,7 +3,7 @@
 Various code snippets were created by the community
 to enable autocompletion for `$jason` files.
 
-![](images/tools/vscode.gif)
+![](images/tools/snippets/vscode.gif)
 
 |Name|Author|Repo|Backup Repo|
 |--- |---   |--- |---        |
