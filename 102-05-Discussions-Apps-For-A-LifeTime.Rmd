@@ -1,6 +1,6 @@
 ## Apps for a Lifetime
 
-> This article was written by [@CLSource](http://github.com/clsource)
+> This article was written by [CLSource](http://github.com/clsource)
 
 Many of us create mobile apps for a living. 
 Of all the software being made today, 
