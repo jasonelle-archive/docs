@@ -2,8 +2,8 @@
 
 ![](images/discussions/building-apps-with-json/header.png)
 
-This article was written by Ethan on FreeCodeCamp.
-[https://www.freecodecamp.org/news/how-to-build-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup-f493abec1873/#.i83lzc4g9](https://www.freecodecamp.org/news/how-to-build-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup-f493abec1873/#.i83lzc4g9)
+> This article was written by Ethan on FreeCodeCamp.
+> [https://www.freecodecamp.org/news/how-to-build-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup-f493abec1873/#.i83lzc4g9](https://www.freecodecamp.org/news/how-to-build-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup-f493abec1873/#.i83lzc4g9)
 
 For the past few months, I’ve been working on a new way to build cross-platform, 
 native iOS and Android apps called *Jasonette*.

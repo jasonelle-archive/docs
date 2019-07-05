@@ -1,6 +1,6 @@
 ## Native Mobile View as Microservice
 
-This article was published by Ethan on [https://medium.com/@gliechtenstein/native-mobile-view-as-microservice-fd24ea62defa](https://medium.com/@gliechtenstein/native-mobile-view-as-microservice-fd24ea62defa).
+> This article was published by Ethan on [https://medium.com/@gliechtenstein/native-mobile-view-as-microservice-fd24ea62defa](https://medium.com/@gliechtenstein/native-mobile-view-as-microservice-fd24ea62defa).
 
 How sandboxed views talk to each other in *Jasonette*.
 

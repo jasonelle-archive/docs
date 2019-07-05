@@ -1,0 +1,140 @@
+## Apps for a Lifetime
+
+> This article was written by [@CLSource](http://github.com/clsource)
+
+Many of us create mobile apps for a living. 
+Of all the software being made today, 
+mobile apps have the saddest future. 
+
+Little fragments composed by ones and 
+zeroes working on a device that fits in your pocket. 
+Some use smartphones for communication, 
+others use them for entertainment, working, etc. 
+
+Many users ignore the enormous 
+effort and dedication that is required to give 
+life an app. It's a shame all those hours 
+that developers, designers, managers 
+and other people invested in the app's creation process. 
+Can be lost and forgotten forever.
+
+### A trip to the future
+
+Let's go some years to the future. 
+Year *2062*. Maybe you formed a happy family. 
+Your friends and relatives will have kids, nephews, 
+grandchildren, and so on. 
+
+One of them ask you how it was living in the 
+2010's as a *Software Developer*. 
+
+What was an *iPhone*?, How apps were made?, 
+How they worked?, Can I still use them now?.
+
+As a software developer you could tell them by your
+memories and experiences. But people in the future 
+will never experience apps the same way we do it now.
+
+### State of the Art
+
+If we want to experience software 
+made 15, 20 or 30 years ago, 
+we can use them without much trouble. 
+
+Simply use a virtual machine, emulators or using the 
+original hardware if you are lucky enough. 
+We can learn from those software applications by using them.
+
+Software made 15 years ago 
+required little or no internet access to function. 
+They didn't need *"cloud"* servers or *"social media platforms"* 
+to deliver access to the features. 
+Now you can easily play games, and use enterprise 
+or offimatic software by using virtual machines or another techniques.
+
+Today such kind of software is made too
+(that could still be used in 15 years), 
+but for *mobile apps* is a totally different scenario. 
+
+Mobile apps are super difficult to be preserved for future 
+generations and will fall in a digital black hole.
+
+### Space Jam
+
+Let's look to this example. 
+The *Space Jam* movie 
+website (https://www.warnerbros.com/archive/spacejam/movie/jam.htm). 
+More than 20 years have passed since it's 
+debut in *1996* and still we can enjoy it 
+with a modern browser. 
+Also it can be easily preserved using tools 
+like the web archive (http://web.archive.org/web/20170102152426/https://www.warnerbros.com/archive/spacejam/movie/jam.htm) 
+so if *Warner Bros* decides to shut it down 
+we could still see the website.
+
+### The Mobile App Blackhole
+
+When *iOS 11* arrived many 32 bit 
+applications died for ever. 
+
+But this was not the first time an operating system 
+update causes troubles with mobile apps. 
+
+Let's see this page from 2015 https://www.polygon.com/2015/10/7/9470351/telltale-games-titles-removed-from-app-store-due-to-ios-9-issues.
+
+> "Back to the Future, A Wolf Among Us, 
+> and other mobile ports of Telltale Games’
+> adventure tiles have been removed from the App Store 
+> following problems with the new iOS9. — Polygon.com"
+
+### Why this Mobile Blackhole Happens?
+
+Many motives could be behind an app's shutdown. 
+The following motives could affect most applications:
+
+- An Operating system update deletes deprecated libraries and functions. Apps that use those libraries and functions will cease to work.
+- A cloud service changes it's api structure, policies or it's deleted. Services like *Facebook*, *Twitter*, *iCloud* and many others. A clear example was the death of *Parse* (A Backend as A Service). http://blog.parse.com/announcements/moving-on/. Causing a lot of apps to be re-enginered or simply left for dead.
+- Hardware device is obsolete and not supported by manufacturer any more. Some apps are highly coupled with the device's hardware. If the hardware changes too much and the app is not updated, slowly the app will be forgotten.
+- Google, Apple, Microsoft or "Company X" will cease to exist. These big companies control the application stores. We can not guarantee that in 500 years these companies will still be alive and supporting the eco-systems made today. They have total control of the mobile app's enviroment. We can not archive such enviroments or create emulators that can re create what we have today.
+- Original creator of the application is dead. A bankrupcy or simply bought by a bigger company that is not interested in maintained older apps.
+- App was removed due to other motives like legal rights problems.
+- App does not make enough money to justify or pay maitainence efforts.
+
+Initiatives like 
+*The Internet Archive* (https://archive.org/) 
+try to solve this "blackhole" 
+problem of our digital age. 
+Millions of documents, audios, videos, websites 
+and older software are being preserved for future generations. 
+But it's virtually impossible to replicate and archive the 
+same environment needed for an App that uses *Facebook*, *Stripe.com* 
+and some other services to fully function.
+
+### Apps that can last 100 years
+
+Thanks to [Jasonelle](https://jasonelle.com) you can create apps
+that can last 100 years or more. Because they are made using *JSON*.
+
+Is natural to think that not all apps could be saved, special those
+that require servers or use external dependencies.
+
+But if your apps consist mainly of static assets like *json, javascript, 
+images and videos* you can be sure that as long as an interpreter
+exists you can replicate the behaviour of the app.
+
+This means the app is not coupled with *Apple* or *Google* systems.
+Is not a binary. Is a representation of data and logic that can be 
+easily replicated with new technologies, vendor free.
+
+You could create a *zip file* with all the assets and then saved it in a 
+public library. Then in 100 years anyone could open that file with an interpreter
+and your app will be alive.
+
+Make something useful, funny, weird or anything you could dream.
+And in 100 years people could still use that piece of software.
+
+That's awesome.
+
+You can use other technologies for making apps. But they are coupled
+with the current mobile ecosystem. With *Jasonelle* you have the power
+to create a legacy and a make dent in the world.
