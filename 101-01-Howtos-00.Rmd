@@ -1,1 +1,97 @@
 # How To Guides
+
+Small tips and tricks.
+
+## How to Know the Operating System
+
+If you need to check the operating system before executing some code.
+You could use the `$env` property to obtain details of the operating system.
+
+- `{{#if $env.device.os.name === 'ios'}}`: Evals to `true` if the operating system is *iOS*.
+- `{{#if $env.device.os.name === 'android'}}`: Evals to `true` if the operating system is *Android*.
+
+## How to Open Native Maps App
+
+If you want to open the native map view you need to
+simply use `$href` with the special url `maps.apple.com` (iOS) 
+or `maps.google.com`. (Android). And the `app` view.
+
+Put this code inside the `actions` object.
+
+```json
+{
+
+  "open_map": {
+    "type": "$href",
+    "options": {
+      "view": "app",
+      "transition": "modal",
+      "url": [{
+          "{{#if $env.device.os.name === 'ios'}}": "https://maps.apple.com?ll=-33.44402500439274,-70.65428849999995&z=14"
+        },
+        {
+          "{{#else}}": "https://maps.google.com?center=-33.44402500439274,-70.65428849999995&zoom=14"
+        }
+      ]
+    }
+  }
+}
+```
+
+And call it with `trigger`.
+
+```json
+{
+  "action": {
+    "trigger" : "open_map"
+  }
+}
+```
+
+## How to Call/SMS a Phone Number
+
+If you want to call/sms a phone number you can use the `$href`
+with the `tel://` or `sms://` and the `app` view.
+
+```json
+{
+    "type": "$href",
+    "options": {
+        "url": "tel://18888888888",
+        "view": "app",
+        "transition": "modal"
+    }
+}
+```
+
+> Note: This feature only works on devices that can make
+> app calls. So simulators like the iOS can't test this.
+> Use a real smartphone for this functionality.
+
+## How to Add Events to Calendar
+
+You can add events to the calendar by downloading an `ics` file
+and using the `$href` action with the `app` view. You can also
+use the `web` view to show the calendar details before adding it.
+
+```json
+{
+  "type": "$href",
+  "options": {
+      "url": "file://calendar.ics",
+      "view": "app",
+      "transition": "modal"
+  }
+}
+```
+
+More info about the `ics` files 
+- [https://tools.ietf.org/html/rfc5545](https://tools.ietf.org/html/rfc5545).
+- [https://en.wikipedia.org/wiki/ICalendar](https://en.wikipedia.org/wiki/ICalendar).
+
+You can create `ics` files by using software like *Apple Calendar*, *Google Calendar*
+or any application that support this filetype. 
+
+- [https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support](https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support).
+
+
