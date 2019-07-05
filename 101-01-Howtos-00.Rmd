@@ -20,7 +20,6 @@ Put this code inside the `actions` object.
 
 ```json
 {
-
   "open_map": {
     "type": "$href",
     "options": {
@@ -86,7 +85,9 @@ use the `web` view to show the calendar details before adding it.
 ```
 
 More info about the `ics` files 
+
 - [https://tools.ietf.org/html/rfc5545](https://tools.ietf.org/html/rfc5545).
+
 - [https://en.wikipedia.org/wiki/ICalendar](https://en.wikipedia.org/wiki/ICalendar).
 
 You can create `ics` files by using software like *Apple Calendar*, *Google Calendar*
