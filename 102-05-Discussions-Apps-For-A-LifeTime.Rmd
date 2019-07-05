@@ -115,7 +115,7 @@ and some other services to fully function.
 Thanks to [Jasonelle](https://jasonelle.com) you can create apps
 that can last 100 years or more. Because they are made using *JSON*.
 
-Is natural to think that not all apps could be saved, special those
+Is natural to think that not all apps could be saved, specially those
 that require servers or use external dependencies.
 
 But if your apps consist mainly of static assets like *json, javascript, 
@@ -138,3 +138,23 @@ That's awesome.
 You can use other technologies for making apps. But they are coupled
 with the current mobile ecosystem. With *Jasonelle* you have the power
 to create a legacy and a make dent in the world.
+
+### Conclusion
+
+Mobile apps are different than a website or other software. 
+Because mobile apps depends on ecosystems highly controled by 
+companies like *Apple* or *Google*. 
+
+They use cloud services that could die. 
+This causes that mobile apps have a short life span of a 
+couple of years, depending on the original creator 
+to maintain them and if the conditions to work (servers, apis) 
+don't change or a kept up to date in the app. 
+
+If any condition changes and the maintainer is gone.
+People will lost the oportunity to use the app and learn from it.
+
+The solution is using a technology that is vendor agnostic. A technology
+which can be interpreted the same way as HTML. We need a browser for apps.
+
+We need *Jasonelle*.
