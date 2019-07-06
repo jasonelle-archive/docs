@@ -24,7 +24,7 @@
 <meta name="author" content="Jasonelle Team" />
 
 
-<meta name="date" content="2019-07-05" />
+<meta name="date" content="2019-07-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -327,13 +327,14 @@ Use a real smartphone for this functionality.</p>
 </div>
 <div id="how-to-add-events-to-calendar" class="section level2">
 <h2><span class="header-section-number">8.4</span> How to Add Events to Calendar</h2>
-<p>You can add events to the calendar by downloading an <code>ics</code> file
+<p>You can add events to the calendar by linking to an <code>ics</code> file
 and using the <code>$href</code> action with the <code>app</code> view. You can also
 use the <code>web</code> view to show the calendar details before adding it.</p>
+<p>This file can be stored (or generated) in a server or in local <code>file://</code>.</p>
 <pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
   <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span>
   <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://calendar.ics&quot;</span><span class="fu">,</span>
+      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://host/calendar.ics&quot;</span><span class="fu">,</span>
       <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span>
       <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span>
   <span class="fu">}</span>
