@@ -69,15 +69,17 @@ with the `tel://` or `sms://` and the `app` view.
 
 ## How to Add Events to Calendar
 
-You can add events to the calendar by downloading an `ics` file
+You can add events to the calendar by linking to an `ics` file
 and using the `$href` action with the `app` view. You can also
 use the `web` view to show the calendar details before adding it.
+
+This file can be stored (or generated) in a server or in local `file://`.
 
 ```json
 {
   "type": "$href",
   "options": {
-      "url": "file://calendar.ics",
+      "url": "http://host/calendar.ics",
       "view": "app",
       "transition": "modal"
   }
