@@ -18,7 +18,7 @@
                   },
                   "background": {
                       "type": "html",
-                      "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/web-audio-recorder/index.html",
+                      "url": "https://htmlpreview.github.io/?https://github.com/jasonelle/docs/blob/develop/examples/jasonette/apps/web-audio-recorder/index.html",
                       "action": {
                           "type": "$audio.record",
                           "success": {
