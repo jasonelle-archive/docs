@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+        <title>Recording Audio Demo</title>
+    </head>
+    <body>
+        <h1>Recording Home With $agent</h1>
+        <!--
+          The $agent object is injected by Jasonette.
+          This code calls the record_audio defined in
+          index.agent.json actions object.
+        -->
+        <a onClick="$agent.trigger('record_audio')" id="recording">
+            <button>Load Record Audio Screen</button>
+        </a>
+    </body>
+</html>
