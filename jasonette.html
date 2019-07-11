@@ -754,8 +754,7 @@ Use a <code>NSDictionary</code> with the component <code>name</code> to the set 
 <h6><span class="header-section-number">4.2.2.1.6.3</span> Target Actions</h6>
 <p>Is recommended to use the Target-Action to listen to component events.</p>
 <p><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html">https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html</a></p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">
-<span class="co">// Remove then add to ensure uniqueness</span>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="co">// Remove then add to ensure uniqueness</span>
 [component removeTarget:<span class="kw">self</span> action:<span class="kw">@selector</span>(myselector:) forControlEvents:UIControlEventValueChanged];
 
 [component addTarget:<span class="kw">self</span> action:<span class="kw">@selector</span>(myselector:) forControlEvents:UIControlEventValueChanged];</code></pre>
