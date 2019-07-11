@@ -516,13 +516,31 @@ or components.</p>
 </blockquote>
 <p>Your jr.json file must be a JSON file which contains the following attributes:</p>
 <ol style="list-style-type: decimal">
-<li><code>version</code>: Follows <a href="http://semver.org/">semantic versioning</a>. Must upgrade everytime you make a change to your repo and wish to update the registry with the latest version.</li>
-<li><code>name</code>: This is the name that will be used in the JSON. For example if you set this <code>console</code> and your main class contains methods named <code>debug</code> or <code>log</code>, you can call <code>&quot;type&quot;: &quot;$console.debug&quot;</code> or <code>&quot;type&quot;: &quot;$console.log&quot;</code> actions in your JSON markup.</li>
-<li><code>description</code>: This is the description that will show up on the registry list when you open the extension manager</li>
-<li><code>classname</code>: This is the main class name that will be linked with the <code>name</code> attribute above. So if you set the classname attribute as <code>JasonConsoleAction</code>, Jasonette will look for <code>JasonConsoleAction</code> class every time it runs into the JSON markup specified by the <code>name</code> attribute above.</li>
-<li><code>platform</code>: Specify your platform. Currently can only be <code>&quot;ios&quot;</code> or <code>&quot;android&quot;</code></li>
-<li><code>dependencies</code>: If you’re using 3rd party libraries via Cocoapods or gradle, you need to add the lines you would normally use in a <code>Podfile</code> (for ios) or a <code>build.gradle</code> file (for android). For example: <code>&quot;dependencies&quot;: [ &quot;compile 'com.segment.analytics.android:analytics:4.+'&quot; ]</code>, or <code>&quot;dependencies&quot;: [&quot;pod 'Analytics', '~&gt; 3.0'&quot;]</code></li>
+<li><p><code>version</code>: Follows <a href="http://semver.org/">semantic versioning</a>.
+Must upgrade everytime you make a change to your repo and
+wish to update the registry with the latest version.</p></li>
+<li><p><code>name</code>: This is the name that will be used in the JSON.
+For example if you set this <code>console</code> and your main
+class contains methods named <code>debug</code> or <code>log</code>,
+you can call <code>&quot;type&quot;: &quot;$console.debug&quot;</code> or <code>&quot;type&quot;: &quot;$console.log&quot;</code>
+actions in your JSON markup.</p></li>
+<li><p><code>description</code>: This is the description
+that will show up on the registry list when you
+open the extension manager</p></li>
+<li><p><code>classname</code>: This is the main class name
+that will be linked with the <code>name</code> attribute above.
+So if you set the classname attribute as <code>JasonConsoleAction</code>,
+Jasonette will look for <code>JasonConsoleAction</code> class every time
+it runs into the JSON markup specified by the <code>name</code> attribute above.</p></li>
+<li><p><code>platform</code>: Specify your platform.
+Currently can only be <code>&quot;ios&quot;</code> or <code>&quot;android&quot;</code></p></li>
+<li><p><code>dependencies</code>: If you’re using 3rd party libraries
+via Cocoapods or gradle, you need to add the lines
+you would normally use in a <code>Podfile</code> (for ios) or a <code>build.gradle</code>
+file (for android).</p></li>
 </ol>
+<p>For example: <code>&quot;dependencies&quot;: [ &quot;compile 'com.segment.analytics.android:analytics:4.+'&quot; ]</code>,
+or <code>&quot;dependencies&quot;: [&quot;pod 'Analytics', '~&gt; 3.0'&quot;]</code></p>
 </div>
 <div id="ios" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> iOS</h3>
@@ -530,8 +548,8 @@ or components.</p>
 <div id="creating-extensions" class="section level4">
 <h4><span class="header-section-number">4.2.2.1</span> Creating Extensions</h4>
 <p>You can create extensions with native <em>Objective-C</em> or <em>Swift</em>.</p>
-<p>If you are using Swift for an Extension use the <code>@objectivec()</code> annotation.</p>
-<pre><code>@objectivec(MySwiftClass)
+<p>If you are using Swift for an Extension use the <code>@objc()</code> annotation.</p>
+<pre><code>@objc(MySwiftClass)
 class MySwiftClass {
     // ...
 }</code></pre>
@@ -554,8 +572,7 @@ an element. The element should decide when to call this action.</p>
 <blockquote>
 <p>Or type your json directly</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">
-[[Jason client] call:@{
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] call:@{
                  <span class="st">@&quot;type&quot;</span>: <span class="st">@&quot;$href&quot;</span>,
                  <span class="st">@&quot;options&quot;</span>: userInfo[<span class="st">@&quot;href&quot;</span>]
             }];</code></pre>
@@ -627,8 +644,7 @@ available inside the <code>$jason</code> property.</p>
 <blockquote>
 <p>JasonVibrationAction.h</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">
-<span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span>
 
 <span class="kw">@interface</span> JasonVibrationAction : JasonAction
 
@@ -636,8 +652,7 @@ available inside the <code>$jason</code> property.</p>
 <blockquote>
 <p>JasonVibrationAction.m</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">
-<span class="pp">#import </span><span class="im">&quot;JasonVibrationAction.h&quot;</span>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonVibrationAction.h&quot;</span>
 <span class="pp">#import </span><span class="im">&quot;JasonOptionHelper.h&quot;</span>
 
 <span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span>
@@ -657,7 +672,7 @@ available inside the <code>$jason</code> property.</p>
     <span class="dt">int</span> vibrationId = kSystemSoundID_Vibrate;
     
     <span class="kw">if</span> (forceVibration &amp;&amp; [[UIDevice currentDevice].model
-                           isEqualToString:<span class="st">@&quot;iPhone&quot;</span>])
+                            isEqualToString:<span class="st">@&quot;iPhone&quot;</span>])
     {
         vibrationId = kForceVibrationId;
     }
@@ -847,17 +862,10 @@ with the service.</p>
             AVMetadataMachineReadableCodeObject * transformed = (AVMetadataMachineReadableCodeObject *) metadata;
             <span class="kw">self</span>.is_open = NO;
             [[Jason client] call:events[<span class="st">@&quot;$vision.onscan&quot;</span>] with:@{
-                 <span class="st">@&quot;$jason&quot;</span>: @{
-                     <span class="st">@&quot;content&quot;</span>: transformed.stringValue,
-                     <span class="st">@&quot;type&quot;</span>: transformed.type
-                     <span class="co">//                   @&quot;corners&quot;: transformed.corners,</span>
-                     <span class="co">//                   @&quot;bounds&quot;: @{</span>
-                     <span class="co">//                       @&quot;left&quot;: [NSNumber numberWithFloat: transformed.bounds.origin.x],</span>
-                     <span class="co">//                       @&quot;top&quot;: [NSNumber numberWithFloat: transformed.bounds.origin.y],</span>
-                     <span class="co">//                       @&quot;width&quot;: [NSNumber numberWithFloat: transformed.bounds.size.width],</span>
-                     <span class="co">//                       @&quot;height&quot;: [NSNumber numberWithFloat: transformed.bounds.size.height]</span>
-                     <span class="co">//                   }</span>
-                 }
+                  <span class="st">@&quot;$jason&quot;</span>: @{
+                      <span class="st">@&quot;content&quot;</span>: transformed.stringValue,
+                      <span class="st">@&quot;type&quot;</span>: transformed.type
+                  }
             }];
             <span class="kw">return</span>;
         }
