@@ -55,12 +55,36 @@ that uses your action/component.
 
 Your jr.json file must be a JSON file which contains the following attributes:
 
-1. `version`: Follows [semantic versioning](http://semver.org/). Must upgrade everytime you make a change to your repo and wish to update the registry with the latest version.
-2. `name`: This is the name that will be used in the JSON. For example if you set this `console` and your main class contains methods named `debug` or `log`, you can call `"type": "$console.debug"` or `"type": "$console.log"` actions in your JSON markup.
-3. `description`: This is the description that will show up on the registry list when you open the extension manager
-4. `classname`: This is the main class name that will be linked with the `name` attribute above. So if you set the classname attribute as `JasonConsoleAction`, Jasonette will look for `JasonConsoleAction` class every time it runs into the JSON markup specified by the `name` attribute above.
-5. `platform`: Specify your platform. Currently can only be `"ios"` or `"android"`
-6. `dependencies`: If you're using 3rd party libraries via Cocoapods or gradle, you need to add the lines you would normally use in a `Podfile` (for ios) or a `build.gradle` file (for android). For example: `"dependencies": [ "compile 'com.segment.analytics.android:analytics:4.+'" ]`, or `"dependencies": ["pod 'Analytics', '~> 3.0'"]`
+1. `version`: Follows [semantic versioning](http://semver.org/). 
+Must upgrade everytime you make a change to your repo and 
+wish to update the registry with the latest version.
+
+2. `name`: This is the name that will be used in the JSON. 
+For example if you set this `console` and your main 
+class contains methods named `debug` or `log`, 
+you can call `"type": "$console.debug"` or `"type": "$console.log"` 
+actions in your JSON markup.
+
+3. `description`: This is the description 
+that will show up on the registry list when you 
+open the extension manager
+
+4. `classname`: This is the main class name 
+that will be linked with the `name` attribute above. 
+So if you set the classname attribute as `JasonConsoleAction`, 
+Jasonette will look for `JasonConsoleAction` class every time 
+it runs into the JSON markup specified by the `name` attribute above.
+
+5. `platform`: Specify your platform.
+Currently can only be `"ios"` or `"android"`
+
+6. `dependencies`: If you're using 3rd party libraries 
+via Cocoapods or gradle, you need to add the lines 
+you would normally use in a `Podfile` (for ios) or a `build.gradle` 
+file (for android). 
+
+For example: `"dependencies": [ "compile 'com.segment.analytics.android:analytics:4.+'" ]`,
+or `"dependencies": ["pod 'Analytics', '~> 3.0'"]`
 
 
 ### iOS 
@@ -71,10 +95,10 @@ The following information is related to creating extensions in iOS.
 
 You can create extensions with native *Objective-C* or *Swift*.
 
-If you are using Swift for an Extension use the `@objectivec()` annotation.
+If you are using Swift for an Extension use the `@objc()` annotation.
 
 ```
-@objectivec(MySwiftClass)
+@objc(MySwiftClass)
 class MySwiftClass {
     // ...
 }
@@ -107,7 +131,6 @@ an element. The element should decide when to call this action.
 > Or type your json directly
 
 ```objectivec
-
 [[Jason client] call:@{
                  @"type": @"$href",
                  @"options": userInfo[@"href"]
@@ -207,7 +230,6 @@ Call `Jason.client.error` method to execute the `error` callback in the json.
 > JasonVibrationAction.h
 
 ```objectivec
-
 #import "JasonAction.h"
 
 @interface JasonVibrationAction : JasonAction
@@ -218,7 +240,6 @@ Call `Jason.client.error` method to execute the `error` callback in the json.
 > JasonVibrationAction.m
 
 ```objectivec
-
 #import "JasonVibrationAction.h"
 #import "JasonOptionHelper.h"
 
@@ -239,7 +260,7 @@ int const kForceVibrationId = 1352;
     int vibrationId = kSystemSoundID_Vibrate;
     
     if (forceVibration && [[UIDevice currentDevice].model
-                           isEqualToString:@"iPhone"])
+                            isEqualToString:@"iPhone"])
     {
         vibrationId = kForceVibrationId;
     }
@@ -464,17 +485,10 @@ JasonPushService * service = [Jason client].services[@"JasonPushService"];
             AVMetadataMachineReadableCodeObject * transformed = (AVMetadataMachineReadableCodeObject *) metadata;
             self.is_open = NO;
             [[Jason client] call:events[@"$vision.onscan"] with:@{
-                 @"$jason": @{
-                     @"content": transformed.stringValue,
-                     @"type": transformed.type
-                     //                   @"corners": transformed.corners,
-                     //                   @"bounds": @{
-                     //                       @"left": [NSNumber numberWithFloat: transformed.bounds.origin.x],
-                     //                       @"top": [NSNumber numberWithFloat: transformed.bounds.origin.y],
-                     //                       @"width": [NSNumber numberWithFloat: transformed.bounds.size.width],
-                     //                       @"height": [NSNumber numberWithFloat: transformed.bounds.size.height]
-                     //                   }
-                 }
+                  @"$jason": @{
+                      @"content": transformed.stringValue,
+                      @"type": transformed.type
+                  }
             }];
             return;
         }
