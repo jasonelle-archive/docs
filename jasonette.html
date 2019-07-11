@@ -24,7 +24,7 @@
 <meta name="author" content="Jasonelle Team" />
 
 
-<meta name="date" content="2019-07-10" />
+<meta name="date" content="2019-07-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -142,6 +142,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="jasonette.html"><a href="jasonette.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="jasonette.html"><a href="jasonette.html#json-to-native-components"><i class="fa fa-check"></i><b>4.1.1</b> JSON to Native Components</a></li>
 <li class="chapter" data-level="4.1.2" data-path="jasonette.html"><a href="jasonette.html#free-battle-tested"><i class="fa fa-check"></i><b>4.1.2</b> Free &amp; Battle Tested</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="jasonette.html"><a href="jasonette.html#extensions"><i class="fa fa-check"></i><b>4.2</b> Extensions</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="jasonette.html"><a href="jasonette.html#the-jr.json"><i class="fa fa-check"></i><b>4.2.1</b> The jr.json</a></li>
+<li class="chapter" data-level="4.2.2" data-path="jasonette.html"><a href="jasonette.html#ios"><i class="fa fa-check"></i><b>4.2.2</b> iOS</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Ja.js - Selector Transformer</a><ul>
@@ -463,6 +467,432 @@ native components and actions.
 It doesn’t force you to drop everything and adopt the technology exclusively.
 You can extend it or even integrate it with your existing native code seamlessly.</p>
 
+</div>
+</div>
+</div>
+<div id="extensions" class="section level2">
+<h2><span class="header-section-number">4.2</span> Extensions</h2>
+<p><em>Jasonette</em> is easily extendable. You can add your own
+native code <code>actions</code>, <code>components</code> or <code>services</code> and call them using JSON.</p>
+<blockquote>
+<p>More Examples</p>
+</blockquote>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions</a></p>
+<div id="the-jr.json" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> The jr.json</h3>
+<p>This file contains the configuration that <em>Jasonette</em> needs
+to detect the extension.</p>
+<p>Example:</p>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions/ios/vibration-action">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions/ios/vibration-action</a></p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+  <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;0.1.0&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;vibration&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;classname&quot;</span><span class="fu">:</span> <span class="st">&quot;JasonVibrationAction&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;platform&quot;</span><span class="fu">:</span> <span class="st">&quot;ios&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;language&quot;</span> <span class="fu">:</span> <span class="st">&quot;objective-c&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;author&quot;</span> <span class="fu">:</span> <span class="st">&quot;Jasonelle&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;href&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://jasonelle.com&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;license&quot;</span> <span class="fu">:</span> <span class="st">&quot;MIT&quot;</span><span class="fu">,</span>
+  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;$vibration.activate makes the device vibrate.&quot;</span>
+<span class="fu">}</span></code></pre>
+<p>At the minimum it must have two properties:</p>
+<ul>
+<li><code>name</code>: is the one who defines how Jasonette will identify
+this component.</li>
+</ul>
+<p>In the example is <code>vibration</code>. The json object will be <code>$vibration</code>.</p>
+<ul>
+<li><code>classname</code>: tells which file will be used for this action.</li>
+</ul>
+<p>This is used in <em>Jasonette</em> to load the class. It must follow
+the pattern <code>Jason&lt;Name&gt;Action</code> for actions and <code>Jason&lt;Name&gt;Component</code>
+for components.</p>
+<p>It’s a good practice to include a <code>test.json</code> with a sample app
+that uses your action/component.</p>
+<blockquote>
+<p><code>name</code> and <code>classname</code> could be different for the same component.
+is important that they not conflict with other actions
+or components.</p>
+</blockquote>
+<p>Your jr.json file must be a JSON file which contains the following attributes:</p>
+<ol style="list-style-type: decimal">
+<li><code>version</code>: Follows <a href="http://semver.org/">semantic versioning</a>. Must upgrade everytime you make a change to your repo and wish to update the registry with the latest version.</li>
+<li><code>name</code>: This is the name that will be used in the JSON. For example if you set this <code>console</code> and your main class contains methods named <code>debug</code> or <code>log</code>, you can call <code>&quot;type&quot;: &quot;$console.debug&quot;</code> or <code>&quot;type&quot;: &quot;$console.log&quot;</code> actions in your JSON markup.</li>
+<li><code>description</code>: This is the description that will show up on the registry list when you open the extension manager</li>
+<li><code>classname</code>: This is the main class name that will be linked with the <code>name</code> attribute above. So if you set the classname attribute as <code>JasonConsoleAction</code>, Jasonette will look for <code>JasonConsoleAction</code> class every time it runs into the JSON markup specified by the <code>name</code> attribute above.</li>
+<li><code>platform</code>: Specify your platform. Currently can only be <code>&quot;ios&quot;</code> or <code>&quot;android&quot;</code></li>
+<li><code>dependencies</code>: If you’re using 3rd party libraries via Cocoapods or gradle, you need to add the lines you would normally use in a <code>Podfile</code> (for ios) or a <code>build.gradle</code> file (for android). For example: <code>&quot;dependencies&quot;: [ &quot;compile 'com.segment.analytics.android:analytics:4.+'&quot; ]</code>, or <code>&quot;dependencies&quot;: [&quot;pod 'Analytics', '~&gt; 3.0'&quot;]</code></li>
+</ol>
+</div>
+<div id="ios" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> iOS</h3>
+<p>The following information is related to creating extensions in iOS.</p>
+<div id="creating-extensions" class="section level4">
+<h4><span class="header-section-number">4.2.2.1</span> Creating Extensions</h4>
+<p>You can create extensions with native <em>Objective-C</em> or <em>Swift</em>.</p>
+<p>If you are using Swift for an Extension use the <code>@objc()</code> annotation.</p>
+<pre><code>@objc(MySwiftClass)
+class MySwiftClass {
+    // ...
+}</code></pre>
+<p>Extensions must be childs of the parent class <code>JasonAction</code> or <code>JasonComponent</code>.</p>
+<div id="jason" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.1</span> Jason</h5>
+<p>The <code>Jason</code> is the main singleton for executing actions and other
+operations.</p>
+<div id="call" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.1.1</span> call</h6>
+<p>Use <code>Jason.client.call</code> to trigger an action related to
+an element. The element should decide when to call this action.</p>
+<pre class="objc"><code>[[Jason client] call:json[@&quot;action&quot;]];</code></pre>
+<blockquote>
+<p>You can also call using params</p>
+</blockquote>
+<pre class="objc"><code>[[Jason client]
+    call:json[@&quot;action&quot;]
+    with:@{ @&quot;$jason&quot;: payload }];</code></pre>
+<blockquote>
+<p>Or type your json directly</p>
+</blockquote>
+<pre class="objc"><code>
+[[Jason client] call:@{
+                 @&quot;type&quot;: @&quot;$href&quot;,
+                 @&quot;options&quot;: userInfo[@&quot;href&quot;]
+            }];</code></pre>
+</div>
+<div id="go" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.1.2</span> go</h6>
+<p>Use <code>Jason.client.go</code> to load a view inside a <code>file://</code> or <code>http[s]://</code>
+url.</p>
+<pre class="objc"><code>[[Jason client] go:userInfo[@&quot;href&quot;]];</code></pre>
+</div>
+<div id="getvc" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.1.3</span> getVC</h6>
+<p>Obtain the current <code>JasonViewController</code> object.</p>
+<pre class="objc"><code>[[[Jason client] getVC];</code></pre>
+</div>
+</div>
+<div id="jasonaction" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.2</span> JasonAction</h5>
+<p>Defines actions that could be performed using the <code>action</code> property.</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;action&quot;</span> <span class="fu">:</span> <span class="fu">{</span>
+        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$myaction&quot;</span>
+    <span class="fu">}</span>
+<span class="fu">}</span></code></pre>
+<blockquote>
+<p>Interface:
+The action must be child of <code>JasonAction</code> and follow the naming convention.</p>
+</blockquote>
+<pre class="objc"><code>#import &quot;JasonAction.h&quot;
+@interface JasonMyCustomAction : JasonAction
+
+@end</code></pre>
+<blockquote>
+<p>Implementation:
+Each method will be available as <code>$myaction.mymethod</code>
+in this case would be <code>$myaction.get</code></p>
+</blockquote>
+<pre class="objc"><code>- (void) get {
+    NSLog(@&quot;Hello&quot;);
+}</code></pre>
+</div>
+<div id="methods" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.3</span> Methods</h5>
+<p>All the input and output must be using the <code>Jason</code> class
+using the <code>client</code> singleton.</p>
+<p>Example</p>
+<pre class="objc"><code>[[Jason client] success:@{ @&quot;coord&quot;: coord }];</code></pre>
+<div id="options" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.3.1</span> options</h6>
+<p>The dictionary <code>self.options</code> contains all the params provided in
+the json file.</p>
+<pre class="objc"><code>NSString * name = self.options[@&quot;name&quot;];</code></pre>
+</div>
+<div id="success" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.3.2</span> success</h6>
+<p>Call <code>Jason.client.success</code> method to return a value. And execute
+the <code>success</code> callback in the json. The params provided would be
+available inside the <code>$jason</code> property.</p>
+<pre class="objc"><code>[[Jason client] success:@{}];</code></pre>
+</div>
+<div id="error" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.3.3</span> error</h6>
+<p>Call <code>Jason.client.error</code> method to execute the <code>error</code> callback in the json.</p>
+<pre class="objc"><code>[[Jason client] error];</code></pre>
+</div>
+</div>
+<div id="example-jasonvibrationaction" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.4</span> Example: JasonVibrationAction</h5>
+<blockquote>
+<p>JasonVibrationAction.h</p>
+</blockquote>
+<pre class="objc"><code>
+#import &quot;JasonAction.h&quot;
+
+@interface JasonVibrationAction : JasonAction
+
+@end</code></pre>
+<blockquote>
+<p>JasonVibrationAction.m</p>
+</blockquote>
+<pre class="objc"><code>
+#import &quot;JasonVibrationAction.h&quot;
+#import &quot;JasonOptionHelper.h&quot;
+
+#import &lt;AVFoundation/AVFoundation.h&gt;
+
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+// AudioServicesPlaySystemSound (1352) works for iPhones regardless of silent switch position
+int const kForceVibrationId = 1352;
+
+@implementation JasonVibrationAction
+
+// use this as $vibration.activate
+- (void) activate
+{
+    BOOL forceVibration = [self.options[@&quot;force&quot;] boolValue];
+    
+    int vibrationId = kSystemSoundID_Vibrate;
+    
+    if (forceVibration &amp;&amp; [[UIDevice currentDevice].model
+                           isEqualToString:@&quot;iPhone&quot;])
+    {
+        vibrationId = kForceVibrationId;
+    }
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@&quot;9.0&quot;))
+    {
+
+        AudioServicesPlayAlertSoundWithCompletion(vibrationId, nil);
+    }
+    else
+    {
+        AudioServicesPlayAlertSound(vibrationId);
+    }
+
+    [[Jason client] success];
+}
+
+@end</code></pre>
+</div>
+<div id="jasoncomponent" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.5</span> JasonComponent</h5>
+<p>A component is an <code>UIView</code> that could be rendered by the <code>JasonComponentFactory</code>.</p>
+<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
+    <span class="dt">&quot;type&quot;</span> <span class="fu">:</span> <span class="st">&quot;mycomponent&quot;</span>
+<span class="fu">}</span></code></pre>
+<blockquote>
+<p>Interface:
+The component must be child of <code>JasonComponent</code> and follow the naming convention.</p>
+</blockquote>
+<pre class="objc"><code>#import &quot;JasonComponent.h&quot;
+@interface JasonMyCustomComponent : JasonComponent
+
+@end</code></pre>
+<blockquote>
+<p>Implementation:
+The component must implement the following method</p>
+</blockquote>
+<pre class="objc"><code>+ (UIView *) build:(UIView *)component
+    withJSON:(NSDictionary *)json
+    withOptions:(NSDictionary *)options;</code></pre>
+<div id="properties" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.5.1</span> Properties</h6>
+<ul>
+<li><code>component</code>: Should be returned with all the styles and options applied.</li>
+<li><code>json</code>: Contains the properties <code>name</code>, <code>action</code> and <code>style</code>.</li>
+<li><code>options</code>: Contains the params.</li>
+</ul>
+<blockquote>
+<p>component can’t be nil</p>
+</blockquote>
+<p>Component param can’t be <code>nil</code>. always check and build the component
+if needed.</p>
+<pre class="objc"><code>if (!component)
+{
+    component = [[UIView alloc] init];
+}</code></pre>
+</div>
+</div>
+<div id="methods-1" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.6</span> Methods</h5>
+<p>Most information is stored in the params of the implementation. Some of the following methods can become handy.</p>
+<div id="stylize" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.6.1</span> stylize</h6>
+<p>Use the <code>stylize</code> to apply common styles configuration
+to the component.</p>
+<pre class="objc"><code>[self stylize:json component:component];</code></pre>
+<blockquote>
+<p>Call this method before applying your custom styles.</p>
+</blockquote>
+</div>
+<div id="updateform" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.6.2</span> updateForm</h6>
+<p>Use the <code>updateForm</code> method to return values to the json.
+Use a <code>NSDictionary</code> with the component <code>name</code> to the set values.</p>
+<pre class="objc"><code>[self updateForm:@{ json[@&quot;name&quot;]: newValue }];</code></pre>
+</div>
+<div id="target-actions" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.6.3</span> Target Actions</h6>
+<p>Is recommended to use the Target-Action to listen to component events.</p>
+<p><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html">https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html</a></p>
+<pre class="objc"><code>
+// Remove then add to ensure uniqueness
+[component removeTarget:self action:@selector(myselector:) forControlEvents:UIControlEventValueChanged];
+
+[component addTarget:self action:@selector(myselector:) forControlEvents:UIControlEventValueChanged];</code></pre>
+<p>Create custom handlers and use <code>Jason.client.call</code> to
+trigger the action associated with the component.</p>
+</div>
+</div>
+<div id="example-jasonspacecomponent" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.7</span> Example: JasonSpaceComponent</h5>
+<blockquote>
+<p>JasonSpaceComponent.h</p>
+</blockquote>
+<pre class="objc"><code>#import &quot;JasonComponent.h&quot;
+#import &quot;JasonHelper.h&quot;
+
+@interface JasonSpaceComponent : JasonComponent
+@end</code></pre>
+<blockquote>
+<p>JasonSpaceComponent.m</p>
+</blockquote>
+<pre class="objc"><code>#import &quot;JasonSpaceComponent.h&quot;
+
+@implementation JasonSpaceComponent
++ (UIView *) build:(UIView *)component withJSON:(NSDictionary *)json withOptions:(NSDictionary *)options {
+
+    if (!component)
+    {
+        component = [[UIView alloc] init];
+    }
+    if ([options[@&quot;parent&quot;] isEqualToString:@&quot;vertical&quot;])
+    {
+        [component setContentHuggingPriority:1 forAxis:UILayoutConstraintAxisVertical];
+    }
+    else if ([options[@&quot;parent&quot;] isEqualToString:@&quot;horizontal&quot;])
+    {
+        [component setContentHuggingPriority:1 forAxis:UILayoutConstraintAxisHorizontal];
+    }
+    component.translatesAutoresizingMaskIntoConstraints = false;
+
+    // Apply Common Style
+    [self stylize:json component:component];
+
+    return component;
+}
+
+@end</code></pre>
+</div>
+<div id="jasonservice" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.8</span> JasonService</h5>
+<p>A service is a special extension that will not be deallocated
+when the view changes. They are similar to daemons that runs
+in background processes.</p>
+<p>Some services are: <code>$agent</code>, <code>$websocket</code>, <code>$vision</code> and <code>$push</code>.</p>
+<p>They do not need to extend a base class. But they must implement
+the <code>initialize:</code> method called in the <code>AppDelegate</code>. And follow
+the naming convention <code>Jason&lt;Name&gt;Service</code>.</p>
+<pre class="objc"><code>- (void) initialize:(NSDictionary *)launchOptions;</code></pre>
+<div id="accessing-a-service" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.8.1</span> Accessing a Service</h6>
+<p>For accessing a service object use the <code>Jason.client.services</code> property.
+This could be used inside an <code>action</code> or <code>component</code> that interacts
+with the service.</p>
+<pre class="objc"><code>JasonPushService * service = [Jason client].services[@&quot;JasonPushService&quot;];</code></pre>
+</div>
+<div id="example-jasonvisionservice-and-jasonvisionaction" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.8.2</span> Example: JasonVisionService and JasonVisionAction</h6>
+<blockquote>
+<p>JasonVisionService.h</p>
+</blockquote>
+<pre class="objc"><code>#import &lt;Foundation/Foundation.h&gt;
+#import &lt;AVFoundation/AVFoundation.h&gt;
+#import &quot;Jason.h&quot;
+#import &quot;JasonMemory.h&quot;
+
+@interface JasonVisionService : NSObject &lt;AVCaptureMetadataOutputObjectsDelegate&gt;
+
+@property (nonatomic, assign) BOOL is_open;
+
+@end</code></pre>
+<blockquote>
+<p>JasonVisionService.m</p>
+</blockquote>
+<pre class="objc"><code>#import &quot;JasonVisionService.h&quot;
+#import &quot;JasonLogger.h&quot;
+
+@implementation JasonVisionService
+- (void) initialize:(NSDictionary *)launchOptions
+{
+    self.is_open = NO;
+    DTLogDebug(@&quot;initialize&quot;);
+}
+
+- (void) captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray&lt;__kindof AVMetadataObject *&gt; *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
+
+    if (!self.is_open)
+    {
+        return;
+    }
+
+    NSDictionary * events = [[[Jason client] getVC] valueForKey:@&quot;events&quot;];
+    if (![JasonMemory client].executing)
+    {
+        for (AVMetadataObject * metadata in metadataObjects)
+        {
+            AVMetadataMachineReadableCodeObject * transformed = (AVMetadataMachineReadableCodeObject *) metadata;
+            self.is_open = NO;
+            [[Jason client] call:events[@&quot;$vision.onscan&quot;] with:@{
+                 @&quot;$jason&quot;: @{
+                     @&quot;content&quot;: transformed.stringValue,
+                     @&quot;type&quot;: transformed.type
+                     //                   @&quot;corners&quot;: transformed.corners,
+                     //                   @&quot;bounds&quot;: @{
+                     //                       @&quot;left&quot;: [NSNumber numberWithFloat: transformed.bounds.origin.x],
+                     //                       @&quot;top&quot;: [NSNumber numberWithFloat: transformed.bounds.origin.y],
+                     //                       @&quot;width&quot;: [NSNumber numberWithFloat: transformed.bounds.size.width],
+                     //                       @&quot;height&quot;: [NSNumber numberWithFloat: transformed.bounds.size.height]
+                     //                   }
+                 }
+            }];
+            return;
+        }
+    }
+}
+
+@end</code></pre>
+<blockquote>
+<p>JasonVisionAction.m</p>
+</blockquote>
+<pre class="objc"><code>#import &quot;JasonAction.h&quot;
+#import &quot;JasonVisionService.h&quot;
+#import &quot;Jason.h&quot;
+
+@interface JasonVisionAction : JasonAction
+
+@end</code></pre>
+<blockquote>
+<p>JasonVisionAction.m</p>
+</blockquote>
+<pre class="objc"><code>#import &quot;JasonVisionAction.h&quot;
+
+@implementation JasonVisionAction
+
+// $vision.scan
+- (void) scan {
+    JasonVisionService * service = [Jason client].services[@&quot;JasonVisionService&quot;];
+
+    service.is_open = YES;
+    [[Jason client] success];
+}
+@end</code></pre>
+
+</div>
+</div>
 </div>
 </div>
 </div>
