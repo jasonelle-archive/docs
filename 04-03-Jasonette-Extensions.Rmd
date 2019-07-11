@@ -132,8 +132,8 @@ an element. The element should decide when to call this action.
 
 ```objectivec
 [[Jason client] call:@{
-                 @"type": @"$href",
-                 @"options": userInfo[@"href"]
+                  @"type": @"$href",
+                  @"options": userInfo[@"href"]
             }];
 ```
 
