@@ -530,8 +530,8 @@ or components.</p>
 <div id="creating-extensions" class="section level4">
 <h4><span class="header-section-number">4.2.2.1</span> Creating Extensions</h4>
 <p>You can create extensions with native <em>Objective-C</em> or <em>Swift</em>.</p>
-<p>If you are using Swift for an Extension use the <code>@objc()</code> annotation.</p>
-<pre><code>@objc(MySwiftClass)
+<p>If you are using Swift for an Extension use the <code>@objectivec()</code> annotation.</p>
+<pre><code>@objectivec(MySwiftClass)
 class MySwiftClass {
     // ...
 }</code></pre>
@@ -544,32 +544,32 @@ operations.</p>
 <h6><span class="header-section-number">4.2.2.1.1.1</span> call</h6>
 <p>Use <code>Jason.client.call</code> to trigger an action related to
 an element. The element should decide when to call this action.</p>
-<pre class="objc"><code>[[Jason client] call:json[@&quot;action&quot;]];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] call:json[<span class="st">@&quot;action&quot;</span>]];</code></pre>
 <blockquote>
 <p>You can also call using params</p>
 </blockquote>
-<pre class="objc"><code>[[Jason client]
-    call:json[@&quot;action&quot;]
-    with:@{ @&quot;$jason&quot;: payload }];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client]
+    call:json[<span class="st">@&quot;action&quot;</span>]
+    with:@{ <span class="st">@&quot;$jason&quot;</span>: payload }];</code></pre>
 <blockquote>
 <p>Or type your json directly</p>
 </blockquote>
-<pre class="objc"><code>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">
 [[Jason client] call:@{
-                 @&quot;type&quot;: @&quot;$href&quot;,
-                 @&quot;options&quot;: userInfo[@&quot;href&quot;]
+                 <span class="st">@&quot;type&quot;</span>: <span class="st">@&quot;$href&quot;</span>,
+                 <span class="st">@&quot;options&quot;</span>: userInfo[<span class="st">@&quot;href&quot;</span>]
             }];</code></pre>
 </div>
 <div id="go" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.1.2</span> go</h6>
 <p>Use <code>Jason.client.go</code> to load a view inside a <code>file://</code> or <code>http[s]://</code>
 url.</p>
-<pre class="objc"><code>[[Jason client] go:userInfo[@&quot;href&quot;]];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] go:userInfo[<span class="st">@&quot;href&quot;</span>]];</code></pre>
 </div>
 <div id="getvc" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.1.3</span> getVC</h6>
 <p>Obtain the current <code>JasonViewController</code> object.</p>
-<pre class="objc"><code>[[[Jason client] getVC];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[[Jason client] getVC];</code></pre>
 </div>
 </div>
 <div id="jasonaction" class="section level5">
@@ -584,17 +584,17 @@ url.</p>
 <p>Interface:
 The action must be child of <code>JasonAction</code> and follow the naming convention.</p>
 </blockquote>
-<pre class="objc"><code>#import &quot;JasonAction.h&quot;
-@interface JasonMyCustomAction : JasonAction
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span>
+<span class="kw">@interface</span> JasonMyCustomAction : JasonAction
 
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 <blockquote>
 <p>Implementation:
 Each method will be available as <code>$myaction.mymethod</code>
 in this case would be <code>$myaction.get</code></p>
 </blockquote>
-<pre class="objc"><code>- (void) get {
-    NSLog(@&quot;Hello&quot;);
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (<span class="dt">void</span>) get {
+    NSLog(<span class="st">@&quot;Hello&quot;</span>);
 }</code></pre>
 </div>
 <div id="methods" class="section level5">
@@ -602,24 +602,24 @@ in this case would be <code>$myaction.get</code></p>
 <p>All the input and output must be using the <code>Jason</code> class
 using the <code>client</code> singleton.</p>
 <p>Example</p>
-<pre class="objc"><code>[[Jason client] success:@{ @&quot;coord&quot;: coord }];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] success:@{ <span class="st">@&quot;coord&quot;</span>: coord }];</code></pre>
 <div id="options" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.3.1</span> options</h6>
 <p>The dictionary <code>self.options</code> contains all the params provided in
 the json file.</p>
-<pre class="objc"><code>NSString * name = self.options[@&quot;name&quot;];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">NSString * name = <span class="kw">self</span>.options[<span class="st">@&quot;name&quot;</span>];</code></pre>
 </div>
 <div id="success" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.3.2</span> success</h6>
 <p>Call <code>Jason.client.success</code> method to return a value. And execute
 the <code>success</code> callback in the json. The params provided would be
 available inside the <code>$jason</code> property.</p>
-<pre class="objc"><code>[[Jason client] success:@{}];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] success:@{}];</code></pre>
 </div>
 <div id="error" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.3.3</span> error</h6>
 <p>Call <code>Jason.client.error</code> method to execute the <code>error</code> callback in the json.</p>
-<pre class="objc"><code>[[Jason client] error];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] error];</code></pre>
 </div>
 </div>
 <div id="example-jasonvibrationaction" class="section level5">
@@ -627,47 +627,47 @@ available inside the <code>$jason</code> property.</p>
 <blockquote>
 <p>JasonVibrationAction.h</p>
 </blockquote>
-<pre class="objc"><code>
-#import &quot;JasonAction.h&quot;
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">
+<span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span>
 
-@interface JasonVibrationAction : JasonAction
+<span class="kw">@interface</span> JasonVibrationAction : JasonAction
 
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 <blockquote>
 <p>JasonVibrationAction.m</p>
 </blockquote>
-<pre class="objc"><code>
-#import &quot;JasonVibrationAction.h&quot;
-#import &quot;JasonOptionHelper.h&quot;
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">
+<span class="pp">#import </span><span class="im">&quot;JasonVibrationAction.h&quot;</span>
+<span class="pp">#import </span><span class="im">&quot;JasonOptionHelper.h&quot;</span>
 
-#import &lt;AVFoundation/AVFoundation.h&gt;
+<span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span>
 
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+<span class="pp">#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span>
 
-// AudioServicesPlaySystemSound (1352) works for iPhones regardless of silent switch position
-int const kForceVibrationId = 1352;
+<span class="co">// AudioServicesPlaySystemSound (1352) works for iPhones regardless of silent switch position</span>
+<span class="dt">int</span> <span class="dt">const</span> kForceVibrationId = <span class="dv">1352</span>;
 
-@implementation JasonVibrationAction
+<span class="kw">@implementation</span> JasonVibrationAction
 
-// use this as $vibration.activate
-- (void) activate
+<span class="co">// use this as $vibration.activate</span>
+- (<span class="dt">void</span>) activate
 {
-    BOOL forceVibration = [self.options[@&quot;force&quot;] boolValue];
+    BOOL forceVibration = [<span class="kw">self</span>.options[<span class="st">@&quot;force&quot;</span>] boolValue];
     
-    int vibrationId = kSystemSoundID_Vibrate;
+    <span class="dt">int</span> vibrationId = kSystemSoundID_Vibrate;
     
-    if (forceVibration &amp;&amp; [[UIDevice currentDevice].model
-                           isEqualToString:@&quot;iPhone&quot;])
+    <span class="kw">if</span> (forceVibration &amp;&amp; [[UIDevice currentDevice].model
+                           isEqualToString:<span class="st">@&quot;iPhone&quot;</span>])
     {
         vibrationId = kForceVibrationId;
     }
     
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@&quot;9.0&quot;))
+    <span class="kw">if</span> (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(<span class="st">@&quot;9.0&quot;</span>))
     {
 
         AudioServicesPlayAlertSoundWithCompletion(vibrationId, nil);
     }
-    else
+    <span class="kw">else</span>
     {
         AudioServicesPlayAlertSound(vibrationId);
     }
@@ -675,7 +675,7 @@ int const kForceVibrationId = 1352;
     [[Jason client] success];
 }
 
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 </div>
 <div id="jasoncomponent" class="section level5">
 <h5><span class="header-section-number">4.2.2.1.5</span> JasonComponent</h5>
@@ -687,15 +687,15 @@ int const kForceVibrationId = 1352;
 <p>Interface:
 The component must be child of <code>JasonComponent</code> and follow the naming convention.</p>
 </blockquote>
-<pre class="objc"><code>#import &quot;JasonComponent.h&quot;
-@interface JasonMyCustomComponent : JasonComponent
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonComponent.h&quot;</span>
+<span class="kw">@interface</span> JasonMyCustomComponent : JasonComponent
 
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 <blockquote>
 <p>Implementation:
 The component must implement the following method</p>
 </blockquote>
-<pre class="objc"><code>+ (UIView *) build:(UIView *)component
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">+ (UIView *) build:(UIView *)component
     withJSON:(NSDictionary *)json
     withOptions:(NSDictionary *)options;</code></pre>
 <div id="properties" class="section level6">
@@ -710,7 +710,7 @@ The component must implement the following method</p>
 </blockquote>
 <p>Component param can’t be <code>nil</code>. always check and build the component
 if needed.</p>
-<pre class="objc"><code>if (!component)
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="kw">if</span> (!component)
 {
     component = [[UIView alloc] init];
 }</code></pre>
@@ -723,7 +723,7 @@ if needed.</p>
 <h6><span class="header-section-number">4.2.2.1.6.1</span> stylize</h6>
 <p>Use the <code>stylize</code> to apply common styles configuration
 to the component.</p>
-<pre class="objc"><code>[self stylize:json component:component];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[<span class="kw">self</span> stylize:json component:component];</code></pre>
 <blockquote>
 <p>Call this method before applying your custom styles.</p>
 </blockquote>
@@ -732,17 +732,17 @@ to the component.</p>
 <h6><span class="header-section-number">4.2.2.1.6.2</span> updateForm</h6>
 <p>Use the <code>updateForm</code> method to return values to the json.
 Use a <code>NSDictionary</code> with the component <code>name</code> to the set values.</p>
-<pre class="objc"><code>[self updateForm:@{ json[@&quot;name&quot;]: newValue }];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[<span class="kw">self</span> updateForm:@{ json[<span class="st">@&quot;name&quot;</span>]: newValue }];</code></pre>
 </div>
 <div id="target-actions" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.6.3</span> Target Actions</h6>
 <p>Is recommended to use the Target-Action to listen to component events.</p>
 <p><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html">https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html</a></p>
-<pre class="objc"><code>
-// Remove then add to ensure uniqueness
-[component removeTarget:self action:@selector(myselector:) forControlEvents:UIControlEventValueChanged];
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">
+<span class="co">// Remove then add to ensure uniqueness</span>
+[component removeTarget:<span class="kw">self</span> action:<span class="kw">@selector</span>(myselector:) forControlEvents:UIControlEventValueChanged];
 
-[component addTarget:self action:@selector(myselector:) forControlEvents:UIControlEventValueChanged];</code></pre>
+[component addTarget:<span class="kw">self</span> action:<span class="kw">@selector</span>(myselector:) forControlEvents:UIControlEventValueChanged];</code></pre>
 <p>Create custom handlers and use <code>Jason.client.call</code> to
 trigger the action associated with the component.</p>
 </div>
@@ -752,40 +752,40 @@ trigger the action associated with the component.</p>
 <blockquote>
 <p>JasonSpaceComponent.h</p>
 </blockquote>
-<pre class="objc"><code>#import &quot;JasonComponent.h&quot;
-#import &quot;JasonHelper.h&quot;
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonComponent.h&quot;</span>
+<span class="pp">#import </span><span class="im">&quot;JasonHelper.h&quot;</span>
 
-@interface JasonSpaceComponent : JasonComponent
-@end</code></pre>
+<span class="kw">@interface</span> JasonSpaceComponent : JasonComponent
+<span class="kw">@end</span></code></pre>
 <blockquote>
 <p>JasonSpaceComponent.m</p>
 </blockquote>
-<pre class="objc"><code>#import &quot;JasonSpaceComponent.h&quot;
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonSpaceComponent.h&quot;</span>
 
-@implementation JasonSpaceComponent
+<span class="kw">@implementation</span> JasonSpaceComponent
 + (UIView *) build:(UIView *)component withJSON:(NSDictionary *)json withOptions:(NSDictionary *)options {
 
-    if (!component)
+    <span class="kw">if</span> (!component)
     {
         component = [[UIView alloc] init];
     }
-    if ([options[@&quot;parent&quot;] isEqualToString:@&quot;vertical&quot;])
+    <span class="kw">if</span> ([options[<span class="st">@&quot;parent&quot;</span>] isEqualToString:<span class="st">@&quot;vertical&quot;</span>])
     {
-        [component setContentHuggingPriority:1 forAxis:UILayoutConstraintAxisVertical];
+        [component setContentHuggingPriority:<span class="dv">1</span> forAxis:UILayoutConstraintAxisVertical];
     }
-    else if ([options[@&quot;parent&quot;] isEqualToString:@&quot;horizontal&quot;])
+    <span class="kw">else</span> <span class="kw">if</span> ([options[<span class="st">@&quot;parent&quot;</span>] isEqualToString:<span class="st">@&quot;horizontal&quot;</span>])
     {
-        [component setContentHuggingPriority:1 forAxis:UILayoutConstraintAxisHorizontal];
+        [component setContentHuggingPriority:<span class="dv">1</span> forAxis:UILayoutConstraintAxisHorizontal];
     }
     component.translatesAutoresizingMaskIntoConstraints = false;
 
-    // Apply Common Style
-    [self stylize:json component:component];
+    <span class="co">// Apply Common Style</span>
+    [<span class="kw">self</span> stylize:json component:component];
 
-    return component;
+    <span class="kw">return</span> component;
 }
 
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 </div>
 <div id="jasonservice" class="section level5">
 <h5><span class="header-section-number">4.2.2.1.8</span> JasonService</h5>
@@ -796,100 +796,100 @@ in background processes.</p>
 <p>They do not need to extend a base class. But they must implement
 the <code>initialize:</code> method called in the <code>AppDelegate</code>. And follow
 the naming convention <code>Jason&lt;Name&gt;Service</code>.</p>
-<pre class="objc"><code>- (void) initialize:(NSDictionary *)launchOptions;</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (<span class="dt">void</span>) initialize:(NSDictionary *)launchOptions;</code></pre>
 <div id="accessing-a-service" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.8.1</span> Accessing a Service</h6>
 <p>For accessing a service object use the <code>Jason.client.services</code> property.
 This could be used inside an <code>action</code> or <code>component</code> that interacts
 with the service.</p>
-<pre class="objc"><code>JasonPushService * service = [Jason client].services[@&quot;JasonPushService&quot;];</code></pre>
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec">JasonPushService * service = [Jason client].services[<span class="st">@&quot;JasonPushService&quot;</span>];</code></pre>
 </div>
 <div id="example-jasonvisionservice-and-jasonvisionaction" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.8.2</span> Example: JasonVisionService and JasonVisionAction</h6>
 <blockquote>
 <p>JasonVisionService.h</p>
 </blockquote>
-<pre class="objc"><code>#import &lt;Foundation/Foundation.h&gt;
-#import &lt;AVFoundation/AVFoundation.h&gt;
-#import &quot;Jason.h&quot;
-#import &quot;JasonMemory.h&quot;
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&lt;Foundation/Foundation.h&gt;</span>
+<span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span>
+<span class="pp">#import </span><span class="im">&quot;Jason.h&quot;</span>
+<span class="pp">#import </span><span class="im">&quot;JasonMemory.h&quot;</span>
 
-@interface JasonVisionService : NSObject &lt;AVCaptureMetadataOutputObjectsDelegate&gt;
+<span class="kw">@interface</span> JasonVisionService : NSObject &lt;AVCaptureMetadataOutputObjectsDelegate&gt;
 
 @property (nonatomic, assign) BOOL is_open;
 
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 <blockquote>
 <p>JasonVisionService.m</p>
 </blockquote>
-<pre class="objc"><code>#import &quot;JasonVisionService.h&quot;
-#import &quot;JasonLogger.h&quot;
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonVisionService.h&quot;</span>
+<span class="pp">#import </span><span class="im">&quot;JasonLogger.h&quot;</span>
 
-@implementation JasonVisionService
-- (void) initialize:(NSDictionary *)launchOptions
+<span class="kw">@implementation</span> JasonVisionService
+- (<span class="dt">void</span>) initialize:(NSDictionary *)launchOptions
 {
-    self.is_open = NO;
-    DTLogDebug(@&quot;initialize&quot;);
+    <span class="kw">self</span>.is_open = NO;
+    DTLogDebug(<span class="st">@&quot;initialize&quot;</span>);
 }
 
-- (void) captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray&lt;__kindof AVMetadataObject *&gt; *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
+- (<span class="dt">void</span>) captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray&lt;__kindof AVMetadataObject *&gt; *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
 
-    if (!self.is_open)
+    <span class="kw">if</span> (!<span class="kw">self</span>.is_open)
     {
-        return;
+        <span class="kw">return</span>;
     }
 
-    NSDictionary * events = [[[Jason client] getVC] valueForKey:@&quot;events&quot;];
-    if (![JasonMemory client].executing)
+    NSDictionary * events = [[[Jason client] getVC] valueForKey:<span class="st">@&quot;events&quot;</span>];
+    <span class="kw">if</span> (![JasonMemory client].executing)
     {
-        for (AVMetadataObject * metadata in metadataObjects)
+        <span class="kw">for</span> (AVMetadataObject * metadata in metadataObjects)
         {
             AVMetadataMachineReadableCodeObject * transformed = (AVMetadataMachineReadableCodeObject *) metadata;
-            self.is_open = NO;
-            [[Jason client] call:events[@&quot;$vision.onscan&quot;] with:@{
-                 @&quot;$jason&quot;: @{
-                     @&quot;content&quot;: transformed.stringValue,
-                     @&quot;type&quot;: transformed.type
-                     //                   @&quot;corners&quot;: transformed.corners,
-                     //                   @&quot;bounds&quot;: @{
-                     //                       @&quot;left&quot;: [NSNumber numberWithFloat: transformed.bounds.origin.x],
-                     //                       @&quot;top&quot;: [NSNumber numberWithFloat: transformed.bounds.origin.y],
-                     //                       @&quot;width&quot;: [NSNumber numberWithFloat: transformed.bounds.size.width],
-                     //                       @&quot;height&quot;: [NSNumber numberWithFloat: transformed.bounds.size.height]
-                     //                   }
+            <span class="kw">self</span>.is_open = NO;
+            [[Jason client] call:events[<span class="st">@&quot;$vision.onscan&quot;</span>] with:@{
+                 <span class="st">@&quot;$jason&quot;</span>: @{
+                     <span class="st">@&quot;content&quot;</span>: transformed.stringValue,
+                     <span class="st">@&quot;type&quot;</span>: transformed.type
+                     <span class="co">//                   @&quot;corners&quot;: transformed.corners,</span>
+                     <span class="co">//                   @&quot;bounds&quot;: @{</span>
+                     <span class="co">//                       @&quot;left&quot;: [NSNumber numberWithFloat: transformed.bounds.origin.x],</span>
+                     <span class="co">//                       @&quot;top&quot;: [NSNumber numberWithFloat: transformed.bounds.origin.y],</span>
+                     <span class="co">//                       @&quot;width&quot;: [NSNumber numberWithFloat: transformed.bounds.size.width],</span>
+                     <span class="co">//                       @&quot;height&quot;: [NSNumber numberWithFloat: transformed.bounds.size.height]</span>
+                     <span class="co">//                   }</span>
                  }
             }];
-            return;
+            <span class="kw">return</span>;
         }
     }
 }
 
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 <blockquote>
 <p>JasonVisionAction.m</p>
 </blockquote>
-<pre class="objc"><code>#import &quot;JasonAction.h&quot;
-#import &quot;JasonVisionService.h&quot;
-#import &quot;Jason.h&quot;
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span>
+<span class="pp">#import </span><span class="im">&quot;JasonVisionService.h&quot;</span>
+<span class="pp">#import </span><span class="im">&quot;Jason.h&quot;</span>
 
-@interface JasonVisionAction : JasonAction
+<span class="kw">@interface</span> JasonVisionAction : JasonAction
 
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 <blockquote>
 <p>JasonVisionAction.m</p>
 </blockquote>
-<pre class="objc"><code>#import &quot;JasonVisionAction.h&quot;
+<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonVisionAction.h&quot;</span>
 
-@implementation JasonVisionAction
+<span class="kw">@implementation</span> JasonVisionAction
 
-// $vision.scan
-- (void) scan {
-    JasonVisionService * service = [Jason client].services[@&quot;JasonVisionService&quot;];
+<span class="co">// $vision.scan</span>
+- (<span class="dt">void</span>) scan {
+    JasonVisionService * service = [Jason client].services[<span class="st">@&quot;JasonVisionService&quot;</span>];
 
     service.is_open = YES;
     [[Jason client] success];
 }
-@end</code></pre>
+<span class="kw">@end</span></code></pre>
 
 </div>
 </div>
