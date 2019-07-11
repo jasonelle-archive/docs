@@ -360,7 +360,6 @@ Is recommended to use the Target-Action to listen to component events.
 [https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html](https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html)
 
 ```objectivec
-
 // Remove then add to ensure uniqueness
 [component removeTarget:self action:@selector(myselector:) forControlEvents:UIControlEventValueChanged];
 
