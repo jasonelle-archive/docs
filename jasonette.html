@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Jasonette | Jasonelle Documentation</title>
   <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Jasonette | Jasonelle Documentation" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jasonelle Team" />
 
 
-<meta name="date" content="2019-07-11" />
+<meta name="date" content="2019-07-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,7 +55,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -135,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#old-docs"><i class="fa fa-check"></i><b>1.3</b> Old Docs</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#examples"><i class="fa fa-check"></i><b>1.4</b> Examples</a></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#why-json"><i class="fa fa-check"></i><b>1.5</b> Why JSON?</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#usable-apps-in-100-years"><i class="fa fa-check"></i><b>1.6</b> Usable Apps in 100 years!</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a></li>
 <li class="chapter" data-level="3" data-path="cell-js.html"><a href="cell-js.html"><i class="fa fa-check"></i><b>3</b> Cell.js</a></li>
@@ -301,71 +301,71 @@ This lets you build native apps by writing a simple JSON.</p>
 <h4><span class="header-section-number">4.1.1.1</span> Structure</h4>
 <p>Organize your code in nested JSON objects.</p>
 <p><strong>Example:</strong></p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span><span class="er">...</span><span class="fu">},</span>
-        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-            <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
-            <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span>
-                <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span> <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span> <span class="fu">}</span><span class="ot">,</span>
-                <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span> <span class="fu">}</span><span class="ot">,</span>
-                <span class="er">...</span>
-            <span class="ot">]</span>
-            <span class="fu">}</span><span class="ot">]</span>
-        <span class="fu">}</span>
-    <span class="fu">}</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span><span class="er">...</span><span class="fu">},</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">            <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">            <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">                <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span> <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">                <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">                <span class="er">...</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">            <span class="ot">]</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">            <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="fu">}</span></a></code></pre></div>
 </div>
 <div id="layout" class="section level4">
 <h4><span class="header-section-number">4.1.1.2</span> Layout</h4>
 <p>Construct complex layouts with JSON.</p>
 <p><strong>Example:</strong></p>
 <p>Build a card UI with an image, labels, and nested layouts.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span>
-    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span>
-        <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span> <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://ethan.jpeg&quot;</span> <span class="fu">}</span><span class="ot">,</span>
-        <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span>
-            <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Ethan&quot;</span> <span class="fu">}</span><span class="ot">,</span>
-            <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span> <span class="dt">&quot;www.textethan.com&quot;</span> <span class="fu">}</span>
-        <span class="ot">]</span>
-        <span class="fu">}</span>
-    <span class="ot">]</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">        <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span> <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://ethan.jpeg&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">        <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">        <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">            <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Ethan&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">            <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span> <span class="dt">&quot;www.textethan.com&quot;</span> <span class="fu">}</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">        <span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">    <span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="fu">}</span></a></code></pre></div>
 </div>
 <div id="actions" class="section level4">
 <h4><span class="header-section-number">4.1.1.3</span> Actions</h4>
 <p>Describe actions with JSON.</p>
 <p><strong>Example:</strong></p>
 <p>Make a network request and draw the result.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$network.request&quot;</span><span class="fu">,</span>
-    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://api.giphy.com/v1/gifs/search&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;q&quot;</span><span class="fu">:</span> <span class="st">&quot;kitten&quot;</span><span class="fu">,</span> <span class="dt">&quot;api_key&quot;</span><span class="fu">:</span> <span class="st">&quot;dc6zaTOxFJmzC&quot;</span> <span class="fu">}</span>
-    <span class="fu">},</span>
-    <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$render&quot;</span>
-    <span class="fu">}</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$network.request&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://api.giphy.com/v1/gifs/search&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">        <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;q&quot;</span><span class="fu">:</span> <span class="st">&quot;kitten&quot;</span><span class="fu">,</span> <span class="dt">&quot;api_key&quot;</span><span class="fu">:</span> <span class="st">&quot;dc6zaTOxFJmzC&quot;</span> <span class="fu">}</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$render&quot;</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="fu">}</span></a></code></pre></div>
 </div>
 <div id="style" class="section level4">
 <h4><span class="header-section-number">4.1.1.4</span> Style</h4>
 <p>Style components with JSON.</p>
 <p><strong>Example:</strong></p>
 <p>Style a label.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span>
-    <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Hello World&quot;</span><span class="fu">,</span>
-    <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-        <span class="dt">&quot;padding&quot;</span><span class="fu">:</span> <span class="st">&quot;10&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;corner_radius&quot;</span><span class="fu">:</span> <span class="st">&quot;5&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;rgba(0,0,0,0.4)&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;color&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue&quot;</span>
-    <span class="fu">}</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">    <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Hello World&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">        <span class="dt">&quot;padding&quot;</span><span class="fu">:</span> <span class="st">&quot;10&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">        <span class="dt">&quot;corner_radius&quot;</span><span class="fu">:</span> <span class="st">&quot;5&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;rgba(0,0,0,0.4)&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">        <span class="dt">&quot;color&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">        <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue&quot;</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="fu">}</span></a></code></pre></div>
 </div>
 <div id="native-app-over-json" class="section level4">
 <h4><span class="header-section-number">4.1.1.5</span> Native App Over JSON</h4>
@@ -485,17 +485,17 @@ native code <code>actions</code>, <code>components</code> or <code>services</cod
 to detect the extension.</p>
 <p>Example:</p>
 <p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions/ios/vibration-action">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions/ios/vibration-action</a></p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-  <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;0.1.0&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;vibration&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;classname&quot;</span><span class="fu">:</span> <span class="st">&quot;JasonVibrationAction&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;platform&quot;</span><span class="fu">:</span> <span class="st">&quot;ios&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;language&quot;</span> <span class="fu">:</span> <span class="st">&quot;objective-c&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;author&quot;</span> <span class="fu">:</span> <span class="st">&quot;Jasonelle&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;href&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://jasonelle.com&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;license&quot;</span> <span class="fu">:</span> <span class="st">&quot;MIT&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;$vibration.activate makes the device vibrate.&quot;</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;0.1.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;vibration&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="dt">&quot;classname&quot;</span><span class="fu">:</span> <span class="st">&quot;JasonVibrationAction&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="dt">&quot;platform&quot;</span><span class="fu">:</span> <span class="st">&quot;ios&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="dt">&quot;language&quot;</span> <span class="fu">:</span> <span class="st">&quot;objective-c&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">  <span class="dt">&quot;author&quot;</span> <span class="fu">:</span> <span class="st">&quot;Jasonelle&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">  <span class="dt">&quot;href&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://jasonelle.com&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">  <span class="dt">&quot;license&quot;</span> <span class="fu">:</span> <span class="st">&quot;MIT&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;$vibration.activate makes the device vibrate.&quot;</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="fu">}</span></a></code></pre></div>
 <p>At the minimum it must have two properties:</p>
 <ul>
 <li><code>name</code>: is the one who defines how Jasonette will identify
@@ -563,81 +563,81 @@ operations.</p>
 <h6><span class="header-section-number">4.2.2.1.1.1</span> call</h6>
 <p>Use <code>Jason.client.call</code> to trigger an action related to
 an element. The element should decide when to call this action.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] call:json[<span class="st">@&quot;action&quot;</span>]];</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb7-1" data-line-number="1">[[Jason client] call:json[<span class="st">@&quot;action&quot;</span>]];</a></code></pre></div>
 <blockquote>
 <p>You can also call using params</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client]
-    call:json[<span class="st">@&quot;action&quot;</span>]
-    with:@{ <span class="st">@&quot;$jason&quot;</span>: payload }];</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb8-1" data-line-number="1">[[Jason client]</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">    call:json[<span class="st">@&quot;action&quot;</span>]</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">    with:@{ <span class="st">@&quot;$jason&quot;</span>: payload }];</a></code></pre></div>
 <blockquote>
 <p>Or type your json directly</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] call:@{
-                  <span class="st">@&quot;type&quot;</span>: <span class="st">@&quot;$href&quot;</span>,
-                  <span class="st">@&quot;options&quot;</span>: userInfo[<span class="st">@&quot;href&quot;</span>]
-            }];</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb9-1" data-line-number="1">[[Jason client] call:@{</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">                  <span class="st">@&quot;type&quot;</span>: <span class="st">@&quot;$href&quot;</span>,</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">                  <span class="st">@&quot;options&quot;</span>: userInfo[<span class="st">@&quot;href&quot;</span>]</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">            }];</a></code></pre></div>
 </div>
 <div id="go" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.1.2</span> go</h6>
 <p>Use <code>Jason.client.go</code> to load a view inside a <code>file://</code> or <code>http[s]://</code>
 url.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] go:userInfo[<span class="st">@&quot;href&quot;</span>]];</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb10-1" data-line-number="1">[[Jason client] go:userInfo[<span class="st">@&quot;href&quot;</span>]];</a></code></pre></div>
 </div>
 <div id="getvc" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.1.3</span> getVC</h6>
 <p>Obtain the current <code>JasonViewController</code> object.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[[Jason client] getVC];</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb11-1" data-line-number="1">[[[Jason client] getVC];</a></code></pre></div>
 </div>
 </div>
 <div id="jasonaction" class="section level5">
 <h5><span class="header-section-number">4.2.2.1.2</span> JasonAction</h5>
 <p>Defines actions that could be performed using the <code>action</code> property.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-    <span class="dt">&quot;action&quot;</span> <span class="fu">:</span> <span class="fu">{</span>
-        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$myaction&quot;</span>
-    <span class="fu">}</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">    <span class="dt">&quot;action&quot;</span> <span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$myaction&quot;</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="fu">}</span></a></code></pre></div>
 <blockquote>
 <p>Interface:
 The action must be child of <code>JasonAction</code> and follow the naming convention.</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span>
-<span class="kw">@interface</span> JasonMyCustomAction : JasonAction
-
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">@interface</span> JasonMyCustomAction : JasonAction</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="kw">@end</span></a></code></pre></div>
 <blockquote>
 <p>Implementation:
 Each method will be available as <code>$myaction.mymethod</code>
 in this case would be <code>$myaction.get</code></p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (<span class="dt">void</span>) get {
-    NSLog(<span class="st">@&quot;Hello&quot;</span>);
-}</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb14-1" data-line-number="1">- (<span class="dt">void</span>) get {</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">    NSLog(<span class="st">@&quot;Hello&quot;</span>);</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">}</a></code></pre></div>
 </div>
 <div id="methods" class="section level5">
 <h5><span class="header-section-number">4.2.2.1.3</span> Methods</h5>
 <p>All the input and output must be using the <code>Jason</code> class
 using the <code>client</code> singleton.</p>
 <p>Example</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] success:@{ <span class="st">@&quot;coord&quot;</span>: coord }];</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb15-1" data-line-number="1">[[Jason client] success:@{ <span class="st">@&quot;coord&quot;</span>: coord }];</a></code></pre></div>
 <div id="options" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.3.1</span> options</h6>
 <p>The dictionary <code>self.options</code> contains all the params provided in
 the json file.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">NSString * name = <span class="kw">self</span>.options[<span class="st">@&quot;name&quot;</span>];</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb16-1" data-line-number="1">NSString * name = <span class="kw">self</span>.options[<span class="st">@&quot;name&quot;</span>];</a></code></pre></div>
 </div>
 <div id="success" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.3.2</span> success</h6>
 <p>Call <code>Jason.client.success</code> method to return a value. And execute
 the <code>success</code> callback in the json. The params provided would be
 available inside the <code>$jason</code> property.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] success:@{}];</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb17-1" data-line-number="1">[[Jason client] success:@{}];</a></code></pre></div>
 </div>
 <div id="error" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.3.3</span> error</h6>
 <p>Call <code>Jason.client.error</code> method to execute the <code>error</code> callback in the json.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[[Jason client] error];</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb18-1" data-line-number="1">[[Jason client] error];</a></code></pre></div>
 </div>
 </div>
 <div id="example-jasonvibrationaction" class="section level5">
@@ -645,75 +645,75 @@ available inside the <code>$jason</code> property.</p>
 <blockquote>
 <p>JasonVibrationAction.h</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span>
-
-<span class="kw">@interface</span> JasonVibrationAction : JasonAction
-
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="kw">@interface</span> JasonVibrationAction : JasonAction</a>
+<a class="sourceLine" id="cb19-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="kw">@end</span></a></code></pre></div>
 <blockquote>
 <p>JasonVibrationAction.m</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonVibrationAction.h&quot;</span>
-<span class="pp">#import </span><span class="im">&quot;JasonOptionHelper.h&quot;</span>
-
-<span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span>
-
-<span class="pp">#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span>
-
-<span class="co">// AudioServicesPlaySystemSound (1352) works for iPhones regardless of silent switch position</span>
-<span class="dt">int</span> <span class="dt">const</span> kForceVibrationId = <span class="dv">1352</span>;
-
-<span class="kw">@implementation</span> JasonVibrationAction
-
-<span class="co">// use this as $vibration.activate</span>
-- (<span class="dt">void</span>) activate
-{
-    BOOL forceVibration = [<span class="kw">self</span>.options[<span class="st">@&quot;force&quot;</span>] boolValue];
-    
-    <span class="dt">int</span> vibrationId = kSystemSoundID_Vibrate;
-    
-    <span class="kw">if</span> (forceVibration &amp;&amp; [[UIDevice currentDevice].model
-                            isEqualToString:<span class="st">@&quot;iPhone&quot;</span>])
-    {
-        vibrationId = kForceVibrationId;
-    }
-    
-    <span class="kw">if</span> (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(<span class="st">@&quot;9.0&quot;</span>))
-    {
-
-        AudioServicesPlayAlertSoundWithCompletion(vibrationId, nil);
-    }
-    <span class="kw">else</span>
-    {
-        AudioServicesPlayAlertSound(vibrationId);
-    }
-
-    [[Jason client] success];
-}
-
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonVibrationAction.h&quot;</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="pp">#import </span><span class="im">&quot;JasonOptionHelper.h&quot;</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb20-6" data-line-number="6"><span class="pp">#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span></a>
+<a class="sourceLine" id="cb20-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb20-8" data-line-number="8"><span class="co">// AudioServicesPlaySystemSound (1352) works for iPhones regardless of silent switch position</span></a>
+<a class="sourceLine" id="cb20-9" data-line-number="9"><span class="dt">int</span> <span class="dt">const</span> kForceVibrationId = <span class="dv">1352</span>;</a>
+<a class="sourceLine" id="cb20-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb20-11" data-line-number="11"><span class="kw">@implementation</span> JasonVibrationAction</a>
+<a class="sourceLine" id="cb20-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb20-13" data-line-number="13"><span class="co">// use this as $vibration.activate</span></a>
+<a class="sourceLine" id="cb20-14" data-line-number="14">- (<span class="dt">void</span>) activate</a>
+<a class="sourceLine" id="cb20-15" data-line-number="15">{</a>
+<a class="sourceLine" id="cb20-16" data-line-number="16">    BOOL forceVibration = [<span class="kw">self</span>.options[<span class="st">@&quot;force&quot;</span>] boolValue];</a>
+<a class="sourceLine" id="cb20-17" data-line-number="17">    </a>
+<a class="sourceLine" id="cb20-18" data-line-number="18">    <span class="dt">int</span> vibrationId = kSystemSoundID_Vibrate;</a>
+<a class="sourceLine" id="cb20-19" data-line-number="19">    </a>
+<a class="sourceLine" id="cb20-20" data-line-number="20">    <span class="kw">if</span> (forceVibration &amp;&amp; [[UIDevice currentDevice].model</a>
+<a class="sourceLine" id="cb20-21" data-line-number="21">                            isEqualToString:<span class="st">@&quot;iPhone&quot;</span>])</a>
+<a class="sourceLine" id="cb20-22" data-line-number="22">    {</a>
+<a class="sourceLine" id="cb20-23" data-line-number="23">        vibrationId = kForceVibrationId;</a>
+<a class="sourceLine" id="cb20-24" data-line-number="24">    }</a>
+<a class="sourceLine" id="cb20-25" data-line-number="25">    </a>
+<a class="sourceLine" id="cb20-26" data-line-number="26">    <span class="kw">if</span> (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(<span class="st">@&quot;9.0&quot;</span>))</a>
+<a class="sourceLine" id="cb20-27" data-line-number="27">    {</a>
+<a class="sourceLine" id="cb20-28" data-line-number="28"></a>
+<a class="sourceLine" id="cb20-29" data-line-number="29">        AudioServicesPlayAlertSoundWithCompletion(vibrationId, nil);</a>
+<a class="sourceLine" id="cb20-30" data-line-number="30">    }</a>
+<a class="sourceLine" id="cb20-31" data-line-number="31">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb20-32" data-line-number="32">    {</a>
+<a class="sourceLine" id="cb20-33" data-line-number="33">        AudioServicesPlayAlertSound(vibrationId);</a>
+<a class="sourceLine" id="cb20-34" data-line-number="34">    }</a>
+<a class="sourceLine" id="cb20-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb20-36" data-line-number="36">    [[Jason client] success];</a>
+<a class="sourceLine" id="cb20-37" data-line-number="37">}</a>
+<a class="sourceLine" id="cb20-38" data-line-number="38"></a>
+<a class="sourceLine" id="cb20-39" data-line-number="39"><span class="kw">@end</span></a></code></pre></div>
 </div>
 <div id="jasoncomponent" class="section level5">
 <h5><span class="header-section-number">4.2.2.1.5</span> JasonComponent</h5>
 <p>A component is an <code>UIView</code> that could be rendered by the <code>JasonComponentFactory</code>.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-    <span class="dt">&quot;type&quot;</span> <span class="fu">:</span> <span class="st">&quot;mycomponent&quot;</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span> <span class="fu">:</span> <span class="st">&quot;mycomponent&quot;</span></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="fu">}</span></a></code></pre></div>
 <blockquote>
 <p>Interface:
 The component must be child of <code>JasonComponent</code> and follow the naming convention.</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonComponent.h&quot;</span>
-<span class="kw">@interface</span> JasonMyCustomComponent : JasonComponent
-
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonComponent.h&quot;</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">@interface</span> JasonMyCustomComponent : JasonComponent</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="kw">@end</span></a></code></pre></div>
 <blockquote>
 <p>Implementation:
 The component must implement the following method</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">+ (UIView *) build:(UIView *)component
-    withJSON:(NSDictionary *)json
-    withOptions:(NSDictionary *)options;</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb23-1" data-line-number="1">+ (UIView *) build:(UIView *)component</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">    withJSON:(NSDictionary *)json</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">    withOptions:(NSDictionary *)options;</a></code></pre></div>
 <div id="properties" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.5.1</span> Properties</h6>
 <ul>
@@ -726,10 +726,10 @@ The component must implement the following method</p>
 </blockquote>
 <p>Component param can’t be <code>nil</code>. always check and build the component
 if needed.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="kw">if</span> (!component)
-{
-    component = [[UIView alloc] init];
-}</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">if</span> (!component)</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">{</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">    component = [[UIView alloc] init];</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">}</a></code></pre></div>
 </div>
 </div>
 <div id="methods-1" class="section level5">
@@ -739,7 +739,7 @@ if needed.</p>
 <h6><span class="header-section-number">4.2.2.1.6.1</span> stylize</h6>
 <p>Use the <code>stylize</code> to apply common styles configuration
 to the component.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[<span class="kw">self</span> stylize:json component:component];</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb25-1" data-line-number="1">[<span class="kw">self</span> stylize:json component:component];</a></code></pre></div>
 <blockquote>
 <p>Call this method before applying your custom styles.</p>
 </blockquote>
@@ -748,16 +748,20 @@ to the component.</p>
 <h6><span class="header-section-number">4.2.2.1.6.2</span> updateForm</h6>
 <p>Use the <code>updateForm</code> method to return values to the json.
 Use a <code>NSDictionary</code> with the component <code>name</code> to the set values.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">[<span class="kw">self</span> updateForm:@{ json[<span class="st">@&quot;name&quot;</span>]: newValue }];</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb26-1" data-line-number="1">[<span class="kw">self</span> updateForm:@{ json[<span class="st">@&quot;name&quot;</span>]: newValue }];</a></code></pre></div>
 </div>
 <div id="target-actions" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.6.3</span> Target Actions</h6>
 <p>Is recommended to use the Target-Action to listen to component events.</p>
 <p><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html">https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html</a></p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="co">// Remove then add to ensure uniqueness</span>
-[component removeTarget:<span class="kw">self</span> action:<span class="kw">@selector</span>(myselector:) forControlEvents:UIControlEventValueChanged];
-
-[component addTarget:<span class="kw">self</span> action:<span class="kw">@selector</span>(myselector:) forControlEvents:UIControlEventValueChanged];</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co">// Remove then add to ensure uniqueness</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">[component removeTarget:<span class="kw">self</span> </a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">action:<span class="kw">@selector</span>(myselector:) </a>
+<a class="sourceLine" id="cb27-4" data-line-number="4">forControlEvents:UIControlEventValueChanged];</a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb27-6" data-line-number="6">[component addTarget:<span class="kw">self</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7">action:<span class="kw">@selector</span>(myselector:) </a>
+<a class="sourceLine" id="cb27-8" data-line-number="8">forControlEvents:UIControlEventValueChanged];</a></code></pre></div>
 <p>Create custom handlers and use <code>Jason.client.call</code> to
 trigger the action associated with the component.</p>
 </div>
@@ -767,40 +771,42 @@ trigger the action associated with the component.</p>
 <blockquote>
 <p>JasonSpaceComponent.h</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonComponent.h&quot;</span>
-<span class="pp">#import </span><span class="im">&quot;JasonHelper.h&quot;</span>
-
-<span class="kw">@interface</span> JasonSpaceComponent : JasonComponent
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonComponent.h&quot;</span></a>
+<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="pp">#import </span><span class="im">&quot;JasonHelper.h&quot;</span></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="kw">@interface</span> JasonSpaceComponent : JasonComponent</a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="kw">@end</span></a></code></pre></div>
 <blockquote>
 <p>JasonSpaceComponent.m</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonSpaceComponent.h&quot;</span>
-
-<span class="kw">@implementation</span> JasonSpaceComponent
-+ (UIView *) build:(UIView *)component withJSON:(NSDictionary *)json withOptions:(NSDictionary *)options {
-
-    <span class="kw">if</span> (!component)
-    {
-        component = [[UIView alloc] init];
-    }
-    <span class="kw">if</span> ([options[<span class="st">@&quot;parent&quot;</span>] isEqualToString:<span class="st">@&quot;vertical&quot;</span>])
-    {
-        [component setContentHuggingPriority:<span class="dv">1</span> forAxis:UILayoutConstraintAxisVertical];
-    }
-    <span class="kw">else</span> <span class="kw">if</span> ([options[<span class="st">@&quot;parent&quot;</span>] isEqualToString:<span class="st">@&quot;horizontal&quot;</span>])
-    {
-        [component setContentHuggingPriority:<span class="dv">1</span> forAxis:UILayoutConstraintAxisHorizontal];
-    }
-    component.translatesAutoresizingMaskIntoConstraints = false;
-
-    <span class="co">// Apply Common Style</span>
-    [<span class="kw">self</span> stylize:json component:component];
-
-    <span class="kw">return</span> component;
-}
-
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonSpaceComponent.h&quot;</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="kw">@implementation</span> JasonSpaceComponent</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">+ (UIView *) build:(UIView *)component </a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">withJSON:(NSDictionary *)json </a>
+<a class="sourceLine" id="cb29-6" data-line-number="6">withOptions:(NSDictionary *)options {</a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">    <span class="kw">if</span> (!component)</a>
+<a class="sourceLine" id="cb29-9" data-line-number="9">    {</a>
+<a class="sourceLine" id="cb29-10" data-line-number="10">        component = [[UIView alloc] init];</a>
+<a class="sourceLine" id="cb29-11" data-line-number="11">    }</a>
+<a class="sourceLine" id="cb29-12" data-line-number="12">    <span class="kw">if</span> ([options[<span class="st">@&quot;parent&quot;</span>] isEqualToString:<span class="st">@&quot;vertical&quot;</span>])</a>
+<a class="sourceLine" id="cb29-13" data-line-number="13">    {</a>
+<a class="sourceLine" id="cb29-14" data-line-number="14">        [component setContentHuggingPriority:<span class="dv">1</span> forAxis:UILayoutConstraintAxisVertical];</a>
+<a class="sourceLine" id="cb29-15" data-line-number="15">    }</a>
+<a class="sourceLine" id="cb29-16" data-line-number="16">    <span class="kw">else</span> <span class="kw">if</span> ([options[<span class="st">@&quot;parent&quot;</span>] isEqualToString:<span class="st">@&quot;horizontal&quot;</span>])</a>
+<a class="sourceLine" id="cb29-17" data-line-number="17">    {</a>
+<a class="sourceLine" id="cb29-18" data-line-number="18">        [component setContentHuggingPriority:<span class="dv">1</span> forAxis:UILayoutConstraintAxisHorizontal];</a>
+<a class="sourceLine" id="cb29-19" data-line-number="19">    }</a>
+<a class="sourceLine" id="cb29-20" data-line-number="20">    component.translatesAutoresizingMaskIntoConstraints = false;</a>
+<a class="sourceLine" id="cb29-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb29-22" data-line-number="22">    <span class="co">// Apply Common Style</span></a>
+<a class="sourceLine" id="cb29-23" data-line-number="23">    [<span class="kw">self</span> stylize:json component:component];</a>
+<a class="sourceLine" id="cb29-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb29-25" data-line-number="25">    <span class="kw">return</span> component;</a>
+<a class="sourceLine" id="cb29-26" data-line-number="26">}</a>
+<a class="sourceLine" id="cb29-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb29-28" data-line-number="28"><span class="kw">@end</span></a></code></pre></div>
 </div>
 <div id="jasonservice" class="section level5">
 <h5><span class="header-section-number">4.2.2.1.8</span> JasonService</h5>
@@ -811,93 +817,93 @@ in background processes.</p>
 <p>They do not need to extend a base class. But they must implement
 the <code>initialize:</code> method called in the <code>AppDelegate</code>. And follow
 the naming convention <code>Jason&lt;Name&gt;Service</code>.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">- (<span class="dt">void</span>) initialize:(NSDictionary *)launchOptions;</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb30-1" data-line-number="1">- (<span class="dt">void</span>) initialize:(NSDictionary *)launchOptions;</a></code></pre></div>
 <div id="accessing-a-service" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.8.1</span> Accessing a Service</h6>
 <p>For accessing a service object use the <code>Jason.client.services</code> property.
 This could be used inside an <code>action</code> or <code>component</code> that interacts
 with the service.</p>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec">JasonPushService * service = [Jason client].services[<span class="st">@&quot;JasonPushService&quot;</span>];</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb31-1" data-line-number="1">JasonPushService * service = [Jason client].services[<span class="st">@&quot;JasonPushService&quot;</span>];</a></code></pre></div>
 </div>
 <div id="example-jasonvisionservice-and-jasonvisionaction" class="section level6">
 <h6><span class="header-section-number">4.2.2.1.8.2</span> Example: JasonVisionService and JasonVisionAction</h6>
 <blockquote>
 <p>JasonVisionService.h</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&lt;Foundation/Foundation.h&gt;</span>
-<span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span>
-<span class="pp">#import </span><span class="im">&quot;Jason.h&quot;</span>
-<span class="pp">#import </span><span class="im">&quot;JasonMemory.h&quot;</span>
-
-<span class="kw">@interface</span> JasonVisionService : NSObject &lt;AVCaptureMetadataOutputObjectsDelegate&gt;
-
-@property (nonatomic, assign) BOOL is_open;
-
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="pp">#import </span><span class="im">&lt;Foundation/Foundation.h&gt;</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="pp">#import </span><span class="im">&quot;Jason.h&quot;</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="pp">#import </span><span class="im">&quot;JasonMemory.h&quot;</span></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="kw">@interface</span> JasonVisionService : NSObject &lt;AVCaptureMetadataOutputObjectsDelegate&gt;</a>
+<a class="sourceLine" id="cb32-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb32-8" data-line-number="8">@property (nonatomic, assign) BOOL is_open;</a>
+<a class="sourceLine" id="cb32-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb32-10" data-line-number="10"><span class="kw">@end</span></a></code></pre></div>
 <blockquote>
 <p>JasonVisionService.m</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonVisionService.h&quot;</span>
-<span class="pp">#import </span><span class="im">&quot;JasonLogger.h&quot;</span>
-
-<span class="kw">@implementation</span> JasonVisionService
-- (<span class="dt">void</span>) initialize:(NSDictionary *)launchOptions
-{
-    <span class="kw">self</span>.is_open = NO;
-    DTLogDebug(<span class="st">@&quot;initialize&quot;</span>);
-}
-
-- (<span class="dt">void</span>) captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray&lt;__kindof AVMetadataObject *&gt; *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
-
-    <span class="kw">if</span> (!<span class="kw">self</span>.is_open)
-    {
-        <span class="kw">return</span>;
-    }
-
-    NSDictionary * events = [[[Jason client] getVC] valueForKey:<span class="st">@&quot;events&quot;</span>];
-    <span class="kw">if</span> (![JasonMemory client].executing)
-    {
-        <span class="kw">for</span> (AVMetadataObject * metadata in metadataObjects)
-        {
-            AVMetadataMachineReadableCodeObject * transformed = (AVMetadataMachineReadableCodeObject *) metadata;
-            <span class="kw">self</span>.is_open = NO;
-            [[Jason client] call:events[<span class="st">@&quot;$vision.onscan&quot;</span>] with:@{
-                  <span class="st">@&quot;$jason&quot;</span>: @{
-                      <span class="st">@&quot;content&quot;</span>: transformed.stringValue,
-                      <span class="st">@&quot;type&quot;</span>: transformed.type
-                  }
-            }];
-            <span class="kw">return</span>;
-        }
-    }
-}
-
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonVisionService.h&quot;</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="pp">#import </span><span class="im">&quot;JasonLogger.h&quot;</span></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="kw">@implementation</span> JasonVisionService</a>
+<a class="sourceLine" id="cb33-5" data-line-number="5">- (<span class="dt">void</span>) initialize:(NSDictionary *)launchOptions</a>
+<a class="sourceLine" id="cb33-6" data-line-number="6">{</a>
+<a class="sourceLine" id="cb33-7" data-line-number="7">    <span class="kw">self</span>.is_open = NO;</a>
+<a class="sourceLine" id="cb33-8" data-line-number="8">    DTLogDebug(<span class="st">@&quot;initialize&quot;</span>);</a>
+<a class="sourceLine" id="cb33-9" data-line-number="9">}</a>
+<a class="sourceLine" id="cb33-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb33-11" data-line-number="11">- (<span class="dt">void</span>) captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray&lt;__kindof AVMetadataObject *&gt; *)metadataObjects fromConnection:(AVCaptureConnection *)connection {</a>
+<a class="sourceLine" id="cb33-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb33-13" data-line-number="13">    <span class="kw">if</span> (!<span class="kw">self</span>.is_open)</a>
+<a class="sourceLine" id="cb33-14" data-line-number="14">    {</a>
+<a class="sourceLine" id="cb33-15" data-line-number="15">        <span class="kw">return</span>;</a>
+<a class="sourceLine" id="cb33-16" data-line-number="16">    }</a>
+<a class="sourceLine" id="cb33-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb33-18" data-line-number="18">    NSDictionary * events = [[[Jason client] getVC] valueForKey:<span class="st">@&quot;events&quot;</span>];</a>
+<a class="sourceLine" id="cb33-19" data-line-number="19">    <span class="kw">if</span> (![JasonMemory client].executing)</a>
+<a class="sourceLine" id="cb33-20" data-line-number="20">    {</a>
+<a class="sourceLine" id="cb33-21" data-line-number="21">        <span class="kw">for</span> (AVMetadataObject * metadata in metadataObjects)</a>
+<a class="sourceLine" id="cb33-22" data-line-number="22">        {</a>
+<a class="sourceLine" id="cb33-23" data-line-number="23">            AVMetadataMachineReadableCodeObject * transformed = (AVMetadataMachineReadableCodeObject *) metadata;</a>
+<a class="sourceLine" id="cb33-24" data-line-number="24">            <span class="kw">self</span>.is_open = NO;</a>
+<a class="sourceLine" id="cb33-25" data-line-number="25">            [[Jason client] call:events[<span class="st">@&quot;$vision.onscan&quot;</span>] with:@{</a>
+<a class="sourceLine" id="cb33-26" data-line-number="26">                  <span class="st">@&quot;$jason&quot;</span>: @{</a>
+<a class="sourceLine" id="cb33-27" data-line-number="27">                      <span class="st">@&quot;content&quot;</span>: transformed.stringValue,</a>
+<a class="sourceLine" id="cb33-28" data-line-number="28">                      <span class="st">@&quot;type&quot;</span>: transformed.type</a>
+<a class="sourceLine" id="cb33-29" data-line-number="29">                  }</a>
+<a class="sourceLine" id="cb33-30" data-line-number="30">            }];</a>
+<a class="sourceLine" id="cb33-31" data-line-number="31">            <span class="kw">return</span>;</a>
+<a class="sourceLine" id="cb33-32" data-line-number="32">        }</a>
+<a class="sourceLine" id="cb33-33" data-line-number="33">    }</a>
+<a class="sourceLine" id="cb33-34" data-line-number="34">}</a>
+<a class="sourceLine" id="cb33-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb33-36" data-line-number="36"><span class="kw">@end</span></a></code></pre></div>
 <blockquote>
 <p>JasonVisionAction.m</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span>
-<span class="pp">#import </span><span class="im">&quot;JasonVisionService.h&quot;</span>
-<span class="pp">#import </span><span class="im">&quot;Jason.h&quot;</span>
-
-<span class="kw">@interface</span> JasonVisionAction : JasonAction
-
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="pp">#import </span><span class="im">&quot;JasonVisionService.h&quot;</span></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="pp">#import </span><span class="im">&quot;Jason.h&quot;</span></a>
+<a class="sourceLine" id="cb34-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb34-5" data-line-number="5"><span class="kw">@interface</span> JasonVisionAction : JasonAction</a>
+<a class="sourceLine" id="cb34-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb34-7" data-line-number="7"><span class="kw">@end</span></a></code></pre></div>
 <blockquote>
 <p>JasonVisionAction.m</p>
 </blockquote>
-<pre class="sourceCode objectivec"><code class="sourceCode objectivec"><span class="pp">#import </span><span class="im">&quot;JasonVisionAction.h&quot;</span>
-
-<span class="kw">@implementation</span> JasonVisionAction
-
-<span class="co">// $vision.scan</span>
-- (<span class="dt">void</span>) scan {
-    JasonVisionService * service = [Jason client].services[<span class="st">@&quot;JasonVisionService&quot;</span>];
-
-    service.is_open = YES;
-    [[Jason client] success];
-}
-<span class="kw">@end</span></code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonVisionAction.h&quot;</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="kw">@implementation</span> JasonVisionAction</a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5"><span class="co">// $vision.scan</span></a>
+<a class="sourceLine" id="cb35-6" data-line-number="6">- (<span class="dt">void</span>) scan {</a>
+<a class="sourceLine" id="cb35-7" data-line-number="7">    JasonVisionService * service = [Jason client].services[<span class="st">@&quot;JasonVisionService&quot;</span>];</a>
+<a class="sourceLine" id="cb35-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb35-9" data-line-number="9">    service.is_open = YES;</a>
+<a class="sourceLine" id="cb35-10" data-line-number="10">    [[Jason client] success];</a>
+<a class="sourceLine" id="cb35-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb35-12" data-line-number="12"><span class="kw">@end</span></a></code></pre></div>
 
 </div>
 </div>

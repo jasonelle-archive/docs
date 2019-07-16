@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 How To Guides | Jasonelle Documentation</title>
   <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 How To Guides | Jasonelle Documentation" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jasonelle Team" />
 
 
-<meta name="date" content="2019-07-11" />
+<meta name="date" content="2019-07-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,7 +55,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -135,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#old-docs"><i class="fa fa-check"></i><b>1.3</b> Old Docs</a></li>
 <li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#examples"><i class="fa fa-check"></i><b>1.4</b> Examples</a></li>
 <li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#why-json"><i class="fa fa-check"></i><b>1.5</b> Why JSON?</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#usable-apps-in-100-years"><i class="fa fa-check"></i><b>1.6</b> Usable Apps in 100 years!</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a></li>
 <li class="chapter" data-level="3" data-path="cell-js.html"><a href="cell-js.html"><i class="fa fa-check"></i><b>3</b> Cell.js</a></li>
@@ -289,41 +289,41 @@ You could use the <code>$env</code> property to obtain details of the operating 
 simply use <code>$href</code> with the special url <code>maps.apple.com</code> (iOS)
 or <code>maps.google.com</code>. (Android). And the <code>app</code> view.</p>
 <p>Put this code inside the <code>actions</code> object.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-  <span class="dt">&quot;open_map&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span>
-    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-      <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span>
-      <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span><span class="fu">,</span>
-      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span>
-          <span class="dt">&quot;{{#if $env.device.os.name === &#39;ios&#39;}}&quot;</span><span class="fu">:</span> <span class="st">&quot;https://maps.apple.com?ll=-33.44402500439274,-70.65428849999995&amp;z=14&quot;</span>
-        <span class="fu">}</span><span class="ot">,</span>
-        <span class="fu">{</span>
-          <span class="dt">&quot;{{#else}}&quot;</span><span class="fu">:</span> <span class="st">&quot;https://maps.google.com?center=-33.44402500439274,-70.65428849999995&amp;zoom=14&quot;</span>
-        <span class="fu">}</span>
-      <span class="ot">]</span>
-    <span class="fu">}</span>
-  <span class="fu">}</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb107-2" data-line-number="2">  <span class="dt">&quot;open_map&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb107-3" data-line-number="3">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb107-4" data-line-number="4">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb107-5" data-line-number="5">      <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb107-6" data-line-number="6">      <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb107-7" data-line-number="7">      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb107-8" data-line-number="8">          <span class="dt">&quot;{{#if $env.device.os.name === &#39;ios&#39;}}&quot;</span><span class="fu">:</span> <span class="st">&quot;https://maps.apple.com?ll=-33.44402500439274,-70.65428849999995&amp;z=14&quot;</span></a>
+<a class="sourceLine" id="cb107-9" data-line-number="9">        <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb107-10" data-line-number="10">        <span class="fu">{</span></a>
+<a class="sourceLine" id="cb107-11" data-line-number="11">          <span class="dt">&quot;{{#else}}&quot;</span><span class="fu">:</span> <span class="st">&quot;https://maps.google.com?center=-33.44402500439274,-70.65428849999995&amp;zoom=14&quot;</span></a>
+<a class="sourceLine" id="cb107-12" data-line-number="12">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb107-13" data-line-number="13">      <span class="ot">]</span></a>
+<a class="sourceLine" id="cb107-14" data-line-number="14">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb107-15" data-line-number="15">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb107-16" data-line-number="16"><span class="fu">}</span></a></code></pre></div>
 <p>And call it with <code>trigger</code>.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-  <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-    <span class="dt">&quot;trigger&quot;</span> <span class="fu">:</span> <span class="st">&quot;open_map&quot;</span>
-  <span class="fu">}</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb108-2" data-line-number="2">  <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb108-3" data-line-number="3">    <span class="dt">&quot;trigger&quot;</span> <span class="fu">:</span> <span class="st">&quot;open_map&quot;</span></a>
+<a class="sourceLine" id="cb108-4" data-line-number="4">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb108-5" data-line-number="5"><span class="fu">}</span></a></code></pre></div>
 </div>
 <div id="how-to-callsms-a-phone-number" class="section level2">
 <h2><span class="header-section-number">8.3</span> How to Call/SMS a Phone Number</h2>
 <p>If you want to call/sms a phone number you can use the <code>$href</code>
 with the <code>tel://</code> or <code>sms://</code> and the <code>app</code> view.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span>
-    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;tel://18888888888&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span>
-        <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span>
-    <span class="fu">}</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb109-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb109-3" data-line-number="3">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb109-4" data-line-number="4">        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;tel://18888888888&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb109-5" data-line-number="5">        <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb109-6" data-line-number="6">        <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span></a>
+<a class="sourceLine" id="cb109-7" data-line-number="7">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb109-8" data-line-number="8"><span class="fu">}</span></a></code></pre></div>
 <blockquote>
 <p>Note: This feature only works on devices that can make
 app calls. So simulators like the iOS can’t test this.
@@ -336,14 +336,14 @@ Use a real smartphone for this functionality.</p>
 and using the <code>$href</code> action with the <code>app</code> view. You can also
 use the <code>web</code> view to show the calendar details before adding it.</p>
 <p>This file can be stored (or generated) in a server or in local <code>file://</code>.</p>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span>
-  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span>
-      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://host/calendar.ics&quot;</span><span class="fu">,</span>
-      <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span>
-      <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span>
-  <span class="fu">}</span>
-<span class="fu">}</span></code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb110-2" data-line-number="2">  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb110-3" data-line-number="3">  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb110-4" data-line-number="4">      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://host/calendar.ics&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb110-5" data-line-number="5">      <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb110-6" data-line-number="6">      <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span></a>
+<a class="sourceLine" id="cb110-7" data-line-number="7">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb110-8" data-line-number="8"><span class="fu">}</span></a></code></pre></div>
 <p>More info about the <code>ics</code> files</p>
 <ul>
 <li><p><a href="https://tools.ietf.org/html/rfc5545">https://tools.ietf.org/html/rfc5545</a>.</p></li>
