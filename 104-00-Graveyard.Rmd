@@ -1,4 +1,8 @@
-# Cell.js
+# Graveyard
+
+The following section stands for shelved projects.
+
+## Cell.js
 
 *Cell.js* was a framework to simplify web development using *JSON* like structures. 
 In the following blog post [https://jasonelle.com/blog/cell-js-is-deprecated/](https://jasonelle.com/blog/cell-js-is-deprecated/), 

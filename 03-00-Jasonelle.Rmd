@@ -1,0 +1,36 @@
+# Jasonelle Team
+
+Jasonelle Team consist of different people that shares the following vision:
+
+> Forge a technology that lowers the barriers for mobile app creation.
+> And those apps could still be used in 100 years or more. 
+
+## Members
+
+Jasonelle Team members have one or more roles.
+
+### Roles
+
+The following roles can be asignated to one or more people.
+
+| Role | Description |
+| ---  | ---         |
+|[Prometheus](https://en.wikipedia.org/wiki/Prometheus)| Only can be assigned to `Ethan`. |
+|`Fire Keeper` | Part of core team. Main admin. Coordinates All Teams and Jasonelle related tasks. Only can be assigned to one person. |
+|`Forgemaster` | Part of core team. Focused mainly in one area. Android, iOS, Docs, Community, etc.
+|`Flame` | Not part of core team. But that made significant contributions.
+
+
+### Active Members
+
+| Name | Photo | Role | Years |
+| ---| --- | ---| ---  |
+|[@CLSource](https://github.com/clsource)|![](https://avatars1.githubusercontent.com/u/292738?s=100&v=4)| `Fire Keeper` | 2018 - present |
+|[@Pantorozo](https://github.com/panterozo)| ![](https://avatars0.githubusercontent.com/u/13855618?s=100&v=4) |  `Forgemaster` (Android) | 2019 - present |
+
+### Retired Members
+
+Jasonelle Team is grateful for the contribution of the following people:
+
+|Name|Photo|Role|Years|
+|[Ethan](https://github.com/gliechtenstein)|![](https://avatars2.githubusercontent.com/u/16613330?s=100&v=4)| **Prometheus** | 2016 - 2018 |
