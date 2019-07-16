@@ -25,12 +25,13 @@ The following roles can be asignated to one or more people.
 
 | Name | Photo | Role | Years |
 | ---| --- | ---| ---  |
-|[@CLSource](https://github.com/clsource)|![](https://avatars1.githubusercontent.com/u/292738?s=100&v=4)| `Fire Keeper` | 2018 - present |
-|[@Pantorozo](https://github.com/panterozo)| ![](https://avatars0.githubusercontent.com/u/13855618?s=100&v=4) |  `Forgemaster` (Android) | 2019 - present |
+|[CLSource](https://github.com/clsource)|![](https://avatars1.githubusercontent.com/u/292738?s=100&v=4)| `Fire Keeper` | 2018 - present |
+|[Pantorozo](https://github.com/panterozo)| ![](https://avatars0.githubusercontent.com/u/13855618?s=100&v=4) |  `Forgemaster` (Android) | 2019 - present |
 
 ### Retired Members
 
 Jasonelle Team is grateful for the contribution of the following people:
 
-|Name|Photo|Role|Years|
+|Name |Photo|Role|Years|
+| --- | --- | ---| --- |
 |[Ethan](https://github.com/gliechtenstein)|![](https://avatars2.githubusercontent.com/u/16613330?s=100&v=4)| **Prometheus** | 2016 - 2018 |
