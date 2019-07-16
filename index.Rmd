@@ -36,6 +36,7 @@ submit it to the App Store, and do whatever you want with it!.
 - Use Native Components. 📱
 - Great Documentation. 📝
 - Friendly and Welcoming Community. 🤝
+- A technology that could be used in 100 years. 🕰️
 
 ## Cool things about Jasonelle
 
@@ -96,3 +97,20 @@ Example:
 [Django](https://www.djangoproject.com/), 
 [AWS Lambda](https://aws.amazon.com/lambda/),
 `file://` local file.
+
+## Usable Apps in 100 years!
+
+Thanks to *Jasonelle™️'s JSON technology* ️ you have all the tools
+needed to create **agnostic** mobile apps. This means
+if your app contains only static assets (audio, images, js, jsons, no server) 
+and an interpreter exists in 100 years, your app will
+be valid and usable!.
+
+You can create mobile apps that stands the test of time, apps that
+does not depends on *Apple* or *Google* ecosystems to be used.
+
+Apps that can be used by the next generation of people, even after
+you leave this dimension!.
+
+More details here : 
+[https://jasonelle.com/docs/discussions.html#apps-for-a-lifetime](https://jasonelle.com/docs/discussions.html#apps-for-a-lifetime).

@@ -361,9 +361,13 @@ Is recommended to use the Target-Action to listen to component events.
 
 ```objectivec
 // Remove then add to ensure uniqueness
-[component removeTarget:self action:@selector(myselector:) forControlEvents:UIControlEventValueChanged];
+[component removeTarget:self 
+action:@selector(myselector:) 
+forControlEvents:UIControlEventValueChanged];
 
-[component addTarget:self action:@selector(myselector:) forControlEvents:UIControlEventValueChanged];
+[component addTarget:self
+action:@selector(myselector:) 
+forControlEvents:UIControlEventValueChanged];
 ```
 
 Create custom handlers and use `Jason.client.call` to
@@ -388,7 +392,9 @@ trigger the action associated with the component.
 #import "JasonSpaceComponent.h"
 
 @implementation JasonSpaceComponent
-+ (UIView *) build:(UIView *)component withJSON:(NSDictionary *)json withOptions:(NSDictionary *)options {
++ (UIView *) build:(UIView *)component 
+withJSON:(NSDictionary *)json 
+withOptions:(NSDictionary *)options {
 
     if (!component)
     {
