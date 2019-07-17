@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 How To Guides | Jasonelle Documentation</title>
+  <title>10 External Resources | Jasonelle Documentation</title>
   <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
   <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 How To Guides | Jasonelle Documentation" />
+  <meta property="og:title" content="10 External Resources | Jasonelle Documentation" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://jasonelle.com" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="jasonelle/jasonelle" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 How To Guides | Jasonelle Documentation" />
+  <meta name="twitter:title" content="10 External Resources | Jasonelle Documentation" />
   
   <meta name="twitter:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="jasonette-tutorials.html">
-<link rel="next" href="discussions.html">
+<link rel="prev" href="discussions.html">
+<link rel="next" href="graveyard.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -295,88 +295,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="how-to-guides" class="section level1">
-<h1><span class="header-section-number">8</span> How To Guides</h1>
-<p>Small tips and tricks.</p>
-<div id="how-to-know-the-operating-system" class="section level2">
-<h2><span class="header-section-number">8.1</span> How to Know the Operating System</h2>
-<p>If you need to check the operating system before executing some code.
-You could use the <code>$env</code> property to obtain details of the operating system.</p>
+<div id="external-resources" class="section level1">
+<h1><span class="header-section-number">10</span> External Resources</h1>
+<p>Resources that are external to this documentation.</p>
+<div id="instant-android-apps-article" class="section level2">
+<h2><span class="header-section-number">10.1</span> Instant Android Apps Article</h2>
+<p>An Article in Linux Magazine written by <em>Dmitri Popov</em>.</p>
 <ul>
-<li><code>{{#if $env.device.os.name === 'ios'}}</code>: Evals to <code>true</code> if the operating system is <em>iOS</em>.</li>
-<li><code>{{#if $env.device.os.name === 'android'}}</code>: Evals to <code>true</code> if the operating system is <em>Android</em>.</li>
+<li>Link: <a href="http://www.linux-magazine.com/Issues/2018/210/Jasonette">http://www.linux-magazine.com/Issues/2018/210/Jasonette</a>.</li>
+<li>Code: <a href="https://github.com/jasonelle/jasonette-tokio-taxi">https://github.com/jasonelle/jasonette-tokio-taxi</a>.</li>
 </ul>
 </div>
-<div id="how-to-open-native-maps-app" class="section level2">
-<h2><span class="header-section-number">8.2</span> How to Open Native Maps App</h2>
-<p>If you want to open the native map view you need to
-simply use <code>$href</code> with the special url <code>maps.apple.com</code> (iOS)
-or <code>maps.google.com</code>. (Android). And the <code>app</code> view.</p>
-<p>Put this code inside the <code>actions</code> object.</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb107-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb107-2" data-line-number="2">  <span class="dt">&quot;open_map&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb107-3" data-line-number="3">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb107-4" data-line-number="4">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb107-5" data-line-number="5">      <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb107-6" data-line-number="6">      <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb107-7" data-line-number="7">      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb107-8" data-line-number="8">          <span class="dt">&quot;{{#if $env.device.os.name === &#39;ios&#39;}}&quot;</span><span class="fu">:</span> <span class="st">&quot;https://maps.apple.com?ll=-33.44402500439274,-70.65428849999995&amp;z=14&quot;</span></a>
-<a class="sourceLine" id="cb107-9" data-line-number="9">        <span class="fu">}</span><span class="ot">,</span></a>
-<a class="sourceLine" id="cb107-10" data-line-number="10">        <span class="fu">{</span></a>
-<a class="sourceLine" id="cb107-11" data-line-number="11">          <span class="dt">&quot;{{#else}}&quot;</span><span class="fu">:</span> <span class="st">&quot;https://maps.google.com?center=-33.44402500439274,-70.65428849999995&amp;zoom=14&quot;</span></a>
-<a class="sourceLine" id="cb107-12" data-line-number="12">        <span class="fu">}</span></a>
-<a class="sourceLine" id="cb107-13" data-line-number="13">      <span class="ot">]</span></a>
-<a class="sourceLine" id="cb107-14" data-line-number="14">    <span class="fu">}</span></a>
-<a class="sourceLine" id="cb107-15" data-line-number="15">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb107-16" data-line-number="16"><span class="fu">}</span></a></code></pre></div>
-<p>And call it with <code>trigger</code>.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb108-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb108-2" data-line-number="2">  <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb108-3" data-line-number="3">    <span class="dt">&quot;trigger&quot;</span> <span class="fu">:</span> <span class="st">&quot;open_map&quot;</span></a>
-<a class="sourceLine" id="cb108-4" data-line-number="4">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb108-5" data-line-number="5"><span class="fu">}</span></a></code></pre></div>
-</div>
-<div id="how-to-callsms-a-phone-number" class="section level2">
-<h2><span class="header-section-number">8.3</span> How to Call/SMS a Phone Number</h2>
-<p>If you want to call/sms a phone number you can use the <code>$href</code>
-with the <code>tel://</code> or <code>sms://</code> and the <code>app</code> view.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb109-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb109-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb109-3" data-line-number="3">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb109-4" data-line-number="4">        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;tel://18888888888&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb109-5" data-line-number="5">        <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb109-6" data-line-number="6">        <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span></a>
-<a class="sourceLine" id="cb109-7" data-line-number="7">    <span class="fu">}</span></a>
-<a class="sourceLine" id="cb109-8" data-line-number="8"><span class="fu">}</span></a></code></pre></div>
-<blockquote>
-<p>Note: This feature only works on devices that can make
-app calls. So simulators like the iOS can’t test this.
-Use a real smartphone for this functionality.</p>
-</blockquote>
-</div>
-<div id="how-to-add-events-to-calendar" class="section level2">
-<h2><span class="header-section-number">8.4</span> How to Add Events to Calendar</h2>
-<p>You can add events to the calendar by linking to an <code>ics</code> file
-and using the <code>$href</code> action with the <code>app</code> view. You can also
-use the <code>web</code> view to show the calendar details before adding it.</p>
-<p>This file can be stored (or generated) in a server or in local <code>file://</code>.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb110-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb110-2" data-line-number="2">  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb110-3" data-line-number="3">  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb110-4" data-line-number="4">      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://host/calendar.ics&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb110-5" data-line-number="5">      <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb110-6" data-line-number="6">      <span class="dt">&quot;transition&quot;</span><span class="fu">:</span> <span class="st">&quot;modal&quot;</span></a>
-<a class="sourceLine" id="cb110-7" data-line-number="7">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb110-8" data-line-number="8"><span class="fu">}</span></a></code></pre></div>
-<p>More info about the <code>ics</code> files</p>
+<div id="bubble-forums-posts" class="section level2">
+<h2><span class="header-section-number">10.2</span> Bubble Forums Posts</h2>
+<p>Some forums posts written by <em>John Mark</em> about using <a href="https://bubble.is">https://bubble.is</a> technology
+alonside <em>Jasonelle</em>.</p>
 <ul>
-<li><p><a href="https://tools.ietf.org/html/rfc5545">https://tools.ietf.org/html/rfc5545</a>.</p></li>
-<li><p><a href="https://en.wikipedia.org/wiki/ICalendar">https://en.wikipedia.org/wiki/ICalendar</a>.</p></li>
+<li>[Link]: <a href="https://forum.bubble.is/t/10-min-to-convert-your-site-into-an-iphone-ios-android-app/60923">https://forum.bubble.is/t/10-min-to-convert-your-site-into-an-iphone-ios-android-app/60923</a>.</li>
 </ul>
-<p>You can create <code>ics</code> files by using software like <em>Apple Calendar</em>, <em>Google Calendar</em>
-or any application that support this filetype.</p>
+</div>
+<div id="old-jasonette-docs" class="section level2">
+<h2><span class="header-section-number">10.3</span> Old Jasonette Docs</h2>
+<p>The old docs from <em>Jasonette.com</em> has been restored.</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support">https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support</a>.</li>
+<li>Link: <a href="http://jasonelle.com/jasonette-old-docs/">http://jasonelle.com/jasonette-old-docs/</a></li>
+</ul>
+</div>
+<div id="old-jasonette-blog" class="section level2">
+<h2><span class="header-section-number">10.4</span> Old Jasonette Blog</h2>
+<p>The old blog from <em>Jasonette.com</em> has been restored, and the
+links updated to the new locations.</p>
+<ul>
+<li>Link: <a href="http://jasonelle.com/jasonette-old-blog/">http://jasonelle.com/jasonette-old-blog/</a></li>
 </ul>
 
 </div>
@@ -386,8 +336,8 @@ or any application that support this filetype.</p>
           </div>
         </div>
       </div>
-<a href="jasonette-tutorials.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="discussions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="discussions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="graveyard.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
