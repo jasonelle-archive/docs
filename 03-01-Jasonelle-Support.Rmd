@@ -1,0 +1,55 @@
+## Support
+
+*Jasonelle* is made by the collective efforts of different
+people. Is not funded or sponsored by any company, organization
+or investor of any kind. 
+
+If you want to give support to keep development going
+you can contact members on this list individually.
+
+### List of People
+
+#### [Ignacio Álvarez](https://github.com/panterozo)
+
+- Role `Forgemaster`: Android.
+- Website: [https://chauchatraderpro.cl](https://chauchatraderpro.cl).
+
+Following the same spirit and to help me continue 
+with the project. I leave you my different wallets, 
+in case you want to make a voluntary contribution. 
+Any contribution is welcome, does not matter the amount.
+
+|Crypto| Wallet|
+|---|---|
+|[Chaucha](https://www.chaucha.cl)|ceoNBCv1JF6GgeAhsFLk6efbRkCX5n8kZn
+|Bitcoin|1CWpA2XnFnfTnbAJN94MpQWyunJgoKYz8K
+|Ethereum|0x9f2688B1a76CC24dA8610E90767c319fb2EA2Af0
+|Litecoin|LVBocBQpqD7FrXiUNrAtrkQtw1JdG6CBQt
+|Bitcoin Cash|14X2cEXpT6BLhFtFhYizCdUgoKtAXede4Z
+
+#### [Christian Swanepoel](https://github.com/christianswanepoel)
+
+![](https://avatars1.githubusercontent.com/u/7249713?s=100&v=4)
+
+- Role `Blaze`: Android, iOS tester.
+- Website: [https://ventum.co.za/](https://ventum.co.za/).
+- Services: Mobile App Consulting.
+
+> I have a concrete background and foundation in the creative industry, 
+> not only as a designer, but also as a programmer. 
+> I am happiest (and most productive) spending time in my own matrix: 
+> troubleshooting, coding, writing automation scripts and 
+> I have done so on servers all over the globe.
+
+> I am currently the head of Ventum SA and believe, if I can’t find 
+> the right software solutions for you, we will write it.
+
+> My journey with Jasonelle started in 2018 stemming from a 
+> client brief requiring an in-house corporate application, 
+> providing information to their distributed sales team of over 200. 
+> As a result, I couldn't be happier to have them on Jasonelle, 
+> now with an app in both the Android and iOS App stores.
+> As a backend developer, Jasonelle ticked all the boxes, 
+> allowing me to continue to develop rad tech, knowing that 
+> Jasonelle's architecture and close-knit community spirit will make 
+> lightweight of any UX requirement.

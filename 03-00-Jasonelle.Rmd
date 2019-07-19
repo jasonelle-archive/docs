@@ -23,6 +23,13 @@ Jasonelle Team is grateful for the contribution of the following people:
 |[Ethan](https://github.com/gliechtenstein)|![](https://avatars2.githubusercontent.com/u/16613330?s=100&v=4)| **Prometheus** | 2016 - 2018 |
 
 
+### Blaze Collaborators
+
+|  Name | Photo | Role  | Years |
+|  ---  |  ---  |  ---  |  ---  |
+| [Christian Swanepoel](https://github.com/christianswanepoel) | ![](https://avatars1.githubusercontent.com/u/7249713?s=100&v=4) | `Blaze` (iOS, Android, Testing) | 2019 - present |
+
+
 ## Roles
 
 The following roles can be asignated to one or more people.
@@ -32,7 +39,7 @@ The following roles can be asignated to one or more people.
 |[Prometheus](https://en.wikipedia.org/wiki/Prometheus)| Only can be assigned to `Ethan`. |
 |`Fire Keeper` | Part of core team. Main admin. Coordinates All Teams and Jasonelle related tasks. Only can be assigned to one person. |
 |`Forgemaster` | Part of core team. Focused mainly in one area. Android, iOS, Docs, Community, etc.
-|`Flame` | Sporadical helper. Not part of core team. But can made significant contributions and helping in general. May have to coordinate with a `Forgemaster`.
+|`Blaze Collaborator` | Sporadical helper. Not part of core team. But can made significant contributions and helping in general. May have to coordinate with a `Forgemaster`.
 
 ### Prometheus
 
@@ -98,17 +105,17 @@ Normally is expected that a `Forgemaster` stays active for at least `6 months`.
 
 The `Forgemaster` role can be renewed, revoked or renounced.
 
-### Flame
+### Blaze Collaborator
 
-A flame is a trusted member of the community. 
+A blaze collaborator is a trusted member of the community. 
 Normally someone who can help the core team in small tasks and sporadically
 test code, detect bugs, answer questions or coordinates various tasks with a `Forgemaster`.
 
-A `Flame` is not required to participate actively. But if more than `6 months`
+A `Blaze` is not required to participate actively. But if more than `6 months`
 pass without any significant activity. It would be considered `retired`. 
 (This status can be changed to `active` if requested later).
 
-The `Flame` role can be renewed, revoked or renounced.
+The `Blaze` role can be renewed, revoked or renounced.
 
 ## How to Join?
 
