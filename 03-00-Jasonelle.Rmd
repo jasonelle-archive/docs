@@ -59,7 +59,7 @@ Same as *Prometheus*, `Ethan` gave us the first fire.
 This is a special role. Contains the following responsabilities:
 
 - Pay for the servers and domains and keep them alive.
-- Coordinate with `Forgemasters`, `Flames` and community members.
+- Coordinate with `Forgemasters`, `Blazes` and community members.
 - Define roadmaps and general evolution of the project.
 - Desition making.
 - Promote Jasonelle.
@@ -130,7 +130,7 @@ meaningful contributions. Find the right balance.
 Following the GNU Kind Communication Guidelines. [https://www.gnu.org/philosophy/kind-communication.html](https://www.gnu.org/philosophy/kind-communication.html).
 
 - **6 months minimum**: The least amount of time you must invest is 6 months. If you 
-want to help but don't want to go full you can be a `Flame` collaborator.
+want to help but don't want to go full you can be a `Blaze` collaborator.
 
 - **Promote Jasonelle**: Friendly talk about *Jasonelle Technology* 
 with people that may have interest in making mobile apps. Maybe in meetups
@@ -139,7 +139,7 @@ or small talks. Spamming would not be tolerated.
 - **Expertise in one or more areas**: iOS, Android, JS, Docs, Etc..
 
 If you think this is something you want to do, please contact the current `Fire Keeper`
-with your ideas and why you should be a `Forgemaster` or `Flame`.
+with your ideas and why you should be a `Forgemaster` or `Blaze`.
 
 ### How to Quit?
 
