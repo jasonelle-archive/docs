@@ -13,7 +13,7 @@ you can contact members on this list individually.
 
 ![](https://avatars0.githubusercontent.com/u/13855618?s=100&v=4)
 
-- Role `Forgemaster`: Android.
+- Role `Forgemaster`: Android maintainer.
 - Website: [https://chauchatraderpro.cl](https://chauchatraderpro.cl).
 
 > Following the same spirit and to help me continue 
