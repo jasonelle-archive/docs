@@ -24,7 +24,7 @@
 <meta name="author" content="Jasonelle Team" />
 
 
-<meta name="date" content="2019-07-19" />
+<meta name="date" content="2019-07-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -238,6 +238,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-open-native-maps-app"><i class="fa fa-check"></i><b>8.2</b> How to Open Native Maps App</a></li>
 <li class="chapter" data-level="8.3" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-callsms-a-phone-number"><i class="fa fa-check"></i><b>8.3</b> How to Call/SMS a Phone Number</a></li>
 <li class="chapter" data-level="8.4" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-add-events-to-calendar"><i class="fa fa-check"></i><b>8.4</b> How to Add Events to Calendar</a></li>
+<li class="chapter" data-level="8.5" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-overwrite-links-in-a-website"><i class="fa fa-check"></i><b>8.5</b> How to Overwrite links in a Website</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a><ul>
 <li class="chapter" data-level="9.1" data-path="discussions.html"><a href="discussions.html#beerjs---chile---2019"><i class="fa fa-check"></i><b>9.1</b> BeerJS - Chile - 2019</a></li>
@@ -382,6 +383,52 @@ or any application that support this filetype.</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support">https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support</a>.</li>
 </ul>
+</div>
+<div id="how-to-overwrite-links-in-a-website" class="section level2">
+<h2><span class="header-section-number">8.5</span> How to Overwrite links in a Website</h2>
+<p>If you have a <code>$webcontainer</code> agent in your app. You can listen
+to <code>a href</code> links and execute different native behaviours depending
+on the url provided.</p>
+<p>In the following example (created by user <code>RAPOS</code>) we can make
+a link url to trigger a phone call if the url contains <code>tel</code> prefix.
+Otherwise the <code>ahref</code> will follow the normal behaviour.</p>
+<p>It is also configured the <code>background</code> color to be white,
+and the <code>progress</code> bar to be transparent.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb111-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-2" data-line-number="2">  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-3" data-line-number="3">    <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-4" data-line-number="4">      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Overwriting ahref behaviour&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb111-5" data-line-number="5">      <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-6" data-line-number="6">        <span class="dt">&quot;ahref_handler&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-7" data-line-number="7">          <span class="dt">&quot;{{#if $jason.url.indexOf(&#39;tel&#39;) !== -1 }}&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-8" data-line-number="8">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb111-9" data-line-number="9">            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-10" data-line-number="10">              <span class="dt">&quot;view&quot;</span><span class="fu">:</span> <span class="st">&quot;app&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb111-11" data-line-number="11">              <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$jason.url}}&quot;</span></a>
+<a class="sourceLine" id="cb111-12" data-line-number="12">            <span class="fu">}</span></a>
+<a class="sourceLine" id="cb111-13" data-line-number="13">          <span class="fu">}</span></a>
+<a class="sourceLine" id="cb111-14" data-line-number="14">        <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-15" data-line-number="15">          <span class="dt">&quot;{{#else}}&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-16" data-line-number="16">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$default&quot;</span></a>
+<a class="sourceLine" id="cb111-17" data-line-number="17">          <span class="fu">}</span></a>
+<a class="sourceLine" id="cb111-18" data-line-number="18">        <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb111-19" data-line-number="19">      <span class="fu">}</span></a>
+<a class="sourceLine" id="cb111-20" data-line-number="20">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb111-21" data-line-number="21">    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-22" data-line-number="22">      <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-23" data-line-number="23">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb111-24" data-line-number="24">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;&lt;a href=&#39;tel:987654321&#39;&gt;Call ME&lt;/a&gt;&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb111-25" data-line-number="25">        <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-26" data-line-number="26">          <span class="dt">&quot;trigger&quot;</span><span class="fu">:</span> <span class="st">&quot;ahref_handler&quot;</span></a>
+<a class="sourceLine" id="cb111-27" data-line-number="27">        <span class="fu">},</span></a>
+<a class="sourceLine" id="cb111-28" data-line-number="28">        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb111-29" data-line-number="29">            <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb111-30" data-line-number="30">            <span class="dt">&quot;progress&quot;</span><span class="fu">:</span> <span class="st">&quot;rgba(0,0,0,0)&quot;</span></a>
+<a class="sourceLine" id="cb111-31" data-line-number="31">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb111-32" data-line-number="32">      <span class="fu">}</span></a>
+<a class="sourceLine" id="cb111-33" data-line-number="33">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb111-34" data-line-number="34">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb111-35" data-line-number="35"><span class="fu">}</span></a></code></pre></div>
 
 </div>
 </div>
