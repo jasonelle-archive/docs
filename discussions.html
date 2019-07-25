@@ -236,9 +236,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8" data-path="how-to-guides.html"><a href="how-to-guides.html"><i class="fa fa-check"></i><b>8</b> How To Guides</a><ul>
 <li class="chapter" data-level="8.1" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-know-the-operating-system"><i class="fa fa-check"></i><b>8.1</b> How to Know the Operating System</a></li>
 <li class="chapter" data-level="8.2" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-open-native-maps-app"><i class="fa fa-check"></i><b>8.2</b> How to Open Native Maps App</a></li>
-<li class="chapter" data-level="8.3" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-callsms-a-phone-number"><i class="fa fa-check"></i><b>8.3</b> How to Call/SMS a Phone Number</a></li>
-<li class="chapter" data-level="8.4" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-add-events-to-calendar"><i class="fa fa-check"></i><b>8.4</b> How to Add Events to Calendar</a></li>
-<li class="chapter" data-level="8.5" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-overwrite-links-in-a-website"><i class="fa fa-check"></i><b>8.5</b> How to Overwrite links in a Website</a></li>
+<li class="chapter" data-level="8.3" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-callsmsfacetime-a-phone-number"><i class="fa fa-check"></i><b>8.3</b> How to Call/SMS/Facetime a Phone Number</a></li>
+<li class="chapter" data-level="8.4" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-send-emails"><i class="fa fa-check"></i><b>8.4</b> How to Send Emails</a></li>
+<li class="chapter" data-level="8.5" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-add-events-to-calendar"><i class="fa fa-check"></i><b>8.5</b> How to Add Events to Calendar</a></li>
+<li class="chapter" data-level="8.6" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-overwrite-links-in-a-website"><i class="fa fa-check"></i><b>8.6</b> How to Overwrite links in a Website</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a><ul>
 <li class="chapter" data-level="9.1" data-path="discussions.html"><a href="discussions.html#beerjs---chile---2019"><i class="fa fa-check"></i><b>9.1</b> BeerJS - Chile - 2019</a></li>
@@ -420,22 +421,22 @@ Vertical sections scroll vertically, and horizontal sections horizontally.</p>
 <p>This is probably the most frequently used UI for displaying data on mobile devices.
 On iOS, <em>Jasonette</em> implements this with UITableView (<a href="https://developer.apple.com/reference/uikit/uitableview">https://developer.apple.com/reference/uikit/uitableview</a>).
 On Android it’s implemented with RecyclerView (<a href="https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html">https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html</a>).</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb113-2" data-line-number="2">  <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb113-3" data-line-number="3">    <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb113-4" data-line-number="4">      <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb113-5" data-line-number="5">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb113-6" data-line-number="6">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 1&quot;</span></a>
-<a class="sourceLine" id="cb113-7" data-line-number="7">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb113-8" data-line-number="8">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb113-9" data-line-number="9">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 2&quot;</span></a>
-<a class="sourceLine" id="cb113-10" data-line-number="10">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb113-11" data-line-number="11">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb113-12" data-line-number="12">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 3&quot;</span></a>
-<a class="sourceLine" id="cb113-13" data-line-number="13">      <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb113-14" data-line-number="14">    <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb113-15" data-line-number="15">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb113-16" data-line-number="16"><span class="fu">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb114-2" data-line-number="2">  <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb114-3" data-line-number="3">    <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb114-4" data-line-number="4">      <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb114-5" data-line-number="5">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb114-6" data-line-number="6">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 1&quot;</span></a>
+<a class="sourceLine" id="cb114-7" data-line-number="7">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb114-8" data-line-number="8">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb114-9" data-line-number="9">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 2&quot;</span></a>
+<a class="sourceLine" id="cb114-10" data-line-number="10">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb114-11" data-line-number="11">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb114-12" data-line-number="12">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 3&quot;</span></a>
+<a class="sourceLine" id="cb114-13" data-line-number="13">      <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb114-14" data-line-number="14">    <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb114-15" data-line-number="15">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb114-16" data-line-number="16"><span class="fu">}</span></a></code></pre></div>
 <p>On iOS, above JSON markup creates a <code>UITableView</code> (<a href="https://developer.apple.com/reference/uikit/uitableviewcell">https://developer.apple.com/reference/uikit/uitableviewcell</a>)
 with three <code>UITableViewCells</code> (<a href="https://developer.apple.com/reference/uikit/uitableviewcell">https://developer.apple.com/reference/uikit/uitableviewcell</a>),
 each of which contains a <code>UILabel</code> (<a href="https://developer.apple.com/reference/uikit/uilabel">https://developer.apple.com/reference/uikit/uilabel</a>), with corresponding text attributes.</p>
@@ -450,23 +451,23 @@ in order to make sure every detail is programmable dynamically.</p>
 <h4><span class="header-section-number">9.2.3.2</span> Implementation — Horizontal Sections</h4>
 <p>Syntax-wise, horizontal sections are not much different,
 all you need to do is set the <code>type</code> as “<code>horizontal</code>”, and the items flow horizontally.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb114-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb114-2" data-line-number="2">  <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb114-3" data-line-number="3">    <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb114-4" data-line-number="4">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb114-5" data-line-number="5">      <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb114-6" data-line-number="6">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb114-7" data-line-number="7">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 1&quot;</span></a>
-<a class="sourceLine" id="cb114-8" data-line-number="8">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb114-9" data-line-number="9">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb114-10" data-line-number="10">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 2&quot;</span></a>
-<a class="sourceLine" id="cb114-11" data-line-number="11">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb114-12" data-line-number="12">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb114-13" data-line-number="13">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 3&quot;</span></a>
-<a class="sourceLine" id="cb114-14" data-line-number="14">      <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb114-15" data-line-number="15">    <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb114-16" data-line-number="16">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb114-17" data-line-number="17"><span class="fu">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb115-2" data-line-number="2">  <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb115-3" data-line-number="3">    <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb115-4" data-line-number="4">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb115-5" data-line-number="5">      <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb115-6" data-line-number="6">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb115-7" data-line-number="7">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 1&quot;</span></a>
+<a class="sourceLine" id="cb115-8" data-line-number="8">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb115-9" data-line-number="9">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb115-10" data-line-number="10">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 2&quot;</span></a>
+<a class="sourceLine" id="cb115-11" data-line-number="11">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb115-12" data-line-number="12">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb115-13" data-line-number="13">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Item 3&quot;</span></a>
+<a class="sourceLine" id="cb115-14" data-line-number="14">      <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb115-15" data-line-number="15">    <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb115-16" data-line-number="16">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb115-17" data-line-number="17"><span class="fu">}</span></a></code></pre></div>
 <blockquote>
 <p>Note</p>
 </blockquote>
@@ -504,35 +505,22 @@ or nest a vertical layout within a horizontal layout, and so forth, recursively.
 <img src="images/discussions/building-apps-with-json/4.png" />
 <img src="images/discussions/building-apps-with-json/5.png" /></p>
 <p>To create a vertical layout, you would set the type as <code>vertical</code>, and then set its <code>components</code>:</p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb115-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb115-2" data-line-number="2">  <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb115-3" data-line-number="3">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb115-4" data-line-number="4">    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb115-5" data-line-number="5">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb115-6" data-line-number="6">      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;First&quot;</span></a>
-<a class="sourceLine" id="cb115-7" data-line-number="7">    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb115-8" data-line-number="8">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb115-9" data-line-number="9">      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Second&quot;</span></a>
-<a class="sourceLine" id="cb115-10" data-line-number="10">    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb115-11" data-line-number="11">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb115-12" data-line-number="12">      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Third&quot;</span></a>
-<a class="sourceLine" id="cb115-13" data-line-number="13">    <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb115-14" data-line-number="14">  <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb115-15" data-line-number="15"><span class="fu">}</span></a></code></pre></div>
-<p>Same thing with horizontal layout. Just set the type as <code>horizontal</code> instead:</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb116-1" data-line-number="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb116-2" data-line-number="2">  <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb116-3" data-line-number="3">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb116-3" data-line-number="3">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb116-4" data-line-number="4">    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb116-5" data-line-number="5">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb116-6" data-line-number="6">      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://i.giphy.com/LXONhtCmN32YU.gif&quot;</span></a>
+<a class="sourceLine" id="cb116-5" data-line-number="5">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb116-6" data-line-number="6">      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;First&quot;</span></a>
 <a class="sourceLine" id="cb116-7" data-line-number="7">    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
 <a class="sourceLine" id="cb116-8" data-line-number="8">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb116-9" data-line-number="9">      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Rick&quot;</span></a>
-<a class="sourceLine" id="cb116-10" data-line-number="10">    <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb116-11" data-line-number="11">  <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb116-12" data-line-number="12"><span class="fu">}</span></a></code></pre></div>
-<p>Nesting layouts is as simple as specifying a layout as another layout’s component.</p>
+<a class="sourceLine" id="cb116-9" data-line-number="9">      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Second&quot;</span></a>
+<a class="sourceLine" id="cb116-10" data-line-number="10">    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb116-11" data-line-number="11">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb116-12" data-line-number="12">      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Third&quot;</span></a>
+<a class="sourceLine" id="cb116-13" data-line-number="13">    <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb116-14" data-line-number="14">  <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb116-15" data-line-number="15"><span class="fu">}</span></a></code></pre></div>
+<p>Same thing with horizontal layout. Just set the type as <code>horizontal</code> instead:</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb117-1" data-line-number="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb117-2" data-line-number="2">  <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
 <a class="sourceLine" id="cb117-3" data-line-number="3">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span></a>
@@ -540,17 +528,30 @@ or nest a vertical layout within a horizontal layout, and so forth, recursively.
 <a class="sourceLine" id="cb117-5" data-line-number="5">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb117-6" data-line-number="6">      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://i.giphy.com/LXONhtCmN32YU.gif&quot;</span></a>
 <a class="sourceLine" id="cb117-7" data-line-number="7">    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb117-8" data-line-number="8">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb117-9" data-line-number="9">      <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb117-10" data-line-number="10">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb117-11" data-line-number="11">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;User&quot;</span></a>
-<a class="sourceLine" id="cb117-12" data-line-number="12">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb117-13" data-line-number="13">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb117-14" data-line-number="14">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Rick&quot;</span></a>
-<a class="sourceLine" id="cb117-15" data-line-number="15">      <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb117-16" data-line-number="16">    <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb117-17" data-line-number="17">  <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb117-18" data-line-number="18"><span class="fu">}</span></a></code></pre></div>
+<a class="sourceLine" id="cb117-8" data-line-number="8">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb117-9" data-line-number="9">      <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Rick&quot;</span></a>
+<a class="sourceLine" id="cb117-10" data-line-number="10">    <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb117-11" data-line-number="11">  <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb117-12" data-line-number="12"><span class="fu">}</span></a></code></pre></div>
+<p>Nesting layouts is as simple as specifying a layout as another layout’s component.</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb118-2" data-line-number="2">  <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb118-3" data-line-number="3">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb118-4" data-line-number="4">    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb118-5" data-line-number="5">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb118-6" data-line-number="6">      <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://i.giphy.com/LXONhtCmN32YU.gif&quot;</span></a>
+<a class="sourceLine" id="cb118-7" data-line-number="7">    <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb118-8" data-line-number="8">      <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb118-9" data-line-number="9">      <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb118-10" data-line-number="10">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb118-11" data-line-number="11">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;User&quot;</span></a>
+<a class="sourceLine" id="cb118-12" data-line-number="12">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb118-13" data-line-number="13">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb118-14" data-line-number="14">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Rick&quot;</span></a>
+<a class="sourceLine" id="cb118-15" data-line-number="15">      <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb118-16" data-line-number="16">    <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb118-17" data-line-number="17">  <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb118-18" data-line-number="18"><span class="fu">}</span></a></code></pre></div>
 <p>I have not talked about the styling feature here for the sake of brevity,
 but you can style each individual component as well as the layout itself to make sure the
 layout looks exactly like you wanted.
@@ -572,43 +573,43 @@ You can place these components anywhere you desire on the screen this way. Here�
 and an image (the camera icon) on the screen, whose coordinates have been explicitly
 set to make sure they stay in place without scrolling.</p>
 <p>The markup would look something like this:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-2" data-line-number="2">  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-3" data-line-number="3">    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-4" data-line-number="4">      <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-5" data-line-number="5">        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;camera&quot;</span></a>
-<a class="sourceLine" id="cb118-6" data-line-number="6">      <span class="fu">},</span></a>
-<a class="sourceLine" id="cb118-7" data-line-number="7">      <span class="dt">&quot;layers&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-8" data-line-number="8">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-9" data-line-number="9">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;22°C&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-10" data-line-number="10">        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-11" data-line-number="11">          <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue-Light&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-12" data-line-number="12">          <span class="dt">&quot;size&quot;</span><span class="fu">:</span> <span class="st">&quot;20&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-13" data-line-number="13">          <span class="dt">&quot;top&quot;</span><span class="fu">:</span> <span class="st">&quot;50&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-14" data-line-number="14">          <span class="dt">&quot;left&quot;</span><span class="fu">:</span> <span class="st">&quot;50%-100&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-15" data-line-number="15">          <span class="dt">&quot;width&quot;</span><span class="fu">:</span> <span class="st">&quot;200&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-16" data-line-number="16">          <span class="dt">&quot;align&quot;</span><span class="fu">:</span> <span class="st">&quot;center&quot;</span></a>
-<a class="sourceLine" id="cb118-17" data-line-number="17">        <span class="fu">}</span></a>
-<a class="sourceLine" id="cb118-18" data-line-number="18">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-19" data-line-number="19">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-20" data-line-number="20">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;few clouds&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-21" data-line-number="21">        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-22" data-line-number="22">          <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-23" data-line-number="23">          <span class="dt">&quot;size&quot;</span><span class="fu">:</span> <span class="st">&quot;15&quot;</span></a>
-<a class="sourceLine" id="cb118-24" data-line-number="24">        <span class="fu">}</span></a>
-<a class="sourceLine" id="cb118-25" data-line-number="25">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-26" data-line-number="26">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-27" data-line-number="27">        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://s3.amazonaws.com/.../camera%402x.png&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-28" data-line-number="28">        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb118-29" data-line-number="29">          <span class="dt">&quot;bottom&quot;</span><span class="fu">:</span> <span class="st">&quot;100&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-30" data-line-number="30">          <span class="dt">&quot;width&quot;</span><span class="fu">:</span> <span class="st">&quot;30&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-31" data-line-number="31">          <span class="dt">&quot;color&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb118-32" data-line-number="32">          <span class="dt">&quot;right&quot;</span><span class="fu">:</span> <span class="st">&quot;30&quot;</span></a>
-<a class="sourceLine" id="cb118-33" data-line-number="33">        <span class="fu">}</span></a>
-<a class="sourceLine" id="cb118-34" data-line-number="34">      <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb118-35" data-line-number="35">    <span class="fu">}</span></a>
-<a class="sourceLine" id="cb118-36" data-line-number="36">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb118-37" data-line-number="37"><span class="fu">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-2" data-line-number="2">  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-3" data-line-number="3">    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-4" data-line-number="4">      <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-5" data-line-number="5">        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;camera&quot;</span></a>
+<a class="sourceLine" id="cb119-6" data-line-number="6">      <span class="fu">},</span></a>
+<a class="sourceLine" id="cb119-7" data-line-number="7">      <span class="dt">&quot;layers&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-8" data-line-number="8">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-9" data-line-number="9">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;22°C&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-10" data-line-number="10">        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-11" data-line-number="11">          <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue-Light&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-12" data-line-number="12">          <span class="dt">&quot;size&quot;</span><span class="fu">:</span> <span class="st">&quot;20&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-13" data-line-number="13">          <span class="dt">&quot;top&quot;</span><span class="fu">:</span> <span class="st">&quot;50&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-14" data-line-number="14">          <span class="dt">&quot;left&quot;</span><span class="fu">:</span> <span class="st">&quot;50%-100&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-15" data-line-number="15">          <span class="dt">&quot;width&quot;</span><span class="fu">:</span> <span class="st">&quot;200&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-16" data-line-number="16">          <span class="dt">&quot;align&quot;</span><span class="fu">:</span> <span class="st">&quot;center&quot;</span></a>
+<a class="sourceLine" id="cb119-17" data-line-number="17">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb119-18" data-line-number="18">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-19" data-line-number="19">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-20" data-line-number="20">        <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;few clouds&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-21" data-line-number="21">        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-22" data-line-number="22">          <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-23" data-line-number="23">          <span class="dt">&quot;size&quot;</span><span class="fu">:</span> <span class="st">&quot;15&quot;</span></a>
+<a class="sourceLine" id="cb119-24" data-line-number="24">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb119-25" data-line-number="25">      <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-26" data-line-number="26">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-27" data-line-number="27">        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://s3.amazonaws.com/.../camera%402x.png&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-28" data-line-number="28">        <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb119-29" data-line-number="29">          <span class="dt">&quot;bottom&quot;</span><span class="fu">:</span> <span class="st">&quot;100&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-30" data-line-number="30">          <span class="dt">&quot;width&quot;</span><span class="fu">:</span> <span class="st">&quot;30&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-31" data-line-number="31">          <span class="dt">&quot;color&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb119-32" data-line-number="32">          <span class="dt">&quot;right&quot;</span><span class="fu">:</span> <span class="st">&quot;30&quot;</span></a>
+<a class="sourceLine" id="cb119-33" data-line-number="33">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb119-34" data-line-number="34">      <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb119-35" data-line-number="35">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb119-36" data-line-number="36">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb119-37" data-line-number="37"><span class="fu">}</span></a></code></pre></div>
 <p>Amazingly enough, this is all you need to know in order to build any
 kind of sophisticated view you can imagine on mobile devices.</p>
 <p>Just like you can build anything with simple lego blocks,
@@ -828,16 +829,16 @@ request-and-response model employed by agents and web container.</p>
 <p>First we pass some parameters to the next view through <code>$href</code> action.
 You define parameters under the <code>options</code> attribute.</p>
 <p>Here we pass two parameters <code>firstName</code> and <code>lastName</code>:</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb119-2" data-line-number="2">  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb119-3" data-line-number="3">  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb119-4" data-line-number="4">    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jasonbase.com/things/3fj.json&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb119-5" data-line-number="5">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb119-6" data-line-number="6">      <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span> <span class="st">&quot;Bart&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb119-7" data-line-number="7">      <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span> <span class="st">&quot;Simpson&quot;</span></a>
-<a class="sourceLine" id="cb119-8" data-line-number="8">    <span class="fu">}</span></a>
-<a class="sourceLine" id="cb119-9" data-line-number="9">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb119-10" data-line-number="10"><span class="fu">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb120-2" data-line-number="2">  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb120-3" data-line-number="3">  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb120-4" data-line-number="4">    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jasonbase.com/things/3fj.json&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb120-5" data-line-number="5">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb120-6" data-line-number="6">      <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span> <span class="st">&quot;Bart&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb120-7" data-line-number="7">      <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span> <span class="st">&quot;Simpson&quot;</span></a>
+<a class="sourceLine" id="cb120-8" data-line-number="8">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb120-9" data-line-number="9">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb120-10" data-line-number="10"><span class="fu">}</span></a></code></pre></div>
 <p>The attributes will be accessible as <code>$params.firstName</code>
 and <code>$params.lastName</code> from the next view.
 This feature has been available from the beginning,
@@ -854,53 +855,53 @@ pass a return value back.</p>
 <p>We can trigger <code>$ok</code> at any point in the view lifecycle.
 For example, we can immediately trigger it on <code>$load</code> to make it
 return immediately, like this:</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb120-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb120-2" data-line-number="2">  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb120-3" data-line-number="3">    <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb120-4" data-line-number="4">      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Return Immediately!&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb120-5" data-line-number="5">      <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb120-6" data-line-number="6">        <span class="dt">&quot;$load&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb120-7" data-line-number="7">          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$ok&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb120-8" data-line-number="8">          <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb120-9" data-line-number="9">            <span class="dt">&quot;fullName&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$params.firstName}} {{$params.lastName}}&quot;</span></a>
-<a class="sourceLine" id="cb120-10" data-line-number="10">          <span class="fu">}</span></a>
-<a class="sourceLine" id="cb120-11" data-line-number="11">        <span class="fu">}</span></a>
-<a class="sourceLine" id="cb120-12" data-line-number="12">      <span class="fu">}</span></a>
-<a class="sourceLine" id="cb120-13" data-line-number="13">    <span class="fu">}</span></a>
-<a class="sourceLine" id="cb120-14" data-line-number="14">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb120-15" data-line-number="15"><span class="fu">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb121-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb121-2" data-line-number="2">  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb121-3" data-line-number="3">    <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb121-4" data-line-number="4">      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Return Immediately!&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb121-5" data-line-number="5">      <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb121-6" data-line-number="6">        <span class="dt">&quot;$load&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb121-7" data-line-number="7">          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$ok&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb121-8" data-line-number="8">          <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb121-9" data-line-number="9">            <span class="dt">&quot;fullName&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$params.firstName}} {{$params.lastName}}&quot;</span></a>
+<a class="sourceLine" id="cb121-10" data-line-number="10">          <span class="fu">}</span></a>
+<a class="sourceLine" id="cb121-11" data-line-number="11">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb121-12" data-line-number="12">      <span class="fu">}</span></a>
+<a class="sourceLine" id="cb121-13" data-line-number="13">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb121-14" data-line-number="14">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb121-15" data-line-number="15"><span class="fu">}</span></a></code></pre></div>
 <p>Or we could let the user manually trigger <code>$ok</code> .
 This can be useful for accepting user input and
 returning the value to the previous view. For example:</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb121-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb121-2" data-line-number="2"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-3" data-line-number="3">  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-4" data-line-number="4">    <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-5" data-line-number="5">      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Form&quot;</span></a>
-<a class="sourceLine" id="cb121-6" data-line-number="6">    <span class="fu">},</span></a>
-<a class="sourceLine" id="cb121-7" data-line-number="7">    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-8" data-line-number="8">      <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-9" data-line-number="9">        <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-10" data-line-number="10">          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;textfield&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb121-11" data-line-number="11">          <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;username&quot;</span></a>
-<a class="sourceLine" id="cb121-12" data-line-number="12">        <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-13" data-line-number="13">          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;textfield&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb121-14" data-line-number="14">          <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;password&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb121-15" data-line-number="15">        <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-16" data-line-number="16">          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;button&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb121-17" data-line-number="17">          <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Login&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb121-18" data-line-number="18">          <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-19" data-line-number="19">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$ok&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb121-20" data-line-number="20">            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb121-21" data-line-number="21">              <span class="dt">&quot;username&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$get.username}}&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb121-22" data-line-number="22">              <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$get.password}}&quot;</span></a>
-<a class="sourceLine" id="cb121-23" data-line-number="23">            <span class="fu">}</span></a>
-<a class="sourceLine" id="cb121-24" data-line-number="24">          <span class="fu">}</span></a>
-<a class="sourceLine" id="cb121-25" data-line-number="25">        <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb121-26" data-line-number="26">      <span class="fu">}</span><span class="ot">]</span></a>
-<a class="sourceLine" id="cb121-27" data-line-number="27">    <span class="fu">}</span></a>
-<a class="sourceLine" id="cb121-28" data-line-number="28">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb121-29" data-line-number="29"><span class="fu">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb122-1" data-line-number="1"></a>
+<a class="sourceLine" id="cb122-2" data-line-number="2"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-3" data-line-number="3">  <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-4" data-line-number="4">    <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-5" data-line-number="5">      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Form&quot;</span></a>
+<a class="sourceLine" id="cb122-6" data-line-number="6">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb122-7" data-line-number="7">    <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-8" data-line-number="8">      <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-9" data-line-number="9">        <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-10" data-line-number="10">          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;textfield&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb122-11" data-line-number="11">          <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;username&quot;</span></a>
+<a class="sourceLine" id="cb122-12" data-line-number="12">        <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-13" data-line-number="13">          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;textfield&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb122-14" data-line-number="14">          <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;password&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb122-15" data-line-number="15">        <span class="fu">}</span><span class="ot">,</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-16" data-line-number="16">          <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;button&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb122-17" data-line-number="17">          <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Login&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb122-18" data-line-number="18">          <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-19" data-line-number="19">            <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$ok&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb122-20" data-line-number="20">            <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb122-21" data-line-number="21">              <span class="dt">&quot;username&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$get.username}}&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb122-22" data-line-number="22">              <span class="dt">&quot;password&quot;</span><span class="fu">:</span> <span class="st">&quot;{{$get.password}}&quot;</span></a>
+<a class="sourceLine" id="cb122-23" data-line-number="23">            <span class="fu">}</span></a>
+<a class="sourceLine" id="cb122-24" data-line-number="24">          <span class="fu">}</span></a>
+<a class="sourceLine" id="cb122-25" data-line-number="25">        <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb122-26" data-line-number="26">      <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb122-27" data-line-number="27">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb122-28" data-line-number="28">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb122-29" data-line-number="29"><span class="fu">}</span></a></code></pre></div>
 <p>You can basically implement the <code>$ok</code> action anywhere
 to return to the previous view with return values.
 Here’s an example where a QR code scanner returns
@@ -931,23 +932,23 @@ correctly from the next view and
 returned via <code>$ok</code> action, there would not be a way to deal with them.</p>
 <p>Let’s make a small tweak to the
 JSON markup and add a success callback to handle the return value:</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb123-1" data-line-number="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb123-2" data-line-number="2">  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb123-3" data-line-number="3">  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb123-4" data-line-number="4">    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jasonbase.com/things/3fj.json&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb123-5" data-line-number="5">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb123-6" data-line-number="6">      <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span> <span class="st">&quot;Bart&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb123-7" data-line-number="7">      <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span> <span class="st">&quot;Simpson&quot;</span></a>
-<a class="sourceLine" id="cb123-8" data-line-number="8">    <span class="fu">}</span></a>
-<a class="sourceLine" id="cb123-9" data-line-number="9">  <span class="fu">},</span></a>
-<a class="sourceLine" id="cb123-10" data-line-number="10">  <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb123-11" data-line-number="11">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$util.alert&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb123-12" data-line-number="12">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
-<a class="sourceLine" id="cb123-13" data-line-number="13">      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Full Name&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb123-14" data-line-number="14">      <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Full Name is: {{$jason.fullName}}&quot;</span></a>
-<a class="sourceLine" id="cb123-15" data-line-number="15">    <span class="fu">}</span></a>
-<a class="sourceLine" id="cb123-16" data-line-number="16">  <span class="fu">}</span></a>
-<a class="sourceLine" id="cb123-17" data-line-number="17"><span class="fu">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb124-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb124-2" data-line-number="2">  <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$href&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb124-3" data-line-number="3">  <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb124-4" data-line-number="4">    <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://jasonbase.com/things/3fj.json&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb124-5" data-line-number="5">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb124-6" data-line-number="6">      <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span> <span class="st">&quot;Bart&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb124-7" data-line-number="7">      <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span> <span class="st">&quot;Simpson&quot;</span></a>
+<a class="sourceLine" id="cb124-8" data-line-number="8">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb124-9" data-line-number="9">  <span class="fu">},</span></a>
+<a class="sourceLine" id="cb124-10" data-line-number="10">  <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb124-11" data-line-number="11">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$util.alert&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb124-12" data-line-number="12">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb124-13" data-line-number="13">      <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;Full Name&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb124-14" data-line-number="14">      <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Full Name is: {{$jason.fullName}}&quot;</span></a>
+<a class="sourceLine" id="cb124-15" data-line-number="15">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb124-16" data-line-number="16">  <span class="fu">}</span></a>
+<a class="sourceLine" id="cb124-17" data-line-number="17"><span class="fu">}</span></a></code></pre></div>
 <p>When you come back from the other
 view through the <code>$ok</code> action, its options
 object is returned as <code>$jason</code>, and you can
