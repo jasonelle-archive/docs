@@ -98,3 +98,53 @@ or any application that support this filetype.
 - [https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support](https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support).
 
 
+## How to Overwrite links in a Website
+
+If you have a `$webcontainer` agent in your app. You can listen
+to `a href` links and execute different native behaviours depending
+on the url provided.
+
+In the following example (created by user `RAPOS`) we can make
+a link url to trigger a phone call if the url contains `tel` prefix.
+Otherwise the `ahref` will follow the normal behaviour.
+
+It is also configured the `background` color to be white, 
+and the `progress` bar to be transparent.
+
+```json
+{
+  "$jason": {
+    "head": {
+      "title": "Overwriting ahref behaviour",
+      "actions": {
+        "ahref_handler": [{
+          "{{#if $jason.url.indexOf('tel') !== -1 }}": {
+            "type": "$href",
+            "options": {
+              "view": "app",
+              "url": "{{$jason.url}}"
+            }
+          }
+        }, {
+          "{{#else}}": {
+            "type": "$default"
+          }
+        }]
+      }
+    },
+    "body": {
+      "background": {
+        "type": "html",
+        "text": "<html><body><h1><a href='tel:987654321'>Call ME</a></h1></body></html>",
+        "action": {
+          "trigger": "ahref_handler"
+        },
+        "style": {
+            "background": "#ffffff",
+            "progress": "rgba(0,0,0,0)"
+        }
+      }
+    }
+  }
+}
+```
