@@ -47,16 +47,16 @@ And call it with `trigger`.
 }
 ```
 
-## How to Call/SMS a Phone Number
+## How to Call/SMS/Facetime a Phone Number
 
 If you want to call/sms a phone number you can use the `$href`
-with the `tel://` or `sms://` and the `app` view.
+with the `tel:` or `sms:` and the `app` view.
 
 ```json
 {
     "type": "$href",
     "options": {
-        "url": "tel://18888888888",
+        "url": "tel:18888888888",
         "view": "app",
         "transition": "modal"
     }
@@ -66,6 +66,27 @@ with the `tel://` or `sms://` and the `app` view.
 > Note: This feature only works on devices that can make
 > app calls. So simulators like the iOS can't test this.
 > Use a real smartphone for this functionality.
+
+- Possible Values (Some of them): `sms:, tel:, mailto:, facetime:, facetime-audio:`.
+- Apple Docs: [https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899).
+
+## How to Send Emails
+
+The principle is the same as calling a phone number. 
+Use `mailto:` address in the url to trigger the mail app.
+
+```json
+{
+    "type": "$href",
+    "options": {
+        "url": "mailto:hi@jasonelle.com",
+        "view": "app",
+        "transition": "modal"
+    }
+}
+```
+
+- RFC: [https://www.ietf.org/rfc/rfc2368.txt](https://www.ietf.org/rfc/rfc2368.txt)
 
 ## How to Add Events to Calendar
 
@@ -107,6 +128,8 @@ on the url provided.
 In the following example (created by user `RAPOS`) we can make
 a link url to trigger a phone call if the url contains `tel` prefix.
 Otherwise the `ahref` will follow the normal behaviour.
+
+With this method we can trigger any native functionality available.
 
 It is also configured the `background` color to be white, 
 and the `progress` bar to be transparent.
