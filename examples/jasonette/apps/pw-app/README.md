@@ -6,7 +6,7 @@ Does not stores any private info or anything related. Only good rss reader app.
 
 ## How to Install
 You can install this app on *Android* or *iOS*. Download *Jason* app and 
-add this url `https://raw.githubusercontent.com/NinjasCL/pw-app/master/app.json`.
+add this url `https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/pw-app/app.json`.
 
 ## PW App Download
 
