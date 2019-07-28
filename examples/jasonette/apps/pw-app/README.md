@@ -12,15 +12,6 @@ add this url `https://raw.githubusercontent.com/NinjasCL/pw-app/master/app.json`
 
 [PW App Appstore Download](https://itunes.apple.com/us/app/pw-app/id1252337641?l=es&ls=1&mt=8)
 
-## Jason Download
-
-[Jason AppStore Download](https://itunes.apple.com/us/app/jason./id1095557868?mt=8)
-
-[Jason Google Play Download](https://play.google.com/store/apps/details?id=com.jasonette.jason)
-
-Or you can compile it using [http://jasonette.com](http://jasonette.com).
-
-
 ## Screen Shots
 ![](img/1.jpg)
 ![](img/2.jpg)
