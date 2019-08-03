@@ -56,3 +56,13 @@ you can contact members on this list individually.
 > allowing me to continue to develop rad tech, knowing that 
 > Jasonelle's architecture and close-knit community spirit will make 
 > lightweight of any UX requirement.
+
+#### [Al Sanchez](https://www.stackk.xyz/)
+![](https://user-images.githubusercontent.com/292738/62412952-431bc400-b5d7-11e9-80d3-88de9cb67078.jpg)
+
+- Role `Blaze`: Android, iOS, Designer and tester.
+- Website: [https://www.stackk.xyz/](https://www.stackk.xyz/).
+- Services: Jasonelle Support, Web and Mobile App Consulting.
+
+> We develop custom web and mobile apps for startups, non-profit organizations and established companies.
+> We can help you using Jasonelle technology to create your next project!.
