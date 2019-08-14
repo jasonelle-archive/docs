@@ -28,6 +28,7 @@ Jasonelle Team is grateful for the contribution of the following people:
 |  Name | Photo | Role  | Years |
 |  ---  |  ---  |  ---  |  ---  |
 | [Christian Swanepoel](https://github.com/christianswanepoel) | ![](https://avatars1.githubusercontent.com/u/7249713?s=100&v=4) | `Blaze` (iOS, Android, Testing) | 2019 - present |
+| [Al Sanchez](https://www.stackk.xyz/) | ![](https://user-images.githubusercontent.com/292738/62412952-431bc400-b5d7-11e9-80d3-88de9cb67078.jpg) | `Blaze` (Desing, Testing) | 2019 - present |
 
 
 ## Roles

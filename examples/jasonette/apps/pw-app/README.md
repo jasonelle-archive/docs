@@ -1,22 +1,16 @@
 # ProcessWire Reader App
 A Simple RSS Reader App for ProcessWire news.
 
+## Privacy Policy
+Does not stores any private info or anything related. Only good rss reader app.
+
 ## How to Install
 You can install this app on *Android* or *iOS*. Download *Jason* app and 
-add this url `https://raw.githubusercontent.com/NinjasCL/pw-app/master/app.json`.
+add this url `https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/pw-app/app.json`.
 
 ## PW App Download
 
 [PW App Appstore Download](https://itunes.apple.com/us/app/pw-app/id1252337641?l=es&ls=1&mt=8)
-
-## Jason Download
-
-[Jason AppStore Download](https://itunes.apple.com/us/app/jason./id1095557868?mt=8)
-
-[Jason Google Play Download](https://play.google.com/store/apps/details?id=com.jasonette.jason)
-
-Or you can compile it using [http://jasonette.com](http://jasonette.com).
-
 
 ## Screen Shots
 ![](img/1.jpg)
