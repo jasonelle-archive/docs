@@ -42,3 +42,7 @@ Stores the event that will be considered the current event.
 
 This example demostrates the usage of `vertical` and `horizontal`
 scrolling. Using `mixins`, `global`, `images`, `text`, `maps`, `timers` and `calendars`.
+
+Test it using the following url in `strings.xml` (Android) or `settings.plist` (iOS)
+
+`https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/splash.json`
