@@ -1,0 +1,90 @@
+{
+    "title": "BeerJS Santiago #46 🍺",
+    "number" : 46,
+
+    "status" : {
+        "ended" : true,
+        "registration" : {
+            "available" : false
+        }
+    },
+    
+    "topic": "Machine Learning entre otros.",
+    "notes": "I2B se pone con la comida; cada asistente debe traer rica y helada cerveza para compartir entre los asistentes.",
+    "urls": {
+        "registration" : "https://guestli.st/613785",
+        "github" : "https://github.com/beerjs/santiago/issues/85"
+    },
+
+    "sponsor" : {
+        "title" : "I2B",
+        "image" : "https://user-images.githubusercontent.com/292738/62988533-beb91480-be12-11e9-82e2-17f6a04e114f.png",
+        "about" : "",
+        "url"   : "https://www.i2btech.com/"
+    },
+
+    "location": {
+        "title": "I2B",
+        "latitude" : "-33.424272",
+        "longitude" : "-70.615939",
+        "address": "La Concepción 141, Providencia",
+        "notes" : "5to Piso"
+    },
+    
+    "date" : {
+        "day": "Miércoles 5 Junio 2019",
+        "time": "desde las 19:00 hrs.",
+        "iso" : "2019-06-05 19:00:00",
+        "timezone" : "America/Santiago",
+        "calendar": {
+            "ics": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/events/santiago/201906/calendar.ics"
+        }
+    },
+
+    "organizers" : [
+        {
+            "@" : "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/events/santiago/shared/jorge.json"
+        },
+        {
+            "title": "Mario",
+            "name" : "Mario Schiappacasse.",
+            "image" : "https://user-images.githubusercontent.com/292738/62988550-d2fd1180-be12-11e9-866e-b4992e8ef1c3.png",
+            "about" : "Ñoño asumido, amante de la buena cerveza, estratega y apasionado por el mundo tech.",
+            "url" : ""
+        },
+        {
+            "title": "Luis",
+            "name" : "Luis Muñoz.",
+            "image" : "https://user-images.githubusercontent.com/292738/62988572-df816a00-be12-11e9-91d2-c3f4b8ae2147.png",
+            "about" : "Data Scientist de I2B Labs, apasionado por el viaje y la aventura. Me gusta inventar y crear cosas innovadoras por diversión.",
+            "url" : ""
+        }
+    ],
+    
+    "speakers" : [
+        {
+            "name" : "Mario Schiappacasse y Luis Muñoz",
+            "about" : "La Tecnología detrás de un SAAS de Machine Learning.",
+            "image" : "https://user-images.githubusercontent.com/292738/60390097-7df08080-9a9c-11e9-9eaf-eb75ac932c9c.png",
+            "url" : ""
+        },
+        {
+            "name" : "Santiago Larraín",
+            "about" : "Inteligencia Artificial en Canales tradicionales.",
+            "image" : "https://user-images.githubusercontent.com/292738/60390103-95c80480-9a9c-11e9-92b2-16e38dd065b6.png",
+            "url" : ""
+        },
+        {
+            "name" : "Felipe Egas",
+            "about" : "WebComponents hooks con Haunted.",
+            "image" : "https://user-images.githubusercontent.com/292738/60390079-50a3d280-9a9c-11e9-922f-f5ec7c86c4c7.png",
+            "url" : ""
+        },
+        {
+            "name" : "Camilo Castro",
+            "about" : "Aplicaciones móviles solo con json usando el framework Jasonelle.",
+            "image" : "https://avatars2.githubusercontent.com/u/20961094?s=500&v=4",
+            "url" : "https://jasonelle.com"
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "$jason": {
+        "head": {
+            "title": "Profile View",
+            "actions": {
+                "$load": {
+                    "type": "$render"
+                }
+            },
+            "styles": {
+                "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/includes/styles.json"
+            },
+            "templates": {
+                "body": {
+                    "header": {
+                        "title": "{{$global.person.name}}",
+                        "style" : {
+                            "background": "#F8DC3D",
+                            "color": "#2E2E2C",
+                            "font":"HelveticaNeue-Bold",
+                            "size": 16
+                        },
+                        "menu": [
+                            {
+                                "{{#if $global.person.url != ''}}" : {
+                                    "text": "Website",
+                                    "style": {
+                                        "font":"HelveticaNeue-Bold",
+                                        "size":14
+                                    },
+                                    "href": {
+                                        "url": "{{$global.person.url}}",
+                                        "view": "web",
+                                        "transition": "push"
+                                    }
+                                }
+                            },
+                            {
+                                "{{#else}}": {
+                                    "text": ""
+                                }
+                            }
+                        ]
+                    },
+                    "sections": [
+                        {
+                            "items": [
+                                {
+                                    "type": "image",
+                                    "url": "{{$global.person.image}}",
+                                    "style": {
+                                        "width": "100%"
+                                    }
+                                },
+                                {
+                                    "type": "label",
+                                    "text": "{{$global.person.about}}",
+                                    "class": "color-dark-1, font-helvetica-neue"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
