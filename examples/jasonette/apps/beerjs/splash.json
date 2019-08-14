@@ -1,0 +1,67 @@
+{
+    "$jason": {
+        "head": {
+            "title": "Splash Screen",
+            "offline" : true,
+            "actions": {
+                "$load":{
+                    "type": "$set",
+                    "options": {
+                        "counter": "0"
+                    },
+                    "success": {
+                        "type": "$timer.start",
+                        "options": {
+                            "interval": "2",
+                            "name" : "splash",
+                            "repeats": "false",
+                            "action": {
+                                "trigger": "tick"
+                            }
+                        }
+                    }
+                },
+                "tick": {
+                    "type": "$set",
+                    "options": {
+                        "counter": "{{ $get.counter + 1 }}"
+                    },
+                    "success": {
+                        "trigger": "{{ $get.counter > 1 ? 'show_app' : 'show_splash' }}"
+                    }
+                },
+                "show_splash": {
+                    "type" : "$render"
+                },
+                "show_app": {
+                    "type" : "$timer.stop",
+                    "options" : {
+                        "name" : "splash"
+                    },
+                    "success" : {
+                        "type": "$href",
+                        "options": {
+                            "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/index.json",
+                            "transition": "replace"
+                        }
+                    }
+                }
+            }
+        },
+        "body": {
+            "background": "#F8DC3D",
+            "layers": [
+                {
+                    "type": "image",
+                    "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/img/beerjs.png",
+                    "style": {
+                        "top": "50%-100",
+                        "left": "50%-80",
+                        "align": "center",
+                        "width": "50%"
+                    }
+                }
+            ]
+        }
+    }
+}
