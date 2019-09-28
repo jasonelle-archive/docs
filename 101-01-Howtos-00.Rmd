@@ -171,3 +171,59 @@ and the `progress` bar to be transparent.
   }
 }
 ```
+
+## How to Execute Custom Functions Inside a Web View
+
+In this example (Based on Code by `DAN`) we are defining a custom function that calls 
+the [`window.history.back()`](https://www.w3schools.com/jsref/met_his_back.asp) 
+method inside the `$webcontainer` webview. 
+Using the [`$agent.request`](https://jasonelle.com/jasonette-old-docs/agents/) API.
+
+This method will be executed when the `layer` label is clicked.
+
+```json
+{
+    "$jason": {
+        "head": {
+            "title": "History Go Back",
+            "description": "Triggers a History Back on Button Press",
+            "actions": {
+                "navigate_back": {
+                    "type": "$agent.request",
+                    "options": {
+                        "id": "$webcontainer",
+                        "method": "(() => window.history.back())"
+                    }
+                }
+            }
+        },
+        "body": {
+            "layers": [
+                {
+                    "type": "label",
+                    "text": "<",
+                    "style": {
+                        "size": "45",
+                        "top": "100%-50",
+                        "left": "0",
+                        "align": "center",
+                        "width": "20%",
+                        "color": "#ffffff",
+                        "background":"#2C2C2C"
+                    },
+                    "action": {
+                        "trigger": "navigate_back"
+                    }
+                }
+            ],
+            "background": {
+                "type": "html",
+                "url": "https://www.google.com",
+                "action": {
+                    "type": "$default"
+                }
+            }
+        }
+    }
+}
+```
