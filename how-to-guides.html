@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 How To Guides | Jasonelle Documentation</title>
   <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 How To Guides | Jasonelle Documentation" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Jasonelle Team" />
 
 
-<meta name="date" content="2019-08-14" />
+<meta name="date" content="2019-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="jasonette-tutorials.html">
-<link rel="next" href="discussions.html">
+<link rel="prev" href="jasonette-tutorials.html"/>
+<link rel="next" href="discussions.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -240,6 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-send-emails"><i class="fa fa-check"></i><b>8.4</b> How to Send Emails</a></li>
 <li class="chapter" data-level="8.5" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-add-events-to-calendar"><i class="fa fa-check"></i><b>8.5</b> How to Add Events to Calendar</a></li>
 <li class="chapter" data-level="8.6" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-overwrite-links-in-a-website"><i class="fa fa-check"></i><b>8.6</b> How to Overwrite links in a Website</a></li>
+<li class="chapter" data-level="8.7" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-execute-custom-functions-inside-a-web-view"><i class="fa fa-check"></i><b>8.7</b> How to Execute Custom Functions Inside a Web View</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a><ul>
 <li class="chapter" data-level="9.1" data-path="discussions.html"><a href="discussions.html#beerjs---chile---2019"><i class="fa fa-check"></i><b>9.1</b> BeerJS - Chile - 2019</a></li>
@@ -451,6 +452,58 @@ and the <code>progress</code> bar to be transparent.</p>
 <a class="sourceLine" id="cb112-33" data-line-number="33">    <span class="fu">}</span></a>
 <a class="sourceLine" id="cb112-34" data-line-number="34">  <span class="fu">}</span></a>
 <a class="sourceLine" id="cb112-35" data-line-number="35"><span class="fu">}</span></a></code></pre></div>
+</div>
+<div id="how-to-execute-custom-functions-inside-a-web-view" class="section level2">
+<h2><span class="header-section-number">8.7</span> How to Execute Custom Functions Inside a Web View</h2>
+<p>In this example (Based on Code by <code>DAN</code>) we are defining a custom function that calls
+the <a href="https://www.w3schools.com/jsref/met_his_back.asp"><code>window.history.back()</code></a>
+method inside the <code>$webcontainer</code> webview.
+Using the <a href="https://jasonelle.com/jasonette-old-docs/agents/"><code>$agent.request</code></a> API.</p>
+<p>This method will be executed when the <code>layer</code> label is clicked.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-2" data-line-number="2">    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-3" data-line-number="3">        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-4" data-line-number="4">            <span class="dt">&quot;title&quot;</span><span class="fu">:</span> <span class="st">&quot;History Go Back&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-5" data-line-number="5">            <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;Triggers a History Back on Button Press&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-6" data-line-number="6">            <span class="dt">&quot;actions&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-7" data-line-number="7">                <span class="dt">&quot;navigate_back&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-8" data-line-number="8">                    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$agent.request&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-9" data-line-number="9">                    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-10" data-line-number="10">                        <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;$webcontainer&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-11" data-line-number="11">                        <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;(() =&gt; window.history.back())&quot;</span></a>
+<a class="sourceLine" id="cb113-12" data-line-number="12">                    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-13" data-line-number="13">                <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-14" data-line-number="14">            <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-15" data-line-number="15">        <span class="fu">},</span></a>
+<a class="sourceLine" id="cb113-16" data-line-number="16">        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-17" data-line-number="17">            <span class="dt">&quot;layers&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb113-18" data-line-number="18">                <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-19" data-line-number="19">                    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-20" data-line-number="20">                    <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;&lt;&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-21" data-line-number="21">                    <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-22" data-line-number="22">                        <span class="dt">&quot;size&quot;</span><span class="fu">:</span> <span class="st">&quot;45&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-23" data-line-number="23">                        <span class="dt">&quot;top&quot;</span><span class="fu">:</span> <span class="st">&quot;100%-50&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-24" data-line-number="24">                        <span class="dt">&quot;left&quot;</span><span class="fu">:</span> <span class="st">&quot;0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-25" data-line-number="25">                        <span class="dt">&quot;align&quot;</span><span class="fu">:</span> <span class="st">&quot;center&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-26" data-line-number="26">                        <span class="dt">&quot;width&quot;</span><span class="fu">:</span> <span class="st">&quot;20%&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-27" data-line-number="27">                        <span class="dt">&quot;color&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-28" data-line-number="28">                        <span class="dt">&quot;background&quot;</span><span class="fu">:</span><span class="st">&quot;#2C2C2C&quot;</span></a>
+<a class="sourceLine" id="cb113-29" data-line-number="29">                    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb113-30" data-line-number="30">                    <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-31" data-line-number="31">                        <span class="dt">&quot;trigger&quot;</span><span class="fu">:</span> <span class="st">&quot;navigate_back&quot;</span></a>
+<a class="sourceLine" id="cb113-32" data-line-number="32">                    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-33" data-line-number="33">                <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-34" data-line-number="34">            <span class="ot">]</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-35" data-line-number="35">            <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-36" data-line-number="36">                <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;html&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-37" data-line-number="37">                <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;https://www.google.com&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb113-38" data-line-number="38">                <span class="dt">&quot;action&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb113-39" data-line-number="39">                    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$default&quot;</span></a>
+<a class="sourceLine" id="cb113-40" data-line-number="40">                <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-41" data-line-number="41">            <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-42" data-line-number="42">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-43" data-line-number="43">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb113-44" data-line-number="44"><span class="fu">}</span></a></code></pre></div>
 
 </div>
 </div>
