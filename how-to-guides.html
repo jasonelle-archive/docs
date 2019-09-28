@@ -239,8 +239,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-callsmsfacetime-a-phone-number"><i class="fa fa-check"></i><b>8.3</b> How to Call/SMS/Facetime a Phone Number</a></li>
 <li class="chapter" data-level="8.4" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-send-emails"><i class="fa fa-check"></i><b>8.4</b> How to Send Emails</a></li>
 <li class="chapter" data-level="8.5" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-add-events-to-calendar"><i class="fa fa-check"></i><b>8.5</b> How to Add Events to Calendar</a></li>
-<li class="chapter" data-level="8.6" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-overwrite-links-in-a-website"><i class="fa fa-check"></i><b>8.6</b> How to Overwrite links in a Website</a></li>
-<li class="chapter" data-level="8.7" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-execute-custom-functions-inside-a-web-view"><i class="fa fa-check"></i><b>8.7</b> How to Execute Custom Functions Inside a Web View</a></li>
+<li class="chapter" data-level="8.6" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-overwrite-links-in-a-webview"><i class="fa fa-check"></i><b>8.6</b> How to Overwrite links in a WebView</a></li>
+<li class="chapter" data-level="8.7" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-execute-custom-functions-inside-a-webview"><i class="fa fa-check"></i><b>8.7</b> How to Execute Custom Functions Inside a WebView</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a><ul>
 <li class="chapter" data-level="9.1" data-path="discussions.html"><a href="discussions.html#beerjs---chile---2019"><i class="fa fa-check"></i><b>9.1</b> BeerJS - Chile - 2019</a></li>
@@ -406,8 +406,8 @@ or any application that support this filetype.</p>
 <li><a href="https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support">https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support</a>.</li>
 </ul>
 </div>
-<div id="how-to-overwrite-links-in-a-website" class="section level2">
-<h2><span class="header-section-number">8.6</span> How to Overwrite links in a Website</h2>
+<div id="how-to-overwrite-links-in-a-webview" class="section level2">
+<h2><span class="header-section-number">8.6</span> How to Overwrite links in a WebView</h2>
 <p>If you have a <code>$webcontainer</code> agent in your app. You can listen
 to <code>a href</code> links and execute different native behaviours depending
 on the url provided.</p>
@@ -453,13 +453,15 @@ and the <code>progress</code> bar to be transparent.</p>
 <a class="sourceLine" id="cb112-34" data-line-number="34">  <span class="fu">}</span></a>
 <a class="sourceLine" id="cb112-35" data-line-number="35"><span class="fu">}</span></a></code></pre></div>
 </div>
-<div id="how-to-execute-custom-functions-inside-a-web-view" class="section level2">
-<h2><span class="header-section-number">8.7</span> How to Execute Custom Functions Inside a Web View</h2>
+<div id="how-to-execute-custom-functions-inside-a-webview" class="section level2">
+<h2><span class="header-section-number">8.7</span> How to Execute Custom Functions Inside a WebView</h2>
 <p>In this example (Based on Code by <code>DAN</code>) we are defining a custom function that calls
 the <a href="https://www.w3schools.com/jsref/met_his_back.asp"><code>window.history.back()</code></a>
 method inside the <code>$webcontainer</code> webview.
 Using the <a href="https://jasonelle.com/jasonette-old-docs/agents/"><code>$agent.request</code></a> API.</p>
-<p>This method will be executed when the <code>layer</code> label is clicked.</p>
+<p>This method will be executed when the <code>layer</code> label is clicked.
+The <code>$agent.response()</code> is needed in order to continue the normal flow of events.</p>
+<p>We are using <a href="https://www.w3schools.com/js/js_function_definition.asp"><code>Arrow Functions</code></a> to simplify the syntax.</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb113-1" data-line-number="1"><span class="fu">{</span></a>
 <a class="sourceLine" id="cb113-2" data-line-number="2">    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
 <a class="sourceLine" id="cb113-3" data-line-number="3">        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
@@ -470,7 +472,7 @@ Using the <a href="https://jasonelle.com/jasonette-old-docs/agents/"><code>$agen
 <a class="sourceLine" id="cb113-8" data-line-number="8">                    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$agent.request&quot;</span><span class="fu">,</span></a>
 <a class="sourceLine" id="cb113-9" data-line-number="9">                    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
 <a class="sourceLine" id="cb113-10" data-line-number="10">                        <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;$webcontainer&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb113-11" data-line-number="11">                        <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;(() =&gt; window.history.back())&quot;</span></a>
+<a class="sourceLine" id="cb113-11" data-line-number="11">                        <span class="dt">&quot;method&quot;</span><span class="fu">:</span> <span class="st">&quot;(() =&gt; window.history.back(); $agent.response();)&quot;</span></a>
 <a class="sourceLine" id="cb113-12" data-line-number="12">                    <span class="fu">}</span></a>
 <a class="sourceLine" id="cb113-13" data-line-number="13">                <span class="fu">}</span></a>
 <a class="sourceLine" id="cb113-14" data-line-number="14">            <span class="fu">}</span></a>
