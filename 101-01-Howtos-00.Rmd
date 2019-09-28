@@ -174,7 +174,7 @@ and the `progress` bar to be transparent.
 
 ## How to Execute Custom Functions Inside a Web View
 
-In this example we are defining a custom function that calls 
+In this example (Based on Code by `DAN`) we are defining a custom function that calls 
 the [`window.history.back()`](https://www.w3schools.com/jsref/met_his_back.asp) 
 method inside the `$webcontainer` webview. 
 Using the [`$agent.request`](https://jasonelle.com/jasonette-old-docs/agents/) API.
