@@ -1,0 +1,39 @@
+<html>
+<style>
+body {
+  font-family: HelveticaNeue, helvetica, arial;
+  padding: 20px;
+}
+pre {
+  box-sizing: border-box;
+  background: whitesmoke;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 10px;
+  padding: 10px;
+}
+</style>
+<script src="https://www.celljs.org/cell.js"></script>
+<script src="./model.js"></script>
+<script src="./view.js"></script>
+<script src="./component.js"></script>
+<script>
+var App = {
+  $cell: true,
+  $components: [
+    { 
+      model: { algorithm: "rsa_oaep", export: ["privateKey"] },
+      view: { title: View.h1, content: View.json }
+    },
+    {
+      model: { algorithm: "ecdsa", export: ["publicKey"] },
+      view: { title: View.h2, content: View.json }
+    },
+    { 
+      model: { algorithm: "ecdh", export: ["privateKey"] },
+      view: { title: View.h3, content: View.json }
+    }
+  ].map(Component.keygen.build)
+}
+</script>
+</html>

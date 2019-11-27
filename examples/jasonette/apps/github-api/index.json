@@ -1,0 +1,93 @@
+{
+    "$jason": {
+      "head": {
+        "title": "Search",
+        "data": {
+          "items": {
+            "@": "items@https://api.github.com/search/repositories?q=json"
+          }
+        },
+        "templates": {
+          "body": {
+            "style": {
+              "background": "#3f0000",
+              "border": "none"
+            },
+            "header": {
+              "style": {
+                "background": "#3f0000"
+              },
+              "title": {
+                "type": "label",
+                "text": "Search",
+                "style": {
+                  "font": "HelveticaNeue",
+                  "color": "#ffffff"
+                }
+              }
+            },
+            "sections": [
+              {
+                "items": {
+                  "{{#each items}}": {
+                    "type": "horizontal",
+                    "href": {
+                      "url": "{{html_url}}",
+                      "view": "web"
+                    },
+                    "style": {
+                      "spacing": "10"
+                    },
+                    "components": [
+                      {
+                        "type": "image",
+                        "url": "{{owner.avatar_url}}",
+                        "style": {
+                          "width": "30",
+                          "height": "30",
+                          "corner_radius": "5"
+                        }
+                      },
+                      {
+                        "type": "vertical",
+                        "style": {
+                          "spacing": "3"
+                        },
+                        "components": [
+                          {
+                            "type": "label",
+                            "style": {
+                              "color": "#FFD34E",
+                              "font": "HelveticaNeue-Bold",
+                              "size": "12"
+                            },
+                            "text": "{{full_name}}"
+                          },
+                          {
+                            "type": "label",
+                            "style": {
+                              "color": "rgba(255,255,255,0.8)",
+                              "size": "10"
+                            },
+                            "text": "{{watchers_count}} Stars"
+                          },
+                          {
+                            "type": "label",
+                            "style": {
+                              "color": "rgba(255,255,255,0.8)",
+                              "size": "10"
+                            },
+                            "text": "{{description ? description : '' }}"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }

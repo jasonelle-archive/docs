@@ -1,0 +1,1 @@
+@include('common.style.color', ['value' => '#3c3c3c'])

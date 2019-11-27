@@ -1,0 +1,232 @@
+# How To Guides
+
+Small tips and tricks.
+
+## How to Know the Operating System
+
+If you need to check the operating system before executing some code.
+You could use the `$env` property to obtain details of the operating system.
+
+- `{{#if $env.device.os.name === 'ios'}}`: Evals to `true` if the operating system is *iOS*.
+- `{{#if $env.device.os.name === 'android'}}`: Evals to `true` if the operating system is *Android*.
+
+## How to Open Native Maps App
+
+If you want to open the native map view you need to
+simply use `$href` with the special url `maps.apple.com` (iOS) 
+or `maps.google.com`. (Android). And the `app` view.
+
+Put this code inside the `actions` object.
+
+```json
+{
+  "open_map": {
+    "type": "$href",
+    "options": {
+      "view": "app",
+      "transition": "modal",
+      "url": [{
+          "{{#if $env.device.os.name === 'ios'}}": "https://maps.apple.com?ll=-33.44402500439274,-70.65428849999995&z=14"
+        },
+        {
+          "{{#else}}": "https://maps.google.com?center=-33.44402500439274,-70.65428849999995&zoom=14"
+        }
+      ]
+    }
+  }
+}
+```
+
+And call it with `trigger`.
+
+```json
+{
+  "action": {
+    "trigger" : "open_map"
+  }
+}
+```
+
+## How to Call/SMS/Facetime a Phone Number
+
+If you want to call/sms a phone number you can use the `$href`
+with the `tel:` or `sms:` and the `app` view.
+
+```json
+{
+    "type": "$href",
+    "options": {
+        "url": "tel:18888888888",
+        "view": "app",
+        "transition": "modal"
+    }
+}
+```
+
+> Note: This feature only works on devices that can make
+> app calls. So simulators like the iOS can't test this.
+> Use a real smartphone for this functionality.
+
+- Possible Values (Some of them): `sms:, tel:, mailto:, facetime:, facetime-audio:`.
+- Apple Docs: [https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899).
+
+## How to Send Emails
+
+The principle is the same as calling a phone number. 
+Use `mailto:` address in the url to trigger the mail app.
+
+```json
+{
+    "type": "$href",
+    "options": {
+        "url": "mailto:hi@jasonelle.com",
+        "view": "app",
+        "transition": "modal"
+    }
+}
+```
+
+- RFC: [https://www.ietf.org/rfc/rfc2368.txt](https://www.ietf.org/rfc/rfc2368.txt)
+
+## How to Add Events to Calendar
+
+You can add events to the calendar by linking to an `ics` file
+and using the `$href` action with the `app` view. You can also
+use the `web` view to show the calendar details before adding it.
+
+This file can be stored (or generated) in a server or in local `file://`.
+
+```json
+{
+  "type": "$href",
+  "options": {
+      "url": "http://host/calendar.ics",
+      "view": "app",
+      "transition": "modal"
+  }
+}
+```
+
+More info about the `ics` files 
+
+- [https://tools.ietf.org/html/rfc5545](https://tools.ietf.org/html/rfc5545).
+
+- [https://en.wikipedia.org/wiki/ICalendar](https://en.wikipedia.org/wiki/ICalendar).
+
+You can create `ics` files by using software like *Apple Calendar*, *Google Calendar*
+or any application that support this filetype. 
+
+- [https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support](https://en.wikipedia.org/wiki/List_of_applications_with_iCalendar_support).
+
+
+## How to Overwrite links in a WebView
+
+If you have a `$webcontainer` agent in your app. You can listen
+to `a href` links and execute different native behaviours depending
+on the url provided.
+
+In the following example (created by user `RAPOS`) we can make
+a link url to trigger a phone call if the url contains `tel` prefix.
+Otherwise the `ahref` will follow the normal behaviour.
+
+With this method we can trigger any native functionality available.
+
+It is also configured the `background` color to be white, 
+and the `progress` bar to be transparent.
+
+```json
+{
+  "$jason": {
+    "head": {
+      "title": "Overwriting ahref behaviour",
+      "actions": {
+        "ahref_handler": [{
+          "{{#if $jason.url.indexOf('tel') !== -1 }}": {
+            "type": "$href",
+            "options": {
+              "view": "app",
+              "url": "{{$jason.url}}"
+            }
+          }
+        }, {
+          "{{#else}}": {
+            "type": "$default"
+          }
+        }]
+      }
+    },
+    "body": {
+      "background": {
+        "type": "html",
+        "text": "<html><body><h1><a href='tel:987654321'>Call ME</a></h1></body></html>",
+        "action": {
+          "trigger": "ahref_handler"
+        },
+        "style": {
+            "background": "#ffffff",
+            "progress": "rgba(0,0,0,0)"
+        }
+      }
+    }
+  }
+}
+```
+
+## How to Execute Custom Functions Inside a WebView
+
+In this example (Based on Code by `DAN`) we are defining a custom function that calls 
+the [`window.history.back()`](https://www.w3schools.com/jsref/met_his_back.asp) 
+method inside the `$webcontainer` webview. 
+Using the [`$agent.request`](https://jasonelle.com/jasonette-old-docs/agents/) API.
+
+This method will be executed when the `layer` label is clicked.
+The `$agent.response()` is needed in order to continue the normal flow of events.
+
+We are using [`Arrow Functions`](https://www.w3schools.com/js/js_function_definition.asp) to simplify the syntax.
+
+```json
+{
+    "$jason": {
+        "head": {
+            "title": "History Go Back",
+            "description": "Triggers a History Back on Button Press",
+            "actions": {
+                "navigate_back": {
+                    "type": "$agent.request",
+                    "options": {
+                        "id": "$webcontainer",
+                        "method": "(() => window.history.back(); $agent.response();)"
+                    }
+                }
+            }
+        },
+        "body": {
+            "layers": [
+                {
+                    "type": "label",
+                    "text": "<",
+                    "style": {
+                        "size": "45",
+                        "top": "100%-50",
+                        "left": "0",
+                        "align": "center",
+                        "width": "20%",
+                        "color": "#ffffff",
+                        "background":"#2C2C2C"
+                    },
+                    "action": {
+                        "trigger": "navigate_back"
+                    }
+                }
+            ],
+            "background": {
+                "type": "html",
+                "url": "https://www.google.com",
+                "action": {
+                    "type": "$default"
+                }
+            }
+        }
+    }
+}
+```

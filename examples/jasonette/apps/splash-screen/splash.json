@@ -1,0 +1,69 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Splash Screen",
+      "actions": {
+        "$load": {
+          "type": "$set",
+          "options": {
+            "counter": "0"
+          },
+          "success": {
+            "type": "$timer.start",
+            "options": {
+              "interval": "3",
+              "name": "splash",
+              "repeats": "false",
+              "action": {
+                "trigger": "tick"
+              }
+            }
+          }
+        },
+        "tick": {
+          "type": "$set",
+          "options": {
+            "counter": "{{ $get.counter + 1 }}"
+          },
+          "success": {
+            "trigger": "{{ $get.counter > 1 ? 'show_app' : 'show_splash' }}"
+          }
+        },
+        "show_splash": {
+          "type": "$render"
+        },
+        "show_app": {
+          "type": "$timer.stop",
+          "options": {
+            "name": "splash"
+          },
+          "success": {
+            "type": "$href",
+            "options": {
+              "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/splash-screen/app.json",
+              "transition": "replace"
+            }
+          }
+        }
+      }
+    },
+    "body": {
+      "style": {
+        "background": "#000000"
+      },
+      "layers": [{
+        "type": "label",
+        "text": "Splash Screen",
+        "style": {
+          "color": "#ffffff",
+          "top": "50%-80",
+          "left": "50%-100",
+          "font": "Georgia",
+          "size": "25",
+          "align": "center",
+          "width": "200"
+        }
+      }]
+    }
+  }
+}

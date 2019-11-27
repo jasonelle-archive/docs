@@ -1,0 +1,22 @@
+{
+  "name": "JasonetteTimerAction",
+  "version": "0.1.0",
+  "summary": "A short description of JasonetteTimerAction.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/JasonetteTimerAction",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Gliechtenstein": "ethan.gliechtenstein@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/JasonetteTimerAction.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JasonetteTimerAction/Classes/**/*"
+}

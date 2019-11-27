@@ -1,0 +1,59 @@
+{
+    "title": "BeerJS Santiago #47 🍺",
+    "number" : 47,
+
+    "status" : {
+        "ended" : false,
+        "registration" : {
+            "available" : true
+        }
+    },
+
+    "topic": "Próximamente.",
+    "notes": "Posted In se pone con la comida; cada asistente debe traer rica y helada cerveza para compartir entre los asistentes.",
+    "urls": {
+        "registration" : "https://guestli.st/616665",
+        "github" : "https://github.com/beerjs/santiago/issues/86"
+    },
+
+    "sponsor" : {
+        "title" : "Posted In",
+        "image" : "https://user-images.githubusercontent.com/292738/60391078-89e83c80-9ab4-11e9-9e69-57b953fea62b.png",
+        "about" : "",
+        "url"   : "https://www.postedin.com/"
+    },
+
+    "location": {
+        "title": "Posted In",
+        "latitude" : "-33.441530",
+        "longitude" : "-70.615110",
+        "address": "Av. Manuel Montt 1404, Providencia, Santiago.",
+        "notes" : ""
+    },
+
+    "date" : {
+        "day": "Miércoles 3 Julio 2019",
+        "time": "desde las 19:00 hrs.",
+        "iso" : "2019-07-03 19:00:00",
+        "timezone" : "America/Santiago",
+        "calendar": {
+            "ics": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/events/santiago/201907/calendar.ics"
+        }
+    },
+
+    "organizers" : [
+        {
+            "@" : "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/events/santiago/shared/jorge.json"
+        },
+        {
+            "title": "Alvaro",
+            "name" : "Alvaro Véliz Marín.",
+            "image" : "https://user-images.githubusercontent.com/292738/62989822-8f58d680-be17-11e9-93fc-d0b5c3611ae3.png",
+            "about" : "Product Manager en Postedin. Con una mano programo y con la otra me hago barra. Soy el DJ oficial de mis amigos.",
+            "url" : "https://github.com/alvaroveliz"
+        }
+    ],
+
+    "speakers" : [
+    ]
+}

@@ -1,0 +1,131 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Todo App",
+      "actions": {
+        "$show": {
+          "type": "$render"
+        },
+        "$pull": {
+          "type": "$href",
+          "options": {
+            "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/input.json"
+          }
+        },
+        "do": {
+          "type": "$global.set",
+          "options": {
+            "todos": "{{ var todos = $global.todos; var selected_index = 0; for(var index=0; index<todos.length; index++) { var todo = todos[index]; if(todo.key.toString() == $jason.key.toString()) todo.done = !todo.done; } return todos; }}"
+          },
+          "success": {
+            "type": "$render"
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "#FF9800",
+            "color": "#ffffff",
+            "border": "none"
+          },
+          "header": {
+            "title": "Todo App",
+            "style": {
+              "background": "#FF9800",
+              "color": "#ffffff"
+            },
+            "menu": {
+              "text": "reset",
+              "action": {
+                "type": "$global.reset",
+                "options": {
+                  "items": [
+                    "todos"
+                  ]
+                },
+                "success": {
+                  "type": "$render"
+                }
+              }
+            }
+          },
+          "sections": [
+            {
+              "items": [
+                {
+                  "{{#if 'todos' in $global}}": {
+                    "{{#each $global.todos}}": {
+                      "type": "horizontal",
+                      "style": {
+                        "spacing": "10"
+                      },
+                      "action": {
+                        "trigger": "do",
+                        "options": {
+                          "key": "{{key}}"
+                        }
+                      },
+                      "components": [
+                        {
+                          "type": "label",
+                          "style": {
+                            "color": "#ffffff",
+                            "size": "30",
+                            "padding": "10",
+                            "font": "HelveticaNeue"
+                          },
+                          "text": "{{text}}"
+                        },
+                        {
+                          "type": "image",
+                          "style": {
+                            "width": "50",
+                            "color": "#ffffff"
+                          },
+                          "url": "{{ done ? 'https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/done.png' : 'https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/pending.png'}}"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "{{#else}}": [
+                    {
+                      "type": "vertical",
+                      "style": {
+                        "align": "center"
+                      },
+                      "components": [
+                        {
+                          "type": "image",
+                          "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/todo-app/swipedown.png",
+                          "style": {
+                            "padding": "30",
+                            "width": "100",
+                            "color": "#ffffff"
+                          }
+                        },
+                        {
+                          "type": "label",
+                          "text": "Swipe down to add a todo",
+                          "style": {
+                            "color": "#ffffff",
+                            "font": "HelveticaNeue",
+                            "size": "12",
+                            "align": "center",
+                            "padding": "10"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

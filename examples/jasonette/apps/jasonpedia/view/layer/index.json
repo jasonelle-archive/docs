@@ -1,0 +1,95 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Layer",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "padding": "10",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/layer/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "header": {
+            "type": "label",
+            "text": "Tutorials",
+            "style": {
+              "background": "#f5f5f5"
+            }
+          },
+          "items": [{
+            "type": "label",
+            "class": "bold",
+            "text": "Basic Labels",
+            "href": {
+              "url": "https://jasonette.github.io/Jasonpedia/view/layer/label.json"
+            }
+          }, {
+            "type": "label",
+            "class": "bold",
+            "text": "Static layers",
+            "href": {
+              "url": "https://jasonette.github.io/Jasonpedia/view/layer/static.json"
+            }
+          }, {
+            "type": "label",
+            "class": "bold",
+            "text": "Dynamic layers",
+            "href": {
+              "url": "https://jasonette.github.io/Jasonpedia/view/layer/dynamic.json"
+            }
+          }]
+        },
+        {
+          "header": {
+            "type": "label",
+            "text": "Demos",
+            "style": {
+              "background": "#f5f5f5"
+            }
+          },
+          "items": [
+            {
+              "type": "label",
+              "class": "bold",
+              "text": "CatchAll!",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/layer/pokemon/index.json"
+              }
+            },
+            {
+              "type": "label",
+              "class": "bold",
+              "text": "Weather",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/view/layer/weather/index.json",
+                "transition": "modal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

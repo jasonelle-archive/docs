@@ -1,0 +1,24 @@
+language: python
+python:
+  - "3.6"
+
+sudo: false
+
+cache:
+  packages: yes
+  directories:
+    - $HOME/bin
+
+services:
+  - docker
+
+before_install:
+  - ./check-branch.sh
+  - docker pull rocker/verse
+
+install: true
+script:
+  - ./build-docker.sh
+
+after_success:
+  - ./deploy-github.sh

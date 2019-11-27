@@ -1,0 +1,31 @@
+# External Resources
+
+Resources that are external to this documentation.
+
+## Instant Android Apps Article
+
+An Article in Linux Magazine written by *Dmitri Popov*.
+
+- Link: [http://www.linux-magazine.com/Issues/2018/210/Jasonette](http://www.linux-magazine.com/Issues/2018/210/Jasonette).
+- Code: [https://github.com/jasonelle/jasonette-tokio-taxi](https://github.com/jasonelle/jasonette-tokio-taxi).
+
+## Bubble Forums Posts
+
+Some forums posts written by *John Mark* about using [https://bubble.is](https://bubble.is) technology
+alonside *Jasonelle*.
+
+- [Link]: [https://forum.bubble.is/t/10-min-to-convert-your-site-into-an-iphone-ios-android-app/60923](https://forum.bubble.is/t/10-min-to-convert-your-site-into-an-iphone-ios-android-app/60923).
+
+## Old Jasonette Docs
+
+The old docs from *Jasonette.com* has been restored.
+
+- Link: [http://jasonelle.com/jasonette-old-docs/](http://jasonelle.com/jasonette-old-docs/)
+
+
+## Old Jasonette Blog
+
+The old blog from *Jasonette.com* has been restored, and the 
+links updated to the new locations.
+
+- Link: [http://jasonelle.com/jasonette-old-blog/](http://jasonelle.com/jasonette-old-blog/)

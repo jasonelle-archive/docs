@@ -1,0 +1,66 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Injection Demo",
+      "agents": {
+        "hn": {
+          "url": "https://news.ycombinator.com"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$agent.inject",
+          "options": {
+            "id": "hn",
+            "items": [{
+              "url": "https://jasonette.github.io/AgentJason/inject/inject.js"
+            }]
+          },
+          "success": {
+            "type": "$agent.request",
+            "options": {
+              "id": "hn",
+              "method": "fetch",
+              "params": []
+            },
+            "success": {
+              "type": "$render"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "HN",
+            "style": {
+              "background": "#040F0B",
+              "color": "#F1BB85"
+            }
+          },
+          "background": "#040F0B",
+          "style": {
+            "border": "none"
+          },
+          "sections": [{
+            "items": {
+              "{{#each $jason.items}}": {
+                "type": "label",
+                "text": "{{text}}",
+                "style": {
+                  "font": "Courier",
+                  "color": "#F1BB85",
+                  "size": "13"
+                },
+                "href": {
+                  "url": "{{url}}",
+                  "view": "web"
+                }
+              }
+            }
+          }]
+        }
+      }
+    }
+  }
+}

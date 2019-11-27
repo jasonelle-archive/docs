@@ -1,0 +1,349 @@
+{
+    "$jason": {
+        "head": {
+            "title": "BeerJS - Chile",
+            "description": "Beerjs.cl Santiago",
+            "styles": {
+                "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/includes/styles.json"
+            },
+            "actions": {
+                "$load": {
+                    "type": "$render"
+                },
+                "$foreground": {
+                    "type": "$reload"
+                },
+                "$pull": {
+                    "type": "$reload"
+                },
+                "open_registration": {
+                    "type": "$href",
+                    "options": {
+                        "url": "{{current.urls.registration}}",
+                        "view": "web",
+                        "transition": "modal"
+                    }
+                },
+                "open_calendar": {
+                    "type": "$href",
+                    "options": {
+                        "url": "{{current.date.calendar.ics}}",
+                        "view": "app",
+                        "transition": "modal"
+                    }
+                },
+                "open_map": {
+                    "type": "$href",
+                    "options":{
+                        "view": "app",
+                        "transition": "modal",
+                        "url": [{
+                                "{{#if $env.device.os.name === 'ios'}}": "{{'https://maps.apple.com?ll=' + current.location.latitude + ',' + current.location.longitude + '&z=14&address=' + current.location.address.replace(' ', '+')}}"
+                            },
+                            {
+                                "{{#else}}": "{{'https://maps.google.com?center=' + current.location.latitude + ',' + current.location.longitude + '&zoom=14&address=' + current.location.address.replace(' ', '+')}}"
+                            }
+                        ]
+                    }
+                },
+                "open_profile": {
+                    "type": "$href",
+                    "options": {
+                        "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/screens/profile.json",
+                        "view": "jason",
+                        "transition": "modal"
+                    }
+                }
+            },
+            "data": {
+                "current": {
+                    "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/events/santiago/current.json"
+                }
+            },
+            "templates": {
+                "body": {
+                    "style": {
+                        "border": "none",
+                        "background": "https://user-images.githubusercontent.com/292738/62988697-3ab35c80-be13-11e9-8988-1dde7464156c.png"
+                    },
+                    "header": {
+                        "title": "{{current.title}}",
+                        "style": {
+                            "background": "#F8DC3D",
+                            "color": "#2E2E2C",
+                            "font": "HelveticaNeue-Bold",
+                            "size": 16
+                        },
+                        "menu": [{
+                                "{{#if current.status.registration.available}}": {
+                                    "text": "Registro",
+                                    "action": {
+                                        "trigger": "open_registration"
+                                    },
+                                    "style": {
+                                        "font": "HelveticaNeue-Bold",
+                                        "size": "14"
+                                    }
+                                }
+                            },
+                            {
+                                "{{#else}}": {
+                                    "image": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/img/pin-outline.png",
+                                    "action": {
+                                        "trigger": "open_map"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "sections": [{
+                            "type": "horizontal",
+                            "style": {
+                                "background": "rgba(44, 62, 80, 0.8)"
+                            },
+                            "header": {
+                                "type": "vertical",
+                                "style": {
+                                    "padding": 20,
+                                    "background": "#F8DC3D"
+                                },
+                                "components": [{
+                                    "type": "label",
+                                    "text": "Próximo Evento",
+                                    "class": "font-helvetica-neue-bold color-dark-1 size-16"
+                                }]
+                            },
+                            "items": [{
+                                    "type": "image",
+                                    "url": "{{current.sponsor.image}}",
+                                    "style": {
+                                        "width": 100,
+                                        "height": 100,
+                                        "padding": 9
+                                    }
+                                },
+                                {
+                                    "type": "vertical",
+                                    "style": {
+                                        "width": "50%",
+                                        "top": 10
+                                    },
+                                    "components": [{
+                                            "type": "label",
+                                            "text": "{{current.sponsor.title}}",
+                                            "class": "font-helvetica-neue-bold color-white size-16"
+                                        },
+                                        {
+                                            "type": "label",
+                                            "text": "{{current.date.day}} {{current.date.time}}",
+                                            "class": "font-helvetica-neue-bold color-white size-16"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+
+                        {
+                            "type": "horizontal",
+                            "style": {
+                                "background":"#F8DC3D",
+                                "height": 60,
+                                "width":"100%",
+                                "align":"bottom",
+                                "padding":20
+                            },
+                            "items": [
+                                {
+                                    "type": "button",
+                                    "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/img/pin.png",
+                                    "style": {
+                                        "width":40,
+                                        "height":40
+                                    },
+                                    "action":{
+                                        "trigger":"open_map"
+                                    }
+                                },
+                                {
+                                    "type":"space",
+                                    "style": {
+                                        "width":"25%"
+                                    }
+                                },
+                                {
+                                    "type": "button",
+                                    "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/img/calendar.png",
+                                    "style": {
+                                        "width":40,
+                                        "height":40
+                                    },
+                                    "action":{
+                                        "trigger":"open_calendar"
+                                    }
+                                },
+                                {
+                                    "type":"space",
+                                    "style": {
+                                        "width":"25%"
+                                    }
+                                },
+                                [
+                                    {
+                                        "{{#if current.status.registration.available}}": {
+                                            "type": "button",
+                                            "url": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/beerjs/img/edit-2.png",
+                                            "style": {
+                                                "width":40,
+                                                "height":40
+                                            },
+                                            "action":{
+                                                "trigger":"open_registration"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "{{#else}}":{}
+                                    }
+                                ]
+                            ]
+                        },
+
+                        {
+                            "type": "horizontal",
+                            "style": {
+                                "background": "rgba(44, 62, 80, 0.8)",
+                                "distribution": "equalsize",
+                                "align": "center"
+                            },
+                            "header": {
+                                "type": "vertical",
+                                "style": {
+                                    "padding": 20,
+                                    "background": "#F8DC3D"
+                                },
+                                "components": [{
+                                    "type": "label",
+                                    "text": "Organizadores",
+                                    "class": "font-helvetica-neue-bold color-dark-1 size-16"
+                                }]
+                            },
+                            "items": {
+                                "{{#each current.organizers}}": {
+                                    "type": "vertical",
+                                    "style": {
+                                        "spacing": 5,
+                                        "padding": 9,
+                                        "height": 150,
+                                        "align": "center"
+                                    },
+                                    "action": {
+                                        "type": "$global.set",
+                                        "options": {
+                                            "person": "{{this}}"
+                                        },
+                                        "success": {
+                                            "trigger":"open_profile"
+                                        }
+                                    },
+                                    "components": [{
+                                            "type": "image",
+                                            "url": "{{this.image}}",
+                                            "style": {
+                                                "width": 80,
+                                                "height": 80,
+                                                "corner_radius": 40
+                                            }
+                                        },
+                                        {
+                                            "type": "label",
+                                            "text": "{{this.title}}",
+                                            "class": "font-helvetica-neue-bold color-white size-14"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        [{
+                            "{{#if current.speakers.length <= 0}}": {
+                                "type": "space"
+                            }
+                        }, {
+                            "{{#else}}": {
+                                "type": "vertical",
+                                "style": {
+                                    "background": "rgba(44, 62, 80, 0.8)",
+                                    "distribution": "equalsize",
+                                    "align": "center"
+                                },
+                                "header": {
+                                    "type": "vertical",
+                                    "style": {
+                                        "padding": 20,
+                                        "background": "#F8DC3D"
+                                    },
+                                    "components": [{
+                                        "type": "label",
+                                        "text": "Temas",
+                                        "class": "font-helvetica-neue-bold color-dark-1 size-16"
+                                    }]
+                                },
+                                "items": {
+                                    "{{#each current.speakers}}": {
+                                        "type": "vertical",
+                                        "style": {
+                                            "background": "rgba(44, 62, 80, 0.8)"
+                                        },
+                                        "action": {
+                                            "type": "$global.set",
+                                            "options": {
+                                                "person": "{{this}}"
+                                            },
+                                            "success": {
+                                                "trigger":"open_profile"
+                                            }
+                                        },
+                                        "components": [{
+                                                "type": "label",
+                                                "text": "{{this.name}}",
+                                                "style": {
+                                                    "padding": 10
+                                                },
+                                                "class": "font-helvetica-neue-bold color-white size-14 bg-blue-1"
+                                            },
+                                            {
+                                                "type": "horizontal",
+                                                "style": {
+                                                    "spacing": 5,
+                                                    "padding": 9,
+                                                    "height": 150,
+                                                    "align": "center"
+                                                },
+                                                "components": [{
+                                                        "type": "button",
+                                                        "url": "{{this.image}}",
+                                                        "style": {
+                                                            "width": 80,
+                                                            "height": 80,
+                                                            "corner_radius": 40,
+                                                            "padding": 10
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "label",
+                                                        "text": "{{this.about}}",
+                                                        "class": "font-helvetica-neue-bold color-white size-14"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+
+                                }
+                            }
+                        }]
+                    ]
+                }
+            }
+        }
+    }
+}

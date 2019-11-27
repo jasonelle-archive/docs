@@ -1,0 +1,44 @@
+<html>
+<div id="app">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+/*************************************
+
+  With Jasonette agents,
+  you can even bring your existing
+  web app and just let it trigger
+  Jasonette core using $agent.
+  Here, we've just taken an existing
+  Vue.js sample app and added
+  $agent.response() lines, so that
+  they can talk to Jasonette when
+  they need to.
+
+  First try opening this in your
+  browser. It should work, since
+  it's just a web app.
+
+  Then, try plugging this into Jasonette
+  as an agent under $jason.head.agents.
+
+*************************************/
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue.js!'
+  },
+  mounted: function() {
+    if (window.$agent) $agent.response(this.message);
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+      if (window.$agent) $agent.response(this.message)
+    }
+  }
+})
+</script>
+</html>

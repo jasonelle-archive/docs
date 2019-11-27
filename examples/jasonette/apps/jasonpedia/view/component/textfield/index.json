@@ -1,0 +1,122 @@
+{
+  "$jason": {
+    "head": {
+      "title": "textfield example",
+      "styles": {
+        "padded": {
+          "padding": "20",
+          "font": "HelveticaNeue-Bold",
+          "size": "20"
+        }
+      }
+    },
+    "body": {
+      "style": {
+        "background": "#f5f5f5"
+      },
+      "header": {
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/component/textfield/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "header": {
+            "type": "label",
+            "text": "textfield",
+            "style": {
+              "background": "#f5f5f5"
+            }
+          },
+          "items": [
+            {
+              "type": "horizontal",
+              "style": {
+                "background": "#ffffff",
+                "align": "center"
+              },
+              "components": [
+                {
+                  "type": "textfield",
+                  "placeholder": "Enter text and press Done",
+                  "name": "blank"
+                },
+                {
+                  "type": "button",
+                  "text": "Done",
+                  "style": {
+                    "width": "60",
+                    "height": "50",
+                    "color": "#ffffff",
+                    "background": "#0000ff"
+                  },
+                  "action": {
+                    "type": "$util.banner",
+                    "options": {
+                      "title": "Selected Value",
+                      "description": "{{$get.blank}}"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "type": "horizontal",
+              "style": {
+                "background": "#ffffff",
+                "align": "center"
+              },
+              "components": [
+                {
+                  "type": "textfield",
+                  "style": {
+                    "secure": "true"
+                  },
+                  "placeholder": "Secure field",
+                  "name": "secure"
+                },
+                {
+                  "type": "button",
+                  "text": "Done",
+                  "style": {
+                    "width": "60",
+                    "color": "#ffffff",
+                    "background": "#0000ff"
+                  },
+                  "action": {
+                    "type": "$util.banner",
+                    "options": {
+                      "title": "Selected secure value",
+                      "description": "{{$get.secure}}"
+                    }
+                  }
+                }
+              ]
+            },
+                        {
+              "type": "horizontal",
+              "style": {
+                "background": "#ffffff",
+                "align": "center"
+              },
+              "components": [
+                {
+                  "type": "textfield",
+                  "style": {
+                    "border_color": "#000000"
+                  },
+                  "placeholder": "field with border",
+                  "name": "border"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

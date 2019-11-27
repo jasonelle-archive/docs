@@ -1,0 +1,330 @@
+{
+    "$jason": {
+      "head": {
+        "title": "Try Caviar",
+        "description": "Jasonifying Caviar",
+        "icon": "http://a5.mzstatic.com/us/r30/Purple49/v4/da/1c/7d/da1c7d7f-0ef9-5d3f-7815-7e278cc38c08/icon175x175.png",
+        "preview": "https://s3-us-west-2.amazonaws.com/fm.ethan.jason/caviar@2x.jpg",
+        "tags": [
+          "prototyping",
+          "mockup",
+          "horizontal",
+          "carousel"
+        ],
+        "data": {
+          "items": [
+            {
+              "name": "2nd Ave Deli",
+              "description": "Keeping Tradition Alive.",
+              "meta": "40-60 min * $$",
+              "image": "https://img.trycaviar.com/JinbfUyvNljvk__20R81PTokZN0=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/366/16551.jpg"
+            },
+            {
+              "name": "Almond - Flatiron",
+              "description": "An American Bistro with Rustic French Cuisine",
+              "meta": "40-60 min * $$",
+              "image": "https://img.trycaviar.com/TKGpex_wIVToN03bIdL_kDjy0HE=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/1489/52993-201506152326.jpg"
+            },
+            {
+              "name": "Anthi's Greek Food",
+              "description": "Greek Prepared Foods.",
+              "meta": "40-60 min * $",
+              "image": "https://img.trycaviar.com/kweTzACUDXcyAh-zDceT_oIG20I=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/2804/105384-201602062055.jpg"
+            },
+            {
+              "name": "Au Za'atar",
+              "description": "Arabian French Bistro",
+              "meta": "40-60 min * $$",
+              "image": "https://img.trycaviar.com/jLIxtfEOymtD9ZXmoBOy1qHngEc=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/1510/53752-201506151818.jpg"
+            },
+            {
+              "name": "Babu Ji",
+              "description": "Street Food and Indian Favorites.",
+              "meta": "40-60 min * $$$",
+              "image": "https://img.trycaviar.com/HFjlXqVqbbCIDT4yOvspHDsZ93w=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/1545/54714-201506082308.jpg"
+            },
+            {
+              "name": "Bangkok B.A.R. - Urbanspace Vanderbilt",
+              "description": "Best Thai Food Since Thailand",
+              "meta": "40-60 min * $",
+              "image": "https://img.trycaviar.com/3sCEMCto_XVRFZL3ZkvTLInWNvU=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/2899/126438-201604061844.jpg"
+            },
+            {
+              "name": "Baohaus",
+              "description": "Taiwanese-Style Steamed Buns.",
+              "meta": "40-60 min * $",
+              "image": "https://img.trycaviar.com/LBAjYDcH-TA8IMPbK2G9GRRA9es=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/76/19474.jpg"
+            },
+            {
+              "name": "Barn Joo",
+              "description": "Modern Korean Gastropub",
+              "meta": "40-60 min * $$",
+              "image": "https://img.trycaviar.com/dGRNXGWO8AffAsm8fJxUL1hknso=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/260/10091.jpg"
+            },
+            {
+              "name": "Bar Primi",
+              "description": "Pasta-focused Italian. A Scula Past!",
+              "meta": "40-60 min * $$$",
+              "image": "https://img.trycaviar.com/CC3tg_9gPh1AtjRpYR3EeDiH9a0=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/2545/94769-201511270014.jpg"
+            },
+            {
+              "name": "Beecher's Handmade Cheese",
+              "description": "For the Cheese Connoisseur",
+              "meta": "40-60 min * $$",
+              "image": "https://img.trycaviar.com/2toi2uiUJl70J0u802pOstcRvMU=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/86/3120.jpg"
+            },
+            {
+              "name": "Benoit",
+              "description": "There is no restaurant more bistro-like and more Parisian than Benoit.",
+              "meta": "40-60 min * $$$",
+              "image": "https://img.trycaviar.com/QsRXZNnhslVwoVF_PSRG4Mr0W0g=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/689/48281-201505160213.jpg"
+            },
+            {
+              "name": "Black Tap Craft Burgers & Beer",
+              "description": "Burgers, With Style.",
+              "meta": "40-60 min * $$",
+              "image": "https://img.trycaviar.com/FRowTWTgDPIVL0zT91XeRqGGjcU=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/1300/44893-201504071840.jpg"
+            },
+            {
+              "name": "Bleecker Street Pizza",
+              "description": "Tuscan Style Thin-Crust Pizza",
+              "meta": "40-60 min * $",
+              "image": "https://img.trycaviar.com/K7RCMiYsw--QQT1kBUTPhT7otsU=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/57/2064.jpg"
+            },
+            {
+              "name": "Blue Ribbon Bakery Kitchen",
+              "description": "Restaurant & Brick Oven Bakery",
+              "meta": "40-60 min * $$$",
+              "image": "https://img.trycaviar.com/DNezDthPeEtPCSrP8dN-hGStYK4=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/1327/46372-201504062147.jpg"
+            },
+            {
+              "name": "Blue Ribbon Fried Chickent",
+              "description": "World Famous Chickent",
+              "meta": "40-60 min * $$",
+              "image": "https://img.trycaviar.com/uni9bAVFlNb18_vCxT3hDNSAYWo=/350x233/https://s3.amazonaws.com/trycaviar.com/offers/510/20535.jpg"
+            }
+          ]
+        },
+        "styles": {
+          "bold_red": {
+            "font": "HelveticaNeue-BoldItalic",
+            "color": "#fa4b2a",
+            "width": "40%",
+            "size": "30"
+          },
+          "img": {
+            "align": "top",
+            "width": "300"
+          },
+          "text": {
+            "font": "TimesNewRomanPSMT",
+            "size": "16",
+            "color": "#000000"
+          },
+          "transparent": {
+            "opacity": "0"
+          },
+          "center": {
+            "align": "center"
+          }
+        },
+        "templates": {
+          "body": {
+            "style": {
+              "border": "none"
+            },
+            "sections": [
+              {
+                "header": {
+                  "type": "vertical",
+                  "style": {
+                    "background": "https://img.trycaviar.com/bqtIdTg6Yj5uLsH_2ubAeAkRNMM=/1680x1120/https://s3.amazonaws.com/trycaviar.com/images/home/landing3.jpg",
+                    "padding": "20",
+                    "spacing": "10",
+                    "height": "200"
+                  },
+                  "components": [
+                    {
+                      "type": "label",
+                      "text": "Caviar",
+                      "style": {
+                        "color": "#ffffff",
+                        "font": "HelveticaNeue-Bold",
+                        "size": "40",
+                        "align": "center"
+                      }
+                    },
+                    {
+                      "type": "label",
+                      "text": "Get delivery from your favorite restaurants.",
+                      "style": {
+                        "font": "HelveticaNeue-Bold",
+                        "color": "#ffffff",
+                        "size": "14",
+                        "align": "center"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "header": {
+                  "type": "label",
+                  "text": " ",
+                  "style": {
+                    "size": "6",
+                    "padding": "0",
+                    "background": "#cacaca"
+                  }
+                }
+              },
+              {
+                "type": "horizontal",
+                "header": {
+                  "type": "label",
+                  "text": "Recommended for You",
+                  "style": {
+                    "font": "AvenirNext-Bold",
+                    "padding": "10",
+                    "size": "20"
+                  }
+                },
+                "items": {
+                  "{{#each items}}": {
+                    "type": "vertical",
+                    "action": {
+                      "trigger": "alert",
+                      "options": {
+                        "title": "{{name}}",
+                        "description": "{{description}}"
+                      }
+                    },
+                    "style": {
+                      "width": "200",
+                      "height": "350",
+                      "padding": "0",
+                      "spacing": "10",
+                      "align": "top"
+                    },
+                    "components": [
+                      {
+                        "type": "image",
+                        "style": {
+                          "width": "100%",
+                          "padding": "0"
+                        },
+                        "url": "{{image}}"
+                      },
+                      {
+                        "type": "label",
+                        "style": {
+                          "padding": "10",
+                          "font": "HelveticaNeue-Bold",
+                          "align": "top",
+                          "size": "17"
+                        },
+                        "text": "{{name}}"
+                      },
+                      {
+                        "type": "label",
+                        "style": {
+                          "padding": "10",
+                          "font": "HelveticaNeue",
+                          "size": "12",
+                          "align": "top",
+                          "color": "#bababa"
+                        },
+                        "text": "{{description}}"
+                      },
+                      {
+                        "type": "label",
+                        "text": "{{meta}}",
+                        "style": {
+                          "padding": "10",
+                          "font": "HelveticaNeue",
+                          "size": "12",
+                          "align": "top",
+                          "color": "#39ab34"
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "header": {
+                  "type": "label",
+                  "text": " ",
+                  "style": {
+                    "size": "6",
+                    "padding": "0",
+                    "background": "#cacaca"
+                  }
+                },
+                "items": {
+                  "{{#each items}}": {
+                    "type": "vertical",
+                    "action": {
+                      "trigger": "banner",
+                      "options": {
+                        "title": "{{name}}",
+                        "description": "{{description}}"
+                      }
+                    },
+                    "components": [
+                      {
+                        "type": "image",
+                        "style": {
+                          "width": "100%",
+                          "padding": "0"
+                        },
+                        "url": "{{image}}"
+                      },
+                      {
+                        "type": "vertical",
+                        "style": {
+                          "padding": "10",
+                          "spacing": "5"
+                        },
+                        "components": [
+                          {
+                            "type": "label",
+                            "style": {
+                              "padding": "10",
+                              "font": "HelveticaNeue-Bold",
+                              "size": "17"
+                            },
+                            "text": "{{name}}"
+                          },
+                          {
+                            "type": "label",
+                            "style": {
+                              "padding": "10",
+                              "font": "HelveticaNeue",
+                              "size": "12",
+                              "color": "#cacaca"
+                            },
+                            "text": "{{description}}"
+                          },
+                          {
+                            "type": "label",
+                            "text": "{{meta}}",
+                            "style": {
+                              "padding": "10",
+                              "font": "HelveticaNeue",
+                              "size": "12",
+                              "color": "#39ab34"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }

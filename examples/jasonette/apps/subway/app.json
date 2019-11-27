@@ -1,0 +1,75 @@
+{
+    "$jason": {
+        "head": {
+            "title": "Basic ListView Mixin",
+            "type": "mixin",
+            "data": {
+                "collection": {
+                    "@": "$document.collection"
+                },
+                "style": {
+                    "@": "$document.style"
+                }
+            },
+            "templates": {
+                "body": {
+                    "header": {
+                        "title": {
+                            "@": "$document.title"
+                        },
+                        "style": {
+                            "background": "{{style.header.background}}",
+                            "color": "{{style.header.color}}"
+                        }
+                    },
+                    "background": "{{style.background}}",
+                    "sections": [{
+                        "items": {
+                            "{{#each collection}}": {
+                                "type": "horizontal",
+                                "style": {
+                                    "padding": "10",
+                                    "spacing": "10"
+                                },
+                                "components": [{
+                                    "type": "image",
+                                    "url": {
+                                        "@": "$document.adapter.avatar"
+                                    },
+                                    "style": {
+                                        "width": "30",
+                                        "height": "30",
+                                        "corner_radius": "15"
+                                    }
+                                }, {
+                                    "type": "vertical",
+                                    "components": [{
+                                        "type": "label",
+                                        "style": {
+                                            "font": "HelveticaNeue-Bold",
+                                            "size": "12",
+                                            "color": "{{$root.style.item.title}}"
+                                        },
+                                        "text": {
+                                            "@": "$document.adapter.title"
+                                        }
+                                    }, {
+                                        "type": "label",
+                                        "text": {
+                                            "@": "$document.adapter.description"
+                                        },
+                                        "style": {
+                                            "font": "Helvetica",
+                                            "size": "11",
+                                            "color": "{{$root.style.item.description}}"
+                                        }
+                                    }]
+                                }]
+                            }
+                        }
+                    }]
+                }
+            }
+        }
+    }
+}

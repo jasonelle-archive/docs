@@ -1,0 +1,23 @@
+{
+    "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/subway/app.json",
+    "title": "Montgomery",
+    "collection": {
+      "@": "root.station[0].etd@https://api.bart.gov/api/etd.aspx?cmd=etd&orig=MONT&key=MW9S-E7SL-26DU-VV8V&json=y"
+    },
+    "adapter": {
+      "avatar": "https://png.icons8.com/windows/100/000000/subway.png",
+      "title": "{{destination}}",
+      "description": "Arrives in: {{estimate.map(function(e) { return e.minutes }).join(', ')}} Minutes"
+    },
+    "style": {
+      "background": "#ffffff",
+      "header": {
+        "background": "#ffffff",
+        "color": "#2a2a2a"
+      },
+      "item": {
+        "title": "#bc9458",
+        "description": "#001000"
+      }
+    }
+}

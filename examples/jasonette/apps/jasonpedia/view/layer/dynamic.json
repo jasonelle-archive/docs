@@ -1,0 +1,154 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Dynamic Layers",
+      "actions": {
+        "$load": {
+          "type": "$set",
+          "options": {
+            "style": {
+              "width": "86",
+              "height": "175",
+              "bottom": "70",
+              "left": "50%-43"
+            }
+          },
+          "success": {
+            "type": "$render"
+          }
+        },
+        "resizable": {
+          "type": "$set",
+          "options": {
+            "style": "{{var new_style = $get.style; new_style['resize']='true'; return new_style;}}"
+          },
+          "success": {
+            "type": "$util.banner",
+            "options": {
+              "title": "Now resizable",
+              "description": "Try pinching Mario with two fingers"
+            },
+            "success": {
+              "type": "$render"
+            }
+          }
+        },
+        "draggable": {
+          "type": "$set",
+          "options": {
+            "style": "{{var new_style = $get.style; new_style['move']='true'; return new_style;}}"
+          },
+          "success": {
+            "type": "$util.banner",
+            "options": {
+              "title": "Now draggable",
+              "description": "Try dragging Mario around"
+            },
+            "success": {
+              "type": "$render"
+            }
+          }
+        },
+        "rotatable": {
+          "type": "$set",
+          "options": {
+            "style": "{{var new_style = $get.style; new_style['rotate']='true'; return new_style;}}"
+          },
+          "success": {
+            "type": "$util.banner",
+            "options": {
+              "title": "Now rotatable",
+              "description": "Try rotating Mario with two fingers"
+            },
+            "success": {
+              "type": "$render"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "style": {
+            "background": "https://jasonette.github.io/Jasonpedia/assets/mariobackground.jpg"
+          },
+          "header": {
+            "style": {
+              "background": "rgba(0,0,0,0)"
+            },
+            "menu": {
+              "text": "View JSON",
+              "href": {
+                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/layer/dynamic.json",
+                "view": "web"
+              }
+            }
+          },
+          "layers": [{
+            "type": "label",
+            "text": "IN THIS DEMO, MARIO IS A DYNAMIC LAYER, WHICH MEANS YOU CAN RESIZE, DRAG, ROTATE HIM.\n\nBUT FIRST, PRESS THE BUTTONS TO ACTIVATE EACH FEATURE",
+            "style": {
+              "font": "Verdana",
+              "color": "#fdfdfd",
+              "size": "15",
+              "top": "100",
+              "left": "10%",
+              "width": "80%",
+              "height": "150",
+              "align": "center"
+            }
+          }, {
+            "type": "label",
+            "text": "Draggable",
+            "action": {
+              "trigger": "draggable"
+            },
+            "style": {
+              "align": "center",
+              "bottom": "30",
+              "left": "50%-50",
+              "width": "100",
+              "padding": "10",
+              "background": "#6e2111",
+              "color": "#ffffff",
+              "corner_radius": "3"
+            }
+          }, {
+            "type": "label",
+            "text": "Resizable",
+            "action": {
+              "trigger": "resizable"
+            },
+            "style": {
+              "align": "center",
+              "bottom": "30",
+              "right": "20",
+              "padding": "10",
+              "background": "#6e2111",
+              "color": "#ffffff",
+              "corner_radius": "3"
+            }
+          }, {
+            "type": "label",
+            "text": "Rotatable",
+            "action": {
+              "trigger": "rotatable"
+            },
+            "style": {
+              "align": "center",
+              "bottom": "30",
+              "left": "20",
+              "padding": "10",
+              "background": "#6e2111",
+              "color": "#ffffff",
+              "corner_radius": "3"
+            }
+          }, {
+            "type": "image",
+            "url": "https://jasonette.github.io/Jasonpedia/assets/0.png",
+            "style": "{{$get.style}}"
+          }]
+        }
+      }
+    }
+  }
+}

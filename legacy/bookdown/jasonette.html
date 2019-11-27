@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Jasonette | Jasonelle Documentation</title>
+  <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Jasonette | Jasonelle Documentation" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://jasonelle.com" />
+  
+  <meta property="og:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  <meta name="github-repo" content="jasonelle/jasonelle" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Jasonette | Jasonelle Documentation" />
+  
+  <meta name="twitter:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  
+
+<meta name="author" content="Jasonelle Team" />
+
+
+<meta name="date" content="2019-09-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="jasonelle-team.html"/>
+<link rel="next" href="ja-js-selector-transformer.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">📝 Jasonelle Docs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#main-goals"><i class="fa fa-check"></i><b>1.1</b> Main Goals</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#cool-things-about-jasonelle"><i class="fa fa-check"></i><b>1.2</b> Cool things about Jasonelle</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#old-docs"><i class="fa fa-check"></i><b>1.3</b> Old Docs</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#examples"><i class="fa fa-check"></i><b>1.4</b> Examples</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#why-json"><i class="fa fa-check"></i><b>1.5</b> Why JSON?</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#usable-apps-in-100-years"><i class="fa fa-check"></i><b>1.6</b> Usable Apps in 100 years!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a></li>
+<li class="chapter" data-level="3" data-path="jasonelle-team.html"><a href="jasonelle-team.html"><i class="fa fa-check"></i><b>3</b> Jasonelle Team</a><ul>
+<li class="chapter" data-level="3.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#members"><i class="fa fa-check"></i><b>3.1</b> Members</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#active-members"><i class="fa fa-check"></i><b>3.1.1</b> Active Members</a></li>
+<li class="chapter" data-level="3.1.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#retired-members"><i class="fa fa-check"></i><b>3.1.2</b> Retired Members</a></li>
+<li class="chapter" data-level="3.1.3" data-path="jasonelle-team.html"><a href="jasonelle-team.html#blaze-collaborators"><i class="fa fa-check"></i><b>3.1.3</b> Blaze Collaborators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#roles"><i class="fa fa-check"></i><b>3.2</b> Roles</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#prometheus"><i class="fa fa-check"></i><b>3.2.1</b> Prometheus</a></li>
+<li class="chapter" data-level="3.2.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#fire-keeper"><i class="fa fa-check"></i><b>3.2.2</b> Fire Keeper</a></li>
+<li class="chapter" data-level="3.2.3" data-path="jasonelle-team.html"><a href="jasonelle-team.html#forgemaster"><i class="fa fa-check"></i><b>3.2.3</b> Forgemaster</a></li>
+<li class="chapter" data-level="3.2.4" data-path="jasonelle-team.html"><a href="jasonelle-team.html#blaze-collaborator"><i class="fa fa-check"></i><b>3.2.4</b> Blaze Collaborator</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="jasonelle-team.html"><a href="jasonelle-team.html#how-to-join"><i class="fa fa-check"></i><b>3.3</b> How to Join?</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#how-to-quit"><i class="fa fa-check"></i><b>3.3.1</b> How to Quit?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#are-there-any-profits"><i class="fa fa-check"></i><b>3.3.2</b> Are there any profits?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="jasonelle-team.html"><a href="jasonelle-team.html#contributions"><i class="fa fa-check"></i><b>3.4</b> Contributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#branches"><i class="fa fa-check"></i><b>3.4.1</b> Branches</a></li>
+<li class="chapter" data-level="3.4.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#releases"><i class="fa fa-check"></i><b>3.4.2</b> Releases</a></li>
+<li class="chapter" data-level="3.4.3" data-path="jasonelle-team.html"><a href="jasonelle-team.html#version-number"><i class="fa fa-check"></i><b>3.4.3</b> Version number</a></li>
+<li class="chapter" data-level="3.4.4" data-path="jasonelle-team.html"><a href="jasonelle-team.html#nicknames"><i class="fa fa-check"></i><b>3.4.4</b> Nicknames</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="jasonelle-team.html"><a href="jasonelle-team.html#support"><i class="fa fa-check"></i><b>3.5</b> Support</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#list-of-people"><i class="fa fa-check"></i><b>3.5.1</b> List of People</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="jasonette.html"><a href="jasonette.html"><i class="fa fa-check"></i><b>4</b> Jasonette</a><ul>
+<li class="chapter" data-level="4.1" data-path="jasonette.html"><a href="jasonette.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="jasonette.html"><a href="jasonette.html#json-to-native-components"><i class="fa fa-check"></i><b>4.1.1</b> JSON to Native Components</a></li>
+<li class="chapter" data-level="4.1.2" data-path="jasonette.html"><a href="jasonette.html#free-battle-tested"><i class="fa fa-check"></i><b>4.1.2</b> Free &amp; Battle Tested</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="jasonette.html"><a href="jasonette.html#extensions"><i class="fa fa-check"></i><b>4.2</b> Extensions</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="jasonette.html"><a href="jasonette.html#the-jr.json"><i class="fa fa-check"></i><b>4.2.1</b> The jr.json</a></li>
+<li class="chapter" data-level="4.2.2" data-path="jasonette.html"><a href="jasonette.html#ios"><i class="fa fa-check"></i><b>4.2.2</b> iOS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Ja.js - Selector Transformer</a><ul>
+<li class="chapter" data-level="5.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#repository"><i class="fa fa-check"></i><b>5.1</b> Repository</a></li>
+<li class="chapter" data-level="5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#playground"><i class="fa fa-check"></i><b>5.2</b> Playground</a></li>
+<li class="chapter" data-level="5.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#introduction-1"><i class="fa fa-check"></i><b>5.3</b> Introduction</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#select"><i class="fa fa-check"></i><b>5.3.1</b> Select</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform"><i class="fa fa-check"></i><b>5.3.2</b> Transform</a></li>
+<li class="chapter" data-level="5.3.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#usage"><i class="fa fa-check"></i><b>5.3.3</b> Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#select-1"><i class="fa fa-check"></i><b>5.4</b> Select</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#syntax"><i class="fa fa-check"></i><b>5.4.1</b> Syntax</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example"><i class="fa fa-check"></i><b>5.4.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform-1"><i class="fa fa-check"></i><b>5.5</b> Transform</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#syntax-1"><i class="fa fa-check"></i><b>5.5.1</b> Syntax</a></li>
+<li class="chapter" data-level="5.5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#basic"><i class="fa fa-check"></i><b>5.5.2</b> Basic</a></li>
+<li class="chapter" data-level="5.5.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#loop"><i class="fa fa-check"></i><b>5.5.3</b> Loop</a></li>
+<li class="chapter" data-level="5.5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#conditionals"><i class="fa fa-check"></i><b>5.5.4</b> Conditionals</a></li>
+<li class="chapter" data-level="5.5.5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#existencial-operator"><i class="fa fa-check"></i><b>5.5.5</b> Existencial Operator</a></li>
+<li class="chapter" data-level="5.5.6" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#concat"><i class="fa fa-check"></i><b>5.5.6</b> Concat</a></li>
+<li class="chapter" data-level="5.5.7" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#merge"><i class="fa fa-check"></i><b>5.5.7</b> Merge</a></li>
+<li class="chapter" data-level="5.5.8" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#inline-javascript"><i class="fa fa-check"></i><b>5.5.8</b> Inline JavaScript</a></li>
+<li class="chapter" data-level="5.5.9" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#root"><i class="fa fa-check"></i><b>5.5.9</b> $root</a></li>
+<li class="chapter" data-level="5.5.10" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#index"><i class="fa fa-check"></i><b>5.5.10</b> <code>$index</code></a></li>
+<li class="chapter" data-level="5.5.11" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#local-variables"><i class="fa fa-check"></i><b>5.5.11</b> Local Variables</a></li>
+<li class="chapter" data-level="5.5.12" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example-1---use-only-a-subtree-of-a-template"><i class="fa fa-check"></i><b>5.5.12</b> Example 1 - Use only a subtree of a template</a></li>
+<li class="chapter" data-level="5.5.13" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example-2---filter-data-transform-with-template"><i class="fa fa-check"></i><b>5.5.13</b> Example 2 - Filter Data + Transform with template</a></li>
+<li class="chapter" data-level="5.5.14" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example-3---nesting-templates"><i class="fa fa-check"></i><b>5.5.14</b> Example 3 - Nesting Templates</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#sample-projects"><i class="fa fa-check"></i><b>5.6</b> Sample Projects</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#declarative-json-api-template"><i class="fa fa-check"></i><b>5.6.1</b> Declarative JSON API Template</a></li>
+<li class="chapter" data-level="5.6.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#json-as-a-json-query-language"><i class="fa fa-check"></i><b>5.6.2</b> JSON as a JSON Query Language</a></li>
+<li class="chapter" data-level="5.6.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#app-as-data"><i class="fa fa-check"></i><b>5.6.3</b> App as data</a></li>
+<li class="chapter" data-level="5.6.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#routerless-server"><i class="fa fa-check"></i><b>5.6.4</b> Routerless Server</a></li>
+<li class="chapter" data-level="5.6.5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#jasonette-1"><i class="fa fa-check"></i><b>5.6.5</b> Jasonette</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a><ul>
+<li class="chapter" data-level="6.1" data-path="tools.html"><a href="tools.html#jason-app-"><i class="fa fa-check"></i><b>6.1</b> Jason App <strong>{ ·ᴥ·}</strong></a><ul>
+<li class="chapter" data-level="6.1.1" data-path="tools.html"><a href="tools.html#how-is-related-to-jasonette"><i class="fa fa-check"></i><b>6.1.1</b> How is related to Jasonette?</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tools.html"><a href="tools.html#what-is-it"><i class="fa fa-check"></i><b>6.1.2</b> What is it?</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tools.html"><a href="tools.html#when-to-use"><i class="fa fa-check"></i><b>6.1.3</b> When to use?</a></li>
+<li class="chapter" data-level="6.1.4" data-path="tools.html"><a href="tools.html#how-to-install"><i class="fa fa-check"></i><b>6.1.4</b> How to Install</a></li>
+<li class="chapter" data-level="6.1.5" data-path="tools.html"><a href="tools.html#how-to-use"><i class="fa fa-check"></i><b>6.1.5</b> How to Use</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tools.html"><a href="tools.html#code-snippets"><i class="fa fa-check"></i><b>6.2</b> Code Snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html"><i class="fa fa-check"></i><b>7</b> Jasonette Tutorials</a><ul>
+<li class="chapter" data-level="7.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#how-to-implement"><i class="fa fa-check"></i><b>7.1.1</b> How to implement</a></li>
+<li class="chapter" data-level="7.1.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#simple-and-flexible-works-on-both-ios-and-android."><i class="fa fa-check"></i><b>7.1.2</b> Simple and Flexible, works on both iOS and Android.</a></li>
+<li class="chapter" data-level="7.1.3" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#conclusion"><i class="fa fa-check"></i><b>7.1.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#why-would-you-use-html-in-a-native-app"><i class="fa fa-check"></i><b>7.2.1</b> Why would you use HTML in a native app?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#how-does-it-work"><i class="fa fa-check"></i><b>7.2.2</b> How does it work?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#implementation-interactive-web-container"><i class="fa fa-check"></i><b>7.2.3</b> Implementation: Interactive Web Container</a></li>
+<li class="chapter" data-level="7.2.4" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#example-usage"><i class="fa fa-check"></i><b>7.2.4</b> Example Usage</a></li>
+<li class="chapter" data-level="7.2.5" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#conclusion-1"><i class="fa fa-check"></i><b>7.2.5</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="how-to-guides.html"><a href="how-to-guides.html"><i class="fa fa-check"></i><b>8</b> How To Guides</a><ul>
+<li class="chapter" data-level="8.1" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-know-the-operating-system"><i class="fa fa-check"></i><b>8.1</b> How to Know the Operating System</a></li>
+<li class="chapter" data-level="8.2" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-open-native-maps-app"><i class="fa fa-check"></i><b>8.2</b> How to Open Native Maps App</a></li>
+<li class="chapter" data-level="8.3" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-callsmsfacetime-a-phone-number"><i class="fa fa-check"></i><b>8.3</b> How to Call/SMS/Facetime a Phone Number</a></li>
+<li class="chapter" data-level="8.4" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-send-emails"><i class="fa fa-check"></i><b>8.4</b> How to Send Emails</a></li>
+<li class="chapter" data-level="8.5" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-add-events-to-calendar"><i class="fa fa-check"></i><b>8.5</b> How to Add Events to Calendar</a></li>
+<li class="chapter" data-level="8.6" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-overwrite-links-in-a-webview"><i class="fa fa-check"></i><b>8.6</b> How to Overwrite links in a WebView</a></li>
+<li class="chapter" data-level="8.7" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-execute-custom-functions-inside-a-webview"><i class="fa fa-check"></i><b>8.7</b> How to Execute Custom Functions Inside a WebView</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a><ul>
+<li class="chapter" data-level="9.1" data-path="discussions.html"><a href="discussions.html#beerjs---chile---2019"><i class="fa fa-check"></i><b>9.1</b> BeerJS - Chile - 2019</a></li>
+<li class="chapter" data-level="9.2" data-path="discussions.html"><a href="discussions.html#building-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup"><i class="fa fa-check"></i><b>9.2</b> Building cross-platform mobile apps using nothing more than a JSON markup</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="discussions.html"><a href="discussions.html#basic-structure"><i class="fa fa-check"></i><b>9.2.1</b> Basic Structure</a></li>
+<li class="chapter" data-level="9.2.2" data-path="discussions.html"><a href="discussions.html#design-philosophy"><i class="fa fa-check"></i><b>9.2.2</b> Design Philosophy</a></li>
+<li class="chapter" data-level="9.2.3" data-path="discussions.html"><a href="discussions.html#sections-describing-scrolling-lists"><i class="fa fa-check"></i><b>9.2.3</b> Sections — Describing scrolling lists</a></li>
+<li class="chapter" data-level="9.2.4" data-path="discussions.html"><a href="discussions.html#items-describing-layout-within-each-scrolling-unit"><i class="fa fa-check"></i><b>9.2.4</b> Items — Describing layout within each scrolling unit</a></li>
+<li class="chapter" data-level="9.2.5" data-path="discussions.html"><a href="discussions.html#layers-aka-absolute-positioning"><i class="fa fa-check"></i><b>9.2.5</b> Layers — AKA “absolute positioning”</a></li>
+<li class="chapter" data-level="9.2.6" data-path="discussions.html"><a href="discussions.html#beyond-views"><i class="fa fa-check"></i><b>9.2.6</b> Beyond Views</a></li>
+<li class="chapter" data-level="9.2.7" data-path="discussions.html"><a href="discussions.html#what-is-possible"><i class="fa fa-check"></i><b>9.2.7</b> What is possible?</a></li>
+<li class="chapter" data-level="9.2.8" data-path="discussions.html"><a href="discussions.html#conclusion-2"><i class="fa fa-check"></i><b>9.2.8</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="discussions.html"><a href="discussions.html#native-mobile-view-as-microservice"><i class="fa fa-check"></i><b>9.3</b> Native Mobile View as Microservice</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="discussions.html"><a href="discussions.html#how-sandbox-model-works-in-jasonette"><i class="fa fa-check"></i><b>9.3.1</b> How Sandbox Model Works in Jasonette</a></li>
+<li class="chapter" data-level="9.3.2" data-path="discussions.html"><a href="discussions.html#agents-and-web-container"><i class="fa fa-check"></i><b>9.3.2</b> Agents and Web Container</a></li>
+<li class="chapter" data-level="9.3.3" data-path="discussions.html"><a href="discussions.html#local-variables-1"><i class="fa fa-check"></i><b>9.3.3</b> Local Variables</a></li>
+<li class="chapter" data-level="9.3.4" data-path="discussions.html"><a href="discussions.html#cross-view-communication-protocol"><i class="fa fa-check"></i><b>9.3.4</b> Cross-View Communication Protocol</a></li>
+<li class="chapter" data-level="9.3.5" data-path="discussions.html"><a href="discussions.html#conclusion-3"><i class="fa fa-check"></i><b>9.3.5</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="discussions.html"><a href="discussions.html#apps-for-a-lifetime"><i class="fa fa-check"></i><b>9.4</b> Apps for a Lifetime</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="discussions.html"><a href="discussions.html#a-trip-to-the-future"><i class="fa fa-check"></i><b>9.4.1</b> A trip to the future</a></li>
+<li class="chapter" data-level="9.4.2" data-path="discussions.html"><a href="discussions.html#state-of-the-art"><i class="fa fa-check"></i><b>9.4.2</b> State of the Art</a></li>
+<li class="chapter" data-level="9.4.3" data-path="discussions.html"><a href="discussions.html#space-jam"><i class="fa fa-check"></i><b>9.4.3</b> Space Jam</a></li>
+<li class="chapter" data-level="9.4.4" data-path="discussions.html"><a href="discussions.html#the-mobile-app-blackhole"><i class="fa fa-check"></i><b>9.4.4</b> The Mobile App Blackhole</a></li>
+<li class="chapter" data-level="9.4.5" data-path="discussions.html"><a href="discussions.html#why-this-mobile-blackhole-happens"><i class="fa fa-check"></i><b>9.4.5</b> Why this Mobile Blackhole Happens?</a></li>
+<li class="chapter" data-level="9.4.6" data-path="discussions.html"><a href="discussions.html#apps-that-can-last-100-years"><i class="fa fa-check"></i><b>9.4.6</b> Apps that can last 100 years</a></li>
+<li class="chapter" data-level="9.4.7" data-path="discussions.html"><a href="discussions.html#conclusion-4"><i class="fa fa-check"></i><b>9.4.7</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="external-resources.html"><a href="external-resources.html"><i class="fa fa-check"></i><b>10</b> External Resources</a><ul>
+<li class="chapter" data-level="10.1" data-path="external-resources.html"><a href="external-resources.html#instant-android-apps-article"><i class="fa fa-check"></i><b>10.1</b> Instant Android Apps Article</a></li>
+<li class="chapter" data-level="10.2" data-path="external-resources.html"><a href="external-resources.html#bubble-forums-posts"><i class="fa fa-check"></i><b>10.2</b> Bubble Forums Posts</a></li>
+<li class="chapter" data-level="10.3" data-path="external-resources.html"><a href="external-resources.html#old-jasonette-docs"><i class="fa fa-check"></i><b>10.3</b> Old Jasonette Docs</a></li>
+<li class="chapter" data-level="10.4" data-path="external-resources.html"><a href="external-resources.html#old-jasonette-blog"><i class="fa fa-check"></i><b>10.4</b> Old Jasonette Blog</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="graveyard.html"><a href="graveyard.html"><i class="fa fa-check"></i><b>11</b> Graveyard</a><ul>
+<li class="chapter" data-level="11.1" data-path="graveyard.html"><a href="graveyard.html#cell.js"><i class="fa fa-check"></i><b>11.1</b> Cell.js</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://jasonelle.com">Jasonelle.com</a></li>
+<li><a href="https://github.com/jasonelle/docs/tree/develop/examples">Examples</a></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Jasonelle Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="jasonette" class="section level1">
+<h1><span class="header-section-number">4</span> Jasonette</h1>
+<p>Quite a different way to make an app. Make iOS and Android apps
+with just a single JSON, loaded over HTTP, local file, or anywhere.</p>
+<p>It has never been trivial to have an idea and turn it into an app quickly.
+Even for genius programmers.</p>
+<p>With <em>Jasonette</em>, you don’t even have to be a programmer.
+Anyone can make an app. And do it in minutes, not days or weeks.</p>
+<p>Make an app as fast as it takes to write a blog post.</p>
+<p><img src="images/jasonette/intro/jasonette-intro.jpg" /></p>
+<iframe src="data:text/html;charset=utf-8, %0A%3Cvideo%20width=%22100%25%22%20height=%22auto%22%20controls%3E%0A%20%20%20%20%3Csource%20src=%22https://github.com/jasonelle/videos/raw/master/jasonette-intro.webm%22%20type=%22video/webm%22%3E%0A%20%20%20%20%3Cimg%20src=%22https://raw.githubusercontent.com/jasonelle/videos/master/jasonette-intro.jpg%22%3E%0A%3C/video%3E " style="border: none; seamless:seamless; width: 100%; height: 420px">
+</iframe>
+
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p><em>Jasonette</em> abstracts away all low level programming with a JSON based markup.
+All you need to write is a single JSON.</p>
+<div id="json-to-native-components" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> JSON to Native Components</h3>
+<p>Just like how web browsers turn HTML into a web page,
+<strong>Jasonette turns JSON into iOS and Android native components.</strong>
+This lets you build native apps by writing a simple JSON.</p>
+<div class="figure">
+<img src="images/jasonette/intro/code1.png" alt="Native App over JSON" />
+<p class="caption">Native App over JSON</p>
+</div>
+<div id="structure" class="section level4">
+<h4><span class="header-section-number">4.1.1.1</span> Structure</h4>
+<p>Organize your code in nested JSON objects.</p>
+<p><strong>Example:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="dt">&quot;$jason&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="dt">&quot;head&quot;</span><span class="fu">:</span> <span class="fu">{</span><span class="er">...</span><span class="fu">},</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">        <span class="dt">&quot;body&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">            <span class="dt">&quot;sections&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="fu">{</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">            <span class="dt">&quot;items&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">                <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span> <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">                <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;...&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">                <span class="er">...</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">            <span class="ot">]</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">            <span class="fu">}</span><span class="ot">]</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"><span class="fu">}</span></a></code></pre></div>
+</div>
+<div id="layout" class="section level4">
+<h4><span class="header-section-number">4.1.1.2</span> Layout</h4>
+<p>Construct complex layouts with JSON.</p>
+<p><strong>Example:</strong></p>
+<p>Build a card UI with an image, labels, and nested layouts.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;horizontal&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">        <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;image&quot;</span><span class="fu">,</span> <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;file://ethan.jpeg&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">        <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;vertical&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">        <span class="dt">&quot;components&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">            <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Ethan&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">            <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span> <span class="dt">&quot;text&quot;</span> <span class="dt">&quot;www.textethan.com&quot;</span> <span class="fu">}</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">        <span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">        <span class="fu">}</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">    <span class="ot">]</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="fu">}</span></a></code></pre></div>
+</div>
+<div id="actions" class="section level4">
+<h4><span class="header-section-number">4.1.1.3</span> Actions</h4>
+<p>Describe actions with JSON.</p>
+<p><strong>Example:</strong></p>
+<p>Make a network request and draw the result.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$network.request&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="dt">&quot;options&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">        <span class="dt">&quot;url&quot;</span><span class="fu">:</span> <span class="st">&quot;http://api.giphy.com/v1/gifs/search&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">        <span class="dt">&quot;data&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;q&quot;</span><span class="fu">:</span> <span class="st">&quot;kitten&quot;</span><span class="fu">,</span> <span class="dt">&quot;api_key&quot;</span><span class="fu">:</span> <span class="st">&quot;dc6zaTOxFJmzC&quot;</span> <span class="fu">}</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    <span class="fu">},</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    <span class="dt">&quot;success&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$render&quot;</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="fu">}</span></a></code></pre></div>
+</div>
+<div id="style" class="section level4">
+<h4><span class="header-section-number">4.1.1.4</span> Style</h4>
+<p>Style components with JSON.</p>
+<p><strong>Example:</strong></p>
+<p>Style a label.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;label&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">    <span class="dt">&quot;text&quot;</span><span class="fu">:</span> <span class="st">&quot;Hello World&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    <span class="dt">&quot;style&quot;</span><span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">        <span class="dt">&quot;padding&quot;</span><span class="fu">:</span> <span class="st">&quot;10&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">        <span class="dt">&quot;corner_radius&quot;</span><span class="fu">:</span> <span class="st">&quot;5&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">        <span class="dt">&quot;background&quot;</span><span class="fu">:</span> <span class="st">&quot;rgba(0,0,0,0.4)&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">        <span class="dt">&quot;color&quot;</span><span class="fu">:</span> <span class="st">&quot;#ffffff&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">        <span class="dt">&quot;font&quot;</span><span class="fu">:</span> <span class="st">&quot;HelveticaNeue&quot;</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="fu">}</span></a></code></pre></div>
+</div>
+<div id="native-app-over-json" class="section level4">
+<h4><span class="header-section-number">4.1.1.5</span> Native App Over JSON</h4>
+<p>Directly manipulate native APIs simply using JSON.
+For Android, this means direct access to LinearLayout, RecyclerView, etc.
+For iOS, this means direct access to UITableView, UIStackView, etc.</p>
+<p>Want to make changes to your LIVE app?
+Simply change your JSON content on the server,
+and watch the app change in front of your eyes, instantly!.</p>
+<p><img src="images/jasonette/intro/reload.gif" /></p>
+</div>
+<div id="native-components" class="section level4">
+<h4><span class="header-section-number">4.1.1.6</span> Native Components</h4>
+<p>These are some Native Components you can access using just JSON.</p>
+<table>
+<tbody>
+<tr class="odd">
+<td><img src="images/jasonette/intro/footer_input_focused.jpeg" alt="Footer Input" /></td>
+<td><img src="images/jasonette/intro/util_alert_basic.jpeg" alt="Alert" /></td>
+</tr>
+<tr class="even">
+<td><img src="images/jasonette/intro/util_banner.jpeg" alt="Banner" /></td>
+<td><img src="images/jasonette/intro/media_play.jpeg" alt="Video Playback" /></td>
+</tr>
+</tbody>
+</table>
+<p>And much more! Including:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Direct access to the device such as camera, audio, geolocation, video, network request, etc.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Powerful layout engine that directly manipulates native components such as UITableView, UIStackView, UIView, etc.</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Describe styling and event handling all with JSON</li>
+</ol></li>
+</ul>
+</div>
+<div id="cross-platform" class="section level4">
+<h4><span class="header-section-number">4.1.1.7</span> Cross Platform</h4>
+<p>100% native binary for both <em>Android</em> and <em>iOS</em>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>iOS</th>
+<th>Android</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="images/jasonette/intro/instagram-ios.gif" alt="Jasonette iOS" /></td>
+<td><img src="images/jasonette/intro/instagram-android.gif" alt="Jasonette Android" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="free-battle-tested" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Free &amp; Battle Tested</h3>
+<p><em>Jasonette</em> was extracted from several production apps on the
+App Store, so you know it works.</p>
+<p>Below are some actual production apps built with <em>Jasonette</em>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Kitty</th>
+<th>Catch All</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="images/jasonette/intro/kitty.png" alt="Kitty App" /></td>
+<td><img src="images/jasonette/intro/catchall.jpg" alt="Catchall App" /></td>
+</tr>
+</tbody>
+</table>
+<div id="free" class="section level4">
+<h4><span class="header-section-number">4.1.2.1</span> 100% FREE</h4>
+<p>Everything is free for you to use.
+There is no small print that says “pay $$$ if you want to publish your app”.
+It’s all yours.</p>
+</div>
+<div id="open-source" class="section level4">
+<h4><span class="header-section-number">4.1.2.2</span> 100% OPEN SOURCE</h4>
+<p>Jasonette is licensed under MIT license.
+Take the code, build and publish your own apps, and do whatever you want with it!</p>
+</div>
+<div id="portable" class="section level4">
+<h4><span class="header-section-number">4.1.2.3</span> 100% PORTABLE</h4>
+<p>There is no magical backend server you need to
+learn to use, pay for, or install to use Jasonette.
+ALL YOU NEED IS JSON.
+If you have a web server, you ALREADY have a Jasonette server.</p>
+</div>
+<div id="extensible" class="section level4">
+<h4><span class="header-section-number">4.1.2.4</span> 100% EXTENSIBLE</h4>
+<p>Jasonette is essentially just an engine that maps JSON expression to
+native components and actions.
+It doesn’t force you to drop everything and adopt the technology exclusively.
+You can extend it or even integrate it with your existing native code seamlessly.</p>
+
+</div>
+</div>
+</div>
+<div id="extensions" class="section level2">
+<h2><span class="header-section-number">4.2</span> Extensions</h2>
+<p><em>Jasonette</em> is easily extendable. You can add your own
+native code <code>actions</code>, <code>components</code> or <code>services</code> and call them using JSON.</p>
+<blockquote>
+<p>More Examples</p>
+</blockquote>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions</a></p>
+<div id="the-jr.json" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> The jr.json</h3>
+<p>This file contains the configuration that <em>Jasonette</em> needs
+to detect the extension.</p>
+<p>Example:</p>
+<p><a href="https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions/ios/vibration-action">https://github.com/jasonelle/docs/tree/develop/examples/jasonette/extensions/ios/vibration-action</a></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="dt">&quot;version&quot;</span><span class="fu">:</span> <span class="st">&quot;0.1.0&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;vibration&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="dt">&quot;classname&quot;</span><span class="fu">:</span> <span class="st">&quot;JasonVibrationAction&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="dt">&quot;platform&quot;</span><span class="fu">:</span> <span class="st">&quot;ios&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="dt">&quot;language&quot;</span> <span class="fu">:</span> <span class="st">&quot;objective-c&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">  <span class="dt">&quot;author&quot;</span> <span class="fu">:</span> <span class="st">&quot;Jasonelle&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">  <span class="dt">&quot;href&quot;</span> <span class="fu">:</span> <span class="st">&quot;https://jasonelle.com&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">  <span class="dt">&quot;license&quot;</span> <span class="fu">:</span> <span class="st">&quot;MIT&quot;</span><span class="fu">,</span></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">  <span class="dt">&quot;description&quot;</span><span class="fu">:</span> <span class="st">&quot;$vibration.activate makes the device vibrate.&quot;</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="fu">}</span></a></code></pre></div>
+<p>At the minimum it must have two properties:</p>
+<ul>
+<li><code>name</code>: is the one who defines how Jasonette will identify
+this component.</li>
+</ul>
+<p>In the example is <code>vibration</code>. The json object will be <code>$vibration</code>.</p>
+<ul>
+<li><code>classname</code>: tells which file will be used for this action.</li>
+</ul>
+<p>This is used in <em>Jasonette</em> to load the class. It must follow
+the pattern <code>Jason&lt;Name&gt;Action</code> for actions and <code>Jason&lt;Name&gt;Component</code>
+for components.</p>
+<p>It’s a good practice to include a <code>test.json</code> with a sample app
+that uses your action/component.</p>
+<blockquote>
+<p><code>name</code> and <code>classname</code> could be different for the same component.
+is important that they not conflict with other actions
+or components.</p>
+</blockquote>
+<p>Your jr.json file must be a JSON file which contains the following attributes:</p>
+<ol style="list-style-type: decimal">
+<li><p><code>version</code>: Follows <a href="http://semver.org/">semantic versioning</a>.
+Must upgrade everytime you make a change to your repo and
+wish to update the registry with the latest version.</p></li>
+<li><p><code>name</code>: This is the name that will be used in the JSON.
+For example if you set this <code>console</code> and your main
+class contains methods named <code>debug</code> or <code>log</code>,
+you can call <code>&quot;type&quot;: &quot;$console.debug&quot;</code> or <code>&quot;type&quot;: &quot;$console.log&quot;</code>
+actions in your JSON markup.</p></li>
+<li><p><code>description</code>: This is the description
+that will show up on the registry list when you
+open the extension manager</p></li>
+<li><p><code>classname</code>: This is the main class name
+that will be linked with the <code>name</code> attribute above.
+So if you set the classname attribute as <code>JasonConsoleAction</code>,
+Jasonette will look for <code>JasonConsoleAction</code> class every time
+it runs into the JSON markup specified by the <code>name</code> attribute above.</p></li>
+<li><p><code>platform</code>: Specify your platform.
+Currently can only be <code>&quot;ios&quot;</code> or <code>&quot;android&quot;</code></p></li>
+<li><p><code>dependencies</code>: If you’re using 3rd party libraries
+via Cocoapods or gradle, you need to add the lines
+you would normally use in a <code>Podfile</code> (for ios) or a <code>build.gradle</code>
+file (for android).</p></li>
+</ol>
+<p>For example: <code>&quot;dependencies&quot;: [ &quot;compile 'com.segment.analytics.android:analytics:4.+'&quot; ]</code>,
+or <code>&quot;dependencies&quot;: [&quot;pod 'Analytics', '~&gt; 3.0'&quot;]</code></p>
+</div>
+<div id="ios" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> iOS</h3>
+<p>The following information is related to creating extensions in iOS.</p>
+<div id="creating-extensions" class="section level4">
+<h4><span class="header-section-number">4.2.2.1</span> Creating Extensions</h4>
+<p>You can create extensions with native <em>Objective-C</em> or <em>Swift</em>.</p>
+<p>If you are using Swift for an Extension use the <code>@objc()</code> annotation.</p>
+<pre><code>@objc(MySwiftClass)
+class MySwiftClass {
+    // ...
+}</code></pre>
+<p>Extensions must be childs of the parent class <code>JasonAction</code> or <code>JasonComponent</code>.</p>
+<div id="jason" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.1</span> Jason</h5>
+<p>The <code>Jason</code> is the main singleton for executing actions and other
+operations.</p>
+<div id="call" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.1.1</span> call</h6>
+<p>Use <code>Jason.client.call</code> to trigger an action related to
+an element. The element should decide when to call this action.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb7-1" data-line-number="1">[[Jason client] call:json[<span class="st">@&quot;action&quot;</span>]];</a></code></pre></div>
+<blockquote>
+<p>You can also call using params</p>
+</blockquote>
+<div class="sourceCode" id="cb8"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb8-1" data-line-number="1">[[Jason client]</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">    call:json[<span class="st">@&quot;action&quot;</span>]</a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">    with:@{ <span class="st">@&quot;$jason&quot;</span>: payload }];</a></code></pre></div>
+<blockquote>
+<p>Or type your json directly</p>
+</blockquote>
+<div class="sourceCode" id="cb9"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb9-1" data-line-number="1">[[Jason client] call:@{</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">                  <span class="st">@&quot;type&quot;</span>: <span class="st">@&quot;$href&quot;</span>,</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">                  <span class="st">@&quot;options&quot;</span>: userInfo[<span class="st">@&quot;href&quot;</span>]</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">            }];</a></code></pre></div>
+</div>
+<div id="go" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.1.2</span> go</h6>
+<p>Use <code>Jason.client.go</code> to load a view inside a <code>file://</code> or <code>http[s]://</code>
+url.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb10-1" data-line-number="1">[[Jason client] go:userInfo[<span class="st">@&quot;href&quot;</span>]];</a></code></pre></div>
+</div>
+<div id="getvc" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.1.3</span> getVC</h6>
+<p>Obtain the current <code>JasonViewController</code> object.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb11-1" data-line-number="1">[[[Jason client] getVC];</a></code></pre></div>
+</div>
+</div>
+<div id="jasonaction" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.2</span> JasonAction</h5>
+<p>Defines actions that could be performed using the <code>action</code> property.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">    <span class="dt">&quot;action&quot;</span> <span class="fu">:</span> <span class="fu">{</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3">        <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;$myaction&quot;</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">    <span class="fu">}</span></a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="fu">}</span></a></code></pre></div>
+<blockquote>
+<p>Interface:
+The action must be child of <code>JasonAction</code> and follow the naming convention.</p>
+</blockquote>
+<div class="sourceCode" id="cb13"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span></a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">@interface</span> JasonMyCustomAction : JasonAction</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="kw">@end</span></a></code></pre></div>
+<blockquote>
+<p>Implementation:
+Each method will be available as <code>$myaction.mymethod</code>
+in this case would be <code>$myaction.get</code></p>
+</blockquote>
+<div class="sourceCode" id="cb14"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb14-1" data-line-number="1">- (<span class="dt">void</span>) get {</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2">    NSLog(<span class="st">@&quot;Hello&quot;</span>);</a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">}</a></code></pre></div>
+</div>
+<div id="methods" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.3</span> Methods</h5>
+<p>All the input and output must be using the <code>Jason</code> class
+using the <code>client</code> singleton.</p>
+<p>Example</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb15-1" data-line-number="1">[[Jason client] success:@{ <span class="st">@&quot;coord&quot;</span>: coord }];</a></code></pre></div>
+<div id="options" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.3.1</span> options</h6>
+<p>The dictionary <code>self.options</code> contains all the params provided in
+the json file.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb16-1" data-line-number="1">NSString * name = <span class="kw">self</span>.options[<span class="st">@&quot;name&quot;</span>];</a></code></pre></div>
+</div>
+<div id="success" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.3.2</span> success</h6>
+<p>Call <code>Jason.client.success</code> method to return a value. And execute
+the <code>success</code> callback in the json. The params provided would be
+available inside the <code>$jason</code> property.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb17-1" data-line-number="1">[[Jason client] success:@{}];</a></code></pre></div>
+</div>
+<div id="error" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.3.3</span> error</h6>
+<p>Call <code>Jason.client.error</code> method to execute the <code>error</code> callback in the json.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb18-1" data-line-number="1">[[Jason client] error];</a></code></pre></div>
+</div>
+</div>
+<div id="example-jasonvibrationaction" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.4</span> Example: JasonVibrationAction</h5>
+<blockquote>
+<p>JasonVibrationAction.h</p>
+</blockquote>
+<div class="sourceCode" id="cb19"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3"><span class="kw">@interface</span> JasonVibrationAction : JasonAction</a>
+<a class="sourceLine" id="cb19-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb19-5" data-line-number="5"><span class="kw">@end</span></a></code></pre></div>
+<blockquote>
+<p>JasonVibrationAction.m</p>
+</blockquote>
+<div class="sourceCode" id="cb20"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonVibrationAction.h&quot;</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"><span class="pp">#import </span><span class="im">&quot;JasonOptionHelper.h&quot;</span></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4"><span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span></a>
+<a class="sourceLine" id="cb20-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb20-6" data-line-number="6"><span class="pp">#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span></a>
+<a class="sourceLine" id="cb20-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb20-8" data-line-number="8"><span class="co">// AudioServicesPlaySystemSound (1352) works for iPhones regardless of silent switch position</span></a>
+<a class="sourceLine" id="cb20-9" data-line-number="9"><span class="dt">int</span> <span class="dt">const</span> kForceVibrationId = <span class="dv">1352</span>;</a>
+<a class="sourceLine" id="cb20-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb20-11" data-line-number="11"><span class="kw">@implementation</span> JasonVibrationAction</a>
+<a class="sourceLine" id="cb20-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb20-13" data-line-number="13"><span class="co">// use this as $vibration.activate</span></a>
+<a class="sourceLine" id="cb20-14" data-line-number="14">- (<span class="dt">void</span>) activate</a>
+<a class="sourceLine" id="cb20-15" data-line-number="15">{</a>
+<a class="sourceLine" id="cb20-16" data-line-number="16">    BOOL forceVibration = [<span class="kw">self</span>.options[<span class="st">@&quot;force&quot;</span>] boolValue];</a>
+<a class="sourceLine" id="cb20-17" data-line-number="17">    </a>
+<a class="sourceLine" id="cb20-18" data-line-number="18">    <span class="dt">int</span> vibrationId = kSystemSoundID_Vibrate;</a>
+<a class="sourceLine" id="cb20-19" data-line-number="19">    </a>
+<a class="sourceLine" id="cb20-20" data-line-number="20">    <span class="kw">if</span> (forceVibration &amp;&amp; [[UIDevice currentDevice].model</a>
+<a class="sourceLine" id="cb20-21" data-line-number="21">                            isEqualToString:<span class="st">@&quot;iPhone&quot;</span>])</a>
+<a class="sourceLine" id="cb20-22" data-line-number="22">    {</a>
+<a class="sourceLine" id="cb20-23" data-line-number="23">        vibrationId = kForceVibrationId;</a>
+<a class="sourceLine" id="cb20-24" data-line-number="24">    }</a>
+<a class="sourceLine" id="cb20-25" data-line-number="25">    </a>
+<a class="sourceLine" id="cb20-26" data-line-number="26">    <span class="kw">if</span> (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(<span class="st">@&quot;9.0&quot;</span>))</a>
+<a class="sourceLine" id="cb20-27" data-line-number="27">    {</a>
+<a class="sourceLine" id="cb20-28" data-line-number="28"></a>
+<a class="sourceLine" id="cb20-29" data-line-number="29">        AudioServicesPlayAlertSoundWithCompletion(vibrationId, nil);</a>
+<a class="sourceLine" id="cb20-30" data-line-number="30">    }</a>
+<a class="sourceLine" id="cb20-31" data-line-number="31">    <span class="kw">else</span></a>
+<a class="sourceLine" id="cb20-32" data-line-number="32">    {</a>
+<a class="sourceLine" id="cb20-33" data-line-number="33">        AudioServicesPlayAlertSound(vibrationId);</a>
+<a class="sourceLine" id="cb20-34" data-line-number="34">    }</a>
+<a class="sourceLine" id="cb20-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb20-36" data-line-number="36">    [[Jason client] success];</a>
+<a class="sourceLine" id="cb20-37" data-line-number="37">}</a>
+<a class="sourceLine" id="cb20-38" data-line-number="38"></a>
+<a class="sourceLine" id="cb20-39" data-line-number="39"><span class="kw">@end</span></a></code></pre></div>
+</div>
+<div id="jasoncomponent" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.5</span> JasonComponent</h5>
+<p>A component is an <code>UIView</code> that could be rendered by the <code>JasonComponentFactory</code>.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="fu">{</span></a>
+<a class="sourceLine" id="cb21-2" data-line-number="2">    <span class="dt">&quot;type&quot;</span> <span class="fu">:</span> <span class="st">&quot;mycomponent&quot;</span></a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"><span class="fu">}</span></a></code></pre></div>
+<blockquote>
+<p>Interface:
+The component must be child of <code>JasonComponent</code> and follow the naming convention.</p>
+</blockquote>
+<div class="sourceCode" id="cb22"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonComponent.h&quot;</span></a>
+<a class="sourceLine" id="cb22-2" data-line-number="2"><span class="kw">@interface</span> JasonMyCustomComponent : JasonComponent</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="kw">@end</span></a></code></pre></div>
+<blockquote>
+<p>Implementation:
+The component must implement the following method</p>
+</blockquote>
+<div class="sourceCode" id="cb23"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb23-1" data-line-number="1">+ (UIView *) build:(UIView *)component</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">    withJSON:(NSDictionary *)json</a>
+<a class="sourceLine" id="cb23-3" data-line-number="3">    withOptions:(NSDictionary *)options;</a></code></pre></div>
+<div id="properties" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.5.1</span> Properties</h6>
+<ul>
+<li><code>component</code>: Should be returned with all the styles and options applied.</li>
+<li><code>json</code>: Contains the properties <code>name</code>, <code>action</code> and <code>style</code>.</li>
+<li><code>options</code>: Contains the params.</li>
+</ul>
+<blockquote>
+<p>component can’t be nil</p>
+</blockquote>
+<p>Component param can’t be <code>nil</code>. always check and build the component
+if needed.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw">if</span> (!component)</a>
+<a class="sourceLine" id="cb24-2" data-line-number="2">{</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">    component = [[UIView alloc] init];</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">}</a></code></pre></div>
+</div>
+</div>
+<div id="methods-1" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.6</span> Methods</h5>
+<p>Most information is stored in the params of the implementation. Some of the following methods can become handy.</p>
+<div id="stylize" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.6.1</span> stylize</h6>
+<p>Use the <code>stylize</code> to apply common styles configuration
+to the component.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb25-1" data-line-number="1">[<span class="kw">self</span> stylize:json component:component];</a></code></pre></div>
+<blockquote>
+<p>Call this method before applying your custom styles.</p>
+</blockquote>
+</div>
+<div id="updateform" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.6.2</span> updateForm</h6>
+<p>Use the <code>updateForm</code> method to return values to the json.
+Use a <code>NSDictionary</code> with the component <code>name</code> to the set values.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb26-1" data-line-number="1">[<span class="kw">self</span> updateForm:@{ json[<span class="st">@&quot;name&quot;</span>]: newValue }];</a></code></pre></div>
+</div>
+<div id="target-actions" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.6.3</span> Target Actions</h6>
+<p>Is recommended to use the Target-Action to listen to component events.</p>
+<p><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html">https://developer.apple.com/library/archive/documentation/General/Conceptual/CocoaEncyclopedia/Target-Action/Target-Action.html</a></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="co">// Remove then add to ensure uniqueness</span></a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">[component removeTarget:<span class="kw">self</span> </a>
+<a class="sourceLine" id="cb27-3" data-line-number="3">action:<span class="kw">@selector</span>(myselector:) </a>
+<a class="sourceLine" id="cb27-4" data-line-number="4">forControlEvents:UIControlEventValueChanged];</a>
+<a class="sourceLine" id="cb27-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb27-6" data-line-number="6">[component addTarget:<span class="kw">self</span></a>
+<a class="sourceLine" id="cb27-7" data-line-number="7">action:<span class="kw">@selector</span>(myselector:) </a>
+<a class="sourceLine" id="cb27-8" data-line-number="8">forControlEvents:UIControlEventValueChanged];</a></code></pre></div>
+<p>Create custom handlers and use <code>Jason.client.call</code> to
+trigger the action associated with the component.</p>
+</div>
+</div>
+<div id="example-jasonspacecomponent" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.7</span> Example: JasonSpaceComponent</h5>
+<blockquote>
+<p>JasonSpaceComponent.h</p>
+</blockquote>
+<div class="sourceCode" id="cb28"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonComponent.h&quot;</span></a>
+<a class="sourceLine" id="cb28-2" data-line-number="2"><span class="pp">#import </span><span class="im">&quot;JasonHelper.h&quot;</span></a>
+<a class="sourceLine" id="cb28-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb28-4" data-line-number="4"><span class="kw">@interface</span> JasonSpaceComponent : JasonComponent</a>
+<a class="sourceLine" id="cb28-5" data-line-number="5"><span class="kw">@end</span></a></code></pre></div>
+<blockquote>
+<p>JasonSpaceComponent.m</p>
+</blockquote>
+<div class="sourceCode" id="cb29"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonSpaceComponent.h&quot;</span></a>
+<a class="sourceLine" id="cb29-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="kw">@implementation</span> JasonSpaceComponent</a>
+<a class="sourceLine" id="cb29-4" data-line-number="4">+ (UIView *) build:(UIView *)component </a>
+<a class="sourceLine" id="cb29-5" data-line-number="5">withJSON:(NSDictionary *)json </a>
+<a class="sourceLine" id="cb29-6" data-line-number="6">withOptions:(NSDictionary *)options {</a>
+<a class="sourceLine" id="cb29-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb29-8" data-line-number="8">    <span class="kw">if</span> (!component)</a>
+<a class="sourceLine" id="cb29-9" data-line-number="9">    {</a>
+<a class="sourceLine" id="cb29-10" data-line-number="10">        component = [[UIView alloc] init];</a>
+<a class="sourceLine" id="cb29-11" data-line-number="11">    }</a>
+<a class="sourceLine" id="cb29-12" data-line-number="12">    <span class="kw">if</span> ([options[<span class="st">@&quot;parent&quot;</span>] isEqualToString:<span class="st">@&quot;vertical&quot;</span>])</a>
+<a class="sourceLine" id="cb29-13" data-line-number="13">    {</a>
+<a class="sourceLine" id="cb29-14" data-line-number="14">        [component setContentHuggingPriority:<span class="dv">1</span> forAxis:UILayoutConstraintAxisVertical];</a>
+<a class="sourceLine" id="cb29-15" data-line-number="15">    }</a>
+<a class="sourceLine" id="cb29-16" data-line-number="16">    <span class="kw">else</span> <span class="kw">if</span> ([options[<span class="st">@&quot;parent&quot;</span>] isEqualToString:<span class="st">@&quot;horizontal&quot;</span>])</a>
+<a class="sourceLine" id="cb29-17" data-line-number="17">    {</a>
+<a class="sourceLine" id="cb29-18" data-line-number="18">        [component setContentHuggingPriority:<span class="dv">1</span> forAxis:UILayoutConstraintAxisHorizontal];</a>
+<a class="sourceLine" id="cb29-19" data-line-number="19">    }</a>
+<a class="sourceLine" id="cb29-20" data-line-number="20">    component.translatesAutoresizingMaskIntoConstraints = false;</a>
+<a class="sourceLine" id="cb29-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb29-22" data-line-number="22">    <span class="co">// Apply Common Style</span></a>
+<a class="sourceLine" id="cb29-23" data-line-number="23">    [<span class="kw">self</span> stylize:json component:component];</a>
+<a class="sourceLine" id="cb29-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb29-25" data-line-number="25">    <span class="kw">return</span> component;</a>
+<a class="sourceLine" id="cb29-26" data-line-number="26">}</a>
+<a class="sourceLine" id="cb29-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb29-28" data-line-number="28"><span class="kw">@end</span></a></code></pre></div>
+</div>
+<div id="jasonservice" class="section level5">
+<h5><span class="header-section-number">4.2.2.1.8</span> JasonService</h5>
+<p>A service is a special extension that will not be deallocated
+when the view changes. They are similar to daemons that runs
+in background processes.</p>
+<p>Some services are: <code>$agent</code>, <code>$websocket</code>, <code>$vision</code> and <code>$push</code>.</p>
+<p>They do not need to extend a base class. But they must implement
+the <code>initialize:</code> method called in the <code>AppDelegate</code>. And follow
+the naming convention <code>Jason&lt;Name&gt;Service</code>.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb30-1" data-line-number="1">- (<span class="dt">void</span>) initialize:(NSDictionary *)launchOptions;</a></code></pre></div>
+<div id="accessing-a-service" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.8.1</span> Accessing a Service</h6>
+<p>For accessing a service object use the <code>Jason.client.services</code> property.
+This could be used inside an <code>action</code> or <code>component</code> that interacts
+with the service.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb31-1" data-line-number="1">JasonPushService * service = [Jason client].services[<span class="st">@&quot;JasonPushService&quot;</span>];</a></code></pre></div>
+</div>
+<div id="example-jasonvisionservice-and-jasonvisionaction" class="section level6">
+<h6><span class="header-section-number">4.2.2.1.8.2</span> Example: JasonVisionService and JasonVisionAction</h6>
+<blockquote>
+<p>JasonVisionService.h</p>
+</blockquote>
+<div class="sourceCode" id="cb32"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="pp">#import </span><span class="im">&lt;Foundation/Foundation.h&gt;</span></a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"><span class="pp">#import </span><span class="im">&lt;AVFoundation/AVFoundation.h&gt;</span></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3"><span class="pp">#import </span><span class="im">&quot;Jason.h&quot;</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4"><span class="pp">#import </span><span class="im">&quot;JasonMemory.h&quot;</span></a>
+<a class="sourceLine" id="cb32-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"><span class="kw">@interface</span> JasonVisionService : NSObject &lt;AVCaptureMetadataOutputObjectsDelegate&gt;</a>
+<a class="sourceLine" id="cb32-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb32-8" data-line-number="8">@property (nonatomic, assign) BOOL is_open;</a>
+<a class="sourceLine" id="cb32-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb32-10" data-line-number="10"><span class="kw">@end</span></a></code></pre></div>
+<blockquote>
+<p>JasonVisionService.m</p>
+</blockquote>
+<div class="sourceCode" id="cb33"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonVisionService.h&quot;</span></a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="pp">#import </span><span class="im">&quot;JasonLogger.h&quot;</span></a>
+<a class="sourceLine" id="cb33-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb33-4" data-line-number="4"><span class="kw">@implementation</span> JasonVisionService</a>
+<a class="sourceLine" id="cb33-5" data-line-number="5">- (<span class="dt">void</span>) initialize:(NSDictionary *)launchOptions</a>
+<a class="sourceLine" id="cb33-6" data-line-number="6">{</a>
+<a class="sourceLine" id="cb33-7" data-line-number="7">    <span class="kw">self</span>.is_open = NO;</a>
+<a class="sourceLine" id="cb33-8" data-line-number="8">    DTLogDebug(<span class="st">@&quot;initialize&quot;</span>);</a>
+<a class="sourceLine" id="cb33-9" data-line-number="9">}</a>
+<a class="sourceLine" id="cb33-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb33-11" data-line-number="11">- (<span class="dt">void</span>) captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray&lt;__kindof AVMetadataObject *&gt; *)metadataObjects fromConnection:(AVCaptureConnection *)connection {</a>
+<a class="sourceLine" id="cb33-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb33-13" data-line-number="13">    <span class="kw">if</span> (!<span class="kw">self</span>.is_open)</a>
+<a class="sourceLine" id="cb33-14" data-line-number="14">    {</a>
+<a class="sourceLine" id="cb33-15" data-line-number="15">        <span class="kw">return</span>;</a>
+<a class="sourceLine" id="cb33-16" data-line-number="16">    }</a>
+<a class="sourceLine" id="cb33-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb33-18" data-line-number="18">    NSDictionary * events = [[[Jason client] getVC] valueForKey:<span class="st">@&quot;events&quot;</span>];</a>
+<a class="sourceLine" id="cb33-19" data-line-number="19">    <span class="kw">if</span> (![JasonMemory client].executing)</a>
+<a class="sourceLine" id="cb33-20" data-line-number="20">    {</a>
+<a class="sourceLine" id="cb33-21" data-line-number="21">        <span class="kw">for</span> (AVMetadataObject * metadata in metadataObjects)</a>
+<a class="sourceLine" id="cb33-22" data-line-number="22">        {</a>
+<a class="sourceLine" id="cb33-23" data-line-number="23">            AVMetadataMachineReadableCodeObject * transformed = (AVMetadataMachineReadableCodeObject *) metadata;</a>
+<a class="sourceLine" id="cb33-24" data-line-number="24">            <span class="kw">self</span>.is_open = NO;</a>
+<a class="sourceLine" id="cb33-25" data-line-number="25">            [[Jason client] call:events[<span class="st">@&quot;$vision.onscan&quot;</span>] with:@{</a>
+<a class="sourceLine" id="cb33-26" data-line-number="26">                  <span class="st">@&quot;$jason&quot;</span>: @{</a>
+<a class="sourceLine" id="cb33-27" data-line-number="27">                      <span class="st">@&quot;content&quot;</span>: transformed.stringValue,</a>
+<a class="sourceLine" id="cb33-28" data-line-number="28">                      <span class="st">@&quot;type&quot;</span>: transformed.type</a>
+<a class="sourceLine" id="cb33-29" data-line-number="29">                  }</a>
+<a class="sourceLine" id="cb33-30" data-line-number="30">            }];</a>
+<a class="sourceLine" id="cb33-31" data-line-number="31">            <span class="kw">return</span>;</a>
+<a class="sourceLine" id="cb33-32" data-line-number="32">        }</a>
+<a class="sourceLine" id="cb33-33" data-line-number="33">    }</a>
+<a class="sourceLine" id="cb33-34" data-line-number="34">}</a>
+<a class="sourceLine" id="cb33-35" data-line-number="35"></a>
+<a class="sourceLine" id="cb33-36" data-line-number="36"><span class="kw">@end</span></a></code></pre></div>
+<blockquote>
+<p>JasonVisionAction.m</p>
+</blockquote>
+<div class="sourceCode" id="cb34"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonAction.h&quot;</span></a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="pp">#import </span><span class="im">&quot;JasonVisionService.h&quot;</span></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="pp">#import </span><span class="im">&quot;Jason.h&quot;</span></a>
+<a class="sourceLine" id="cb34-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb34-5" data-line-number="5"><span class="kw">@interface</span> JasonVisionAction : JasonAction</a>
+<a class="sourceLine" id="cb34-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb34-7" data-line-number="7"><span class="kw">@end</span></a></code></pre></div>
+<blockquote>
+<p>JasonVisionAction.m</p>
+</blockquote>
+<div class="sourceCode" id="cb35"><pre class="sourceCode objectivec"><code class="sourceCode objectivec"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="pp">#import </span><span class="im">&quot;JasonVisionAction.h&quot;</span></a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="kw">@implementation</span> JasonVisionAction</a>
+<a class="sourceLine" id="cb35-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb35-5" data-line-number="5"><span class="co">// $vision.scan</span></a>
+<a class="sourceLine" id="cb35-6" data-line-number="6">- (<span class="dt">void</span>) scan {</a>
+<a class="sourceLine" id="cb35-7" data-line-number="7">    JasonVisionService * service = [Jason client].services[<span class="st">@&quot;JasonVisionService&quot;</span>];</a>
+<a class="sourceLine" id="cb35-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb35-9" data-line-number="9">    service.is_open = YES;</a>
+<a class="sourceLine" id="cb35-10" data-line-number="10">    [[Jason client] success];</a>
+<a class="sourceLine" id="cb35-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb35-12" data-line-number="12"><span class="kw">@end</span></a></code></pre></div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="jasonelle-team.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ja-js-selector-transformer.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

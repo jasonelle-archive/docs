@@ -1,0 +1,1 @@
+@include('common.style.border', ['value' => 'none'])

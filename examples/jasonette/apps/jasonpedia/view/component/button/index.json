@@ -1,0 +1,34 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Buttons",
+      "data": {
+        "items": [
+          { "type": "Rectangle button", "url": "https://jasonette.github.io/Jasonpedia/view/component/button/1.json" },
+          { "type": "Rounded button", "url": "https://jasonette.github.io/Jasonpedia/view/component/button/2.json" },
+          { "type": "Image button", "url": "https://jasonette.github.io/Jasonpedia/view/component/button/3.json" }
+        ]
+      },
+      "templates": {
+        "body": {
+          "sections": [{
+            "items": {
+              "{{#each items}}": {
+                "type": "label",
+                "style": {
+                  "padding": "10",
+                  "font": "HelveticaNeue-Bold",
+                  "size": "15"
+                },
+                "href": {
+                  "url": "{{url}}"
+                },
+                "text": "{{type}}"
+              }
+            }
+          }]
+        }
+      }
+    }
+  }
+}

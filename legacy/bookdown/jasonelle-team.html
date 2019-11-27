@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Jasonelle Team | Jasonelle Documentation</title>
+  <meta name="description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Jasonelle Team | Jasonelle Documentation" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://jasonelle.com" />
+  
+  <meta property="og:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  <meta name="github-repo" content="jasonelle/jasonelle" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Jasonelle Team | Jasonelle Documentation" />
+  
+  <meta name="twitter:description" content="Jasonelle is a family of components that enables you creating apps and tools using only JSON." />
+  
+
+<meta name="author" content="Jasonelle Team" />
+
+
+<meta name="date" content="2019-09-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="history.html"/>
+<link rel="next" href="jasonette.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">📝 Jasonelle Docs</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#main-goals"><i class="fa fa-check"></i><b>1.1</b> Main Goals</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#cool-things-about-jasonelle"><i class="fa fa-check"></i><b>1.2</b> Cool things about Jasonelle</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#old-docs"><i class="fa fa-check"></i><b>1.3</b> Old Docs</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#examples"><i class="fa fa-check"></i><b>1.4</b> Examples</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#why-json"><i class="fa fa-check"></i><b>1.5</b> Why JSON?</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#usable-apps-in-100-years"><i class="fa fa-check"></i><b>1.6</b> Usable Apps in 100 years!</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="history.html"><a href="history.html"><i class="fa fa-check"></i><b>2</b> History</a></li>
+<li class="chapter" data-level="3" data-path="jasonelle-team.html"><a href="jasonelle-team.html"><i class="fa fa-check"></i><b>3</b> Jasonelle Team</a><ul>
+<li class="chapter" data-level="3.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#members"><i class="fa fa-check"></i><b>3.1</b> Members</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#active-members"><i class="fa fa-check"></i><b>3.1.1</b> Active Members</a></li>
+<li class="chapter" data-level="3.1.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#retired-members"><i class="fa fa-check"></i><b>3.1.2</b> Retired Members</a></li>
+<li class="chapter" data-level="3.1.3" data-path="jasonelle-team.html"><a href="jasonelle-team.html#blaze-collaborators"><i class="fa fa-check"></i><b>3.1.3</b> Blaze Collaborators</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#roles"><i class="fa fa-check"></i><b>3.2</b> Roles</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#prometheus"><i class="fa fa-check"></i><b>3.2.1</b> Prometheus</a></li>
+<li class="chapter" data-level="3.2.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#fire-keeper"><i class="fa fa-check"></i><b>3.2.2</b> Fire Keeper</a></li>
+<li class="chapter" data-level="3.2.3" data-path="jasonelle-team.html"><a href="jasonelle-team.html#forgemaster"><i class="fa fa-check"></i><b>3.2.3</b> Forgemaster</a></li>
+<li class="chapter" data-level="3.2.4" data-path="jasonelle-team.html"><a href="jasonelle-team.html#blaze-collaborator"><i class="fa fa-check"></i><b>3.2.4</b> Blaze Collaborator</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="jasonelle-team.html"><a href="jasonelle-team.html#how-to-join"><i class="fa fa-check"></i><b>3.3</b> How to Join?</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#how-to-quit"><i class="fa fa-check"></i><b>3.3.1</b> How to Quit?</a></li>
+<li class="chapter" data-level="3.3.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#are-there-any-profits"><i class="fa fa-check"></i><b>3.3.2</b> Are there any profits?</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="jasonelle-team.html"><a href="jasonelle-team.html#contributions"><i class="fa fa-check"></i><b>3.4</b> Contributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#branches"><i class="fa fa-check"></i><b>3.4.1</b> Branches</a></li>
+<li class="chapter" data-level="3.4.2" data-path="jasonelle-team.html"><a href="jasonelle-team.html#releases"><i class="fa fa-check"></i><b>3.4.2</b> Releases</a></li>
+<li class="chapter" data-level="3.4.3" data-path="jasonelle-team.html"><a href="jasonelle-team.html#version-number"><i class="fa fa-check"></i><b>3.4.3</b> Version number</a></li>
+<li class="chapter" data-level="3.4.4" data-path="jasonelle-team.html"><a href="jasonelle-team.html#nicknames"><i class="fa fa-check"></i><b>3.4.4</b> Nicknames</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="jasonelle-team.html"><a href="jasonelle-team.html#support"><i class="fa fa-check"></i><b>3.5</b> Support</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="jasonelle-team.html"><a href="jasonelle-team.html#list-of-people"><i class="fa fa-check"></i><b>3.5.1</b> List of People</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="jasonette.html"><a href="jasonette.html"><i class="fa fa-check"></i><b>4</b> Jasonette</a><ul>
+<li class="chapter" data-level="4.1" data-path="jasonette.html"><a href="jasonette.html#introduction"><i class="fa fa-check"></i><b>4.1</b> Introduction</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="jasonette.html"><a href="jasonette.html#json-to-native-components"><i class="fa fa-check"></i><b>4.1.1</b> JSON to Native Components</a></li>
+<li class="chapter" data-level="4.1.2" data-path="jasonette.html"><a href="jasonette.html#free-battle-tested"><i class="fa fa-check"></i><b>4.1.2</b> Free &amp; Battle Tested</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="jasonette.html"><a href="jasonette.html#extensions"><i class="fa fa-check"></i><b>4.2</b> Extensions</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="jasonette.html"><a href="jasonette.html#the-jr.json"><i class="fa fa-check"></i><b>4.2.1</b> The jr.json</a></li>
+<li class="chapter" data-level="4.2.2" data-path="jasonette.html"><a href="jasonette.html#ios"><i class="fa fa-check"></i><b>4.2.2</b> iOS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html"><i class="fa fa-check"></i><b>5</b> Ja.js - Selector Transformer</a><ul>
+<li class="chapter" data-level="5.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#repository"><i class="fa fa-check"></i><b>5.1</b> Repository</a></li>
+<li class="chapter" data-level="5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#playground"><i class="fa fa-check"></i><b>5.2</b> Playground</a></li>
+<li class="chapter" data-level="5.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#introduction-1"><i class="fa fa-check"></i><b>5.3</b> Introduction</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#select"><i class="fa fa-check"></i><b>5.3.1</b> Select</a></li>
+<li class="chapter" data-level="5.3.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform"><i class="fa fa-check"></i><b>5.3.2</b> Transform</a></li>
+<li class="chapter" data-level="5.3.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#usage"><i class="fa fa-check"></i><b>5.3.3</b> Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#select-1"><i class="fa fa-check"></i><b>5.4</b> Select</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#syntax"><i class="fa fa-check"></i><b>5.4.1</b> Syntax</a></li>
+<li class="chapter" data-level="5.4.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example"><i class="fa fa-check"></i><b>5.4.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#transform-1"><i class="fa fa-check"></i><b>5.5</b> Transform</a><ul>
+<li class="chapter" data-level="5.5.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#syntax-1"><i class="fa fa-check"></i><b>5.5.1</b> Syntax</a></li>
+<li class="chapter" data-level="5.5.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#basic"><i class="fa fa-check"></i><b>5.5.2</b> Basic</a></li>
+<li class="chapter" data-level="5.5.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#loop"><i class="fa fa-check"></i><b>5.5.3</b> Loop</a></li>
+<li class="chapter" data-level="5.5.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#conditionals"><i class="fa fa-check"></i><b>5.5.4</b> Conditionals</a></li>
+<li class="chapter" data-level="5.5.5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#existencial-operator"><i class="fa fa-check"></i><b>5.5.5</b> Existencial Operator</a></li>
+<li class="chapter" data-level="5.5.6" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#concat"><i class="fa fa-check"></i><b>5.5.6</b> Concat</a></li>
+<li class="chapter" data-level="5.5.7" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#merge"><i class="fa fa-check"></i><b>5.5.7</b> Merge</a></li>
+<li class="chapter" data-level="5.5.8" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#inline-javascript"><i class="fa fa-check"></i><b>5.5.8</b> Inline JavaScript</a></li>
+<li class="chapter" data-level="5.5.9" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#root"><i class="fa fa-check"></i><b>5.5.9</b> $root</a></li>
+<li class="chapter" data-level="5.5.10" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#index"><i class="fa fa-check"></i><b>5.5.10</b> <code>$index</code></a></li>
+<li class="chapter" data-level="5.5.11" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#local-variables"><i class="fa fa-check"></i><b>5.5.11</b> Local Variables</a></li>
+<li class="chapter" data-level="5.5.12" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example-1---use-only-a-subtree-of-a-template"><i class="fa fa-check"></i><b>5.5.12</b> Example 1 - Use only a subtree of a template</a></li>
+<li class="chapter" data-level="5.5.13" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example-2---filter-data-transform-with-template"><i class="fa fa-check"></i><b>5.5.13</b> Example 2 - Filter Data + Transform with template</a></li>
+<li class="chapter" data-level="5.5.14" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#example-3---nesting-templates"><i class="fa fa-check"></i><b>5.5.14</b> Example 3 - Nesting Templates</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#sample-projects"><i class="fa fa-check"></i><b>5.6</b> Sample Projects</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#declarative-json-api-template"><i class="fa fa-check"></i><b>5.6.1</b> Declarative JSON API Template</a></li>
+<li class="chapter" data-level="5.6.2" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#json-as-a-json-query-language"><i class="fa fa-check"></i><b>5.6.2</b> JSON as a JSON Query Language</a></li>
+<li class="chapter" data-level="5.6.3" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#app-as-data"><i class="fa fa-check"></i><b>5.6.3</b> App as data</a></li>
+<li class="chapter" data-level="5.6.4" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#routerless-server"><i class="fa fa-check"></i><b>5.6.4</b> Routerless Server</a></li>
+<li class="chapter" data-level="5.6.5" data-path="ja-js-selector-transformer.html"><a href="ja-js-selector-transformer.html#jasonette-1"><i class="fa fa-check"></i><b>5.6.5</b> Jasonette</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tools.html"><a href="tools.html"><i class="fa fa-check"></i><b>6</b> Tools</a><ul>
+<li class="chapter" data-level="6.1" data-path="tools.html"><a href="tools.html#jason-app-"><i class="fa fa-check"></i><b>6.1</b> Jason App <strong>{ ·ᴥ·}</strong></a><ul>
+<li class="chapter" data-level="6.1.1" data-path="tools.html"><a href="tools.html#how-is-related-to-jasonette"><i class="fa fa-check"></i><b>6.1.1</b> How is related to Jasonette?</a></li>
+<li class="chapter" data-level="6.1.2" data-path="tools.html"><a href="tools.html#what-is-it"><i class="fa fa-check"></i><b>6.1.2</b> What is it?</a></li>
+<li class="chapter" data-level="6.1.3" data-path="tools.html"><a href="tools.html#when-to-use"><i class="fa fa-check"></i><b>6.1.3</b> When to use?</a></li>
+<li class="chapter" data-level="6.1.4" data-path="tools.html"><a href="tools.html#how-to-install"><i class="fa fa-check"></i><b>6.1.4</b> How to Install</a></li>
+<li class="chapter" data-level="6.1.5" data-path="tools.html"><a href="tools.html#how-to-use"><i class="fa fa-check"></i><b>6.1.5</b> How to Use</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="tools.html"><a href="tools.html#code-snippets"><i class="fa fa-check"></i><b>6.2</b> Code Snippets</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html"><i class="fa fa-check"></i><b>7</b> Jasonette Tutorials</a><ul>
+<li class="chapter" data-level="7.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#build-a-qrcodebarcode-scanning-app-with-26-lines-of-json"><i class="fa fa-check"></i><b>7.1</b> Build a QRCode/Barcode scanning app with 26 lines of JSON</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#how-to-implement"><i class="fa fa-check"></i><b>7.1.1</b> How to implement</a></li>
+<li class="chapter" data-level="7.1.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#simple-and-flexible-works-on-both-ios-and-android."><i class="fa fa-check"></i><b>7.1.2</b> Simple and Flexible, works on both iOS and Android.</a></li>
+<li class="chapter" data-level="7.1.3" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#conclusion"><i class="fa fa-check"></i><b>7.1.3</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#turn-your-website-into-a-mobile-app-with-7-lines-of-json"><i class="fa fa-check"></i><b>7.2</b> Turn Your Website into a Mobile App with 7 Lines of JSON</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#why-would-you-use-html-in-a-native-app"><i class="fa fa-check"></i><b>7.2.1</b> Why would you use HTML in a native app?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#how-does-it-work"><i class="fa fa-check"></i><b>7.2.2</b> How does it work?</a></li>
+<li class="chapter" data-level="7.2.3" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#implementation-interactive-web-container"><i class="fa fa-check"></i><b>7.2.3</b> Implementation: Interactive Web Container</a></li>
+<li class="chapter" data-level="7.2.4" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#example-usage"><i class="fa fa-check"></i><b>7.2.4</b> Example Usage</a></li>
+<li class="chapter" data-level="7.2.5" data-path="jasonette-tutorials.html"><a href="jasonette-tutorials.html#conclusion-1"><i class="fa fa-check"></i><b>7.2.5</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="how-to-guides.html"><a href="how-to-guides.html"><i class="fa fa-check"></i><b>8</b> How To Guides</a><ul>
+<li class="chapter" data-level="8.1" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-know-the-operating-system"><i class="fa fa-check"></i><b>8.1</b> How to Know the Operating System</a></li>
+<li class="chapter" data-level="8.2" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-open-native-maps-app"><i class="fa fa-check"></i><b>8.2</b> How to Open Native Maps App</a></li>
+<li class="chapter" data-level="8.3" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-callsmsfacetime-a-phone-number"><i class="fa fa-check"></i><b>8.3</b> How to Call/SMS/Facetime a Phone Number</a></li>
+<li class="chapter" data-level="8.4" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-send-emails"><i class="fa fa-check"></i><b>8.4</b> How to Send Emails</a></li>
+<li class="chapter" data-level="8.5" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-add-events-to-calendar"><i class="fa fa-check"></i><b>8.5</b> How to Add Events to Calendar</a></li>
+<li class="chapter" data-level="8.6" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-overwrite-links-in-a-webview"><i class="fa fa-check"></i><b>8.6</b> How to Overwrite links in a WebView</a></li>
+<li class="chapter" data-level="8.7" data-path="how-to-guides.html"><a href="how-to-guides.html#how-to-execute-custom-functions-inside-a-webview"><i class="fa fa-check"></i><b>8.7</b> How to Execute Custom Functions Inside a WebView</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="discussions.html"><a href="discussions.html"><i class="fa fa-check"></i><b>9</b> Discussions</a><ul>
+<li class="chapter" data-level="9.1" data-path="discussions.html"><a href="discussions.html#beerjs---chile---2019"><i class="fa fa-check"></i><b>9.1</b> BeerJS - Chile - 2019</a></li>
+<li class="chapter" data-level="9.2" data-path="discussions.html"><a href="discussions.html#building-cross-platform-mobile-apps-using-nothing-more-than-a-json-markup"><i class="fa fa-check"></i><b>9.2</b> Building cross-platform mobile apps using nothing more than a JSON markup</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="discussions.html"><a href="discussions.html#basic-structure"><i class="fa fa-check"></i><b>9.2.1</b> Basic Structure</a></li>
+<li class="chapter" data-level="9.2.2" data-path="discussions.html"><a href="discussions.html#design-philosophy"><i class="fa fa-check"></i><b>9.2.2</b> Design Philosophy</a></li>
+<li class="chapter" data-level="9.2.3" data-path="discussions.html"><a href="discussions.html#sections-describing-scrolling-lists"><i class="fa fa-check"></i><b>9.2.3</b> Sections — Describing scrolling lists</a></li>
+<li class="chapter" data-level="9.2.4" data-path="discussions.html"><a href="discussions.html#items-describing-layout-within-each-scrolling-unit"><i class="fa fa-check"></i><b>9.2.4</b> Items — Describing layout within each scrolling unit</a></li>
+<li class="chapter" data-level="9.2.5" data-path="discussions.html"><a href="discussions.html#layers-aka-absolute-positioning"><i class="fa fa-check"></i><b>9.2.5</b> Layers — AKA “absolute positioning”</a></li>
+<li class="chapter" data-level="9.2.6" data-path="discussions.html"><a href="discussions.html#beyond-views"><i class="fa fa-check"></i><b>9.2.6</b> Beyond Views</a></li>
+<li class="chapter" data-level="9.2.7" data-path="discussions.html"><a href="discussions.html#what-is-possible"><i class="fa fa-check"></i><b>9.2.7</b> What is possible?</a></li>
+<li class="chapter" data-level="9.2.8" data-path="discussions.html"><a href="discussions.html#conclusion-2"><i class="fa fa-check"></i><b>9.2.8</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="discussions.html"><a href="discussions.html#native-mobile-view-as-microservice"><i class="fa fa-check"></i><b>9.3</b> Native Mobile View as Microservice</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="discussions.html"><a href="discussions.html#how-sandbox-model-works-in-jasonette"><i class="fa fa-check"></i><b>9.3.1</b> How Sandbox Model Works in Jasonette</a></li>
+<li class="chapter" data-level="9.3.2" data-path="discussions.html"><a href="discussions.html#agents-and-web-container"><i class="fa fa-check"></i><b>9.3.2</b> Agents and Web Container</a></li>
+<li class="chapter" data-level="9.3.3" data-path="discussions.html"><a href="discussions.html#local-variables-1"><i class="fa fa-check"></i><b>9.3.3</b> Local Variables</a></li>
+<li class="chapter" data-level="9.3.4" data-path="discussions.html"><a href="discussions.html#cross-view-communication-protocol"><i class="fa fa-check"></i><b>9.3.4</b> Cross-View Communication Protocol</a></li>
+<li class="chapter" data-level="9.3.5" data-path="discussions.html"><a href="discussions.html#conclusion-3"><i class="fa fa-check"></i><b>9.3.5</b> Conclusion</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="discussions.html"><a href="discussions.html#apps-for-a-lifetime"><i class="fa fa-check"></i><b>9.4</b> Apps for a Lifetime</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="discussions.html"><a href="discussions.html#a-trip-to-the-future"><i class="fa fa-check"></i><b>9.4.1</b> A trip to the future</a></li>
+<li class="chapter" data-level="9.4.2" data-path="discussions.html"><a href="discussions.html#state-of-the-art"><i class="fa fa-check"></i><b>9.4.2</b> State of the Art</a></li>
+<li class="chapter" data-level="9.4.3" data-path="discussions.html"><a href="discussions.html#space-jam"><i class="fa fa-check"></i><b>9.4.3</b> Space Jam</a></li>
+<li class="chapter" data-level="9.4.4" data-path="discussions.html"><a href="discussions.html#the-mobile-app-blackhole"><i class="fa fa-check"></i><b>9.4.4</b> The Mobile App Blackhole</a></li>
+<li class="chapter" data-level="9.4.5" data-path="discussions.html"><a href="discussions.html#why-this-mobile-blackhole-happens"><i class="fa fa-check"></i><b>9.4.5</b> Why this Mobile Blackhole Happens?</a></li>
+<li class="chapter" data-level="9.4.6" data-path="discussions.html"><a href="discussions.html#apps-that-can-last-100-years"><i class="fa fa-check"></i><b>9.4.6</b> Apps that can last 100 years</a></li>
+<li class="chapter" data-level="9.4.7" data-path="discussions.html"><a href="discussions.html#conclusion-4"><i class="fa fa-check"></i><b>9.4.7</b> Conclusion</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="external-resources.html"><a href="external-resources.html"><i class="fa fa-check"></i><b>10</b> External Resources</a><ul>
+<li class="chapter" data-level="10.1" data-path="external-resources.html"><a href="external-resources.html#instant-android-apps-article"><i class="fa fa-check"></i><b>10.1</b> Instant Android Apps Article</a></li>
+<li class="chapter" data-level="10.2" data-path="external-resources.html"><a href="external-resources.html#bubble-forums-posts"><i class="fa fa-check"></i><b>10.2</b> Bubble Forums Posts</a></li>
+<li class="chapter" data-level="10.3" data-path="external-resources.html"><a href="external-resources.html#old-jasonette-docs"><i class="fa fa-check"></i><b>10.3</b> Old Jasonette Docs</a></li>
+<li class="chapter" data-level="10.4" data-path="external-resources.html"><a href="external-resources.html#old-jasonette-blog"><i class="fa fa-check"></i><b>10.4</b> Old Jasonette Blog</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="graveyard.html"><a href="graveyard.html"><i class="fa fa-check"></i><b>11</b> Graveyard</a><ul>
+<li class="chapter" data-level="11.1" data-path="graveyard.html"><a href="graveyard.html#cell.js"><i class="fa fa-check"></i><b>11.1</b> Cell.js</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://jasonelle.com">Jasonelle.com</a></li>
+<li><a href="https://github.com/jasonelle/docs/tree/develop/examples">Examples</a></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Jasonelle Documentation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="jasonelle-team" class="section level1">
+<h1><span class="header-section-number">3</span> Jasonelle Team</h1>
+<p>Jasonelle Team consist of different people that shares the following vision:</p>
+<blockquote>
+<p>Forge a technology that lowers the barriers for mobile app creation.
+And those apps could still be used in 100 years or more.</p>
+</blockquote>
+<div id="members" class="section level2">
+<h2><span class="header-section-number">3.1</span> Members</h2>
+<div id="active-members" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Active Members</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Photo</th>
+<th>Role</th>
+<th>Years</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/clsource">CLSource</a></td>
+<td><img src="https://avatars1.githubusercontent.com/u/292738?s=100&amp;v=4" /></td>
+<td><code>Fire Keeper</code></td>
+<td>2018 - present</td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/panterozo">Pantorozo</a></td>
+<td><img src="https://avatars0.githubusercontent.com/u/13855618?s=100&amp;v=4" /></td>
+<td><code>Forgemaster</code> (Android)</td>
+<td>2019 - present</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="retired-members" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Retired Members</h3>
+<p>Jasonelle Team is grateful for the contribution of the following people:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Photo</th>
+<th>Role</th>
+<th>Years</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/gliechtenstein">Ethan</a></td>
+<td><img src="https://avatars2.githubusercontent.com/u/16613330?s=100&amp;v=4" /></td>
+<td><strong>Prometheus</strong></td>
+<td>2016 - 2018</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="blaze-collaborators" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Blaze Collaborators</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Photo</th>
+<th>Role</th>
+<th>Years</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/christianswanepoel">Christian Swanepoel</a></td>
+<td><img src="https://avatars1.githubusercontent.com/u/7249713?s=100&amp;v=4" /> </td>
+<td><code>Blaze</code> (iOS, Android, Testing)</td>
+<td>2019 - present</td>
+</tr>
+<tr class="even">
+<td><a href="https://www.stackk.xyz/">Al Sanchez</a></td>
+<td><img src="https://user-images.githubusercontent.com/292738/62412952-431bc400-b5d7-11e9-80d3-88de9cb67078.jpg" /></td>
+<td><code>Blaze</code> (Desing, Testing)</td>
+<td>2019 - present</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="roles" class="section level2">
+<h2><span class="header-section-number">3.2</span> Roles</h2>
+<p>The following roles can be asignated to one or more people.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://en.wikipedia.org/wiki/Prometheus">Prometheus</a></td>
+<td>Only can be assigned to <code>Ethan</code>.</td>
+</tr>
+<tr class="even">
+<td><code>Fire Keeper</code></td>
+<td>Part of core team. Main admin. Coordinates All Teams and Jasonelle related tasks. Only can be assigned to one person.</td>
+</tr>
+<tr class="odd">
+<td><code>Forgemaster</code></td>
+<td>Part of core team. Focused mainly in one area. Android, iOS, Docs, Community, etc.</td>
+</tr>
+<tr class="even">
+<td><code>Blaze Collaborator</code></td>
+<td>Sporadical helper. Not part of core team. But can made significant contributions and helping in general. May have to coordinate with a <code>Forgemaster</code>.</td>
+</tr>
+</tbody>
+</table>
+<div id="prometheus" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Prometheus</h3>
+<p>This role belongs to <code>Ethan</code>. As per wikipedia.</p>
+<blockquote>
+<p>In Greek mythology, Prometheus (pronounced [promɛːtʰéu̯s], possibly meaning “forethought”)
+is a Titan, culture hero, and trickster figure who is credited
+with the creation of man from clay, and who defies the gods by
+stealing fire and giving it to humanity, an act that enabled progress and civilisation.
+Prometheus is known for his intelligence and as a champion of humankind
+and also seen as the author of the human arts and sciences generally.</p>
+</blockquote>
+<p>Same as <em>Prometheus</em>, <code>Ethan</code> gave us the first fire.</p>
+</div>
+<div id="fire-keeper" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Fire Keeper</h3>
+<p>This is a special role. Contains the following responsabilities:</p>
+<ul>
+<li>Pay for the servers and domains and keep them alive.</li>
+<li>Coordinate with <code>Forgemasters</code>, <code>Blazes</code> and community members.</li>
+<li>Define roadmaps and general evolution of the project.</li>
+<li>Desition making.</li>
+<li>Promote Jasonelle.</li>
+<li>Communicate Kindly.</li>
+</ul>
+<p>This role is similar to the <a href="https://en.wikipedia.org/wiki/Benevolent_dictator_for_life">https://en.wikipedia.org/wiki/Benevolent_dictator_for_life</a>
+but with the consideration that the <code>Fire Keeper</code> could change overtime.
+It’s not a “for life” designation or by any means a “dictator”. But surely is “benevolent”.</p>
+<p>Normally is expected that a <code>Fire Keeper</code> stays active for at least <code>2 years</code>. The <code>Fire Keeper</code>
+role can only be passed on to a <code>Forgemaster</code> if the current <code>Fire Keeper</code> decides to move on.</p>
+<p>The <code>Fire Keeper</code> role can be renewed, revoked or renounced.</p>
+<div id="deadman-clause" class="section level4">
+<h4><span class="header-section-number">3.2.2.1</span> Deadman Clause</h4>
+<p>The <code>Fire Keeper</code> must pass the access keys, admin accounts and other related secrets to at least one
+trusted <code>Forgemaster</code> of its choosing. In case the <code>Fire Keeper</code> sundenly dissapears
+or is not active in at least <em>6 months</em>.</p>
+<p>The chosen <code>Forgemaster</code> will be considered the new <code>Fire Keeper</code> and have to continue the project
+and decide it’s future.</p>
+<p>This is to mitigate the risk of repeating <code>Ethan</code> suddenly dissapearing.
+See <a href="https://jasonelle.com/docs/history.html">History</a>.</p>
+</div>
+</div>
+<div id="forgemaster" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Forgemaster</h3>
+<p>This role is for people interested in programming, documentation or general support tasks.
+Contains the following responsabilities:</p>
+<ul>
+<li>Constantly improve and update code and docs.</li>
+<li>Participate resolving questions in the community.</li>
+<li>Take desitions regarding the area of choice.</li>
+<li>Coordinates with <code>Fire Keeper</code> and other members.</li>
+<li>Promote Jasonelle.</li>
+<li>Communicate Kindly.</li>
+</ul>
+<p>Only one <code>Forgemaster</code> per area can be at the same time. Exceptions could be made
+if appropiate.</p>
+<p>Normally is expected that a <code>Forgemaster</code> stays active for at least <code>6 months</code>.</p>
+<p>The <code>Forgemaster</code> role can be renewed, revoked or renounced.</p>
+</div>
+<div id="blaze-collaborator" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> Blaze Collaborator</h3>
+<p>A blaze collaborator is a trusted member of the community.
+Normally someone who can help the core team in small tasks and sporadically
+test code, detect bugs, answer questions or coordinates various tasks with a <code>Forgemaster</code>.</p>
+<p>A <code>Blaze</code> is not required to participate actively. But if more than <code>6 months</code>
+pass without any significant activity. It would be considered <code>retired</code>.
+(This status can be changed to <code>active</code> if requested later).</p>
+<p>The <code>Blaze</code> role can be renewed, revoked or renounced.</p>
+</div>
+</div>
+<div id="how-to-join" class="section level2">
+<h2><span class="header-section-number">3.3</span> How to Join?</h2>
+<p>Being part of the core team of <em>Jasonelle</em> requires following some simple rules:</p>
+<ul>
+<li><p><strong>Weekly Activity</strong>: At least some weekly activity related to your role is expected.
+It’s not required to have 40 hours weeks.
+But at least dedicate a few hours a week to the project in order to have
+meaningful contributions. Find the right balance.</p></li>
+<li><p><strong>Be Kind</strong>: Interactions between core members and the community must be as kind as possible.
+Following the GNU Kind Communication Guidelines. <a href="https://www.gnu.org/philosophy/kind-communication.html">https://www.gnu.org/philosophy/kind-communication.html</a>.</p></li>
+<li><p><strong>6 months minimum</strong>: The least amount of time you must invest is 6 months. If you
+want to help but don’t want to go full you can be a <code>Blaze</code> collaborator.</p></li>
+<li><p><strong>Promote Jasonelle</strong>: Friendly talk about <em>Jasonelle Technology</em>
+with people that may have interest in making mobile apps. Maybe in meetups
+or small talks. Spamming would not be tolerated.</p></li>
+<li><p><strong>Expertise in one or more areas</strong>: iOS, Android, JS, Docs, Etc..</p></li>
+</ul>
+<p>If you think this is something you want to do, please contact the current <code>Fire Keeper</code>
+with your ideas and why you should be a <code>Forgemaster</code> or <code>Blaze</code>.</p>
+<div id="how-to-quit" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> How to Quit?</h3>
+<p>You can always quit (or be left out) the team. Please contact the <code>Fire Keeper</code> with your request.</p>
+<p>The <code>Fire Keeper</code> have the rights to fire someone if they:</p>
+<ul>
+<li><p>Present continuos non kindly behaviour against the project, team or community members.</p></li>
+<li><p>Participate (directly or indirectly) in unethical or questionable
+activities that could affect <em>Jasonelle</em> reputation or the community safety.</p></li>
+<li><p>Members of the community or team feels that the role is not being correctly fulfilled.</p></li>
+<li><p>Other considerations.</p></li>
+</ul>
+</div>
+<div id="are-there-any-profits" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Are there any profits?</h3>
+<p>This is a <strong>community project</strong> that does not have direct sources of income to the maintainers.</p>
+<p>All team members are encouraged to generate revenue by alternative means:
+Professional Services, Premium Apps, Courses or similar artifacts.</p>
+<p><em>Jasonelle</em> project will provide exposure and direct traffic to such activities
+in order to sustain development. Example: List of Official Apps, Certified Services or Courses.</p>
+</div>
+</div>
+<div id="contributions" class="section level2">
+<h2><span class="header-section-number">3.4</span> Contributions</h2>
+<p>Please create an issue in <a href="https://github.com/jasonelle/jasonelle">Jasonelle/Jasonelle</a>
+before making a pull request in order to talk about how to approach a solution.</p>
+<p>Also please be aware of the contribution guidelines and agreements of each repository.</p>
+<div id="branches" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> Branches</h3>
+<p>Normally each repo contains the following branches. Exceptions may occur if needed.</p>
+<div id="master" class="section level4">
+<h4><span class="header-section-number">3.4.1.1</span> <code>master</code></h4>
+<p>Stores code that can be used. Is updated once in a while with the
+code in <code>develop</code>.</p>
+</div>
+<div id="develop" class="section level4">
+<h4><span class="header-section-number">3.4.1.2</span> <code>develop</code></h4>
+<p>This branch contains <strong>bleeding edge</strong> code. May break the build.
+Is merged to master when enough changes (not more than two weeks of work)
+are made and compiles successfully.</p>
+<ul>
+<li><p>Only code in the <code>develop</code> branch can be merged into master.</p></li>
+<li><p>All commits must be merged. No rebasing or squashing.</p></li>
+<li><p>Other branches must be deleted or archived when it’s purpose is met.</p></li>
+<li><p><code>uncrustify</code> (or other code style standarization) should be applied before merging into <code>master</code>.</p></li>
+</ul>
+</div>
+</div>
+<div id="releases" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Releases</h3>
+<p><em>Jasonelle</em> will release a new version every six months (June 9 and November 6)
+in the repository <a href="https://github.com/jasonelle/jasonelle">Jasonelle/Jasonelle</a>.</p>
+<ul>
+<li>A release will contain the master branch of each relevant repository (Android, iOS, Docs, etc).
+The code in master must be tagged with the release version.</li>
+</ul>
+</div>
+<div id="version-number" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> Version number</h3>
+<p>The version number would be discussed with all the team members before hand.
+Follows <em>Romantic Versioning</em>. Must be greater than the current version.</p>
+</div>
+<div id="nicknames" class="section level3">
+<h3><span class="header-section-number">3.4.4</span> Nicknames</h3>
+<p>A nickname can be assigned to a new version. This nickname must be from a <em>Greek Mythology</em> background.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_Greek_mythological_figures">https://en.wikipedia.org/wiki/List_of_Greek_mythological_figures</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_Greek_mythological_creatures">https://en.wikipedia.org/wiki/List_of_Greek_mythological_creatures</a>.</li>
+</ul>
+<p>The nickname can be chosed by either the core team or from community feedback.</p>
+<div id="june-9" class="section level4">
+<h4><span class="header-section-number">3.4.4.1</span> June 9</h4>
+<p>This date marks the <em>last</em> known activity of <code>Ethan</code>. A new release should be
+made on this week.</p>
+</div>
+<div id="november-6" class="section level4">
+<h4><span class="header-section-number">3.4.4.2</span> November 6</h4>
+<p>This date marks the day <em>Jasonelle</em> Team took the <em>Fire</em> and started this project.
+A new release should be made on this week.</p>
+
+</div>
+</div>
+</div>
+<div id="support" class="section level2">
+<h2><span class="header-section-number">3.5</span> Support</h2>
+<p><em>Jasonelle</em> is made by the collective efforts of different
+people. Is not funded or sponsored by any company, organization
+or investor of any kind.</p>
+<p>If you want to give support to keep development going
+you can contact members on this list individually.</p>
+<div id="list-of-people" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> List of People</h3>
+<div id="ignacio-alvarez" class="section level4">
+<h4><span class="header-section-number">3.5.1.1</span> <a href="https://github.com/panterozo">Ignacio Álvarez</a></h4>
+<p><img src="https://avatars0.githubusercontent.com/u/13855618?s=100&amp;v=4" /></p>
+<ul>
+<li>Role <code>Forgemaster</code>: Android maintainer.</li>
+<li>Website: <a href="https://chauchatraderpro.cl">https://chauchatraderpro.cl</a>.</li>
+<li>Services: Jasonelle Support, Android Consulting.</li>
+</ul>
+<blockquote>
+<p>Following the same spirit and to help me continue
+with the project. I leave you my different wallets,
+in case you want to make a voluntary contribution.
+Any contribution is welcome, does not matter the amount.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Crypto</th>
+<th>Wallet</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://www.chaucha.cl">Chaucha</a></td>
+<td>ceoNBCv1JF6GgeAhsFLk6efbRkCX5n8kZn</td>
+</tr>
+<tr class="even">
+<td>Bitcoin</td>
+<td>1CWpA2XnFnfTnbAJN94MpQWyunJgoKYz8K</td>
+</tr>
+<tr class="odd">
+<td>Ethereum</td>
+<td>0x9f2688B1a76CC24dA8610E90767c319fb2EA2Af0</td>
+</tr>
+<tr class="even">
+<td>Litecoin</td>
+<td>LVBocBQpqD7FrXiUNrAtrkQtw1JdG6CBQt</td>
+</tr>
+<tr class="odd">
+<td>Bitcoin Cash</td>
+<td>14X2cEXpT6BLhFtFhYizCdUgoKtAXede4Z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="christian-swanepoel" class="section level4">
+<h4><span class="header-section-number">3.5.1.2</span> <a href="https://github.com/christianswanepoel">Christian Swanepoel</a></h4>
+<p><img src="https://avatars1.githubusercontent.com/u/7249713?s=100&amp;v=4" /></p>
+<ul>
+<li>Role <code>Blaze</code>: Android, iOS tester.</li>
+<li>Website: <a href="https://ventum.co.za/">https://ventum.co.za/</a>.</li>
+<li>Services: Jasonelle Support, Mobile App Consulting.</li>
+</ul>
+<blockquote>
+<p>I have a concrete background and foundation in the creative industry,
+not only as a designer, but also as a programmer.
+I am happiest (and most productive) spending time in my own matrix:
+troubleshooting, coding, writing automation scripts and
+I have done so on servers all over the globe.</p>
+</blockquote>
+<blockquote>
+<p>I am currently the head of Ventum SA and believe, if I can’t find
+the right software solutions for you, we will write it.</p>
+</blockquote>
+<blockquote>
+<p>My journey with Jasonelle started in 2018 stemming from a
+client brief requiring an in-house corporate application,
+providing information to their distributed sales team of over 200.
+As a result, I couldn’t be happier to have them on Jasonelle,
+now with an app in both the Android and iOS App stores.
+As a backend developer, Jasonelle ticked all the boxes,
+allowing me to continue to develop rad tech, knowing that
+Jasonelle’s architecture and close-knit community spirit will make
+lightweight of any UX requirement.</p>
+</blockquote>
+</div>
+<div id="al-sanchez" class="section level4">
+<h4><span class="header-section-number">3.5.1.3</span> <a href="https://www.stackk.xyz/">Al Sanchez</a></h4>
+<p><img src="https://user-images.githubusercontent.com/292738/62412952-431bc400-b5d7-11e9-80d3-88de9cb67078.jpg" /></p>
+<ul>
+<li>Role <code>Blaze</code>: Android, iOS, Designer and tester.</li>
+<li>Website: <a href="https://www.stackk.xyz/">https://www.stackk.xyz/</a>.</li>
+<li>Services: Jasonelle Support, Web and Mobile App Consulting.</li>
+</ul>
+<blockquote>
+<p>We develop custom web and mobile apps for startups, non-profit organizations and established companies.
+We can help you using Jasonelle technology to create your next project!.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="history.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="jasonette.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": {},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

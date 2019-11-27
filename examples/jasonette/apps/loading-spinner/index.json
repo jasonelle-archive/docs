@@ -1,0 +1,116 @@
+{
+  "$jason": {
+      "head": {
+          "title": "Loading Indicator",
+          "actions": {
+              "$load": {
+                  "type": "$set",
+                  "options": {
+                      "loader": "no"
+                  },
+                  "success": {
+                      "type": "$render"
+                  }
+              },
+              "btn_click": {
+                  "type": "$set",
+                  "options": {
+                      "loader": "yes"
+                  },
+                  "success": {
+                      "type": "$render",
+                      "success": {
+                          "trigger": "do_timer"
+                      }
+                  }
+              },
+              "do_timer": {
+                  "type": "$timer.start",
+                  "options": {
+                      "interval": "5",
+                      "name": "wait_for",
+                      "repeats": "false",
+                      "action": {
+                          "trigger": "stop_loader"
+                      }
+                  }
+              },
+              "stop_loader": {
+                  "type": "$set",
+                  "options": {
+                      "loader": "no"
+                  },
+                  "success": {
+                      "type": "$render"
+                  }
+              }
+          },
+          "templates": {
+              "body": {
+                  "style": {
+                      "border": "none"
+                  },
+                  "background": "#1a1a21",
+                  "layers": [
+                      {
+                          "type": "image",
+                          "url": [
+                              {
+                                  "{{#if $get.loader == 'yes'}}": "https://loading.io/spinners/microsoft/lg.rotating-balls-spinner.gif"
+                              },
+                              {
+                                  "{{#else}}": ""
+                              }
+                          ],
+                          "style": {
+                              "top": "50%-50",
+                              "width": "100",
+                              "height": "100",
+                              "left": "50%-50"
+                          }
+                      }
+                  ],
+                  "sections": [
+                      {
+                          "items": [
+                              {
+                              "type": "vertical",
+                              "style": {
+                                  "align": "center"
+                              },
+                              "components": [
+                                  {
+                                      "type": "space",
+                                      "style": {
+                                          "height": "55%"
+                                      }
+                                  },
+                                  {
+                                      "type": "button",
+                                      "text": "Click Me!",
+                                      "style": {
+                                          "width": "80%",
+                                          "align": "center",
+                                          "height": "60",
+                                          "font": "HelveticaNeue-Bold",
+                                          "border_width": "1",
+                                          "border_color": "#a9a9a9",
+                                          "background": "#ffffff",
+                                          "color": "#000000",
+                                          "corner_radius": "25",
+                                          "size": "18"
+                                      },
+                                      "action": {
+                                          "trigger": "btn_click"
+                                      }
+                                  }
+                              ]
+                              }
+                          ]
+                      }
+                  ]
+              }
+          }
+      }
+  }
+}

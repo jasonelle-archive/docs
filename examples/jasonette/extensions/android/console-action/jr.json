@@ -1,0 +1,7 @@
+{
+  "version": "0.1.0",
+  "name": "console",
+  "classname": "JasonConsoleAction",
+  "platform": "android",
+  "description": "Console for debuggin"
+}

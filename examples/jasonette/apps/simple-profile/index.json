@@ -1,0 +1,28 @@
+{
+    "@": "https://raw.githubusercontent.com/jasonelle/docs/develop/examples/jasonette/apps/simple-profile/app.json",
+    "avatar": {
+      "image": "https://pbs.twimg.com/profile_images/557061751150112768/eMwi4Xz2_400x400.jpeg",
+      "style": {
+        "width": "150",
+        "corner_radius": "75"
+      }
+    },
+    "title": {
+      "text": "Ethan",
+      "style": {
+        "size": "50"
+      }
+    },
+    "content": {
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris faucibus magna non nisl luctus ultrices. Mauris ac suscipit enim. Nam porttitor nibh a diam malesuada consectetur. Quisque nec mi lacinia, fermentum enim ac, dapibus ipsum. Sed blandit finibus ligula gravida fringilla. Aenean eu elit tempor, scelerisque velit ut, lobortis odio. Proin accumsan mollis arcu, ut pulvinar massa convallis vitae. Vivamus consequat orci eget felis gravida, ut dignissim augue tincidunt. Ut ornare faucibus quam, bibendum sollicitudin dui facilisis quis. Nam ac ex felis. Praesent sed nisl lacinia, finibus velit nec, interdum dolor. Quisque nunc odio, porttitor vitae sodales et, accumsan eu ipsum.",
+      "style": {
+        "padding": "20",
+        "font": "HelveticaNeue",
+        "size": "12"
+      }
+    },
+    "submit": {
+      "text": "OK",
+      "style": {}
+    }
+  }

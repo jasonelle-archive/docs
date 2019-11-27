@@ -1,0 +1,143 @@
+{
+  "$jason": {
+    "head": {
+      "title": "$agent.request Demo",
+      "description": "Jasonette to Agent request demo",
+      "agents": {
+        "crypto": {
+          "url": "https://jasonette.github.io/AgentJason/request/jasonette2agent/crypto.html"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$set",
+          "options": {
+            "items": []
+          },
+          "success": {
+            "type": "$render"
+          }
+        },
+        "add": {
+          "type": "$set",
+          "options": {
+            "items": "{{[$jason.result].concat($get.items)}}"
+          },
+          "success": {
+            "type": "$render"
+          }
+        },
+        "md5": {
+          "type": "$agent.request",
+          "options": {
+            "id": "crypto",
+            "method": "md5",
+            "params": ["{{$get.raw}}", "{{$jason.sync}}"]
+          },
+          "success": {
+            "trigger": "add",
+            "options": {
+              "result": "{{$jason}}"
+            }
+          }
+        },
+        "sha256": {
+          "type": "$agent.request",
+          "options": {
+            "id": "crypto",
+            "method": "sha256",
+            "params": ["{{$get.raw}}", "{{$jason.sync}}"]
+          },
+          "success": {
+            "trigger": "add",
+            "options": {
+              "result": "{{$jason}}"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "jasonette <-> agent demo"
+          },
+          "sections": [{
+            "items": {
+              "{{#concat}}": [
+                [
+                  {
+                    "type": "textarea",
+                    "name": "raw",
+                    "placeholder": "Enter Text to Hash"
+                  },
+                  {
+                    "type": "button",
+                    "text": "MD5",
+                    "style": {
+                      "background": "#ff0000",
+                      "color": "#ffffff"
+                    },
+                    "action": {
+                      "trigger": "md5",
+                      "options": {
+                        "sync": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "text": "SHA256",
+                    "style": {
+                      "background": "#0000ff",
+                      "color": "#ffffff"
+                    },
+                    "action": {
+                      "trigger": "sha256",
+                      "options": {
+                        "sync": true
+                      }
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "text": "MD5 Async",
+                    "style": {
+                      "background": "#ff0000",
+                      "color": "#ffffff"
+                    },
+                    "action": {
+                      "trigger": "md5",
+                      "options": {
+                        "sync": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "text": "SHA256 Async",
+                    "style": {
+                      "background": "#0000ff",
+                      "color": "#ffffff"
+                    },
+                    "action": {
+                      "trigger": "sha256",
+                      "options": {
+                        "sync": false
+                      }
+                    }
+                  }
+                ],
+                {
+                  "{{#each $get.items}}": {
+                    "type": "label",
+                    "text": "{{this}}"
+                  }
+                }
+              ]
+            }
+          }]
+        }
+      }
+    }
+  }
+}

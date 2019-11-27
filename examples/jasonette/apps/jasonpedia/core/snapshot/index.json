@@ -1,0 +1,69 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Snapshot",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "padding": "10",
+          "size": "15"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        },
+        "$pull": {
+          "type": "$snapshot",
+          "success": {
+            "type": "$util.share",
+            "options": {
+              "items": [
+                {
+                  "type": "image",
+                  "data": "{{$jason.data}}"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "body": {
+      "style": {
+        "border": "none"
+      },
+      "header": {
+        "menu": {
+          "text": "View JSON",
+          "href": {
+            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/core/snapshot/index.json",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "items": [
+            {
+              "type": "label",
+              "class": "bold",
+              "text": "Swipe down to take a snapshot and share"
+            },
+            {
+              "type": "image",
+              "url": "https://pbs.twimg.com/media/Cu0xSA3WEAAVyA9.jpg",
+              "style": {
+                "width": "100%"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Feed",
+      "data": {
+        "items": {
+          "+": "items@https://jasonette.github.io/Jasonpedia/webcontainer/feed/db.json"
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "the feed",
+            "style": {
+              "theme": "dark"
+            }
+          },
+          "sections": [
+            {
+              "items": {
+                "{{#each items}}": {
+                  "+": "https://jasonette.github.io/Jasonpedia/webcontainer/feed/item.json"
+                }
+              }
+            },
+            {
+              "items": [{
+                "+": "item@https://jasonette.github.io/Jasonpedia/webcontainer/feed/special_item.json"
+              }, {
+                "+": "item@https://jasonette.github.io/Jasonpedia/webcontainer/feed/animated_item.json"
+              }]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

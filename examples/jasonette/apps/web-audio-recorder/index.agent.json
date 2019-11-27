@@ -1,0 +1,40 @@
+{
+  "$jason": {
+      "head": {
+          "title": "Audio Recording Demo",
+          "description": "This example demostrate how to record audio using the native interface called by a webview",
+          "actions": {
+              "$load": {
+                  "type": "$render"
+              },
+              "record_audio": {
+                "type": "$audio.record",
+                "success": {
+                    "type": "$util.alert",
+                    "options": {
+                        "title": "Base64 Audio. Send This to your server using $network.upload",
+                        "description": "{{$jason.data_uri}}"
+                    }
+                }
+            }
+          },
+          "templates": {
+              "body": {
+                  "header": {
+                      "title": "Audio Recording Demo",
+                      "style": {
+                          "background": "#F8DC3D"
+                      }
+                  },
+                  "background": {
+                      "type": "html",
+                      "url": "http://jasonelle.com/docs/examples/jasonette/apps/web-audio-recorder/index.agent.html",
+                      "action": {
+                        "type": "$default"
+                      }
+                  }
+              }
+          }
+      }
+  }
+}

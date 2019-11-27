@@ -1,0 +1,32 @@
+{
+    "bg-yellow-1" : {
+        "background" : "#F8DC3D"
+    },
+    "bg-blue-1": {
+        "background": "rgba(44, 62, 80, 0.8)"
+    },
+    "color-white": {
+        "color": "#FFFFFF"
+    },
+    "color-dark-1" : {
+        "color" : "#2E2E2C"
+    },
+    "font-helvetica-neue-bold": {
+        "font":"HelveticaNeue-Bold"
+    },
+    "font-helvetica-neue": {
+        "font":"HelveticaNeue"
+    },
+    "size-14": {
+        "size": 14
+    },
+    "size-16": {
+        "size": 16
+    },
+    "size-20": {
+        "size": 20
+    },
+    "padding-20": {
+        "padding": 20
+    }
+}

@@ -1,0 +1,313 @@
+{
+    "$result": {
+        "head": {
+            "title": "Settings",
+            "url": "https://wethan.herokuapp.com/v2/user/edit.json"
+        },
+        "body": {
+            "sections": [{
+                "header": {
+                    "labels": [{
+                        "text": "Profile"
+                    }]
+                },
+                "rows": [{
+                    "images": [{
+                        "url": "https://s3.amazonaws.com/me.joincult.ethan/images/avatar/default_avatar.png",
+                        "style": {
+                            "width": "60"
+                        }
+                    }],
+                    "buttons": [{
+                        "text": "Change Avatar",
+                        "style": {
+                            "background": "#ffffff",
+                            "color": "#B64220",
+                            "corner_radius": "2",
+                            "width": "120"
+                        },
+                        "action": {
+                            "type": "Widget.picker",
+                            "options": {
+                                "items": [{
+                                    "text": "Camera",
+                                    "action": {
+                                        "type": "Media.camera",
+                                        "options": {
+                                            "type": "photo",
+                                            "edit": true
+                                        },
+                                        "callback": {
+                                            "type": "Network.upload",
+                                            "options": {
+                                                "storage": {
+                                                    "type": "s3",
+                                                    "bucket": "com.textethan",
+                                                    "path": "images/avatar",
+                                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                                }
+                                            },
+                                            "callback": {
+                                                "type": "Network.request",
+                                                "options": {
+                                                    "loading": true,
+                                                    "include": {
+                                                        "data": {
+                                                            "avatar": "https://s3.amazonaws.com/com.textethan/images/avatar/{{$result}}"
+                                                        }
+                                                    },
+                                                    "method": "PUT",
+                                                    "url": "https://wethan.herokuapp.com/v2/setAvatar.json"
+                                                },
+                                                "callback": {
+                                                    "type": "reload_silent"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }, {
+                                    "text": "Photos",
+                                    "action": {
+                                        "type": "Media.cameraroll",
+                                        "options": {
+                                            "type": "photo",
+                                            "edit": true
+                                        },
+                                        "callback": {
+                                            "type": "Network.upload",
+                                            "options": {
+                                                "storage": {
+                                                    "type": "s3",
+                                                    "bucket": "com.textethan",
+                                                    "path": "images/avatar",
+                                                    "sign_url": "https://wethan.herokuapp.com/v2/signed_url.json"
+                                                }
+                                            },
+                                            "callback": {
+                                                "type": "Network.request",
+                                                "options": {
+                                                    "loading": true,
+                                                    "include": {
+                                                        "data": {
+                                                            "avatar": "https://s3.amazonaws.com/com.textethan/images/avatar/{{$result}}"
+                                                        }
+                                                    },
+                                                    "method": "PUT",
+                                                    "url": "https://wethan.herokuapp.com/v2/setAvatar.json"
+                                                },
+                                                "callback": {
+                                                    "type": "reload_silent"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }]
+                            }
+                        }
+                    }]
+                }, {
+                    "labels": [{
+                        "text": "First name",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }, {
+                        "text": "c",
+                        "style": {
+                            "font": "HelveticaNeue-Bold",
+                            "color": "#323232",
+                            "size": "12"
+                        }
+                    }],
+                    "buttons": [{
+                        "text": "Edit",
+                        "style": {
+                            "background": "#ffffff",
+                            "color": "#B64220",
+                            "corner_radius": "2",
+                            "width": "60"
+                        },
+                        "action": {
+                            "type": "Widget.alert",
+                            "options": {
+                                "title": "Update",
+                                "description": "Update first name",
+                                "form": [{
+                                    "type": "text",
+                                    "name": "firstname",
+                                    "value": "c"
+                                }]
+                            },
+                            "callback": {
+                                "type": "Network.request",
+                                "options": {
+                                    "url": "https://wethan.herokuapp.com/v2/setFirstname.json",
+                                    "method": "put",
+                                    "include": {
+                                        "data": "{{$result}}"
+                                    }
+                                },
+                                "callback": {
+                                    "type": "Widget.toast",
+                                    "options": {
+                                        "text": "Successfully updated"
+                                    },
+                                    "callback": {
+                                        "type": "reload_silent"
+                                    }
+                                }
+                            }
+                        }
+                    }]
+                }, {
+                    "labels": [{
+                        "text": "Last name",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }, {
+                        "text": "c",
+                        "style": {
+                            "font": "HelveticaNeue-Bold",
+                            "color": "#323232",
+                            "size": "12"
+                        }
+                    }],
+                    "buttons": [{
+                        "text": "Edit",
+                        "style": {
+                            "background": "#ffffff",
+                            "color": "#B64220",
+                            "corner_radius": "2",
+                            "width": "60"
+                        },
+                        "action": {
+                            "type": "Widget.alert",
+                            "options": {
+                                "title": "Update",
+                                "description": "Update last name",
+                                "form": [{
+                                    "type": "text",
+                                    "name": "lastname",
+                                    "value": "c"
+                                }]
+                            },
+                            "callback": {
+                                "type": "Network.request",
+                                "options": {
+                                    "include": {
+                                        "data": "{{$result}}"
+                                    },
+                                    "url": "https://wethan.herokuapp.com/v2/setLastname.json",
+                                    "method": "put"
+                                },
+                                "callback": {
+                                    "type": "Widget.toast",
+                                    "options": {
+                                        "text": "Successfully updated"
+                                    },
+                                    "callback": {
+                                        "type": "reload_silent"
+                                    }
+                                }
+                            }
+                        }
+                    }]
+                }, {
+                    "labels": [{
+                        "text": "Email",
+                        "style": {
+                            "font": "HelveticaNeue",
+                            "color": "#8899a6",
+                            "size": "12"
+                        }
+                    }, {
+                        "text": "mail@example.com",
+                        "style": {
+                            "font": "HelveticaNeue-Bold",
+                            "color": "#323232",
+                            "size": "12"
+                        }
+                    }],
+                    "buttons": [{
+                        "text": "Edit",
+                        "style": {
+                            "background": "#ffffff",
+                            "color": "#B64220",
+                            "corner_radius": "2",
+                            "width": "60"
+                        },
+                        "action": {
+                            "type": "Widget.alert",
+                            "options": {
+                                "title": "Update",
+                                "description": "Update email",
+                                "form": [{
+                                    "type": "text",
+                                    "name": "new_email",
+                                    "value": "mail@example.com"
+                                }]
+                            },
+                            "callback": {
+                                "type": "Network.request",
+                                "options": {
+                                    "include": {
+                                        "data": "{{$result}}"
+                                    },
+                                    "url": "https://wethan.herokuapp.com/v2/setEmail.json",
+                                    "method": "put"
+                                },
+                                "callback": {
+                                    "type": "setCredentials",
+                                    "callback": {
+                                        "type": "Widget.toast",
+                                        "options": {
+                                            "text": "Successfully updated"
+                                        },
+                                        "callback": {
+                                            "type": "reload_silent"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }]
+                }]
+            }, {
+                "header": {
+                    "labels": [{
+                        "text": ""
+                    }]
+                },
+                "rows": [{
+                    "style": {
+                        "height": "80"
+                    },
+                    "labels": [{
+                        "text": "Sign out",
+                        "style": {
+                            "font": "HelveticaNeue-CondensedBold",
+                            "background": "#323232",
+                            "size": "16",
+                            "color": "#B64220"
+                        }
+                    }],
+                    "action": {
+                        "type": "Widget.alert",
+                        "options": {
+                            "title": "Sign out",
+                            "description": "Are you sure you want to sign out?"
+                        },
+                        "callback": {
+                            "type": "signout"
+                        }
+                    }
+                }]
+            }]
+        }
+    }
+}

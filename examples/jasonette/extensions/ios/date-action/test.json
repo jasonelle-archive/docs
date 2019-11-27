@@ -1,0 +1,81 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Date Test"
+    },
+    "body": {
+      "header": {
+        "style": {
+          "background": "#8bb92d",
+          "color": "#ffffff"
+        },
+        "title": "Date Test"
+      },
+      "sections": [
+        {
+          "items": [
+            {
+              "type": "label",
+              "text": "$date.now",
+              "style": {
+                "padding": "20"
+              },
+              "action": {
+                "type": "$date.now",
+                "options": {
+                  "format": "dd-MM-yyyy H:mm:ss"
+                },
+                "success": {
+                  "type": "$util.toast",
+                  "options": {
+                    "text": "Now is {{$jason.date}}."
+                  }
+                }
+              }
+            },
+            {
+              "type": "label",
+              "text": "$date.format (18-10-1989)",
+              "style": {
+                "padding": "20"
+              },
+              "action": {
+                "type": "$date.format",
+                "options": {
+                  "date": "18-10-1989",
+                  "format": "dd-MM-yyyy"
+                },
+                "success": {
+                  "type": "$util.toast",
+                  "options": {
+                    "text": "Formatted is {{$jason.date}}."
+                  }
+                }
+              }
+            },
+            {
+              "type": "label",
+              "text": "$date.unix  (624717000)",
+              "style": {
+                "padding": "20"
+              },
+              "action": {
+                "type": "$date.unix",
+                "options": {
+                  "date": "624717000.54654",
+                  "format": "dd-MM-yyyy"
+                },
+                "success": {
+                  "type": "$util.toast",
+                  "options": {
+                    "text": "Unix is {{$jason.date}}."
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

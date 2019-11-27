@@ -1,0 +1,63 @@
+{
+    "$jason": {
+      "head": {
+        "title": "Two menu buttons"
+      },
+      "body": {
+        "style": {
+          "background": "#333333"
+        },
+        "header": {
+          "title": "2 Buttons",
+          "style": {
+            "color": "#ffffff",
+            "background": "#222222"
+          }
+        },
+        "layers": [
+          {
+            "type": "image",
+            "url": "https://png.icons8.com/metro/100/ffffff/chevron-right.png",
+            "style": {
+              "top": "15",
+              "right": "10",
+              "width": "20"
+            }
+          },
+          {
+            "type": "image",
+            "url": "https://png.icons8.com/metro/100/ffffff/chevron-left.png",
+            "style": {
+              "top": "15",
+              "right": "40",
+              "width": "20"
+            }
+          }
+        ],
+        "sections": [
+          {
+            "items": [
+              {
+                "type": "label",
+                "text": "Hello",
+                "style": {
+                  "color": "#ffffff",
+                  "padding": "10",
+                  "size": "20"
+                }
+              },
+              {
+                "type": "label",
+                "text": "world",
+                "style": {
+                  "color": "#ffffff",
+                  "padding": "10",
+                  "size": "20"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }

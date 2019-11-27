@@ -1,0 +1,1 @@
+"color:placeholder" : "{{$value or ''}}"

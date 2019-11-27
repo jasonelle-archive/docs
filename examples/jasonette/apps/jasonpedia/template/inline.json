@@ -1,0 +1,33 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Inline Template",
+      "data": {
+        "profile": "https://pbs.twimg.com/profile_images/557061751150112768/eMwi4Xz2_400x400.jpeg",
+        "username": "ethan"
+      },
+      "templates": {
+        "body": {
+          "sections": [{
+            "items": [{
+              "type": "horizontal",
+              "style": {
+                "spacing": "10"
+              },
+              "components": [{
+                "type": "image",
+                "style": {
+                  "width": "50"
+                },
+                "url": "{{profile}}"
+              }, {
+                "type": "label",
+                "text": "{{username}}"
+              }]
+            }]
+          }]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+    "$jason": {
+      "head": {
+        "title": "footer input",
+        "data": {
+          "messages": [
+            "Hi there",
+            "hey who are you",
+            "I'm doing good my man",
+            "OK shut up now",
+            "😤😤😤😤😤😤😤😤😤😤😤😤😤😤😤😤😤"
+          ]
+        },
+        "templates": {
+          "body": {
+            "header": {
+              "title": {
+                "type": "label",
+                "text": "ethan",
+                "style": {
+                  "font": "HelveticaNeue-CondensedBold"
+                }
+              },
+              "style": {
+                "background": "#f00000",
+                "color": "#ffffff"
+              }
+            },
+            "sections": [
+              {
+                "items": {
+                  "{{#each messages}}": {
+                    "type": "horizontal",
+                    "style": {
+                      "padding": "10"
+                    },
+                    "components": [
+                      {
+                        "{{#if $index%2 == 1}}": [
+                          {
+                            "type": "label",
+                            "text": "{{this}}",
+                            "class": "{{$index%2 == 1 ? 'left' : 'right'}}",
+                            "style": {
+                              "background": "#e4e6ea",
+                              "padding": "10",
+                              "corner_radius": "20",
+                              "color": "#000100"
+                            }
+                          },
+                          {
+                            "type": "space"
+                          }
+                        ]
+                      },
+                      {
+                        "{{#else}}": [
+                          {
+                            "type": "space"
+                          },
+                          {
+                            "type": "label",
+                            "text": "{{this}}",
+                            "class": "{{$index%2 == 1 ? 'left' : 'right'}}",
+                            "style": {
+                              "background": "#2e7cf6",
+                              "padding": "10",
+                              "corner_radius": "20",
+                              "color": "#ffffff"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ],
+            "footer": {
+              "input": {
+                "style": {
+                  "background": "#ebebeb"
+                },
+                "left": {
+                  "image": "https://png.icons8.com/ios/100/000000/compact-camera.png"
+                },
+                "textfield": {
+                  "placeholder": "Enter a message",
+                  "style": {
+                    "background": "#ffffff"
+                  }
+                },
+                "right": {
+                  "text": "send"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,128 @@
+{
+  "$jason": {
+    "head": {
+      "title": "$agent.request Demo",
+      "description": "Agent to Agent request demo",
+      "agents": {
+        "main": {
+          "url": "https://jasonette.github.io/AgentJason/request/agent2agent/main.html"
+        },
+        "add": {
+          "url": "https://jasonette.github.io/AgentJason/request/agent2agent/add.html"
+        },
+        "subtract": {
+          "url": "https://jasonette.github.io/AgentJason/request/agent2agent/subtract.html"
+        }
+      },
+      "styles": {
+        "label": {
+          "font": "HelveticaNeue-Bold",
+          "size": "30",
+          "padding": "20"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$set",
+          "options": {
+            "items": "Empty"
+          },
+          "success": {
+            "type": "$render"
+          }
+        },
+        "subtract": {
+          "type": "$agent.request",
+          "options": {
+            "id": "main",
+            "method": "run",
+            "params": ["subtract", "{{$jason}}"]
+          },
+          "success": {
+            "type": "$set",
+            "options": {
+              "items": "{{$jason.toString()}}"
+            },
+            "success": {
+              "type": "$render"
+            }
+          }
+        },
+        "add": {
+          "type": "$agent.request",
+          "options": {
+            "id": "main",
+            "method": "run",
+            "params": ["add", "{{$jason}}"]
+          },
+          "success": {
+            "type": "$set",
+            "options": {
+              "items": "{{$jason.toString()}}"
+            },
+            "success": {
+              "type": "$render"
+            }
+          }
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "agent <-> agent demo"
+          },
+          "sections": [{
+            "items": [{
+              "type": "label",
+              "style": {
+                "align": "center",
+                "size": "20"
+              },
+              "text": "{{$get.items}}"
+            }, {
+              "type": "label",
+              "text": "add sync",
+              "class": "label",
+              "action": {
+                "trigger": "add",
+                "options": {
+                  "sync": true
+                }
+              }
+            }, {
+              "type": "label",
+              "text": "subtract sync",
+              "class": "label",
+              "action": {
+                "trigger": "subtract",
+                "options": {
+                  "sync": true
+                }
+              }
+            }, {
+              "type": "label",
+              "text": "add async",
+              "class": "label",
+              "action": {
+                "trigger": "add",
+                "options": {
+                  "sync": false
+                }
+              }
+            }, {
+              "type": "label",
+              "text": "subtract async",
+              "class": "label",
+              "action": {
+                "trigger": "subtract",
+                "options": {
+                  "sync": false
+                }
+              }
+            }]
+          }]
+        }
+      }
+    }
+  }
+}

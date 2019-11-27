@@ -1,0 +1,99 @@
+{
+    "$jason": {
+        "head": {
+            "title": "footer input",
+            "type": "mixin",
+            "data": {
+                "model": {
+                    "@": "$document.model"
+                },
+                "style": {
+                    "@": "$document.style"
+                },
+                "title": {
+                    "@": "$document.title"
+                }
+            },
+            "templates": {
+                "body": {
+                    "header": {
+                        "title": {
+                            "type": "label",
+                            "text": "{{title}}",
+                            "style": {
+                                "font": "HelveticaNeue-CondensedBold"
+                            }
+                        },
+                        "style": "{{style.header}}"
+                    },
+                    "background": "{{style.background}}",
+                    "style": {
+                        "border": "none"
+                    },
+                    "sections": [{
+                        "items": {
+                            "{{#each model}}": {
+                                "type": "horizontal",
+                                "style": {
+                                    "padding": "10"
+                                },
+                                "components": [{
+                                    "{{#if $index%2 == 1}}": [{
+                                        "type": "label",
+                                        "text": "{{this}}",
+                                        "class": "{{$index%2 == 1 ? 'left' : 'right'}}",
+                                        "style": {
+                                            "background": "{{$root.style.receiver.background}}",
+                                            "padding": "10",
+                                            "corner_radius": "20",
+                                            "size": "{{#? $root.style.receiverr.size}}",
+                                            "font": "{{#? $root.style.receiver.font}}",
+                                            "color": "{{#? $root.style.receiver.color}}"
+                                        }
+                                    }, {
+                                        "type": "space"
+                                    }]
+                                }, {
+                                    "{{#else}}": [{
+                                        "type": "space"
+                                    }, {
+                                        "type": "label",
+                                        "text": "{{this}}",
+                                        "class": "{{$index%2 == 1 ? 'left' : 'right'}}",
+                                        "style": {
+                                            "background": "{{$root.style.sender.background}}",
+                                            "padding": "10",
+                                            "corner_radius": "20",
+                                            "size": "{{#? $root.style.sender.size}}",
+                                            "font": "{{#? $root.style.sender.font}}",
+                                            "color": "{{#? $root.style.sender.color}}"
+                                        }
+                                    }]
+                                }]
+                            }
+                        }
+                    }],
+                    "footer": {
+                        "input": {
+                            "style": {
+                                "background": "#ebebeb"
+                            },
+                            "left": {
+                                "image": "https://png.icons8.com/ios/100/000000/compact-camera.png"
+                            },
+                            "textfield": {
+                                "placeholder": "Enter a message",
+                                "style": {
+                                    "background": "#ffffff"
+                                }
+                            },
+                            "right": {
+                                "text": "send"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

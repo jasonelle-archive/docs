@@ -1,0 +1,104 @@
+{
+  "items": {
+    "{{#each $jason}}": {
+      "type": "horizontal",
+      "style": {
+        "spacing": "10"
+      },
+      "components": [
+        {
+          "type": "image",
+          "url": "{{user.profile_image_url_https}}",
+          "style": {
+            "width": "48",
+            "height": "48",
+            "corner_radius": "5"
+          }
+        },
+        {
+          "type": "vertical",
+          "style": {
+            "spacing": "5"
+          },
+          "components": [
+            {
+              "type": "horizontal",
+              "components": [
+                {
+                  "type": "label",
+                  "text": "{{user.name}}",
+                  "style": {
+                    "font": "HelveticaNeue-Bold",
+                    "width": "50",
+                    "size": "14"
+                  }
+                },
+                {
+                  "type": "label",
+                  "text": "{{user.screen_name}} · 8h",
+                  "style": {
+                    "color": "#8899a6",
+                    "size": "13",
+                    "font": "HelveticaNeue"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "label",
+              "text": "{{text}}",
+              "style": {
+                "font": "HelveticaNeue",
+                "size": "14"
+              }
+            },
+            {
+              "type": "horizontal",
+              "style": {
+                "padding_top": "10"
+              },
+              "components": [
+                {
+                  "type": "image",
+                  "style": {
+                    "height": "20"
+                  },
+                  "url": "https://g.twimg.com/dev/documentation/image/reply-action_0.png"
+                },
+                {
+                  "type": "space",
+                  "style": {
+                    "width": "60"
+                  }
+                },
+                {
+                  "type": "image",
+                  "style": {
+                    "height": "20"
+                  },
+                  "url": "https://g.twimg.com/dev/documentation/image/retweet-action.png"
+                },
+                {
+                  "type": "space",
+                  "style": {
+                    "width": "60"
+                  }
+                },
+                {
+                  "type": "image",
+                  "style": {
+                    "height": "20"
+                  },
+                  "url": "https://g.twimg.com/dev/documentation/image/like-action.png"
+                },
+                {
+                  "type": "space"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

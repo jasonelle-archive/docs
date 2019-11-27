@@ -1,0 +1,26 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Cell <=> Jasonette",
+      "agents": {
+        "cell": {
+          "url": "https://jasonette.github.io/agent.jsframeworks/cell"
+        }
+      },
+      "actions": {
+        "update": {
+          "type": "$render"
+        }
+      },
+      "templates": {
+        "body": {
+          "sections": [
+            {
+              "@": "https://jasonbase.com/things/Jo4V"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

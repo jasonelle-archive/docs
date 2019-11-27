@@ -1,0 +1,136 @@
+{
+    "$result": {
+        "head": {
+            "url": "https://wethan.herokuapp.com/v2/users/xgRm5q.json",
+            "title": "katy  vatinnèl "
+        },
+        "body": {
+            "sections": [
+                {
+                    "rows": [
+                        {
+                            "images": [
+                                {
+                                    "url": "https://s3.amazonaws.com/com.textethan/images/avatar/7516CB51-7CC2-49AA-B25A-6BEF10C4DBF2.png",
+                                    "style": {
+                                        "width": "60",
+                                        "corner_radius": "30"
+                                    }
+                                }
+                            ],
+                            "labels": [
+                                {
+                                    "text": "katy \nvatinnèl ",
+                                    "style": {
+                                        "font": "HelveticaNeue-CondensedBold",
+                                        "color": "#323232",
+                                        "size": "25"
+                                    }
+                                },
+                                {
+                                    "text": "656 XP",
+                                    "style": {
+                                        "font": "HelveticaNeue-CondensedBold",
+                                        "color": "#B64220",
+                                        "size": "14"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "labels": [
+                            {
+                                "text": "⌄ 2 ethans"
+                            }
+                        ]
+                    },
+                    "rows": [
+                        {
+                            "href": {
+                                "url": "https://wethan.herokuapp.com/v2/channels/2497.json"
+                            },
+                            "images": [
+                                {
+                                    "url": "https://s3.amazonaws.com/com.textethan/images/avatar/9CB22896-64CA-4FA1-862F-60886F045342.png",
+                                    "style": {
+                                        "corner_radius": "2",
+                                        "width": "100"
+                                    }
+                                }
+                            ],
+                            "labels": [
+                                {
+                                    "text": "@Helphotline101",
+                                    "style": {
+                                        "font": "HelveticaNeue-CondensedBold",
+                                        "color": "#323232",
+                                        "size": "14"
+                                    }
+                                },
+                                {
+                                    "text": "Available ",
+                                    "style": {
+                                        "font": "HelveticaNeue-Bold",
+                                        "color": "#96b420",
+                                        "size": "11"
+                                    }
+                                },
+                                {
+                                    "text": "Text me about anything whether it's love school stress personal issues or whatever I'm here to help with anything just be open ",
+                                    "style": {
+                                        "font": "HelveticaNeue",
+                                        "color": "#8899a6",
+                                        "size": "11"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "href": {
+                                "url": "https://wethan.herokuapp.com/v2/channels/1290.json"
+                            },
+                            "images": [
+                                {
+                                    "url": "https://s3.amazonaws.com/com.textethan/images/avatar/E1E80154-0AE8-406E-B73E-0298E47B8215.png",
+                                    "style": {
+                                        "corner_radius": "2",
+                                        "width": "100"
+                                    }
+                                }
+                            ],
+                            "labels": [
+                                {
+                                    "text": "@Loveatics",
+                                    "style": {
+                                        "font": "HelveticaNeue-CondensedBold",
+                                        "color": "#323232",
+                                        "size": "14"
+                                    }
+                                },
+                                {
+                                    "text": "Available ",
+                                    "style": {
+                                        "font": "HelveticaNeue-Bold",
+                                        "color": "#96b420",
+                                        "size": "11"
+                                    }
+                                },
+                                {
+                                    "text": "relationship/love/goals/Etc text me about love and relationship ",
+                                    "style": {
+                                        "font": "HelveticaNeue",
+                                        "color": "#8899a6",
+                                        "size": "11"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

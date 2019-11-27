@@ -1,0 +1,1 @@
+@include('common.properties.description', ['value' => $value])

@@ -1,0 +1,62 @@
+{
+    "$jason": {
+        "head": {
+            "title": "MagicTable",
+            "type": "mixin",
+            "data": {
+                "items": {
+                    "@": "$document.collection"
+                }
+            },
+            "templates": {
+                "body": {
+                    "background": {
+                        "@": "$document.style.background"
+                    },
+                    "header": {
+                        "title": "Magic Table",
+                        "style": {
+                            "@": "$document.style.header"
+                        }
+                    },
+                    "sections": {
+                        "{{#each items.slice(0,20)}}": {
+                            "header": {
+                                "type": "label",
+                                "text": "{{$index}}",
+                                "style": {
+                                    "@": "$document.style.section"
+                                }
+                            },
+                            "items": [{
+                                "type": "vertical",
+                                "components": {
+                                    "{{#let}}": [{
+                                        "key": "{{this}}"
+                                    }, {
+                                        "{{#each Object.keys(key).filter(function(k) { return k !== '$root' && k !== 'key' }) }}": {
+                                            "type": "vertical",
+                                            "components": [{
+                                                "type": "label",
+                                                "style": {
+                                                    "@": "$document.style.key"
+                                                },
+                                                "text": "{{this}}"
+                                            }, {
+                                                "type": "label",
+                                                "style": {
+                                                    "@": "$document.style.value"
+                                                },
+                                                "text": "{{JSON.stringify(key[this])}}"
+                                            }]
+                                        }
+                                    }]
+                                }
+                            }]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

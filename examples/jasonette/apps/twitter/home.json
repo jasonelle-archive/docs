@@ -1,0 +1,188 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Twitter",
+      "styles": {
+        "note": {
+          "color": "#ffffff",
+          "font": "HelveticaNeue-Bold",
+          "size": "15"
+        }
+      },
+      "actions": {
+        "$pull": {
+          "type": "$flush",
+          "success": {
+            "type": "$reload"
+          }
+        }
+      },
+      "data": {
+        "tweets": [{
+          "text": "Animated GIFs are neon signs of the Internet.",
+          "image": "https://pbs.twimg.com/media/Cub2D-vXYAIXFQo.jpg"
+        }, {
+          "text": "I think this is a new feature on Twitter: a push notification for every tweet",
+          "image": "https://pbs.twimg.com/media/CtJYvx1XgAIilZ4.jpg"
+        }, {
+          "text": "Found the most brilliant invention in human history",
+          "image": "https://pbs.twimg.com/media/Cr7cSz1WIAA0OZj.jpg"
+        }, {
+          "text": "Ludlow and Rivington. NOW.",
+          "image": "https://pbs.twimg.com/media/CrNnHPUWEAEK_b3.jpg"
+        }]
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": {
+              "type": "image",
+              "style": {
+                "width": "35",
+                "height": "35"
+              },
+              "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/logo.png"
+            }
+          },
+          "footer": {
+            "tabs": {
+              "style": {
+                "background": "rgba(255,255,255,0.8)",
+                "color": "#009efa"
+              },
+              "items": [{
+                "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/home.png",
+                "text": "Home",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/home.json"
+              }, {
+                "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/notifications.png",
+                "text": "Notifications",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/home.json"
+              }, {
+                "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/moments.png",
+                "text": "Moments",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/home.json"
+              }, {
+                "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/messages.png",
+                "text": "Messages",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/home.json"
+              }, {
+                "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/me.png",
+                "text": "Me",
+                "style": {
+                  "height": "21"
+                },
+                "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/home.json"
+              }]
+            }
+          },
+          "sections": [{
+            "items": {
+              "{{#each tweets}}": {
+                "type": "horizontal",
+                "style": {
+                  "spacing": "10"
+                },
+                "components": [{
+                  "type": "image",
+                  "url": "https://pbs.twimg.com/profile_images/557061751150112768/eMwi4Xz2_400x400.jpeg",
+                  "style": {
+                    "width": "48",
+                    "height": "48",
+                    "corner_radius": "5"
+                  }
+                }, {
+                  "type": "vertical",
+                  "style": {
+                    "spacing": "5"
+                  },
+                  "components": [{
+                    "type": "horizontal",
+                    "components": [{
+                      "type": "label",
+                      "text": "ethan",
+                      "style": {
+                        "font": "HelveticaNeue-Bold",
+                        "width": "50",
+                        "size": "14"
+                      }
+                    }, {
+                      "type": "label",
+                      "text": "@gliechtenstein · 8h",
+                      "style": {
+                        "color": "#8899a6",
+                        "size": "13",
+                        "font": "HelveticaNeue"
+                      }
+                    }]
+                  }, {
+                    "type": "label",
+                    "text": "{{text}}",
+                    "style": {
+                      "font": "HelveticaNeue",
+                      "size": "14"
+                    }
+                  }, {
+                    "type": "image",
+                    "url": "{{image}}",
+                    "style": {
+                      "corner_radius": "5"
+                    }
+                  }, {
+                    "type": "horizontal",
+                    "style": {
+                      "padding_top": "10"
+                    },
+                    "components": [{
+                      "type": "image",
+                      "style": {
+                        "height": "20"
+                      },
+                      "url": "https://g.twimg.com/dev/documentation/image/reply-action_0.png"
+                    }, {
+                      "type": "space",
+                      "style": {
+                        "width": "60"
+                      }
+                    }, {
+                      "type": "image",
+                      "style": {
+                        "height": "20"
+                      },
+                      "url": "https://g.twimg.com/dev/documentation/image/retweet-action.png"
+                    }, {
+                      "type": "space",
+                      "style": {
+                        "width": "60"
+                      }
+                    }, {
+                      "type": "image",
+                      "style": {
+                        "height": "20"
+                      },
+                      "url": "https://g.twimg.com/dev/documentation/image/like-action.png"
+                    }, {
+                      "type": "space"
+                    }]
+                  }]
+                }]
+              }
+            }
+          }]
+        }
+      }
+    }
+  }
+}

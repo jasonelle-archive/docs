@@ -1,0 +1,1 @@
+@include('common.style.background', ['value' => 'rgba(0,0,0,0)'])

@@ -1,0 +1,43 @@
+{
+  "$jason": {
+    "head": {
+      "agents": {
+        "timer": {
+          "url": "https://jasonette.github.io/AgentJason/href/index.html"
+        }
+      },
+      "actions": {
+        "$load": {
+          "type": "$render"
+        }
+      },
+      "templates": {
+        "body": {
+          "header": {
+            "title": "$agent.href demo",
+            "style": {
+              "background": "rgba(0,0,0,0)",
+              "color": "#ffffff"
+            }
+          },
+          "style": {
+            "background": "{{'#' + Math.round((0x1000000 + 0xffffff * Math.random())).toString(16).slice(1)}}",
+            "border": "none"
+          },
+          "sections": [{
+            "items": [{
+              "type": "label",
+              "text": "This view transitions every 2 seconds",
+              "style": {
+                "font": "HelveticaNeue-Bold",
+                "size": "30",
+                "color": "#ffffff",
+                "padding": "20"
+              }
+            }]
+          }]
+        }
+      }
+    }
+  }
+}
