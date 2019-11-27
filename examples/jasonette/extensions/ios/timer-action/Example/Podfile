@@ -1,6 +1,0 @@
-use_frameworks!
-target 'JasonetteTimerAction_Tests' do
-  pod 'JasonetteTimerAction', :path => '../'
-  
-  
-end

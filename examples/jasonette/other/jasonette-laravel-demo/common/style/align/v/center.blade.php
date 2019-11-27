@@ -1,1 +1,0 @@
-@include('common.style.aligns.center')

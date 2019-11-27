@@ -1,1 +1,0 @@
-@include('common.properties.data_type' , ['value' => 'raw'])

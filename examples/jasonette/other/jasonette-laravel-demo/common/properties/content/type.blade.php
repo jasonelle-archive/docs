@@ -1,1 +1,0 @@
-"content_type" : "{{$value or ''}}"

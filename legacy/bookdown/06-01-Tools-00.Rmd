@@ -1,4 +1,0 @@
-# Tools
-
-The following tools help developers to be
-more efficient in using *Jasonette* technology.

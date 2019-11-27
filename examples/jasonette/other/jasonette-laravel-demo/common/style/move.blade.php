@@ -1,1 +1,0 @@
-"move" : "{{$value or 'false'}}"

@@ -1,7 +1,0 @@
-book_filename: "jasonelle"
-repo: https://github.com/jasonelle/jasonelle
-delete_merged_file: true
-clean: [packages.bib, bookdown.bbl]
-language:
-  ui:
-    chapter_name: ""

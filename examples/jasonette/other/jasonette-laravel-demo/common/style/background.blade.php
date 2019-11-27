@@ -1,1 +1,0 @@
-"background": "{{$value or ''}}"

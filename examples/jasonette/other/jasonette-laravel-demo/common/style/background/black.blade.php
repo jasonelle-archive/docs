@@ -1,1 +1,0 @@
-@include('common.style.background', ['value' => '#000000'])

@@ -1,1 +1,0 @@
-@include('common.style.height', ['value' => '100%'])

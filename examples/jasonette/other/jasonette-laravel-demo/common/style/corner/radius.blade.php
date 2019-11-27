@@ -1,1 +1,0 @@
-"corner_radius" : "{{$value or ''}}"

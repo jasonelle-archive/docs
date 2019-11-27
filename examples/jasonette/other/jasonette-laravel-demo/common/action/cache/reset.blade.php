@@ -1,1 +1,0 @@
-@include('common.properties.type', ['value' => '$cache.reset'])

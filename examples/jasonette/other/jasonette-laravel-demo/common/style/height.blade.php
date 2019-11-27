@@ -1,1 +1,0 @@
-"height" : "{{$value or ''}}"
