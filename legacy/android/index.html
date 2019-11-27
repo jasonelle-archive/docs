@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>■ Android - Jasonette</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u25a0 Android";
+    var mkdocs_page_input_path = "android.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54282166-8', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Jasonette</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">■ Getting started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ios/">■ iOS</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">■ Android</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#step-1-download-and-unzip">Step 1. DOWNLOAD AND UNZIP</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-2-launch-android-studio">Step 2. LAUNCH ANDROID STUDIO</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-3-import-the-project">Step 3. IMPORT THE PROJECT</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-4-press-play">Step 4. PRESS PLAY</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-5-connect-the-phone-and-run">Step 5. CONNECT THE PHONE AND RUN</a></li>
+    
+
+    <li class="toctree-l2"><a href="#step-6-customize">Step 6. CUSTOMIZE!</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#a-update-json-url">A. Update JSON URL</a></li>
+        
+            <li><a class="toctree-l3" href="#b-update-app-name">B. Update App name</a></li>
+        
+            <li><a class="toctree-l3" href="#c-update-app-icon">C. Update App icon</a></li>
+        
+            <li><a class="toctree-l3" href="#d-update-app-id-important">D. Update App ID (Important!)</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#did-it-work">★ Did it work?</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#yes">YES?</a></li>
+        
+            <li><a class="toctree-l3" href="#no">NO?</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#submitting-to-the-play-store">Submitting to the play store</a></li>
+    
+
+    <li class="toctree-l2"><a href="#debugging">Debugging</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#stetho">Stetho</a></li>
+        
+            <li><a class="toctree-l3" href="#for-more-details-about-stetho-please-see-its-website">For more details about Stetho please see its website.</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#troubleshoot">Troubleshoot</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#need-more-help">Need more help?</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../examples/">■ Examples</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">■ Reference</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../document/">★ View</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../href/">★ Link</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../actions/">★ Actions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../components/">★ Components</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../layout/">★ Layout</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../templates/">★ Templates</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mixin/">★ Mix-in</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../offline/">★ Offline</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../agents/">★ Agents</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../web/">★ Web Container</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../env/">★ Environment Variables</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../convention/">■ Tips</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../advanced/">■ Extending Jasonette (advanced)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../faq/">■ Troubleshoot</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../jason/">■ Jason</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Jasonette</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>■ Android</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Jasonette/documentation/edit/master/docs/android.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1><i class='icon fa-android'></i> Set up Jasonette android</h1>
+
+<div class='banner'>
+<i class='icon fa-exclamation-circle'></i> Want to skip the setup and try Jasonette without building your own app? - <a href='../jason'><b>Try Jason.</b></a>
+</div>
+
+<hr />
+<h2 id="step-1-download-and-unzip">Step 1. DOWNLOAD AND UNZIP</h2>
+<div class='well'>
+Jasonette itself is a pre-built app.<br>All you need to do is download Jasonette and build with <a href='https://developer.android.com/studio/index.html'>Android Studio</a>.
+<br><br>
+<a href='https://github.com/Jasonette/JASONETTE-Android/archive/master.zip' class='btn'><i class='fa fa-download'></i> Download Jasonette-Android</a>
+</div>
+
+<p><img src='../images/android_1.png' class='large'></p>
+<p><br></p>
+<h2 id="step-2-launch-android-studio">Step 2. LAUNCH ANDROID STUDIO</h2>
+<p>Now launch <a href="https://developer.android.com/studio/index.html">Android Studio</a>, and select "Import project"</p>
+<p><img src='../images/android_2.png' class='large'></p>
+<h2 id="step-3-import-the-project">Step 3. IMPORT THE PROJECT</h2>
+<p>Find the Jasonette folder you just unzipped and press OK.</p>
+<p><img src='../images/android_3.png' class='large'></p>
+<h2 id="step-4-press-play">Step 4. PRESS PLAY</h2>
+<p>Jasonette comes with a default demo JSON url embedded. Let's try running it to make sure it works.</p>
+<p><img src='../images/android_4.png' class='large'></p>
+<h2 id="step-5-connect-the-phone-and-run">Step 5. CONNECT THE PHONE AND RUN</h2>
+<p>It will show up a dialog that looks like this.</p>
+<p>Here you can either choose to run it on an emulator or a real device.</p>
+<p><strong>To learn how to connect the phone, or how to run it on an emulator, <a href="https://developer.android.com/training/basics/firstapp/running-app.html">read this</a>.</strong></p>
+<p><img src='../images/android_7.png' class='large'></p>
+<h2 id="step-6-customize">Step 6. CUSTOMIZE!</h2>
+<p>Now let's try changing the JSON url so you can turn it into your own app.</p>
+<p>First, click the "Project" tab on the left side.</p>
+<p>Then find <code>app</code> &gt; <code>res</code> &gt; <code>values</code> &gt; <code>strings.xml</code>.</p>
+<p><img src='../images/stringsxml.png' class='large'></p>
+<p><br></p>
+<h3 id="a-update-json-url">A. Update JSON URL</h3>
+<p>Update the <code>url</code> property inside <code>strings.xml</code> to your own JSON url. That's it! Build and run the app and you'll find that it's turned into your own app!</p>
+<p>If you don't have a JSON yet, <a href="/examples">here are some example apps you can try quickly</a></p>
+<p><br></p>
+<h3 id="b-update-app-name">B. Update App name</h3>
+<p>By default the app is named "Jasonette". You probably want to change this. From the same <code>strings.xml</code> file, change the <code>app_name</code> value to your desired app name.</p>
+<p><br></p>
+<h3 id="c-update-app-icon">C. Update App icon</h3>
+<p><strong>Step 1. Create new Image Asset</strong></p>
+<p>Select <code>app</code> &gt; <code>res</code> and right-click to display a context menu. Then select <code>New</code> &gt; <code>Image Asset</code>.</p>
+<p><img src='../images/icon_step1.png' class='large'></p>
+<p><br></p>
+<p><strong>Step 2. Select your image</strong></p>
+<p>Select <code>image</code> as Asset Type, and select the <code>path</code> to the image you want to use.</p>
+<p><img src='../images/icon_step2.png' class='large'></p>
+<p><br></p>
+<p><strong>Step 3. Confirm and finish</strong></p>
+<p>It will display some warning about overwriting existing icon. You're overwriting the default icon with your own so it's natural. Press Finish.
+<br>
+<img src='../images/icon_step3.png' class='large'></p>
+<p><br></p>
+<h3 id="d-update-app-id-important">D. Update App ID (Important!)</h3>
+<p>This is important if you want to submit to the play store, since this is the ID that distinguishes one app from another.</p>
+<p>To change this ID, go to: <code>Gradle Scripts</code> &gt; <code>build.gradle (Module: app)</code>, and find the <code>applicationId</code> attribute.</p>
+<p>It should be <code>com.jasonette</code> by default.</p>
+<ol>
+<li>Change this to your own unique ID. (In this example I've changed it to <code>com.jasonette.seed</code>)</li>
+<li>Press "Sync Now" at the top right corner, and rebuild.</li>
+</ol>
+<p>To learn more, <a href="https://developer.android.com/studio/build/application-id.html">read this documentation</a>.</p>
+<p><img src='../images/gradle.png' class='large'></p>
+<p><br></p>
+<hr />
+<h2 id="did-it-work">★ Did it work?</h2>
+<p><br></p>
+<ul>
+<li>
+<h3 id="yes">YES?</h3>
+<ul>
+<li>Congratulations! You're ready to transform this into your OWN app! Go on to the <a href="../#step-2-learn">tutorial</a>.</li>
+</ul>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>
+<h3 id="no">NO?</h3>
+<ul>
+<li><strong><a href="#troubleshoot">Check troubleshoot section</a></strong></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="submitting-to-the-play-store">Submitting to the play store</h1>
+<p><a href="https://support.google.com/googleplay/android-developer/answer/113469?hl=en">Check out this documentation</a> to learn how to submit to the play store.</p>
+<hr />
+<h1 id="debugging">Debugging</h1>
+<h2 id="stetho">Stetho</h2>
+<p>Stetho is a library from Facebook that has been integrated into Debug build types of the Jason app to allow debugging via Chrome Dev Tools.</p>
+<p>To use Stetho for debugging:</p>
+<ol>
+<li>
+<p>Run the Jason app from Android Studio on either a emulator or connected Andriod device (you can also directly use the debug APK that AS creates in <code>app/build/outputs/apk/app-debug.apk</code>)</p>
+</li>
+<li>
+<p>In a Chrome web browser running on a machine on the same network as the Android device or emulator, open the url <code>chrome://inspect</code> and you should see under 'Remote Target' an entry labelled <code>Jasonette (powered by Stetho)</code>:
+<img alt="chrome devices inspector window" src="../images/chrome-inspect.png" /></p>
+</li>
+<li>
+<p>Click on the <code>inspect link</code> and that will open a new Chrome Dev Tools window, connected to your app ready for debugging.</p>
+</li>
+</ol>
+<p><img alt="chrome devices inspector window" src="../images/chrome-devtools-elements.png" /></p>
+<p>Using the Dev Tools interface you can now inspect the hiearchy of your UI layout, inspect network requests, browse the key-values stored by the Jasonette $global.set and see output from any uses of console.log in your template expressions.</p>
+<p>A handy feature in the <strong>Elements</strong> tab of Dev Tools is the UI element running on the Android device will be highlighted when its element is hovered over by the mouse in the Elements tab, just as it would if you were using Dev Tools with a web page.</p>
+<h3 id="console-output">Console output</h3>
+<p>As noted above, a useful feature with Stetho is being able to send debugging output to the Dev Tools console.
+When Dev Tools is connected, all logging output, both from Jasonette that would go to logcat will also be displayed int eh DevTools console tab.</p>
+<p>You can send log output to the console from using Javascript within template expressions like so:</p>
+<pre><code>{
+  &quot;someaction&quot; : &quot;{{ console.debug('hello debug') }}&quot;
+}
+</code></pre>
+
+<blockquote>
+<p><em>Note:</em> Dev Tools will disconnect from your app each time it is killed (eg. if you  install an updated APK). When that happens, to close your existing DevTools window and return  'chrome://inspect' to open it again.</p>
+<p><em>Note:</em> Stetho is only included in the <strong>debug</strong>  build type and will <strong>NOT</strong> be included by the gradle config in <em>release</em> builds of the APK.</p>
+</blockquote>
+<h2 id="for-more-details-about-stetho-please-see-its-website">For more details about Stetho please see <a href="http://facebook.github.io/stetho/">its website</a>.</h2>
+<h1 id="troubleshoot">Troubleshoot</h1>
+<h2 id="need-more-help">Need more help?</h2>
+<ul>
+<li>
+<p><strong>Slack - </strong>  Come ask quick questions and share tips with other Jasonette users. <a href="https://jasonette.now.sh">Join here</a></p>
+<p><script async defer src="https://jasonette.now.sh/slackin.js?large"></script></p>
+</li>
+<li>
+<p><strong>Forum - </strong>  Chat messages on Slack tend to flow away, so you may want to ask questions on the forum. Also it's good for future users who may have the same problem. All messages on the forum will be read. Visit here: <a href="https://forum.jasonette.com">https://forum.jasonette.com</a></p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../examples/" class="btn btn-neutral float-right" title="■ Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ios/" class="btn btn-neutral" title="■ iOS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Jasonette/documentation/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ios/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../examples/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

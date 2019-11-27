@@ -1,0 +1,13 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script>
+SynchronizedInput = {
+  $cell: true, $type: "body", style: "padding: 30px;",
+  $components: [
+    { $type: "div", id: "h", $text: "Type something below" },
+    { $type: "input", onkeyup: function(e){ document.querySelector("#h").$text = this.value} }
+  ]
+}
+</script>
+</html>

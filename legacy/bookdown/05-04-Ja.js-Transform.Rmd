@@ -1,0 +1,1024 @@
+## Transform
+
+Transform any JSON with a declarative template, also in JSON.
+
+### Syntax
+
+There are 2 ways of transforming an object:
+
+#### transform()
+
+Select a template or its subtree, and 
+transform data with the selected template.
+
+
+> `ST.select(TEMPLATE).transform(DATA)`
+```js
+
+ST.select({
+      "{{#each items}}": {
+        "type": "label",
+        "text": "{{name}}"
+      }
+    })
+    .transform({
+      items: [
+        { id: 1, name: "Ja" },
+        { id: 2, name: "Ka" },
+        { id: 3, name: "La" }
+      ]
+    })
+    .root();
+```
+
+#### transformWith()
+
+Select a data object or its subtree and transform with a template. 
+
+> `ST.select(DATA).transformWith(TEMPLATE)`
+
+```js
+ST.select({
+      items: [
+        { id: 1, name: "Ja" },
+        { id: 2, name: "Ka" },
+        { id: 3, name: "La" }
+      ]
+    })
+    .transformWith({
+      "{{#each items}}": {
+        "type": "label",
+        "text": "{{name}}"
+      }
+    })
+    .root();
+```
+
+### Basic
+
+Use `{{ }}` notation to fill out a template with data 
+to generate a new JSON.
+
+
+> 1. Template and Data
+
+```js
+var template = {
+  "menu": {
+    "flavor": "{{flavor}}",
+    "richness": "{{richness}}",
+    "garlic amount": "{{garlic_amount}}",
+    "green onion?": "{{green_onion}}",
+    "sliced pork?": "{{pork_amount}}",
+    "secret sauce": "{{sauce_amount}}",
+    "noodle's texture": "{{texture}}"
+  }
+}
+
+var data = {
+  "flavor": "strong",
+  "richness": "ultra rich",
+  "garlic_amount": "1 clove",
+  "green_onion": "thin green onion",
+  "pork_amount": "with",
+  "sauce_amount": "double",
+  "texture": "extra firm"
+}
+
+```
+
+
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+
+> 3. Result
+
+```js
+{
+  "menu": {
+    "flavor": "strong",
+    "richness": "ultra rich",
+    "garlic amount": "1 clove",
+    "green onion?": "thin green onion",
+    "sliced pork?": "with",
+    "secret sauce": "double",
+    "noodle's texture": "extra firm"
+  }
+}
+
+```
+
+### Loop
+
+Use `#each` to iterate through items.
+
+> 1. Template and Data
+
+```js
+var template = {
+  "orders": {
+    "{{#each customers}}": {
+      "order": "One {{menu}} for {{name}}!"
+    }
+  }
+}
+
+var data = {
+  "customers": [{
+    "name": "Hatter",
+    "menu": "miso ramen"
+  }, {
+    "name": "March Hare",
+    "menu": "tonkotsu ramen"
+  }, {
+    "name": "Dormouse",
+    "menu": "miso ramen"
+  }, {
+    "name": "Alice",
+    "menu": "cup noodles"
+  }]
+}
+
+```
+
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+
+> 3. Result
+
+```js
+{
+  "orders": [{
+    "order": "One miso ramen for Hatter!"
+  }, {
+    "order": "One tonkotsu ramen for March Hare!"
+  }, {
+    "order": "One miso ramen for Dormouse!"
+  }, {
+    "order": "One cup noodles for Alice!"
+  }]
+}
+```
+
+### Conditionals
+
+Use `#if` / `#elseif` / `#else` to selectively 
+fill out a template.
+
+
+> 1. Template and Data
+
+```js
+var template = {
+  "response": [{
+    "{{#if spicy < 7}}": {
+      "message": "Coming right up!"
+    }
+  }, {
+    "{{#elseif spicy < 9}}": {
+      "message": "Are you sure? It is very spicy"
+    }
+  }, {
+    "{{#else}}": {
+      "message": "Please sign here where it says you're responsible for this decision"
+    }
+  }]
+}
+
+var data = {
+  "spicy": 8
+}
+```
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+> 3. Result
+
+```js
+{
+  "response": {
+    "message": "Are you sure? It is very spicy"
+  }
+}
+```
+
+
+
+### Existencial Operator
+
+You can use the existential operator `#?`
+to exclude an attribute altogether if the 
+template evaluates to a falsy value.
+
+
+
+> 1. Template and Data
+
+```js
+var data = {
+  notifications: {
+    home: 1,
+    invite: 2
+  }
+};
+var template = {
+  tabs: [{
+    text: "home",
+    badge: "{{#? notifications.home}}"
+  }, {
+    text: "message",
+    badge: "{{#? notification.message}}"
+  }, {
+    text: "invite",
+    badge: "{{#? notification.invite}}"
+  }]
+}
+
+```
+
+
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+
+
+> 3. Result
+
+```js
+{
+  tabs: [{
+    text: "home",
+    badge: 1
+  }, {
+    text: "message"
+  }, {
+    text: "invite",
+    badge: 2
+  }]
+}
+```
+
+### Concat
+You can concatenate multiple items and arrays into a 
+single array using the `#concat` operator.
+
+
+
+> 1. Template and Data
+
+```js
+var data = {
+  numbers: [1,2,3]
+};
+var template = {
+  "items": {
+    "{{#concat}}": [
+      {
+        "type": "label",
+        "text": "Length: {{numbers.length}}"
+      },
+      {
+        "{{#each numbers}}": {
+          "type": "label",
+          "text": "{{this}}"
+        }
+      }
+    ]
+  }
+};
+
+```
+
+
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+
+
+> 3. Result
+
+```js
+{
+  "items": [{
+    "type": "label",
+    "text": "Length: 3"
+  }, {
+    "type": "label",
+    "text": 1
+  }, {
+    "type": "label",
+    "text": 2
+  }, {
+    "type": "label",
+    "text": 3
+  }]
+}
+```
+
+### Merge
+
+You can merge multiple objects into a 
+single object using the `#merge` operator. 
+If there are any overlapping attributes, 
+the ones that come later will override the previously 
+set attribute.
+
+> 1. Template and Data
+
+```js
+var data = {
+  numbers: [1,2,3],
+  align: "right",
+  size: "14"
+};
+
+var template = {
+  "{{#merge}}": [
+    {
+      "type": "label",
+      "text": "Length: {{numbers.length}}"
+    },
+    {
+      "style": {
+        "align": "{{align}}",
+        "size": "{{size}}"
+      },
+      "action": {
+        "type": "$render"
+      }
+    }
+  ]
+};
+```
+
+
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+
+
+> 3. Result
+
+```js
+{
+  "type": "label",
+  "text": "Length: 3",
+  "style": {
+    "align": "right",
+    "size": "14"
+  },
+  "action": {
+    "type": "$render"
+  }
+}
+```
+
+### Inline JavaScript
+You can use *ANY* native javascript expression inside the template.
+
+
+
+> 1. Template and Data
+
+```js
+var template = {
+  "ranking": {
+    "{{#each players.sort(function(p1, p2) { return p2.quantity - p1.quantity; }) }}": "{{name}} ate {{quantity}}"
+  },
+  "winner": "{{players.sort(function(p1, p2) { return p2.quantity - p1.quantity; })[0].name }}"
+};
+var data = {
+  "players": [{
+    "name": "Alice",
+    "quantity": 102
+  }, {
+    "name": "Mad Hatter",
+    "quantity": 108
+  }, {
+    "name": "Red Queen",
+    "quantity": 100
+  }]
+};
+
+```
+
+
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+> 3. Result
+
+```js
+{
+  "ranking": [
+    "Mad Hatter ate 108",
+    "Alice ate 102",
+    "Red Queen ate 100"
+  ],
+  "winner": "Mad Hatter"
+}
+```
+
+### $root
+
+Sometimes you need to refer to the root data object 
+while iterating through an `#each` loop.
+
+In this case you can use a special keyword named `$root`.
+
+
+
+> 1. Template and Data
+
+```js
+var template = {
+  "{{#each posts}}": [
+    "{{content}}",
+    "{{$root.users[user_id]}}"
+  ]
+}
+var data = {
+  users: ["Alice", "Bob", "Carol"],
+  posts: [{
+    content: "Show me the money",
+    user_id: 1
+  }, {
+    content: "hello world",
+    user_id: 0
+  }, {
+    content: "what is the meaning of life?",
+    user_id: 2
+  }]
+}
+```
+
+
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+
+> 3. Result
+
+```js
+[
+  ["Show me the money", "Bob"],
+  ["hello world", "Alice"],
+  ["what is the meaning of life?", "Carol"]
+]
+```
+
+
+### `$index`
+
+You can use a special variable 
+named `$index` within `#each` loops.
+
+
+> 1. Template and Data
+
+
+```js
+const template = {
+  "rows": {
+    "{{#each items}}": {
+      "row_number": "{{$index}}",
+      "columns": {
+        "{{#each this}}": {
+          "content": "{{this}}",
+          "column_number": "{{$index}}"
+        }
+      }
+    }
+  }
+};
+const data = {
+  "items": [
+    ['a','b','c','d','e'],
+    [1,2,3,4,5]
+  ]
+};
+
+const result = ST.select(template)
+                  .transform(data)
+                  .root()
+
+// or
+// const result = ST.transform(template, data)
+
+
+```
+
+
+
+> 2. Select and Transform
+
+```js
+ST.select(template)
+    .transform(data)
+    .root();
+
+// or
+// ST.transform(template, data)
+```
+
+> 3. Result
+
+```js
+{
+  "rows": [
+    {
+      "row_number": 0,
+      "columns": [
+        {
+          "content": "a",
+          "column_number": 0
+        },
+        {
+          "content": "b",
+          "column_number": 1
+        },
+        {
+          "content": "c",
+          "column_number": 2
+        },
+        {
+          "content": "d",
+          "column_number": 3
+        },
+        {
+          "content": "e",
+          "column_number": 4
+        }
+      ]
+    },
+    {
+      "row_number": 1,
+      "columns": [
+        {
+          "content": 1,
+          "column_number": 0
+        },
+        {
+          "content": 2,
+          "column_number": 1
+        },
+        {
+          "content": 3,
+          "column_number": 2
+        },
+        {
+          "content": 4,
+          "column_number": 3
+        },
+        {
+          "content": 5,
+          "column_number": 4
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Local Variables
+
+You can use `#let` API to declare local variables. 
+The `#let` API takes an array as a paremeter, 
+which has two elements:
+
+- The first parameter: the `{{#let}}` statement 
+which assigns any value to a variable.
+
+- The second parameter: the actual expression that 
+will be evaluated.
+
+Here's an example:
+
+
+
+> 1. Template and Data
+
+
+```js
+const data = {
+  families: [{
+    location: "Wonderland",
+    members: [{
+      name: "Alice"
+    }, {
+      name: "Bob"
+    }]
+  }, {
+    location: "Springfield",
+    members: [{
+      name: "Bart"
+    }, {
+      name: "Marge"
+    }, {
+      name: "Lisa"
+    }, {
+      name: "Homer"
+    }, {
+      name: "Maggie"
+    }]
+  }]
+}
+const template = {
+  "rows": {
+    "{{#each families}}": {
+      "{{#let}}": [{
+        "family_location": "{{location}}"
+      }, {
+        "{{#each members}}": {
+          "type": "label",
+          "text": "{{name}} in {{family_location}}"
+        }
+      }]
+    }
+  }
+}
+```
+
+
+
+> 2. Select and Transform
+
+
+```js
+const result = ST.select(template)
+                  .transform(data)
+                  .root()
+
+// or
+// const result = ST.transform(template, data)
+```
+
+
+
+> 3. Result
+
+```js
+{
+  "rows": [
+    [
+      {
+        "type": "label",
+        "text": "Alice in Wonderland"
+      },
+      {
+        "type": "label",
+        "text": "Bob in Wonderland"
+      }
+    ],
+    [
+      {
+        "type": "label",
+        "text": "Bart in Springfield"
+      },
+      {
+        "type": "label",
+        "text": "Marge in Springfield"
+      },
+      {
+        "type": "label",
+        "text": "Lisa in Springfield"
+      },
+      {
+        "type": "label",
+        "text": "Homer in Springfield"
+      },
+      {
+        "type": "label",
+        "text": "Maggie in Springfield"
+      }
+    ]
+  ]
+}
+```
+
+The local variable feature is important 
+when you are using nested loops. 
+
+You could use the `$root` variable to reach out of 
+the current loop context, but this has limitations, 
+because you can always only reach out to the root level.
+
+
+By using the `#let` API, you can define a variable at any 
+level of a loop and have it accessible from 
+anywhere further down the loop **WITHOUT** using the `$root` 
+variable.
+
+### Example 1 - Use only a subtree of a template
+
+Sometimes you don't want to use the entire template to parse data. 
+In this case you can select a subtree of a template and use that to 
+parse data.
+
+```js
+var template = {
+  body: {
+    sections: [{
+      items: {
+        "{{#each items}}": {
+          type: "{{type}}",
+          url: "{{url}}"
+        }
+      }
+    }]
+  }
+};
+
+var finalTemplate = ST.select(template, function(key, val) {
+                          return key === 'type';
+                        })
+                        .transform({ type: "image" }).root();
+
+/*
+finalTemplate = {
+  body: {
+    sections: [{
+      items: {
+        "{{#each items}}": {
+          type: "image",
+          url: "{{url}}"
+        }
+      }
+    }]
+  }
+}
+*/
+```
+
+### Example 2 - Filter Data + Transform with template
+
+Sometimes you have a large set of data
+but only want to transform a portion of it. 
+In this case you can select a subtree of the data 
+object and parse using a template.
+
+```js
+var data = {
+  "item": { "url": "http://localhost", "text": "localhost" },
+  "items": [
+    { "url": "file://documents", "text": "documents" },
+    { "url": "https://blahblah.com", "text": "blah"  }
+  ],
+  "nestedItems": {
+    "childItems": [{
+      "url": "http://hahaha.com",
+      "text": "haha"
+    }, {
+      "url": "https://hohoho.com",
+      "text": "hoho"
+    }]
+  }
+};
+
+var selection = ST.select(data, function(key, val) {
+  return key === 'url';
+});
+
+var urls = selection.values();
+/**
+*  urls = [
+*    "http://localhost",
+*    "file://documents",
+*    "https://blahblah.com",
+*    "http://hahaha.com",
+*    "https://hohoho.com"
+*  ]
+*/
+
+var transformed = selection.transformWith({
+  "tag": "<a href='{{url}}'>{{text}}</a>"
+})
+
+var objects = transformed.objects()
+/**
+* objects = [
+*   { "tag": "<a href='http://localhost'>localhost</a>" },
+*   { "tag": "<a href='file://documents'>documents</a>" },
+*   { "tag": "<a href='https://blahblah.com'>blah</a>" },
+*   { "tag": "<a href='https://hahaha.com'>haha</a>" },
+*   { "tag": "<a href='https://hohoho.com'>hoho</a>" }
+* ]
+*/
+
+var values = transformed.values()
+/**
+* values = [
+*   "<a href='http://localhost'>localhost</a>",
+*   "<a href='file://documents'>documents</a>",
+*   "<a href='https://blahblah.com'>blah</a>",
+*   "<a href='https://hahaha.com'>haha</a>",
+*   "<a href='https://hohoho.com'>hoho</a>"
+* ]
+*/
+
+var keys = transformed.keys()
+/**
+* keys = ["tag", "tag", "tag", "tag", "tag"]
+*/
+
+
+var root = transformed.root()
+/**
+* root = {
+*   "item": {
+*     "tag": "<a href='http://localhost'>localhost</a>"
+*   },
+*   "items": [
+*     { "tag": "<a href='file://documents'>documents</a>" },
+*     { "tag": "<a href='https://blahblah.com'>blah</a>" },
+*   ],
+*   "nestedItems": {
+*     "childItems": [
+*       { "tag": "<a href='https://hahaha.com'>haha</a>" },
+*       { "tag": "<a href='https://hohoho.com'>hoho</a>" }
+*     ]
+*   }
+* };
+*/
+
+var transformed = ST.select({
+  "{{#each items}}": {
+    tag: "<a href='{{url}}'>{{text}}</a>"
+  }
+}).transform({ items: urls });
+
+var root = transformed.root();
+/*
+root = {
+  "item": { "tag": "<a href='http://localhost'>localhost</a>" },
+  "items": [
+    { "tag": "<a href='file://documents'>documents</a>" },
+    { "tag": "<a href='https://blahblah.com'>blah</a>" }
+  ],
+  "nestedItems": {
+    "childItems": {
+      "tag": "<a href='http://hahaha.com'>haha</a>"
+    },
+    "tag": "<a href='https://hohoho.com'>hoho</a>"
+  }
+}
+*/
+
+var keys = transformed.keys();
+/*
+keys = ["tag", "tag", "tag", "tag", "tag"];
+*/
+
+var values = transformed.values();
+/*
+values = [
+  "<a href='http://localhost'>localhost</a>",
+  "<a href='file://documents'>documents</a>",
+  "<a href='https://blahblah.com'>blah</a>",
+  "<a href='http://hahaha.com'>haha</a>",
+  "<a href='https://hohoho.com'>hoho</a>"
+]
+*/
+
+var objects = transformed.objects();
+/*
+objects = [
+  { "tag": "<a href='http://localhost'>localhost</a>" },
+  { "tag": "<a href='file://documents'>documents</a>" },
+  { "tag": "<a href='https://blahblah.com'>blah</a>" },
+  { "tag": "<a href='http://hahaha.com'>haha</a>" },
+  { "tag": "<a href='https://hohoho.com'>hoho</a>" }
+]
+*/
+
+var paths = transformed.paths();
+```
+
+### Example 3 - Nesting Templates
+
+Sometimes you may want to reuse a template by nesting 
+inside another template. In this case you just need to 
+select a subtree of the parent template and plug in a child 
+template.
+
+```js
+var data = {
+  "item": { "url": "http://localhost" },
+  "items": [
+    { "url": "file://documents" },
+    { "url": "https://blahblah.com" }
+  ],
+  "nestedItems": {
+    "childItems": [{
+      "url": "http://hahaha.com",
+      "text": "haha"
+    }, {
+      "url": "https://hohoho.com",
+      "text": "hoho"
+    }]
+  }
+};
+var template = {
+  "items": {
+    "{{#each items}}": "{{partial}}"
+  }
+}
+var partial = {
+  "type": "label",
+  "text": "{{name}}"
+}
+var selected = ST.select(template, function(key, val) {
+  return val === '{{partial}}';
+})
+var finalTemplate = selected.transform({
+  "partial": {
+    "type": "label",
+    "text": "{{name}}"
+  }
+}).root();
+
+/*
+  finalTemplate = {
+    "items": {
+      "{{#each items}}": {
+        "type": "label",
+        "text": "{{name}}"
+      }
+    }
+  }
+*/
+```

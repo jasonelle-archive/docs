@@ -1,0 +1,35 @@
+Package: jasonelle
+Type: Package
+Title: Jasonelle Documentation
+Version: 1.0.0
+Authors@R: c(
+    person("Ethan", "Gliechtenstein", role = c("aut", "cre"), email = "ethan.gliechtenstein@gmail.com"),
+    person("Camilo", "Castro", role = "ctb"),
+    )
+Maintainer: Camilo Castro <camilo@ninjas.cl>
+Description: Documents the different components of the Jasonelle Family.
+License: MPL
+Imports:
+    htmltools (>= 0.3.6),
+    knitr (>= 1.16),
+    rmarkdown (>= 1.9),
+    xfun (>= 0.2),
+    tinytex,
+    yaml (>= 2.1.14)
+    bookdown (>= 0.8)
+Suggests:
+    htmlwidgets,
+    rstudioapi,
+    miniUI,
+    rsconnect (>= 0.4.3),
+    servr (>= 0.3),
+    shiny,
+    testit (>= 0.5),
+    tufte,
+    webshot
+URL: https://jasonelle.com
+BugReports: https://github.com/jasonelle/jasonelle/issues
+SystemRequirements: Pandoc (>= 1.17.2)
+LazyData: TRUE
+RoxygenNote: 6.1.1
+Encoding: UTF-8

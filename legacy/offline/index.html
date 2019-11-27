@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>★ Offline - Jasonette</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u2605 Offline";
+    var mkdocs_page_input_path = "offline.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54282166-8', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Jasonette</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">■ Getting started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ios/">■ iOS</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../android/">■ Android</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../examples/">■ Examples</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">■ Reference</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../document/">★ View</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../href/">★ Link</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../actions/">★ Actions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../components/">★ Components</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../layout/">★ Layout</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../templates/">★ Templates</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mixin/">★ Mix-in</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">★ Offline</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#what-does-offline-mean">What does "Offline" mean?</a></li>
+    
+
+    <li class="toctree-l3"><a href="#features">Features</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1-loading-from-local-file">1. Loading from Local File</a></li>
+        
+            <li><a class="toctree-l4" href="#2-global-key-value-persistent-store">2. Global Key-Value Persistent Store</a></li>
+        
+            <li><a class="toctree-l4" href="#3-automatic-json-caching">3. Automatic JSON caching</a></li>
+        
+            <li><a class="toctree-l4" href="#4-data-uri">4. Data-uri</a></li>
+        
+            <li><a class="toctree-l4" href="#5-loading-screen">5. Loading Screen</a></li>
+        
+            <li><a class="toctree-l4" href="#6-error-screen">6. Error Screen</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../agents/">★ Agents</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../web/">★ Web Container</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../env/">★ Environment Variables</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../convention/">■ Tips</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../advanced/">■ Extending Jasonette (advanced)</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../faq/">■ Troubleshoot</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../jason/">■ Jason</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Jasonette</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>■ Reference &raquo;</li>
+        
+      
+    
+    <li>★ Offline</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Jasonette/documentation/edit/master/docs/offline.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="what-does-offline-mean">What does "Offline" mean?</h1>
+<p>Jasonette supports various offline features.</p>
+<p>Note that "offline" doesn't mean your entire app needs to be offline. Parts of your app can be online and parts of it can be offline.</p>
+<p>This is because <strong>everything</strong> on Jasonette is described in JSON. You can selectively load your JSON from multiple sources and combine them together. You can do things like:</p>
+<ol>
+<li>Store the model locally, and load view and controller from remote.</li>
+<li>Store the view and controller locally, and load model from remote.</li>
+<li>Store all model, view, controller locally.</li>
+<li>Etc.</li>
+</ol>
+<p>But this is just the basics. Imagine what's possible when you use <a href="/mixin">mixins</a>. You can mix and match different modules from different sources, some online, some offline, to finally construct the final app.</p>
+<hr />
+<h1 id="features">Features</h1>
+<ol>
+<li><a href="#1-loading-from-local-file">Loading from Local File</a></li>
+<li><a href="#2-global-key-value-persistent-store">Global Key-value Persistent Store</a></li>
+<li><a href="#3-automatic-json-caching">Automatic JSON Caching</a></li>
+<li><a href="#4-data-uri">Data-uri</a></li>
+<li><a href="#5-loading-screen">Loading Screen</a></li>
+<li><a href="#6-error-screen">Error Screen</a></li>
+</ol>
+<hr />
+<h2 id="1-loading-from-local-file">1. Loading from Local File</h2>
+<p>Just like you can fetch remote files over <code>http</code> to construct a Jasonette app, you can also use local files packaged with the app, using a file url scheme (<code>file://</code>)</p>
+<p><br></p>
+<h3 id="using-file-url-scheme">Using File URL Scheme</h3>
+<p><br></p>
+<blockquote>
+<p><strong>A. Home URL </strong></p>
+<p>Instead of setting a remote URL you can point it to a local JSON file.</p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p>Here's what it looks like on Android:</p>
+<p><br></p>
+<p><img src='../images/android_home_local_url.png' class='large'></p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p>Here's what it looks like on iOS:</p>
+<p><img src='../images/ios_home_local_url.png' class='large'></p>
+</blockquote>
+<hr />
+<blockquote>
+<p><strong>B. Offline HREF</strong></p>
+<p>You can also <code>href</code> into local JSON URLs:</p>
+</blockquote>
+<pre><code>    {
+      &quot;type&quot;: &quot;label&quot;,
+      &quot;text&quot;: &quot;Go&quot;,
+      &quot;href&quot;: {
+        &quot;url&quot;: &quot;file://demo.json&quot;
+      }
+    }
+</code></pre>
+
+<hr />
+<blockquote>
+<p><strong>C. Offline Require</strong></p>
+<p>You can <a href="/actions/#require">$require</a> offline JSON URLs:</p>
+</blockquote>
+<pre><code>    {
+      &quot;type&quot;: &quot;$require&quot;,
+      &quot;options&quot;: {
+        &quot;items&quot;: [&quot;file://item1.json&quot;, &quot;file://item2.json&quot;]
+      }
+    }
+</code></pre>
+
+<hr />
+<blockquote>
+<p><strong>D. Offline Mixin</strong></p>
+<p>You can use file urls with <a href="/mixin">mixins</a>:</p>
+</blockquote>
+<pre><code>    {
+      &quot;@&quot;: &quot;file://mixin.json&quot;,
+      &quot;items&quot;: [],
+      ...
+    }
+</code></pre>
+
+<hr />
+<blockquote>
+<p><strong>E. Offline Images</strong></p>
+<p>Jasonette not only lets you render remote images but also lets you bundle them up on the app locally and load them locally. Just like you can use the <a href="#2-file-url">file:// scheme</a> to render local JSON objects, you can use the same <code>file://</code> scheme to access locally stored images.</p>
+</blockquote>
+<pre><code>{
+  &quot;type&quot;: &quot;image&quot;,
+  &quot;url&quot;: &quot;file://avatar.png&quot;
+}
+</code></pre>
+
+<blockquote>
+<p>Supported everywhere:</p>
+<ul>
+<li><a href="/document/#background">body.background</a></li>
+<li><a href="/document/#menu">header.menu</a></li>
+<li><a href="/document/#title">header.title</a></li>
+<li><a href="/document/#tabs">footer.tabs</a></li>
+<li><a href="/document/#input">footer.input</a></li>
+<li><a href="/components/#image">image component</a></li>
+<li><a href="/components/#button">button component</a></li>
+<li><a href="/document/#typeimage">image layers</a></li>
+</ul>
+</blockquote>
+<hr />
+<p><br></p>
+<h3 id="storing-files-locally">Storing files locally</h3>
+<p>To utilize this feature, you first need to store files under the right folders. Let me show you how:</p>
+<p><br></p>
+<p><strong>iOS File URL</strong></p>
+<ol>
+<li>Open XCode, go to <code>Jasonette &gt; Core &gt; file://</code> from the sidebar, and add your files there by drag and dropping.</li>
+<li>Access using <code>file://your_filename.json</code></li>
+</ol>
+<p><br></p>
+<p><img src='../images/ios_local_file.png' class='large'></p>
+<p><br></p>
+<p><strong> Android File URL</strong></p>
+<ol>
+<li>Open Android Studio, go to <code>app &gt; assets &gt; file</code>. Copy and paste your files there.</li>
+<li>Access using <code>file://your_filename.json</code></li>
+</ol>
+<p><br></p>
+<p><img src='../images/android_local_file.png' class='large'></p>
+<p><br></p>
+<hr />
+<h2 id="2-global-key-value-persistent-store">2. Global Key-Value Persistent Store</h2>
+<p>Normally, variables on Jasonette are sandboxed per URL (local variables and cache).</p>
+<p>However, a lot of times you may want to have a global variable that's accessible from all your views.
+Also, you probably want them to be persisted so you can use it like a Database.</p>
+<p>This is what global key-value store does.</p>
+<p>The global key-value store is supported as an <strong>action</strong>. See <a href="/actions/#global">$global API section</a> to learn more.</p>
+<p><img src='../images/global.png' class='large'></p>
+<hr />
+<h2 id="3-automatic-json-caching">3. Automatic JSON caching</h2>
+<p>You can have best of both worlds (Stream the app on demand to keep it up-to-date all the time, as well as have the app logic cached locally so it loads instantly) by using the offline caching feature.</p>
+<p><br></p>
+<h3 id="how-json-caching-works">How JSON caching works</h3>
+<ol>
+<li>
+<p>The first time the app loads, Jasonette fetches the JSON from your server.</p>
+</li>
+<li>
+<p>If you specify that you want to use offline caching, Jasonette will cache the entire JSON for that view.</p>
+</li>
+<li>
+<p>Next time you open the view, Jasonette will load immediately from the offline cached version.</p>
+</li>
+<li>
+<p>But it doesn't stop there, Jaasonette checks to see if the network is available, and if it is, it re-fetches the JSON and updates the view. The trick is <strong>step 3</strong> comes first, so it will ONLY update if the network is available. Otherwise you'll still have your offline cached version of your app.</p>
+</li>
+</ol>
+<p><br></p>
+<h3 id="how-to-use">How to use</h3>
+<p>Offline caching is managed on a per-view basis. All you need to do to enable is put <code>"offline": "true"</code> under <code>$jason.head</code>, like this:</p>
+<pre><code>{
+  "$jason": {
+    "head": {
+      "title": "offline test",
+      "offline": "true",
+      ...
+}
+</code></pre>
+<hr />
+<h2 id="4-data-uri">4. Data-uri</h2>
+<p>Jasonette supports <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">data-uri</a> for urls. This means you can store the entire content within the URL itself. It's not always practical but there are several cases where you can get neat effects using this approach.</p>
+<p>Try entering a data-url instead of http or https based url. It should work.</p>
+<hr />
+<h2 id="5-loading-screen">5. Loading Screen</h2>
+<p>The loading screen is displayed while a view is being loaded. </p>
+<p>It is loaded from <code>file://loading.json</code>, which comes with the project, but you can customize it as you like.</p>
+<p><br></p>
+<p><img src='../images/loadinganimation.gif'></p>
+<p><br></p>
+<p>Remember, this is a full fledged JASON view, which means you can do anything you can do in a regular view.</p>
+<ol>
+<li>If you don't want a loading view, replace it with an empty view.</li>
+<li>If you want a simple background colour instead of loading animation, you can do so by setting the background color</li>
+<li>You can get creative and use the <a href="/actions/#global">$global</a> and <a href="/env">$env</a> variables to construct custom loading screens for each view.</li>
+</ol>
+<hr />
+<h2 id="6-error-screen">6. Error Screen</h2>
+<p>The error screen is displayed when the view fails to load because of network connection.</p>
+<p><br></p>
+<p><img src='../images/error.png' style='border:1px solid gray;'></p>
+<p><br></p>
+<p>It is loaded from <code>file://error.json</code>, but you can customize it as you like.</p>
+<p>Again, it's a full fledged JASON view, so anything you can do on a regular view is possible in the error view, such as rendering templates, running actions on certain events, etc.</p>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../agents/" class="btn btn-neutral float-right" title="★ Agents">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../mixin/" class="btn btn-neutral" title="★ Mix-in"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Jasonette/documentation/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../mixin/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../agents/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

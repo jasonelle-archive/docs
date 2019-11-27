@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>■ Troubleshoot - Jasonette</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u25a0 Troubleshoot";
+    var mkdocs_page_input_path = "faq.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-54282166-8', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Jasonette</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">■ Getting started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ios/">■ iOS</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../android/">■ Android</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../examples/">■ Examples</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">■ Reference</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../document/">★ View</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../href/">★ Link</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../actions/">★ Actions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../components/">★ Components</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../layout/">★ Layout</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../templates/">★ Templates</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../mixin/">★ Mix-in</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../offline/">★ Offline</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../agents/">★ Agents</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../web/">★ Web Container</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../env/">★ Environment Variables</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../convention/">■ Tips</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../advanced/">■ Extending Jasonette (advanced)</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">■ Troubleshoot</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#no-provisioning-error">"No provisioning..." error</a></li>
+    
+
+    <li class="toctree-l2"><a href="#signing-for-jasonette-requires-a-development-team-select-a-development-team-in-the-project-editor">"Signing for "Jasonette" requires a development team. Select a development team in the project editor."</a></li>
+    
+
+    <li class="toctree-l2"><a href="#code-signing-is-required-for-product-type-application-in-sdk">"Code signing is required for product type 'Application' in SDK"</a></li>
+    
+
+    <li class="toctree-l2"><a href="#untrusted-enterprise-developer">"Untrusted Enterprise Developer"</a></li>
+    
+
+    <li class="toctree-l2"><a href="#cant-be-opened-because-it-is-from-an-unidentified-developer">"Can't be opened because it is from an unidentified developer."</a></li>
+    
+
+    <li class="toctree-l2"><a href="#is-busy-processing-symbol-files">"... is busy: Processing symbol files"</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../jason/">■ Jason</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Jasonette</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>■ Troubleshoot</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/Jasonette/documentation/edit/master/docs/faq.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="no-provisioning-error">"No provisioning..." error</h1>
+<p><br></p>
+<p><img alt="No provisioning error" src="../images/no_provisioning_profiles.png" /></p>
+<p><br></p>
+<p><strong>Just press "Fix Issue" and sign in with your Apple account</strong></p>
+<p><strong><a href="http://apple.stackexchange.com/a/206130">If that doesn't work, read this post</a></strong></p>
+<hr />
+<h1 id="signing-for-jasonette-requires-a-development-team-select-a-development-team-in-the-project-editor">"Signing for "Jasonette" requires a development team. Select a development team in the project editor."</h1>
+<p><br></p>
+<p><img alt="Requires development team" src="../images/requires_development_team.png" /></p>
+<p><br></p>
+<ol>
+<li>Select the project from XCode.</li>
+<li>Go to "General" section.</li>
+<li>Click "Team" under Signing section. Switch it from "None" to your existing team. If you don't have one, select "Add an account" to add your own Apple account.</li>
+</ol>
+<p><img alt="add team" src="../images/add_team.png" /></p>
+<hr />
+<h1 id="code-signing-is-required-for-product-type-application-in-sdk">"Code signing is required for product type 'Application' in SDK"</h1>
+<p><br></p>
+<p><img alt="Requires development team" src="../images/requires_development_team.png" /></p>
+<p><br></p>
+<ol>
+<li>Select the project from XCode.</li>
+<li>Go to "General" section.</li>
+<li>Click "Team" under Signing section. Switch it from "None" to your existing team. If you don't have one, select "Add an account" to add your own Apple account.</li>
+</ol>
+<p><img alt="add team" src="../images/add_team.png" /></p>
+<hr />
+<h1 id="untrusted-enterprise-developer">"Untrusted Enterprise Developer"</h1>
+<p>Keep getting "Untrusted Enterprise Developer" alert when you try to open the installed app?</p>
+<p><br></p>
+<div class='video-container'>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/EG9spHluLKg?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<p><br></p>
+<p>Or read the Apple Guideline below:</p>
+<p><strong><a href="https://support.apple.com/en-us/HT204460">Guidelines for installing custom enterprise apps on iOS</a></strong></p>
+<hr />
+<h1 id="cant-be-opened-because-it-is-from-an-unidentified-developer">"Can't be opened because it is from an unidentified developer."</h1>
+<p>Do you get the following error when you try to execute the <code>Setup</code> command?</p>
+<p><br></p>
+<p><img alt="unidentified developer" src="../images/unidentified_developer.png" /></p>
+<p><br></p>
+<p><strong><a href="http://www.iclarified.com/28180/how-to-open-applications-from-unidentified-developers-in-mac-os-x-mountain-lion">This article will help you</a></strong></p>
+<hr />
+<h1 id="is-busy-processing-symbol-files">"... is busy: Processing symbol files"</h1>
+<p>Do you get this alert when you press the <code>play</code> button?</p>
+<p><br></p>
+<p><img alt="processing symbol files" src="../images/processing_symbol.png" /></p>
+<p><br></p>
+<p><strong>Just wait for a bit until the progress bar gets to the end, and then retry.</strong></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../jason/" class="btn btn-neutral float-right" title="■ Jason">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../advanced/" class="btn btn-neutral" title="■ Extending Jasonette (advanced)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/Jasonette/documentation/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../advanced/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../jason/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

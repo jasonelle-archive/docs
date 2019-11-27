@@ -1,0 +1,20 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cell/1.1.0/cell.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+<script>
+btn = {
+  $cell: true,
+  $text: "Click to count",
+  $type: "a",
+  href: "#",
+  style: "padding: 20px; background: #FFD34E; color: rgba(0,0,0,0.8); font-weight: bold; text-decoration: none; font-family: HelveticaNeue, Helvetica, arial; margin: 10px; font-size: 30px; display: inline-block;",
+  _counter: 0,
+  onclick: function(e){
+	toastr.info("Counting: " + (++this._counter))
+  }
+}
+</script>
+</html>

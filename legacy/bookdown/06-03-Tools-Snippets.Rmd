@@ -1,0 +1,13 @@
+## Code Snippets
+
+Various code snippets were created by the community
+to enable autocompletion for `$jason` files.
+
+![](images/tools/snippets/vscode.gif)
+
+|Name|Author|Repo|Backup Repo|
+|--- |---   |--- |---        |
+|VSCode Snippets| **Felipe Mullen** | [https://github.com/jasonelle/vscode-jasonette-snippets](https://github.com/jasonelle/vscode-jasonette-snippets) | [https://github.com/jasonelle/vscode-jasonette-snippets](https://github.com/jasonelle/vscode-jasonette-snippets) |
+|Sublime Text Snippets| **Barry Anders** | [https://github.com/BarryMode/jasonette-completions](https://github.com/BarryMode/jasonette-completions) | [https://github.com/jasonelle/sublime-jasonette-snippets](https://github.com/jasonelle/sublime-jasonette-snippets) |
+|Cloud9 Snippets| **Lixas** | [https://github.com/lixas/c9JasonetteSnippets](https://github.com/lixas/c9JasonetteSnippets) | [https://github.com/jasonelle/cloud9-jasonette-snippets](https://github.com/jasonelle/cloud9-jasonette-snippets) |
+
