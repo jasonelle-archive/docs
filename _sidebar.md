@@ -2,3 +2,4 @@
 
 * [Welcome](/ "Welcome to Jasonelle")
 * [History](history.md)
+* [Glossary](glossary.md)
