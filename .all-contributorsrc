@@ -37,6 +37,15 @@
         "code",
         "bug"
       ]
+     },
+      {
+      "login": "maks",
+      "name": "Maksim Lin",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/71999?v=4",
+      "profile": "http://manichord.com/blog",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
