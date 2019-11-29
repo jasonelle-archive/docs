@@ -1,6 +1,6 @@
 # Folks 🤝
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors)
 
 ## Core Team ⚙️
 
@@ -33,6 +33,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/lixas"><img src="https://avatars3.githubusercontent.com/u/2889604?v=4" width="100px;" alt="lixas"/><br /><sub><b>lixas</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=lixas" title="Code">💻</a> <a href="#question-lixas" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://github.com/mrshawnj"><img src="https://avatars2.githubusercontent.com/u/33585148?v=4" width="100px;" alt="mrshawnj"/><br /><sub><b>mrshawnj</b></sub></a><br /><a href="https://github.com/jasonelle/docs/issues?q=author%3Amrshawnj" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/miko"><img src="https://avatars1.githubusercontent.com/u/64889?v=4" width="100px;" alt="miko"/><br /><sub><b>miko</b></sub></a><br /><a href="#question-miko" title="Answering Questions">💬</a></td>
   </tr>
 </table>
 
