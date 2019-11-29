@@ -1,6 +1,6 @@
 # Folks 🤝
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
 ## Core Team ⚙️
 
@@ -24,6 +24,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/gliechtenstein"><img src="https://avatars0.githubusercontent.com/u/16613330?v=4" width="100px;" alt="gliechtenstein"/><br /><sub><b>gliechtenstein</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=gliechtenstein" title="Code">💻</a> <a href="#content-gliechtenstein" title="Content">🖋</a> <a href="#ideas-gliechtenstein" title="Ideas, Planning, & Feedback">🤔</a> <a href="#platform-gliechtenstein" title="Packaging/porting to new platform">📦</a> <a href="#tool-gliechtenstein" title="Tools">🔧</a></td>
     <td align="center"><a href="https://ventum.co.za"><img src="https://avatars1.githubusercontent.com/u/7249713?v=4" width="100px;" alt="Christian Swanepoel"/><br /><sub><b>Christian Swanepoel</b></sub></a><br /><a href="https://github.com/jasonelle/docs/issues?q=author%3Achristianswanepoel" title="Bug reports">🐛</a> <a href="#question-christianswanepoel" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="http://flippinbits.com"><img src="https://avatars1.githubusercontent.com/u/535595?v=4" width="100px;" alt="Ken Corey"/><br /><sub><b>Ken Corey</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=kcorey" title="Code">💻</a> <a href="https://github.com/jasonelle/docs/issues?q=author%3Akcorey" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
