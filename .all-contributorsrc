@@ -17,6 +17,16 @@
         "platform",
         "tool"
       ]
+    },
+    {
+      "login": "christianswanepoel",
+      "name": "Christian Swanepoel",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7249713?v=4",
+      "profile": "https://ventum.co.za",
+      "contributions": [
+        "bug",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
