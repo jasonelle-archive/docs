@@ -7,6 +7,14 @@
   <meta name="description" content="Jasonelle Documentation">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  
+  <meta property="og:title" content="Jasonelle - Native App over JSON Markup">
+  <meta property="og:site_name" content="Jasonelle">
+  <meta property="og:url" content="https://jasonelle.com/docs">
+  <meta property="og:description" content="Make iOS and Android apps with just a single JSON, loaded over HTTP, local file, or anywhere. Jasonelle turns JSON into iOS and Android native components.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jasonelle.com/homepage/logo.png">
+
 </head>
 <body>
   <div id="app"><center><img src="https://jasonelle.com/favicon.png" style="width:10%;height:auto;"></center></div>
@@ -14,12 +22,13 @@
     window.$docsify = {
       name: 'Jasonelle',
       repo: 'https://github.com/jasonelle',
-      loadSidebar: true,
-      subMaxLevel: 3,
-      homepage: 'index.md'
-      //logo: 'https://jasonelle.com/favicon.png'
+      homepage: 'home.md',
+      subMaxLevel: 1,
+      maxLevel: 1,
+      loadSidebar:true
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-json5.min.js"></script>
 </body>
 </html>

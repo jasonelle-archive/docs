@@ -1,17 +1,12 @@
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+# Jasonelle Docs
 
-## Contributors ✨
+*Jasonelle* is quite a different way to make an app. Make iOS and Android apps 
+with just a single JSON, loaded over HTTP, local file, or anywhere.
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+It has never been trivial to have an idea and turn it into an app quickly. 
+Even for genius programmers.
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/gliechtenstein"><img src="https://avatars0.githubusercontent.com/u/16613330?v=4" width="100px;" alt="gliechtenstein"/><br /><sub><b>gliechtenstein</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=gliechtenstein" title="Code">💻</a> <a href="#content-gliechtenstein" title="Content">🖋</a> <a href="#ideas-gliechtenstein" title="Ideas, Planning, & Feedback">🤔</a> <a href="#platform-gliechtenstein" title="Packaging/porting to new platform">📦</a> <a href="#tool-gliechtenstein" title="Tools">🔧</a></td>
-  </tr>
-</table>
+With *Jasonelle*, you don't even have to be a programmer. 
+Anyone can make an app. And do it in minutes, not days or weeks.
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+Make an app as fast as it takes to write a blog post.

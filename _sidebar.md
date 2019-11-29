@@ -3,4 +3,6 @@
 * [Welcome](/ "Welcome to Jasonelle")
 * [History](history.md)
 * [Glossary](glossary.md)
-* [Contributors](README.md)
+* [Code of Conduct](conductcode.md)
+* [Release Schedules](schedules.md)
+* [Folks](folks.md)
