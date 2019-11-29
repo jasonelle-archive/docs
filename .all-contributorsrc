@@ -83,6 +83,24 @@
         "code",
         "question"
       ]
+    },
+    {
+      "login": "mrshawnj",
+      "name": "mrshawnj",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/33585148?v=4",
+      "profile": "https://github.com/mrshawnj",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "miko",
+      "name": "miko",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/64889?v=4",
+      "profile": "https://github.com/miko",
+      "contributions": [
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
