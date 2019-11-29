@@ -1,6 +1,6 @@
 # Folks 🤝
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
 
 ## Core Team ⚙️
 
@@ -28,6 +28,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://manichord.com/blog"><img src="https://avatars3.githubusercontent.com/u/71999?v=4" width="100px;" alt="Maksim Lin"/><br /><sub><b>Maksim Lin</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=maks" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/rolloclarke"><img src="https://avatars2.githubusercontent.com/u/1517419?v=4" width="100px;" alt="Rollo Clarke"/><br /><sub><b>Rollo Clarke</b></sub></a><br /><a href="https://github.com/jasonelle/docs/issues?q=author%3Arolloclarke" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://www.amahi.com"><img src="https://avatars1.githubusercontent.com/u/9907?v=4" width="100px;" alt="Carlos Puchol"/><br /><sub><b>Carlos Puchol</b></sub></a><br /><a href="https://github.com/jasonelle/docs/issues?q=author%3Acpg" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/Pvybhav"><img src="https://avatars1.githubusercontent.com/u/22319118?v=4" width="100px;" alt="vybhav P"/><br /><sub><b>vybhav P</b></sub></a><br /><a href="#question-Pvybhav" title="Answering Questions">💬</a></td>
   </tr>
 </table>
 
