@@ -1,8 +1,4 @@
-# Jasonelle
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
-
-This contains the main documentation for the *Jasonelle* project.
-Uses https://docsify.js.org as the doc builder.
 
 ## Contributors ✨
 
