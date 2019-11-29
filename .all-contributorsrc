@@ -29,6 +29,16 @@
       ]
     },
     {
+      "login": "kcorey",
+      "name": "Ken Corey",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/535595?v=4",
+      "profile": "http://flippinbits.com",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+     },
+      {
       "login": "maks",
       "name": "Maksim Lin",
       "avatar_url": "https://avatars3.githubusercontent.com/u/71999?v=4",
