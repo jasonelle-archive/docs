@@ -27,6 +27,62 @@
         "bug",
         "question"
       ]
+    },
+    {
+      "login": "kcorey",
+      "name": "Ken Corey",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/535595?v=4",
+      "profile": "http://flippinbits.com",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "maks",
+      "name": "Maksim Lin",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/71999?v=4",
+      "profile": "http://manichord.com/blog",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "rolloclarke",
+      "name": "Rollo Clarke",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1517419?v=4",
+      "profile": "https://github.com/rolloclarke",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "cpg",
+      "name": "Carlos Puchol",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/9907?v=4",
+      "profile": "http://www.amahi.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "Pvybhav",
+      "name": "vybhav P",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22319118?v=4",
+      "profile": "https://github.com/Pvybhav",
+      "contributions": [
+        "question"
+      ]
+    },
+    {
+      "login": "lixas",
+      "name": "lixas",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2889604?v=4",
+      "profile": "https://github.com/lixas",
+      "contributions": [
+        "code",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
