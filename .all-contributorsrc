@@ -37,14 +37,23 @@
         "code",
         "bug"
       ]
-     },
-      {
+    },
+    {
       "login": "maks",
       "name": "Maksim Lin",
       "avatar_url": "https://avatars3.githubusercontent.com/u/71999?v=4",
       "profile": "http://manichord.com/blog",
       "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "rolloclarke",
+      "name": "Rollo Clarke",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1517419?v=4",
+      "profile": "https://github.com/rolloclarke",
+      "contributions": [
+        "bug"
       ]
     }
   ],
