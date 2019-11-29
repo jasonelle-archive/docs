@@ -73,6 +73,16 @@
       "contributions": [
         "question"
       ]
+    },
+    {
+      "login": "lixas",
+      "name": "lixas",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2889604?v=4",
+      "profile": "https://github.com/lixas",
+      "contributions": [
+        "code",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
