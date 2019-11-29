@@ -27,6 +27,16 @@
         "bug",
         "question"
       ]
+    },
+    {
+      "login": "kcorey",
+      "name": "Ken Corey",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/535595?v=4",
+      "profile": "http://flippinbits.com",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
