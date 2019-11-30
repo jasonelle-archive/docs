@@ -4,5 +4,5 @@
 * [History](history.md)
 * [Glossary](glossary.md)
 * [Code of Conduct](conductcode.md)
-* [Release Schedules](schedules.md)
+* [Releases](releases.md)
 * [Folks](folks.md)

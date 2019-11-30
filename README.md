@@ -10,3 +10,6 @@ With *Jasonelle*, you don't even have to be a programmer.
 Anyone can make an app. And do it in minutes, not days or weeks.
 
 Make an app as fast as it takes to write a blog post.
+
+
+This documentation is made using [Docsify](https://docsify.js.org).
