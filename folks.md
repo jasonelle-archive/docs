@@ -36,6 +36,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/mrshawnj"><img src="https://avatars2.githubusercontent.com/u/33585148?v=4" width="100px;" alt="mrshawnj"/><br /><sub><b>mrshawnj</b></sub></a><br /><a href="https://github.com/jasonelle/docs/issues?q=author%3Amrshawnj" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/miko"><img src="https://avatars1.githubusercontent.com/u/64889?v=4" width="100px;" alt="miko"/><br /><sub><b>miko</b></sub></a><br /><a href="#question-miko" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://www.entrepreneursidehustle.com"><img src="https://avatars3.githubusercontent.com/u/17301409?v=4" width="100px;" alt="Andres Berejnoi"/><br /><sub><b>Andres Berejnoi</b></sub></a><br /><a href="#question-andresberejnoi" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="http://basememara.com"><img src="https://avatars2.githubusercontent.com/u/892152?v=4" width="100px;" alt="Basem Emara"/><br /><sub><b>Basem Emara</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=basememara" title="Code">💻</a></td>
   </tr>
 </table>
 
