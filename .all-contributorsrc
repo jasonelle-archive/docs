@@ -101,11 +101,21 @@
       "contributions": [
         "question"
       ]
+    },
+    {
+      "login": "andresberejnoi",
+      "name": "Andres Berejnoi",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/17301409?v=4",
+      "profile": "https://www.entrepreneursidehustle.com",
+      "contributions": [
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "docs",
   "projectOwner": "jasonelle",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
