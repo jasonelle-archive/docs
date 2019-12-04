@@ -129,6 +129,16 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "realitix",
+      "name": "Jean-Sébastien B.",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/6367936?v=4",
+      "profile": "https://realitix.github.io/",
+      "contributions": [
+        "code",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
