@@ -36,7 +36,9 @@ documentation tools.
 https://jasonelle.com/docs/legacy
 
 ### Examples
-Plenty of example apps and code. (Work in Progress).
+Plenty of example apps and code.
+
+https://jasonelle.com/docs/examples
 
 ### API
 
