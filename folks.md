@@ -40,6 +40,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://linkedin.com/in/najmuzzaman"><img src="https://avatars3.githubusercontent.com/u/20989114?v=4" width="100px;" alt="Mohammad Najmuzzaman"/><br /><sub><b>Mohammad Najmuzzaman</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=mohammadnajmuzzaman" title="Code">💻</a> <a href="#ideas-mohammadnajmuzzaman" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://realitix.github.io/"><img src="https://avatars1.githubusercontent.com/u/6367936?v=4" width="100px;" alt="Jean-Sébastien B."/><br /><sub><b>Jean-Sébastien B.</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=realitix" title="Code">💻</a> <a href="#ideas-realitix" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/TakaKeiji"><img src="https://avatars1.githubusercontent.com/u/6235078?v=4" width="100px;" alt="takakeiji"/><br /><sub><b>takakeiji</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=takakeiji" title="Code">💻</a></td>
+    <td align="center"><a href="http://stackk.xyz"><img src="https://avatars2.githubusercontent.com/u/17913398?v=4" width="100px;" alt="Al Sanchez"/><br /><sub><b>Al Sanchez</b></sub></a><br /><a href="#ideas-alsanchez-dev" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
