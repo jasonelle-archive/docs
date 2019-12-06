@@ -44,6 +44,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/TakaKeiji"><img src="https://avatars1.githubusercontent.com/u/6235078?v=4" width="100px;" alt="takakeiji"/><br /><sub><b>takakeiji</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=takakeiji" title="Code">💻</a></td>
     <td align="center"><a href="http://stackk.xyz"><img src="https://avatars2.githubusercontent.com/u/17913398?v=4" width="100px;" alt="Al Sanchez"/><br /><sub><b>Al Sanchez</b></sub></a><br /><a href="#ideas-alsanchez-dev" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/ClOne20"><img src="https://avatars1.githubusercontent.com/u/29542776?v=4" width="100px;" alt="John"/><br /><sub><b>John</b></sub></a><br /><a href="#ideas-ClOne20" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/mr-moleman"><img src="https://avatars1.githubusercontent.com/u/58608986?v=4" width="100px;" alt="Moleman"/><br /><sub><b>Moleman</b></sub></a><br /><a href="#ideas-mr-moleman" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
