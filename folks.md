@@ -42,6 +42,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/TakaKeiji"><img src="https://avatars1.githubusercontent.com/u/6235078?v=4" width="100px;" alt="takakeiji"/><br /><sub><b>takakeiji</b></sub></a><br /><a href="https://github.com/jasonelle/docs/commits?author=takakeiji" title="Code">💻</a></td>
+    <td align="center"><a href="http://stackk.xyz"><img src="https://avatars2.githubusercontent.com/u/17913398?v=4" width="100px;" alt="Al Sanchez"/><br /><sub><b>Al Sanchez</b></sub></a><br /><a href="#ideas-alsanchez-dev" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
 
