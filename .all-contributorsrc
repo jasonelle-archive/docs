@@ -148,6 +148,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "alsanchez-dev",
+      "name": "Al Sanchez",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/17913398?v=4",
+      "profile": "http://stackk.xyz",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
