@@ -52,7 +52,7 @@ finally releasing the first version of *Jasonette* on November 3th 2016.
 ![Jasonette First Tweet](legacy/bookdown/images/history/jasonette.png)
 
 Ethan worked on *Jasonette*, *Cell* and *ST* for nearly 2 years straight full-time. 
-Until June 9 2018 were he misteriosly disappeared without a trace. 
+Until June 9 2018 were he mysteriously disappeared without a trace. 
 Later on November 6th 2018. *Jasonelle Team* took the lead 
 ([https://github.com/Jasonette/Jasonette/issues/23](https://github.com/Jasonette/Jasonette/issues/23)).
 
