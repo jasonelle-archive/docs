@@ -13,6 +13,51 @@
         "background": "#ffffff",
         "border": "none"
       },
+        "footer": {
+          "tabs": {
+            "style": {
+              "background": "rgba(255,255,255,0.8)",
+              "color:disabled": "#cecece",
+              "color": "#009efa"
+            },
+            "items": [{
+              "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/home.png",
+              "text": "Home",
+              "style": {
+                "height": "21"
+              },
+              "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/home.json"
+            }, {
+              "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/notifications.png",
+              "text": "Notifications",
+              "style": {
+                "height": "21"
+              },
+              "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/notifications.json"
+            }, {
+              "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/moments.png",
+              "text": "Moments",
+              "style": {
+                "height": "21"
+              },
+              "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/moments.json"
+            }, {
+              "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/messages.png",
+              "text": "Messages",
+              "style": {
+                "height": "21"
+              },
+              "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/messages.json"
+            }, {
+              "image": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/images/me.png",
+              "text": "Me",
+              "style": {
+                "height": "21"
+              },
+              "url": "https://raw.githubusercontent.com/Jasonette/Twitter-UI-example/master/me.json"
+            }]
+          }
+        },
       "sections": [
         {
           "items": [
