@@ -1,0 +1,98 @@
+{
+    "$jason":{
+        "head":{
+            "actions":{
+                
+                "start_recording": {
+                    "type": "$haudio.record",
+                    "options": {
+                        "duration": "{{$jason.duration}}",
+                        "options": "{{$jason.options}}",
+                        "quality": "high"
+                    }
+                },
+                
+                "pause_recording": {
+                    "type": "$haudio.pause"
+                },
+                
+                "resume_recording": {
+                    "type": "$haudio.resume"
+                },
+                
+                "stop_recording": {
+                    "type": "$haudio.stop"
+                },
+                
+                "$haudio.ontick": {
+                    "type": "$agent.request",
+                    "options": {
+                        "id": "$webcontainer",
+                        "method": "haudio.tick",
+                        "params": ["{{ $jason }}"]
+                    }
+                },
+                
+                "$haudio.onpause": {
+                    "type": "$agent.request",
+                    "options": {
+                        "id": "$webcontainer",
+                        "method": "haudio.paused",
+                        "params": ["{{ $jason }}"]
+                    },
+                    "success": {
+                        "type": "$util.banner",
+                        "options": {
+                            "title": "paused"
+                        }
+                    }
+                },
+                
+                "$haudio.onrecord": {
+                    "type": "$agent.request",
+                    "options": {
+                        "id": "$webcontainer",
+                        "method": "haudio.recording",
+                        "params": ["{{ $jason }}"]
+                    }
+                },
+                
+                "$haudio.onfinishrecording": {
+                    "type": "$set",
+                    "options": {
+                        "audio": {
+                            "url": "{{$jason.file.url}}",
+                            "path": "{{$jason.file.path}}",
+                            "data": "{{$jason.data}}",
+                            "object" : "{{$jason}}"
+                        }
+                    },
+                    "success": {
+                        "type": "$audio.play",
+                        "options": {
+                            "title": "{{$get.audio.url}}",
+                            "url": "{{$get.audio.url}}"
+                        },
+                        "success": {
+                            "type": "$agent.request",
+                            "options": {
+                                "id": "$webcontainer",
+                                "method": "haudio.finished",
+                                "params": ["{{ $get.audio.object }}"]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "body":{
+            "background":{
+                "type": "html",
+                "url": "file://haudio.webview.example.html", 
+                "action": {
+                    "type": "$default"
+                }
+            }
+        }
+    }
+}

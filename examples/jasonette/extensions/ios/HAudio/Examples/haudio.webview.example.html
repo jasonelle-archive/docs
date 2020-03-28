@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- 
+    This example website shows how to interact with the
+    $haudio action using $agent
+    see https://jasonelle.com/jasonette-old-docs/agents/
+-->
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>$haudio example</title>
+        <script type="text/javascript">
+            
+            // We define a wrapper function to simplify api calls
+            // but we only need to use $agent variable to interact
+            // with the json app.
+            const haudio = {};
+            
+            // Triggers
+            haudio.record = () => {
+                // This will trigger the start_recording action
+                // defined in $jason.head.actions.start_recording
+                //
+                // The start_recording should be defined because
+                // $agent.trigger only can trigger events defined
+                // in $jason.head.actions.
+                //
+                // This is the function that should be used to
+                // trigger the recording.
+                const seconds = 5;
+                const duration = seconds * 1000; // 5 milliseconds
+                
+                // This is a sample variable to use inside the special options.
+                // Special options can be used to pass state params or another
+                // useful info that will be carried inside the events.
+                const options = {
+                    myspecialvar : true
+                };
+                $agent.logger.error('Start Logger in Webview', 1, 'Tega');
+                $agent.trigger('start_recording', {duration, options});
+            };
+        
+            haudio.pause = () => {
+                // This will trigger the pause_recording action
+                // defined in $jason.head.actions.pause_recording
+                
+                $agent.trigger('pause_recording');
+            };
+        
+            haudio.resume = () => {
+                // This will trigger the resume_recording action
+                // defined in $jason.head.actions.resume_recording
+                // Use this method instead of $haudio.record to continue a paused recording
+                
+                $agent.trigger('resume_recording');
+            };
+        
+            haudio.stop = () => {
+                // This will trigger the stop_recording action
+                // defined in $jason.head.actions.stop_recording
+                
+                $agent.trigger('stop_recording');
+            };
+        
+            // Events
+            haudio.tick = ({file, duration, options}) => {
+                // This function receives the current time for the audio recording.
+                // called from the $jason.head.actions.$haudio.ontick event.
+                const status = document.getElementById('status');
+                
+                status.innerHTML = `<ul>
+                <li>File: ${file.name.toLowerCase()}</li>
+                <li>Duration: ${duration.formatted}</li>
+                <li>Options: ${JSON.stringify(options)}</li>
+                </ul>`;
+            };
+        
+            haudio.finished = ({file, duration, checksum, options}) => {
+                // This function is called when the event
+                // $jason.head.actions.$haudio.onfinishedrecording is called.
+                const status = document.getElementById('status');
+                
+                status.innerHTML = `
+                    <ul>
+                        <li>File: ${file.name.toLowerCase()}</li>
+                        <li>Duration: ${duration.formatted}</li>
+                        <li>Checksum: ${checksum}</li>
+                        <li>Options: ${JSON.stringify(options)}</li>
+                    </ul>`;
+                
+                const action = document.getElementById('action');
+                action.innerHTML = `
+                    <button onclick="haudio.record()">Start Recording</button>
+                `;
+            };
+        
+            haudio.paused = () => {
+                // This function is called when the event
+                // $jason.head.actions.$haudio.onpause is called.
+                const action = document.getElementById('action');
+                action.innerHTML = `
+                    <button onclick="haudio.resume()">Resume</button>
+                    &nbsp;
+                    <button onclick="haudio.stop()">Stop</button>
+                `;
+            };
+        
+            haudio.recording = () => {
+                // This function is called when the event
+                // $jason.head.actions.$haudio.onrecord is called.
+                const action = document.getElementById('action');
+                action.innerHTML = `
+                    <button onclick="haudio.pause()">Pause</button>
+                    &nbsp;
+                    <button onclick="haudio.stop()">Stop</button>
+                    `;
+            };
+        </script>
+    </head>
+    <body>
+        <h1>$haudio test</h1>
+        <div id="action"><button onclick="haudio.record()">Start Recording</button></div>
+        <br/><br/>
+        <span id="status"></span>
+    </body>
+</html>

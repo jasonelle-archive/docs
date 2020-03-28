@@ -1,0 +1,14 @@
+{
+    "version": "1.0.0",
+    "name": "haudio",
+    "classname": "JasonHAudioService",
+    "type": "service",
+    "platform": "ios",
+    "language" : "objective-c",
+    "author" : "Camilo Castro <camilo@ninjas.cl>",
+    "date": "September 2019",
+    "href" : "https://ninjas.cl",
+    "license" : "MPL2",
+    "description": "Provides Audio Recording Without UI (Headless)"
+}
+

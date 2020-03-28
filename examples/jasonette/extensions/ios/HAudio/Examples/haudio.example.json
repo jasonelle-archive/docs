@@ -1,0 +1,170 @@
+{
+    "$jason": {
+        "head": {
+            "title": "Headless Audio Test",
+            "actions": {
+                "$haudio.onstop": {
+                    "type": "$util.banner",
+                    "options": {
+                        "title": "Stopped {{$jason.file_url}}"
+                    }
+                },
+                "$haudio.onpause": {
+                    "type": "$util.banner",
+                    "options": {
+                        "title": "Paused {{$jason.file_url}}"
+                    }
+                },
+                "$haudio.onresume": {
+                    "type": "$util.banner",
+                    "options": {
+                        "title": "Resumed {{$jason.file_url}}"
+                    }
+                },
+                "$haudio.onremove": {
+                    "type": "$util.banner",
+                    "options": {
+                        "title": "Removed {{$jason.file_url}}"
+                    }
+                },
+                "$haudio.onfinishrecording": {
+                    "type": "$set",
+                    "options": {
+                        "audio": {
+                            "url": "{{$jason.file_url}}",
+                            "path": "{{$jason.file_path}}"
+                        }
+                    },
+                    "success": {
+                        "type": "$audio.play",
+                        "options": {
+                            "title": "{{$get.audio.url}}",
+                            "url": "{{$get.audio.url}}"
+                        },
+                        "success": {
+                            "type": "$util.banner",
+                            "options": {
+                                "title": "Finished {{$get.audio.url}}"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "body": {
+            "header": {
+                "style": {
+                    "theme": true
+                }
+            },
+            "style": {
+                "background": "#ffffff",
+                "border": "none"
+            },
+            "sections": [{
+                "items": [{
+                    "type": "vertical",
+                    "style": {
+                        "padding": 30,
+                        "spacing": 20,
+                        "align": "center"
+                    },
+                    "components": [{
+                        "type": "label",
+                        "text": "Headless Audio Demo",
+                        "style": {
+                            "align": "center",
+                            "font": "Courier-Bold",
+                            "size": 26
+                        }
+                    },
+                    {
+                        "type": "label",
+                        "text": "This is a demo for the $haudio action.",
+                        "style": {
+                            "align": "center",
+                            "font": "Courier",
+                            "padding": 30,
+                            "size": 20
+                        }
+                    }
+                    ]
+                },
+                {
+                    "type": "label",
+                    "style": {
+                        "align": "right",
+                        "padding": 10,
+                        "color": "#000000",
+                        "font": "HelveticaNeue",
+                        "size": 20
+                    },
+                    "text": "Start Recording",
+                    "action": {
+                        "type": "$haudio.record"
+                    }
+                },
+                {
+                    "type": "label",
+                    "style": {
+                        "align": "right",
+                        "padding": 10,
+                        "color": "#000000",
+                        "font": "HelveticaNeue",
+                        "size": 20
+                    },
+                    "text": "Stop Recording",
+                    "action": {
+                        "type": "$haudio.stop"
+                    }
+                },
+                {
+                    "type": "label",
+                    "style": {
+                        "align": "right",
+                        "padding": 10,
+                        "color": "#000000",
+                        "font": "HelveticaNeue",
+                        "size": 20
+                    },
+                    "text": "Pause Recording",
+                    "action": {
+                        "type": "$haudio.pause"
+                    }
+                },
+                {
+                    "type": "label",
+                    "style": {
+                        "align": "right",
+                        "padding": 10,
+                        "color": "#000000",
+                        "font": "HelveticaNeue",
+                        "size": 20
+                    },
+                    "text": "Resume Recording",
+                    "action": {
+                        "type": "$haudio.resume"
+                    }
+                },
+                {
+                    "type": "label",
+                    "style": {
+                        "align": "right",
+                        "padding": 10,
+                        "color": "#000000",
+                        "font": "HelveticaNeue",
+                        "size": 20
+                    },
+                    "text": "Start Recording With Params",
+                    "action": {
+                        "type": "$haudio.record",
+                        "options": {
+                            "duration": 3000
+                        }
+                    }
+                }
+                ]
+            }]
+        }
+    }
+}
