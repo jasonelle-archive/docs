@@ -1,0 +1,93 @@
+# Firebase FCM Token Extension
+
+This extension provides an action to retrieve the `FCM Token`.
+This needs push notifications. https://github.com/jasonelle/docs/wiki/Push-Notifications[See the wiki for instructions].
+
+## Pods Installation
+
+First install the following cocoapods in your `Podfile` using `pod install`.
+
+```rb
+pod 'Firebase/Core'
+pod 'Firebase/Analytics'
+pod 'Firebase/Messaging'
+```
+
+## Extension Installation
+
+Then include all the files in `FirebasePushNotification` directory. (Including the json files).
+to your _Xcode_ project. (Can be inside the _Extensions_ directory).
+
+## Configure AppDelegate.m
+
+Use `import @Firebase`  and  `JasonFirebaseService.h` before in `AppDelegate.m`.
+
+```objc
+#import "JasonFirebaseService.h"
+@import Firebase;
+
+@interface AppDelegate ()
+```
+
+### Configure application:didFinishLaunchingWithOptions: function
+
+This function handles the firebase configuration. Also a delegate should be assigned to the _JasonFirebaseService_ to store the firebase token.
+
+```objc
+- (BOOL) application: (UIApplication *) application
+    didFinishLaunchingWithOptions:(NSDictionary *) launchOptions {
+
+    // ...
+
+    // Init Jasonette before firebase. So the service can store the token.
+
+    [JasonAppDelegate application:application
+    didFinishLaunchingWithOptions:launchOptions];
+    
+    JasonFirebaseService * firebaseService = [Jason client].services[@"JasonFirebaseService"];
+    
+    [FIRApp configure];
+    [FIRMessaging messaging].delegate = firebaseService;
+
+    // ...
+}
+```
+
+## Usage
+
+Activate push notifications with `$push.register` action then get the token with `$firebase.token` inside `$push.onregister` event.
+
+```json
+{
+    "actions": {
+            "$load": {
+            "type": "$render",
+            "success": {
+                "type": "$push.register"
+            }
+            },
+            "$push.onregister": {
+                "type": "$firebase.token",
+                "success": {
+                    "type": "$global.set",
+                    "options": {
+                        "fcmtoken": "{{$jason.token}}"
+                    }
+                }
+            }
+    }
+}
+```
+
+## Sponsor https://www.fus-ed.com/[Fused]
+
+This extension was made possible thanks to the folks at https://www.fus-ed.com/[Fused].
+_Fused_ merges decades of performance experience with leading-edge technology.
+
+## Made by https://ninjas.cl[Ninjas.cl]
+
+This was developed (with :love:) by https://ninjas.cl[Ninjas.cl].
+
+## LICENSE
+
+MIT

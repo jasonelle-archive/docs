@@ -1,0 +1,12 @@
+{
+    "version": "1.0.0",
+    "name": "firebase.service",
+    "classname": "JasonFirebaseService",
+    "type": "service",
+    "platform": "ios",
+    "language" : "objective-c",
+    "author" : "clsource",
+    "href" : "",
+    "license" : "MIT",
+    "description": ""
+}
