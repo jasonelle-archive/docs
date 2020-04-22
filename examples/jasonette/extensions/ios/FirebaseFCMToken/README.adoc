@@ -13,6 +13,8 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Messaging'
 ```
 
+Ensure to properly configure https://firebase.google.com/docs/reference/swift/firebasecore/api/reference/Classes/FirebaseConfiguration[Firebase with your iOS project].
+
 ## Extension Installation
 
 Then include all the files in `FirebasePushNotification` directory. (Including the json files).
