@@ -34,14 +34,13 @@ didReceiveRegistrationToken:(NSString *)fcmToken {
     
     DTLogDebug(@"Received FCM Token %@", fcmToken);
     
+    [[NSUserDefaults standardUserDefaults] setObject:fcmToken forKey:kFCMTokenKey];
+
     self.token = fcmToken;
     
     NSDictionary * dataDict = @{@"token": fcmToken};
     [[NSNotificationCenter defaultCenter] postNotificationName:
      kFCMTokenKey object:nil userInfo:dataDict];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:fcmToken forKey:kFCMTokenKey];
-    
 }
 
 @end

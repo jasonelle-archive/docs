@@ -15,12 +15,13 @@
 - (void) token {
     
     // Returns the current FCM token
-    JasonFirebaseService * service = [Jason client].services[@"JasonFirebaseService"];
     
-    NSString * token = @"";
-    if(service.token) {
-        token = service.token;
-        DTLogDebug(@"FCM Token %@", token);
+    NSString * token = [[NSUserDefaults standardUserDefaults] objectForKey:kFCMTokenKey];
+    DTLogDebug(@"FCM Token %@", token);
+    
+    if(!token) {
+        token = @"";
+        DTLogError(@"FCM Token not found. Is delegate set to JasonFirebaseService?.");
     }
     
     [[Jason client] success:@{

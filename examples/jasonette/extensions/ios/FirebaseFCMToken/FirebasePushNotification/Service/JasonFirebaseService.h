@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-extern const NSString * kFCMTokenKey;
+extern NSString * kFCMTokenKey;
 
 @interface JasonFirebaseService : NSObject <FIRMessagingDelegate>
 
