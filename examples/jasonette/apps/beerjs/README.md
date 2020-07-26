@@ -18,7 +18,7 @@ that should be configured as the starting json in the Xcode and Android Studio p
 
 The splash screen will show for 2 seconds and then load `index.json`.
 
-Its recommended to use this splash as a preloader of futher screens.
+Its recommended to use this splash as a preloader of further screens.
 
 ## index.json
 
